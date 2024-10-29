@@ -149,6 +149,10 @@ msgstr "1. Ansible doesn't connect via SSH to your AWS instance: you have to che
 msgid "1 Ansible doesn't connect via SSH to your AWS instance: you have to check that your SSH key has copied into the path /root/aws/."
 msgstr "1 Ansible doesn't connect via SSH to your AWS instance: you have to check that your SSH key has copied into the path /root/aws/."
 
+#: ../../automation/terraform/terraformAWS.rst:266
+msgid "1 Ansible doesn't connect via SSH to your AWS instance: you have to check that your SSH key has copied into the path /root/aws/. Also, increase the time in the file instance.yml from 300 sec to 500 sec or more. (It depends on your location). Make sure that you have opened access to the instance in the security group."
+msgstr "1 Ansible doesn't connect via SSH to your AWS instance: you have to check that your SSH key has copied into the path /root/aws/. Also, increase the time in the file instance.yml from 300 sec to 500 sec or more. (It depends on your location). Make sure that you have opened access to the instance in the security group."
+
 #: ../../automation/terraform/terraformvSphere.rst:23
 msgid "1 Collect all data in to file \"terraform.tfvars\" and create resources for example \"terraform\""
 msgstr "1 Collect all data in to file \"terraform.tfvars\" and create resources for example \"terraform\""
@@ -176,12 +180,20 @@ msgid "1 Create an account with Azure"
 msgstr "1 Create an account with Azure"
 
 #: ../../automation/terraform/terraformGoogle.rst:22
+msgid "1 Create an account with Google Cloud and a new project"
+msgstr "1 Create an account with Google Cloud and a new project"
+
+#: ../../automation/terraform/terraformGoogle.rst:22
 msgid "1 Create an account with google cloud and a new project"
 msgstr "1 Create an account with google cloud and a new project"
 
 #: ../../automation/terraform/terraformGoogle.rst:344
 msgid "1 Increase the time in the file instance.yml from 300 sec to 500 sec or more. (It depends on your location)."
 msgstr "1 Increase the time in the file instance.yml from 300 sec to 500 sec or more. (It depends on your location)."
+
+#: ../../automation/terraform/terraformGoogle.rst:344
+msgid "1 Increase the time in the file instance.yml from 300 sec to 500 sec or more. (It depends on your location). Make sure that you have opened access to the instance in the security group."
+msgstr "1 Increase the time in the file instance.yml from 300 sec to 500 sec or more. (It depends on your location). Make sure that you have opened access to the instance in the security group."
 
 #: ../../automation/terraform/terraformAWS.rst:86
 msgid "2.1 Create a0 UNIX or Windows instance"
@@ -245,6 +257,10 @@ msgstr "2.6 Type the commands :"
 msgid "2 Create a key pair_ and download your .pem key"
 msgstr "2 Create a key pair_ and download your .pem key"
 
+#: ../../automation/terraform/terraformGoogle.rst:29
+msgid "2 Create a service aacount and download your key (.JSON)"
+msgstr "2 Create a service aacount and download your key (.JSON)"
+
 #: ../../automation/terraform/terraformAWS.rst:79
 #: ../../automation/terraform/terraformAZ.rst:56
 #: ../../automation/terraform/terraformGoogle.rst:78
@@ -306,6 +322,10 @@ msgstr "3.4 Copy all files from my folder /Ansible into your Ansible project (an
 msgid "3.4 Copy all files into your Ansible project \"/root/aws/\" (ansible.cfg, instance.yml, mykey.pem and \"all\"), more detailed see `Structure of files Ansible for AWS`_"
 msgstr "3.4 Copy all files into your Ansible project \"/root/aws/\" (ansible.cfg, instance.yml, mykey.pem and \"all\"), more detailed see `Structure of files Ansible for AWS`_"
 
+#: ../../automation/terraform/terraformAWS.rst:38
+msgid "3 Create a security group_ for the new VyOS instance and open all traffic"
+msgstr "3 Create a security group_ for the new VyOS instance and open all traffic"
+
 #: ../../automation/terraform/terraformAWS.rst:81
 msgid "3 Create the folder for example /root/aws/"
 msgstr "3 Create the folder for example /root/aws/"
@@ -351,12 +371,24 @@ msgid "4 Copy all files into your Ansible project \"/root/az/\" (ansible.cfg, in
 msgstr "4 Copy all files into your Ansible project \"/root/az/\" (ansible.cfg, instance.yml,\"all\"), more detailed see `Structure of files Ansible for Azure`_"
 
 #: ../../automation/terraform/terraformGoogle.rst:82
+msgid "4 Copy all files into your Ansible project \"/root/google/\" (ansible.cfg, instance.yml, mykey.json and \"all\"), more detailed see `Structure of files Ansible for Google Cloud`_"
+msgstr "4 Copy all files into your Ansible project \"/root/google/\" (ansible.cfg, instance.yml, mykey.json and \"all\"), more detailed see `Structure of files Ansible for Google Cloud`_"
+
+#: ../../automation/terraform/terraformGoogle.rst:82
 msgid "4 Copy all files into your Ansible project \"/root/google/\" (ansible.cfg, instance.yml, mykey.json and \"all\"), more detailed see `Structure of files Ansible for google cloud`_"
 msgstr "4 Copy all files into your Ansible project \"/root/google/\" (ansible.cfg, instance.yml, mykey.json and \"all\"), more detailed see `Structure of files Ansible for google cloud`_"
 
 #: ../../automation/terraform/terraformvSphere.rst:59
 msgid "4 Copy all files into your Ansible project \"/root/vsphereterraform/\" (ansible.cfg, instance.yml,\"all\"), more detailed see `Structure of files Ansible for vSphere`_"
 msgstr "4 Copy all files into your Ansible project \"/root/vsphereterraform/\" (ansible.cfg, instance.yml,\"all\"), more detailed see `Structure of files Ansible for vSphere`_"
+
+#: ../../automation/terraform/terraformGoogle.rst:62
+msgid "4 Copy all files into your Terraform project \"/root/google\" (vyos.tf, var.tf, terraform.tfvars, .JSON), more detailed see `Structure of files Terrafom for google cloud`_"
+msgstr "4 Copy all files into your Terraform project \"/root/google\" (vyos.tf, var.tf, terraform.tfvars, .JSON), more detailed see `Structure of files Terrafom for google cloud`_"
+
+#: ../../automation/terraform/terraformGoogle.rst:64
+msgid "5 Type the commands :"
+msgstr "5 Type the commands :"
 
 #: ../../automation/vyos-api.rst:41
 msgid "API Endpoints"
@@ -393,6 +425,10 @@ msgstr "A single-quote symbol is not allowed inside command or value."
 #: ../../automation/vyos-salt.rst:32
 msgid "Accept minion key"
 msgstr "Accept minion key"
+
+#: ../../automation/terraform/terraformGoogle.rst:333
+msgid "After executing all the commands, you will have your VyOS instance on the Google Cloud with your configuration; it's a very convenient decision. If you need to delete the instance, please type the command:"
+msgstr "After executing all the commands, you will have your VyOS instance on the Google Cloud with your configuration; it's a very convenient decision. If you need to delete the instance, please type the command:"
 
 #: ../../automation/terraform/terraformAWS.rst:255
 msgid "After executing all the commands you will have your VyOS instance on the AWS cloud with your configuration, it's a very convenient desition. If you need to delete the instance please type the command:"
@@ -601,6 +637,10 @@ msgid "Deploying VyOS in the Azure cloud"
 msgstr "Deploying VyOS in the Azure cloud"
 
 #: ../../automation/terraform/terraformGoogle.rst:6
+msgid "Deploying VyOS in the Google Cloud"
+msgstr "Deploying VyOS in the Google Cloud"
+
+#: ../../automation/terraform/terraformGoogle.rst:6
 msgid "Deploying VyOS in the google cloud"
 msgstr "Deploying VyOS in the google cloud"
 
@@ -661,6 +701,10 @@ msgid "File contents of Ansible for Azure"
 msgstr "File contents of Ansible for Azure"
 
 #: ../../automation/terraform/terraformGoogle.rst:651
+msgid "File contents of Ansible for Google Cloud"
+msgstr "File contents of Ansible for Google Cloud"
+
+#: ../../automation/terraform/terraformGoogle.rst:651
 msgid "File contents of Ansible for google cloud"
 msgstr "File contents of Ansible for google cloud"
 
@@ -675,6 +719,10 @@ msgstr "File contents of Terrafom for AWS"
 #: ../../automation/terraform/terraformAZ.rst:93
 msgid "File contents of Terrafom for Azure"
 msgstr "File contents of Terrafom for Azure"
+
+#: ../../automation/terraform/terraformGoogle.rst:375
+msgid "File contents of Terrafom for Google Cloud"
+msgstr "File contents of Terrafom for Google Cloud"
 
 #: ../../automation/terraform/terraformGoogle.rst:375
 msgid "File contents of Terrafom for google cloud"
@@ -744,6 +792,10 @@ msgstr "Generate qcow image"
 msgid "Getting Started"
 msgstr "Getting Started"
 
+#: ../../automation/terraform/terraformGoogle.rst:19
+msgid "Google Cloud"
+msgstr "Google Cloud"
+
 #: ../../automation/command-scripting.rst:82
 msgid "Here is a simple example:"
 msgstr "Here is a simple example:"
@@ -759,6 +811,10 @@ msgstr "How to create a single instance and install your configuration using Ter
 #: ../../automation/terraform/terraformAZ.rst:16
 msgid "How to create a single instance and install your configuration using Terraform+Ansible+Azure Step by step:"
 msgstr "How to create a single instance and install your configuration using Terraform+Ansible+Azure Step by step:"
+
+#: ../../automation/terraform/terraformGoogle.rst:16
+msgid "How to create a single instance and install your configuration using Terraform+Ansible+Google Step by step:"
+msgstr "How to create a single instance and install your configuration using Terraform+Ansible+Google Step by step:"
 
 #: ../../automation/vyos-terraform.rst:987
 msgid "How to create a single instance and install your configuration using Terraform+Ansible+Vsphere Step by step:"
@@ -779,6 +835,10 @@ msgstr "ISO files storage: ``local`` volume is used for ``.iso`` file storage. I
 #: ../../automation/cloud-init.rst:82
 msgid "If command ends in a value, it must be inside single quotes."
 msgstr "If command ends in a value, it must be inside single quotes."
+
+#: ../../automation/cloud-init.rst:253
+msgid "If no networking configuration is provided, then dhcp client is going to be enabled on first interface. Bare in mind that this configuration will be inyected at an OS level, so don't expect to find dhcp client configuration on vyos cli. Because of this behavior, in next example lab we will disable dhcp-client configuration on eth0."
+msgstr "If no networking configuration is provided, then dhcp client is going to be enabled on first interface. Bare in mind that this configuration will be inyected at an OS level, so don't expect to find dhcp client configuration on vyos cli. Because of this behavior, in next example lab we will disable dhcp-client configuration on eth0."
 
 #: ../../automation/cloud-init.rst:253
 msgid "If no networking configuration is provided, then dhcp client is going to be enabled on first interface. Bear in mind that this configuration will be injected at an OS level, so don't expect to find dhcp client configuration on vyos cli. Because of this behavior, in next example lab we will disable dhcp-client configuration on eth0."
@@ -807,6 +867,10 @@ msgstr "In Proxmox server three files are going to be used for this setup:"
 #: ../../automation/cloud-init.rst:49
 msgid "In VyOS, by default, enables only two modules:"
 msgstr "In VyOS, by default, enables only two modules:"
+
+#: ../../automation/terraform/terraformGoogle.rst:11
+msgid "In this case, we'll create the necessary files for Terraform and Ansible. Next, using Terraform, we'll create a single instance on the Google Cloud and make provisioning using Ansible."
+msgstr "In this case, we'll create the necessary files for Terraform and Ansible. Next, using Terraform, we'll create a single instance on the Google Cloud and make provisioning using Ansible."
 
 #: ../../automation/terraform/terraformAWS.rst:17
 msgid "In this case, we'll create the necessary files for Terraform and Ansible next using Terraform we'll create a single instance on the AWS cloud and make provisioning using Ansible."
@@ -985,6 +1049,10 @@ msgid "Preparation steps for deploying VyOS on Azure"
 msgstr "Preparation steps for deploying VyOS on Azure"
 
 #: ../../automation/terraform/terraformGoogle.rst:14
+msgid "Preparation steps for deploying VyOS on Google"
+msgstr "Preparation steps for deploying VyOS on Google"
+
+#: ../../automation/terraform/terraformGoogle.rst:14
 msgid "Preparation steps for deploying VyOS on google"
 msgstr "Preparation steps for deploying VyOS on google"
 
@@ -1093,6 +1161,10 @@ msgid "Sourse files for Azure from GIT"
 msgstr "Sourse files for Azure from GIT"
 
 #: ../../automation/terraform/terraformGoogle.rst:703
+msgid "Sourse files for Google Cloud from GIT"
+msgstr "Sourse files for Google Cloud from GIT"
+
+#: ../../automation/terraform/terraformGoogle.rst:703
 msgid "Sourse files for google cloud from GIT"
 msgstr "Sourse files for google cloud from GIT"
 
@@ -1106,6 +1178,10 @@ msgstr "Sourse files for vSphere from GIT"
 #: ../../automation/terraform/terraformvSphere.rst:62
 msgid "Start"
 msgstr "Start"
+
+#: ../../automation/terraform/terraformGoogle.rst:101
+msgid "Start creating a Google Cloud instance and check the result."
+msgstr "Start creating a Google Cloud instance and check the result."
 
 #: ../../automation/terraform/terraformGoogle.rst:101
 msgid "Start creating a google cloud instance and check the result"
@@ -1141,6 +1217,10 @@ msgid "Structure of files Ansible for Azure"
 msgstr "Structure of files Ansible for Azure"
 
 #: ../../automation/terraform/terraformGoogle.rst:639
+msgid "Structure of files Ansible for Google Cloud"
+msgstr "Structure of files Ansible for Google Cloud"
+
+#: ../../automation/terraform/terraformGoogle.rst:639
 msgid "Structure of files Ansible for google cloud"
 msgstr "Structure of files Ansible for google cloud"
 
@@ -1161,6 +1241,10 @@ msgstr "Structure of files Terrafom for AWS"
 #: ../../automation/terraform/terraformAZ.rst:83
 msgid "Structure of files Terrafom for Azure"
 msgstr "Structure of files Terrafom for Azure"
+
+#: ../../automation/terraform/terraformGoogle.rst:362
+msgid "Structure of files Terrafom for Google Cloud"
+msgstr "Structure of files Terrafom for Google Cloud"
 
 #: ../../automation/terraform/terraformGoogle.rst:362
 msgid "Structure of files Terrafom for google cloud"
@@ -1326,10 +1410,13 @@ msgstr "Troubleshooting"
 
 #: ../../automation/terraform/terraformAWS.rst:91
 #: ../../automation/terraform/terraformAZ.rst:66
-#: ../../automation/terraform/terraformGoogle.rst:90
 #: ../../automation/terraform/terraformvSphere.rst:65
 msgid "Type the commands on your Terrafom instance:"
 msgstr "Type the commands on your Terrafom instance:"
+
+#: ../../automation/terraform/terraformGoogle.rst:90
+msgid "Type the commands on your Terraform instance:"
+msgstr "Type the commands on your Terraform instance:"
 
 #: ../../automation/command-scripting.rst:39
 msgid "Unlike a normal configuration session, all operational commands must be prepended with ``run``, even if you haven't created a session with configure."
@@ -1466,6 +1553,10 @@ msgstr "With the help of Terraform, you can quickly deploy VyOS-based infrastruc
 #: ../../automation/terraform/terraformAZ.rst:8
 msgid "With the help of Terraform, you can quickly deploy VyOS-based infrastructure in the Azure cloud. If necessary, the infrastructure can be removed using terraform. Also we will make provisioning using Ansible."
 msgstr "With the help of Terraform, you can quickly deploy VyOS-based infrastructure in the Azure cloud. If necessary, the infrastructure can be removed using terraform. Also we will make provisioning using Ansible."
+
+#: ../../automation/terraform/terraformGoogle.rst:8
+msgid "With the help of Terraform, you can quickly deploy VyOS-based infrastructure in the Google Cloud. If necessary, the infrastructure can be removed using terraform. Also we will make provisioning using Ansible."
+msgstr "With the help of Terraform, you can quickly deploy VyOS-based infrastructure in the Google Cloud. If necessary, the infrastructure can be removed using terraform. Also we will make provisioning using Ansible."
 
 #: ../../automation/terraform/terraformGoogle.rst:8
 msgid "With the help of Terraform, you can quickly deploy VyOS-based infrastructure in the google cloud. If necessary, the infrastructure can be removed using terraform. Also we will make provisioning using Ansible."
@@ -1613,6 +1704,10 @@ msgstr "main.tf"
 #: ../../automation/vyos-ansible.rst:56
 msgid "main.yml"
 msgstr "main.yml"
+
+#: ../../automation/terraform/terraformGoogle.rst:84
+msgid "mykey.json you have to get using step 2 of the Google Cloud"
+msgstr "mykey.json you have to get using step 2 of the Google Cloud"
 
 #: ../../automation/terraform/terraformGoogle.rst:84
 msgid "mykey.json you have to get using step 2 of the google cloud"

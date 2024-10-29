@@ -28,7 +28,7 @@ msgstr "**Eliminar la VM** del proyecto GNS3."
 msgid "**Early Production Access**"
 msgstr "**Acceso de producción anticipada**"
 
-#: ../../installation/install.rst:541
+#: ../../installation/install.rst:542
 msgid "**First** run a web server - you can use a simple one like `Python's SimpleHTTPServer`_ and start serving the `filesystem.squashfs` file. The file can be found inside the `/live` directory of the extracted contents of the ISO file."
 msgstr "**Primero** ejecute un servidor web; puede usar uno simple como `SimpleHTTPServer de Python`_ y comenzar a servir el archivo `filesystem.squashfs`. El archivo se puede encontrar dentro del directorio `/live` del contenido extraído del archivo ISO."
 
@@ -39,6 +39,10 @@ msgstr "Pestaña **Configuración general**: establezca la prioridad de arranque
 #: ../../installation/install.rst:37
 msgid "**Long-Term Support**"
 msgstr "**Soporte a largo plazo**"
+
+#: ../../installation/bare-metal.rst:436
+msgid "**NOTE:** This is the entry level platform. Other derivates exists with i3-N305 CPU and 2x 25GbE!"
+msgstr "**NOTE:** This is the entry level platform. Other derivates exists with i3-N305 CPU and 2x 25GbE!"
 
 #: ../../installation/install.rst:21
 msgid "**Nightly (Beta)**"
@@ -52,11 +56,11 @@ msgstr "**Cada noche (actual)**"
 msgid "**Release Candidate**"
 msgstr "**Candidato de lanzamiento**"
 
-#: ../../installation/install.rst:432
+#: ../../installation/install.rst:433
 msgid "**Requirements**"
 msgstr "**Requisitos**"
 
-#: ../../installation/install.rst:546
+#: ../../installation/install.rst:547
 msgid "**Second**, edit the configuration file of the :ref:`install_from_tftp` so that it shows the correct URL at ``fetch=http://<address_of_your_HTTP_server>/filesystem.squashfs``."
 msgstr "**Segundo**, edite el archivo de configuración de :ref:`install_from_tftp` para que muestre la URL correcta en ``fetch=http://<address_of_your_HTTP_server> /filesystem.squashfs``."
 
@@ -64,99 +68,115 @@ msgstr "**Segundo**, edite el archivo de configuración de :ref:`install_from_tf
 msgid "**Snapshot**"
 msgstr "**Instantánea**"
 
-#: ../../installation/install.rst:300
+#: ../../installation/install.rst:301
 msgid "**Warning**: This will destroy all data on the USB drive!"
 msgstr "**Advertencia**: ¡Esto destruirá todos los datos en la unidad USB!"
 
-#: ../../installation/vyos-on-baremetal.rst:20
+#: ../../installation/bare-metal.rst:20
 msgid "1x Crucial CT4G4DFS824A (4GB DDR4 RAM 2400 MT/s, PC4-19200)"
 msgstr "1x Crucial CT4G4DFS824A (4GB DDR4 RAM 2400 MT/s, PC4-19200)"
 
-#: ../../installation/vyos-on-baremetal.rst:102
+#: ../../installation/bare-metal.rst:442
+msgid "1x Gowin GW-FN-1UR1-10G"
+msgstr "1x Gowin GW-FN-1UR1-10G"
+
+#: ../../installation/bare-metal.rst:449
+msgid "1x HP LT4120 Snapdragon X5 LTE WWAN module"
+msgstr "1x HP LT4120 Snapdragon X5 LTE WWAN module"
+
+#: ../../installation/bare-metal.rst:102
 msgid "1x Kingston SUV500MS/120G"
 msgstr "1x Kingston SUV500MS/120G"
 
-#: ../../installation/vyos-on-baremetal.rst:21
+#: ../../installation/bare-metal.rst:448
+msgid "1x MediaTek 7921E M.2 NGFF WIFI module (not tested as this currently leads to a Kernel crash)"
+msgstr "1x MediaTek 7921E M.2 NGFF WIFI module (not tested as this currently leads to a Kernel crash)"
+
+#: ../../installation/bare-metal.rst:21
 msgid "1x SanDisk Ultra Fit 32GB (USB-A 3.0 SDCZ43-032G-G46 mass storage for OS)"
 msgstr "1x SanDisk Ultra Fit 32GB (USB-A 3.0 SDCZ43-032G-G46 de almacenamiento masivo para OS)"
 
-#: ../../installation/vyos-on-baremetal.rst:18
+#: ../../installation/bare-metal.rst:18
 msgid "1x Supermicro A2SDi-2C-HLN4F (Intel Atom C3338, 2C/2T, 4MB cache, Quad LAN with Intel C3000 SoC 1GbE)"
 msgstr "1x Supermicro A2SDi-2C-HLN4F (Intel Atom C3338, 2C/2T, 4 MB de caché, Quad LAN con Intel C3000 SoC 1 GbE)"
 
-#: ../../installation/vyos-on-baremetal.rst:16
+#: ../../installation/bare-metal.rst:16
 msgid "1x Supermicro CSE-505-203B (19\" 1U chassis, inkl. 200W PSU)"
 msgstr "1x Supermicro CSE-505-203B (chasis 1U de 19&quot;, fuente de alimentación inkl. 200W)"
 
-#: ../../installation/vyos-on-baremetal.rst:30
+#: ../../installation/bare-metal.rst:30
 msgid "1x Supermicro MCP-120-00063-0N (Riser Card Bracket)"
 msgstr "1x Supermicro MCP-120-00063-0N (soporte de tarjeta vertical)"
 
-#: ../../installation/vyos-on-baremetal.rst:17
+#: ../../installation/bare-metal.rst:17
 msgid "1x Supermicro MCP-260-00085-0B (I/O Shield for A2SDi-2C-HLN4F)"
 msgstr "1x Supermicro MCP-260-00085-0B (protector de E/S para A2SDi-2C-HLN4F)"
 
-#: ../../installation/vyos-on-baremetal.rst:22
+#: ../../installation/bare-metal.rst:22
 msgid "1x Supermicro MCP-320-81302-0B (optional FAN tray)"
 msgstr "1x Supermicro MCP-320-81302-0B (bandeja de VENTILADOR opcional)"
 
-#: ../../installation/vyos-on-baremetal.rst:29
+#: ../../installation/bare-metal.rst:29
 msgid "1x Supermicro RSC-RR1U-E8 (Riser Card)"
 msgstr "1x Supermicro RSC-RR1U-E8 (tarjeta vertical)"
 
-#: ../../installation/vyos-on-baremetal.rst:103
+#: ../../installation/bare-metal.rst:103
 msgid "1x VARIA Group Item 326745 19\" dual rack for APU4"
 msgstr "1x Grupo VARIA Artículo 326745 Bastidor doble de 19&quot; para APU4"
 
-#: ../../installation/vyos-on-baremetal.rst:101
+#: ../../installation/bare-metal.rst:101
 msgid "1x apu4c4 = 4 i211AT LAN / AMD GX-412TC CPU / 4 GB DRAM / dual SIM"
 msgstr "1x apu4c4 = 4 i211AT LAN / AMD GX-412TC CPU / 4 GB DRAM / doble SIM"
 
-#: ../../installation/vyos-on-baremetal.rst:91
+#: ../../installation/bare-metal.rst:91
 msgid "2 miniPCI express (one with SIM socket for 3G modem)."
 msgstr "2 miniPCI express (uno con toma SIM para módem 3G)."
 
-#: ../../installation/vyos-on-baremetal.rst:89
+#: ../../installation/bare-metal.rst:443
+msgid "2x 128GB M.2 NVMe SSDs"
+msgstr "2x 128GB M.2 NVMe SSDs"
+
+#: ../../installation/bare-metal.rst:89
 msgid "4 GB DDR3-1333 DRAM, with optional ECC support"
 msgstr "DRAM DDR3-1333 de 4 GB, con soporte ECC opcional"
 
-#: ../../installation/vyos-on-baremetal.rst:92
+#: ../../installation/bare-metal.rst:92
 msgid "4 Gigabit Ethernet channels using Intel i211AT NICs"
 msgstr "4 canales Gigabit Ethernet con NIC Intel i211AT"
 
-#: ../../installation/vyos-on-baremetal.rst:87
+#: ../../installation/bare-metal.rst:87
 msgid "AMD Embedded G series GX-412TC, 1 GHz quad Jaguar core with 64 bit and AES-NI support, 32K data + 32K instruction cache per core, shared 2MB L2 cache."
 msgstr "AMD Embedded G series GX-412TC, quad Jaguar core de 1 GHz con 64 bits y compatibilidad con AES-NI, 32 000 datos + 32 000 caché de instrucciones por núcleo, 2 MB de caché L2 compartida."
 
-#: ../../installation/vyos-on-baremetal.rst:-1
+#: ../../installation/bare-metal.rst:-1
 msgid "APU4 custom VyOS powder coat"
 msgstr "Capa de polvo VyOS personalizada APU4"
 
-#: ../../installation/vyos-on-baremetal.rst:-1
+#: ../../installation/bare-metal.rst:-1
 msgid "APU4 desktop back"
 msgstr "Parte posterior del escritorio APU4"
 
-#: ../../installation/vyos-on-baremetal.rst:-1
+#: ../../installation/bare-metal.rst:-1
 msgid "APU4 desktop closed"
 msgstr "Escritorio APU4 cerrado"
 
-#: ../../installation/vyos-on-baremetal.rst:-1
+#: ../../installation/bare-metal.rst:-1
 msgid "APU4 rack closed"
 msgstr "Bastidor APU4 cerrado"
 
-#: ../../installation/vyos-on-baremetal.rst:-1
+#: ../../installation/bare-metal.rst:-1
 msgid "APU4 rack front"
 msgstr "Frente de rack APU4"
 
-#: ../../installation/vyos-on-baremetal.rst:-1
+#: ../../installation/bare-metal.rst:-1
 msgid "APU4 rack module #1"
 msgstr "Módulo de bastidor APU4 #1"
 
-#: ../../installation/vyos-on-baremetal.rst:-1
+#: ../../installation/bare-metal.rst:-1
 msgid "APU4 rack module #2"
 msgstr "Módulo de bastidor APU4 #2"
 
-#: ../../installation/vyos-on-baremetal.rst:-1
+#: ../../installation/bare-metal.rst:-1
 msgid "APU4 rack module #3 with PSU"
 msgstr "Módulo de rack APU4 #3 con PSU"
 
@@ -164,7 +184,7 @@ msgstr "Módulo de rack APU4 #3 con PSU"
 msgid "A VyOS installation image (.iso file). You can find how to get it on the :ref:`installation` page"
 msgstr "Una imagen de instalación de VyOS (archivo .iso). Puede encontrar cómo obtenerlo en la página :ref:`installation`"
 
-#: ../../installation/install.rst:490
+#: ../../installation/install.rst:491
 msgid "A directory named pxelinux.cfg which must contain the configuration file. We will use the configuration_ file shown below, which we named default_."
 msgstr "Un directorio llamado pxelinux.cfg que debe contener el archivo de configuración. Usaremos el archivo de configuración que se muestra a continuación, al que llamamos default_."
 
@@ -172,15 +192,19 @@ msgstr "Un directorio llamado pxelinux.cfg que debe contener el archivo de confi
 msgid "A particularly stable release frozen from nightly each month after manual testing. Still contains experimental code."
 msgstr "Una versión particularmente estable congelada todas las noches cada mes después de la prueba manual. Todavía contiene código experimental."
 
-#: ../../installation/install.rst:269
+#: ../../installation/install.rst:270
 msgid "A permanent VyOS installation always requires to go first through a live installation."
 msgstr "Una instalación permanente de VyOS siempre requiere pasar primero por una instalación en vivo."
+
+#: ../../installation/bare-metal.rst:428
+msgid "A platform utilizing an Intel Alder Lake-N100 CPU with 6M cache, TDP 6W. Onboard LPDDR5 16GB RAM and 128GB eMMC (can be used for image installation)."
+msgstr "A platform utilizing an Intel Alder Lake-N100 CPU with 6M cache, TDP 6W. Onboard LPDDR5 16GB RAM and 128GB eMMC (can be used for image installation)."
 
 #: ../../installation/virtual/gns3.rst:22
 msgid "A working GNS3 installation. For further information see the `GNS3 documentation <https://docs.gns3.com/>`__."
 msgstr "Una instalación de GNS3 en funcionamiento. Para obtener más información, consulte la documentación `GNS3<https://docs.gns3.com/> `__."
 
-#: ../../installation/vyos-on-baremetal.rst:90
+#: ../../installation/bare-metal.rst:90
 msgid "About 6 to 10W of 12V DC power depending on CPU load"
 msgstr "Alrededor de 6 a 10 W de alimentación de 12 V CC dependiendo de la carga de la CPU"
 
@@ -196,7 +220,7 @@ msgstr "Acceso a Imágenes"
 msgid "Access to Source"
 msgstr "Acceso a la fuente"
 
-#: ../../installation/vyos-on-baremetal.rst:368
+#: ../../installation/bare-metal.rst:368
 msgid "Acrosser AND-J190N1"
 msgstr "A través de AND-J190N1"
 
@@ -216,7 +240,7 @@ msgstr "Almacenamiento adicional. Puede eliminar el almacenamiento adicional ``/
 msgid "Additional storage. You can remove additional storage ``/dev/sdb``. First root device will be ``/dev/xvda``. You can skip this step."
 msgstr "Additional storage. You can remove additional storage ``/dev/sdb``. First root device will be ``/dev/xvda``. You can skip this step."
 
-#: ../../installation/vyos-on-baremetal.rst:394
+#: ../../installation/bare-metal.rst:394
 msgid "Advanced > Serial Port Console Redirection > Console Redirection Settings:"
 msgstr "Avanzado &gt; Redirección de consola de puerto serie &gt; Configuración de redirección de consola:"
 
@@ -236,11 +260,15 @@ msgstr "Después de la instalación, salga de la consola usando la combinación 
 msgid "After installation has completed, remove the installation iso using the GUI or ``qm set 200 --ide2 none``."
 msgstr "Una vez completada la instalación, elimine la iso de instalación utilizando la GUI o ``qm set 200 --ide2 none``."
 
-#: ../../installation/update.rst:88
+#: ../../installation/update.rst:93
 msgid "After reboot you might want to verify the version you are running with the :opcmd:`show version` command."
 msgstr "Después de reiniciar, es posible que desee verificar la versión que está ejecutando con el comando :opcmd:`show version`."
 
-#: ../../installation/install.rst:413
+#: ../../installation/secure-boot.rst:155
+msgid "After the Kernel CI build completes, the generated key is discarded - meaning we can no londer sign additional modules with out key. Our Kernel configuration also contains the option ``CONFIG_MODULE_SIG_FORCE=y`` which means that we enforce all modules to be signed. If you try to load an unsigned module, it will be rejected with the following error:"
+msgstr "After the Kernel CI build completes, the generated key is discarded - meaning we can no londer sign additional modules with out key. Our Kernel configuration also contains the option ``CONFIG_MODULE_SIG_FORCE=y`` which means that we enforce all modules to be signed. If you try to load an unsigned module, it will be rejected with the following error:"
+
+#: ../../installation/install.rst:414
 msgid "After the installation is completed, remove the live USB stick or CD."
 msgstr "Una vez completada la instalación, retire la memoria USB o el CD en vivo."
 
@@ -256,15 +284,15 @@ msgstr "AmazonAWS"
 msgid "Amazon CloudWatch Agent Usage"
 msgstr "Uso del agente de Amazon CloudWatch"
 
-#: ../../installation/install.rst:450
+#: ../../installation/install.rst:451
 msgid "An IP address"
 msgstr "Una dirección IP"
 
-#: ../../installation/vyos-on-baremetal.rst:334
+#: ../../installation/bare-metal.rst:334
 msgid "An external RS232 serial port is available, internally a GPIO header as well. It does have Realtek based audio on board for some reason, but you can disable that. Booting works on both USB2 and USB3 ports. Switching between serial BIOS mode and HDMI BIOS mode depends on what is connected at startup; it goes into serial mode if you disconnect HDMI and plug in serial, in all other cases it's HDMI mode."
 msgstr "Hay disponible un puerto serie RS232 externo, así como un encabezado GPIO interno. Tiene audio basado en Realtek a bordo por alguna razón, pero puede desactivarlo. El arranque funciona en los puertos USB2 y USB3. El cambio entre el modo BIOS en serie y el modo BIOS HDMI depende de lo que esté conectado al inicio; entra en modo serie si desconecta HDMI y lo conecta en serie, en todos los demás casos es modo HDMI."
 
-#: ../../installation/install.rst:554
+#: ../../installation/install.rst:555
 msgid "And **third**, restart the TFTP service. If you are using VyOS as your TFTP Server, you can restart the service with ``sudo service tftpd-hpa restart``."
 msgstr "Y **tercero**, reinicie el servicio TFTP. Si está utilizando VyOS como servidor TFTP, puede reiniciar el servicio con ``sudo service tftpd-hpa restart``."
 
@@ -276,11 +304,15 @@ msgstr "Otro problema de GPG es que crea un directorio /root/.gnupg solo para ve
 msgid "Another point is that we are using RSA now, which requires absurdly large keys to be secure."
 msgstr "Otro punto es que ahora estamos usando RSA, que requiere claves absurdamente grandes para ser seguro."
 
-#: ../../installation/vyos-on-baremetal.rst:201
+#: ../../installation/secure-boot.rst:33
+msgid "As our version of ``shim`` is not signed by Microsoft we need to enroll the previously generated :abbr:`MOK (Machine Owner Key)` to the system."
+msgstr "As our version of ``shim`` is not signed by Microsoft we need to enroll the previously generated :abbr:`MOK (Machine Owner Key)` to the system."
+
+#: ../../installation/bare-metal.rst:201
 msgid "As the APU board itself still used a serial setting of 115200 8N1 it is strongly recommended that you change the VyOS serial interface settings after your first successful boot."
 msgstr "Como la placa APU todavía usaba una configuración en serie de 115200 8N1, se recomienda encarecidamente que cambie la configuración de la interfaz en serie de VyOS después de su primer arranque exitoso."
 
-#: ../../installation/vyos-on-baremetal.rst:82
+#: ../../installation/bare-metal.rst:82
 msgid "As this platform seems to be quite common in terms of noise, cost, power and performance it makes sense to write a small installation manual."
 msgstr "Como esta plataforma parece ser bastante común en términos de ruido, costo, potencia y rendimiento, tiene sentido escribir un pequeño manual de instalación."
 
@@ -320,15 +352,23 @@ msgstr "Azure no le permite adjuntar una interfaz cuando la instancia está en e
 msgid "Azure has a way to access the serial console of a VM, but this needs to be configured on the VyOS. It's there by default, but keep it in mind if you are replacing config.boot and rebooting: ``set system console device ttyS0 speed '9600'``"
 msgstr "Azure tiene una forma de acceder a la consola serie de una VM, pero esto debe configurarse en el VyOS. Está ahí por defecto, pero tenlo en cuenta si estás reemplazando config.boot y reiniciando: ``set system console device ttyS0 speed &#39;9600&#39;``"
 
-#: ../../installation/vyos-on-baremetal.rst:382
+#: ../../installation/bare-metal.rst:470
+msgid "BIOS Settings"
+msgstr "BIOS Settings"
+
+#: ../../installation/bare-metal.rst:382
 msgid "BIOS Settings:"
 msgstr "Configuración del BIOS:"
 
-#: ../../installation/install.rst:334
+#: ../../installation/bare-metal.rst:5
+msgid "Bare Metal Deployment"
+msgstr "Bare Metal Deployment"
+
+#: ../../installation/install.rst:335
 msgid "Before a permanent installation, VyOS requires a :ref:`live_installation`."
 msgstr "Antes de una instalación permanente, VyOS requiere una :ref:`live_installation`."
 
-#: ../../installation/vyos-on-baremetal.rst:358
+#: ../../installation/bare-metal.rst:358
 msgid "Begin rapidly pressing delete on the keyboard. The boot prompt is very quick, but with a few tries you should be able to get into the BIOS."
 msgstr "Comience rápidamente presionando eliminar en el teclado. El indicador de inicio es muy rápido, pero con algunos intentos debería poder ingresar al BIOS."
 
@@ -336,19 +376,19 @@ msgstr "Comience rápidamente presionando eliminar en el teclado. El indicador d
 msgid "Being again at the **Preferences** window, having **Qemu VMs** selected and having our new VM selected, click the ``Edit`` button."
 msgstr "Estando nuevamente en la ventana de **Preferencias**, teniendo seleccionadas las **Qemu VMs** y nuestra nueva VM seleccionada, haga clic en el botón ``Editar``."
 
-#: ../../installation/vyos-on-baremetal.rst:397
+#: ../../installation/bare-metal.rst:397
 msgid "Bits per second : 9600"
 msgstr "Bits por segundo: 9600"
 
-#: ../../installation/install.rst:583
+#: ../../installation/install.rst:584
 msgid "Black screen on install"
 msgstr "Pantalla negra al instalar"
 
-#: ../../installation/vyos-on-baremetal.rst:362
+#: ../../installation/bare-metal.rst:362
 msgid "Boot to the VyOS installer and install as usual."
 msgstr "Inicie el instalador de VyOS e instálelo como de costumbre."
 
-#: ../../installation/vyos-on-baremetal.rst:236
+#: ../../installation/bare-metal.rst:236
 msgid "Both device types operate without any moving parts and emit zero noise."
 msgstr "Ambos tipos de dispositivos funcionan sin piezas móviles y no emiten ruido."
 
@@ -360,39 +400,39 @@ msgstr "Construyendo desde la fuente"
 msgid "CLI"
 msgstr "CLI"
 
-#: ../../installation/vyos-on-baremetal.rst:-1
+#: ../../installation/bare-metal.rst:-1
 msgid "CSE-505-203B Back"
 msgstr "CSE-505-203B Volver"
 
-#: ../../installation/vyos-on-baremetal.rst:-1
+#: ../../installation/bare-metal.rst:-1
 msgid "CSE-505-203B Front"
 msgstr "CSE-505-203B Frente"
 
-#: ../../installation/vyos-on-baremetal.rst:-1
+#: ../../installation/bare-metal.rst:-1
 msgid "CSE-505-203B Open 1"
 msgstr "CSE-505-203B Abierto 1"
 
-#: ../../installation/vyos-on-baremetal.rst:-1
+#: ../../installation/bare-metal.rst:-1
 msgid "CSE-505-203B Open 2"
 msgstr "CSE-505-203B Abierto 2"
 
-#: ../../installation/vyos-on-baremetal.rst:-1
+#: ../../installation/bare-metal.rst:-1
 msgid "CSE-505-203B Open 3"
 msgstr "CSE-505-203B Abierto 3"
 
-#: ../../installation/vyos-on-baremetal.rst:-1
+#: ../../installation/bare-metal.rst:-1
 msgid "CSE-505-203B w/ 10GE Open"
 msgstr "CSE-505-203B con 10 GE abierto"
 
-#: ../../installation/vyos-on-baremetal.rst:-1
+#: ../../installation/bare-metal.rst:-1
 msgid "CSE-505-203B w/ 10GE Open 1"
 msgstr "CSE-505-203B con 10 GE Abierto 1"
 
-#: ../../installation/vyos-on-baremetal.rst:-1
+#: ../../installation/bare-metal.rst:-1
 msgid "CSE-505-203B w/ 10GE Open 2"
 msgstr "CSE-505-203B con 10GE Abierto 2"
 
-#: ../../installation/vyos-on-baremetal.rst:-1
+#: ../../installation/bare-metal.rst:-1
 msgid "CSE-505-203B w/ 10GE Open 3"
 msgstr "CSE-505-203B con 10GE Abierto 3"
 
@@ -400,7 +440,7 @@ msgstr "CSE-505-203B con 10GE Abierto 3"
 msgid "Change Deployment name/Zone/Machine type and click ``Deploy``"
 msgstr "Cambie el Nombre de implementación/Zona/Tipo de máquina y haga clic en ``Implementar``"
 
-#: ../../installation/vyos-on-baremetal.rst:360
+#: ../../installation/bare-metal.rst:360
 msgid "Chipset > South Bridge > USB Configuration: set XHCI to Disabled and USB 2.0 (EHCI) to Enabled. Without doing this, the USB drive won't boot."
 msgstr "Chipset &gt; South Bridge &gt; Configuración USB: configure XHCI en Deshabilitado y USB 2.0 (EHCI) en Habilitado. Sin hacer esto, la unidad USB no arrancará."
 
@@ -457,11 +497,11 @@ msgstr "Haga clic en ``Instancias`` y ``Iniciar instancia``"
 msgid "Click to your new vm and find out your Public IP address."
 msgstr "Haga clic en su nueva máquina virtual y descubra su dirección IP pública."
 
-#: ../../installation/install.rst:565
+#: ../../installation/install.rst:566
 msgid "Client Boot"
 msgstr "Arranque del cliente"
 
-#: ../../installation/install.rst:434
+#: ../../installation/install.rst:435
 msgid "Clients (where VyOS is to be installed) with a PXE-enabled NIC"
 msgstr "Clientes (donde se instalará VyOS) con una NIC habilitada para PXE"
 
@@ -477,15 +517,19 @@ msgstr "CloudWatchAgentServerRole is too permissive and should be used for singl
 msgid "CloudWatch SSM Configuration creation"
 msgstr "Creación de la configuración de CloudWatch SSM"
 
+#: ../../installation/cloud/index.rst:3
+msgid "Cloud Environments"
+msgstr "Cloud Environments"
+
 #: ../../installation/install.rst:12
 msgid "Comparison of VyOS image releases"
 msgstr "Comparación de lanzamientos de imágenes de VyOS"
 
-#: ../../installation/vyos-on-baremetal.rst:117
+#: ../../installation/bare-metal.rst:117
 msgid "Compex WLE900VX mini-PCIe WiFi module, only supported in mPCIe slot 1."
 msgstr "Módulo Wi-Fi mini-PCIe Compex WLE900VX, solo compatible con la ranura 1 de mPCIe."
 
-#: ../../installation/install.rst:443
+#: ../../installation/install.rst:444
 msgid "Configuration"
 msgstr "Configuración"
 
@@ -493,11 +537,11 @@ msgstr "Configuración"
 msgid "Configure Security Group. It's recommended that you configure ssh access only from certain address sources. Or permit any (by default)."
 msgstr "Configurar grupo de seguridad. Se recomienda que configure el acceso ssh solo desde ciertas fuentes de direcciones. O permitir cualquiera (por defecto)."
 
-#: ../../installation/install.rst:448
+#: ../../installation/install.rst:449
 msgid "Configure a DHCP server to provide the client with:"
 msgstr "Configure un servidor DHCP para proporcionar al cliente:"
 
-#: ../../installation/install.rst:479
+#: ../../installation/install.rst:480
 msgid "Configure a TFTP server so that it serves the following:"
 msgstr "Configure un servidor TFTP para que sirva lo siguiente:"
 
@@ -505,7 +549,11 @@ msgstr "Configure un servidor TFTP para que sirva lo siguiente:"
 msgid "Configure instance for your requirements. Select number of instances / network / subnet"
 msgstr "Configure la instancia para sus requisitos. Seleccione el número de instancias/red/subred"
 
-#: ../../installation/vyos-on-baremetal.rst:142
+#: ../../installation/bare-metal.rst:509
+msgid "Connect serial port to a PC through a USB <-> RJ45 console cable. Set terminal emulator to 115200 8N1. You can also perform the installation using VGA or HDMI ports."
+msgstr "Connect serial port to a PC through a USB <-> RJ45 console cable. Set terminal emulator to 115200 8N1. You can also perform the installation using VGA or HDMI ports."
+
+#: ../../installation/bare-metal.rst:142
 msgid "Connect serial port to a PC through null modem cable (RXD / TXD crossed over). Set terminal emulator to 115200 8N1."
 msgstr "Conecte el puerto serial a una PC a través del cable de módem nulo (RXD / TXD cruzado). Configure el emulador de terminal en 115200 8N1."
 
@@ -517,7 +565,7 @@ msgstr "Conéctese a la VM con el comando ``virsh console vyos_r1``"
 msgid "Connect to VM  with command ``virsh console vyos_r2``"
 msgstr "Conéctese a la VM con el comando ``virsh console vyos_r2``"
 
-#: ../../installation/vyos-on-baremetal.rst:391
+#: ../../installation/bare-metal.rst:391
 msgid "Connect to serial (115200bps). Power on the appliance and press Del in the console when requested to enter BIOS settings."
 msgstr "Conectar a serie (115200bps). Encienda el dispositivo y presione Supr en la consola cuando se le solicite ingresar a la configuración del BIOS."
 
@@ -530,11 +578,15 @@ msgstr "Conéctese a la instancia. La clave SSH se generó en el primer paso."
 msgid "Connect to the instance by SSH key."
 msgstr "Conéctese a la instancia mediante la clave SSH."
 
-#: ../../installation/cloud/index.rst:7
-#: ../../installation/index.rst:7
+#: ../../installation/cloud/index.rst:5
+#: ../../installation/index.rst:5
 #: ../../installation/virtual/index.rst:5
 msgid "Content"
 msgstr "Contenido"
+
+#: ../../installation/bare-metal.rst:463
+msgid "Cooling"
+msgstr "Cooling"
 
 #: ../../installation/virtual/proxmox.rst:14
 msgid "Copy the qcow2 image to a temporary directory on the Proxmox server."
@@ -548,11 +600,11 @@ msgstr "Cree el nombre de la máquina virtual ``vyos_r1``. Debe especificar la r
 msgid "Create VM with ``import`` qcow2 disk option."
 msgstr "Crear VM con la opción de disco ``import`` qcow2."
 
-#: ../../installation/vyos-on-baremetal.rst:412
+#: ../../installation/bare-metal.rst:412
 msgid "Create a VyOS bootable USB key. I used the 64-bit ISO (VyOS 1.1.7) and `LinuxLive USB Creator <http://www.linuxliveusb.com/>`_."
 msgstr "Cree una llave USB de arranque de VyOS. Usé el ISO de 64 bits (VyOS 1.1.7) y `LinuxLive USB Creator<http://www.linuxliveusb.com/> `_."
 
-#: ../../installation/vyos-on-baremetal.rst:140
+#: ../../installation/bare-metal.rst:140
 msgid "Create a bootable USB pendrive using e.g. Rufus_ on a Windows machine."
 msgstr "Cree un pendrive USB de arranque usando, por ejemplo, Rufus_ en una máquina con Windows."
 
@@ -588,7 +640,7 @@ msgstr "Defina red, subred, IP pública. O se creará de forma predeterminada."
 msgid "Delete no longer needed images from the system. You can specify an optional image name to delete, the image name can be retrieved via a list of available images can be shown using the :opcmd:`show system image`."
 msgstr "Elimine las imágenes que ya no necesita del sistema. Puede especificar un nombre de imagen opcional para eliminar, el nombre de la imagen se puede recuperar a través de una lista de imágenes disponibles que se pueden mostrar usando :opcmd:`show system image`."
 
-#: ../../installation/vyos-on-baremetal.rst:137
+#: ../../installation/bare-metal.rst:137
 msgid "Depending on the VyOS versions you intend to install there is a difference in the serial port settings (:vytask:`T1327`)."
 msgstr "Dependiendo de las versiones de VyOS que desee instalar, existe una diferencia en la configuración del puerto serie (:vytask:`T1327`)."
 
@@ -632,7 +684,7 @@ msgstr "Implementar desde qcow2"
 msgid "Description"
 msgstr "Descripción"
 
-#: ../../installation/vyos-on-baremetal.rst:270
+#: ../../installation/bare-metal.rst:270
 msgid "Desktop / Bench Top"
 msgstr "Escritorio / Mesa de trabajo"
 
@@ -644,7 +696,11 @@ msgstr "Desarrollando VyOS, probando nuevas funciones, experimentando."
 msgid "Developing and testing the latest major version under development."
 msgstr "Desarrollar y probar la última versión principal en desarrollo."
 
-#: ../../installation/vyos-on-baremetal.rst:406
+#: ../../installation/secure-boot.rst:-1
+msgid "Disable UEFI secure boot"
+msgstr "Disable UEFI secure boot"
+
+#: ../../installation/bare-metal.rst:406
 msgid "Disable XHCI"
 msgstr "Deshabilitar XHCI"
 
@@ -652,7 +708,7 @@ msgstr "Deshabilitar XHCI"
 msgid "Disk size"
 msgstr "Tamaño del disco"
 
-#: ../../installation/install.rst:550
+#: ../../installation/install.rst:551
 msgid "Do not change the name of the *filesystem.squashfs* file. If you are working with different versions, you can create different directories instead."
 msgstr "No cambie el nombre del archivo *filesystem.squashfs*. Si está trabajando con versiones diferentes, puede crear directorios diferentes en su lugar."
 
@@ -688,9 +744,13 @@ msgstr "Descargue la ISO de lanzamiento continuo desde https://vyos.net/get/nigh
 msgid "Drag the newly created VyOS VM into it."
 msgstr "Arrastre la máquina virtual VyOS recién creada a ella."
 
-#: ../../installation/install.rst:256
+#: ../../installation/install.rst:257
 msgid "During an image upgrade VyOS performas the following command:"
 msgstr "Durante una actualización de imagen, VyOS realiza el siguiente comando:"
+
+#: ../../installation/secure-boot.rst:127
+msgid "During image installation you will install your :abbr:`MOK (Machine Owner Key)` into the UEFI variables to add trust to this key. After enabling secure boot support in UEFI again, you can only boot into your signed image."
+msgstr "During image installation you will install your :abbr:`MOK (Machine Owner Key)` into the UEFI variables to add trust to this key. After enabling secure boot support in UEFI again, you can only boot into your signed image."
 
 #: ../../installation/virtual/vmware.rst:7
 msgid "ESXi 5.5 or later"
@@ -704,7 +764,7 @@ msgstr "EVE-NG"
 msgid "Edit /etc/docker/daemon.json to set the ``ipv6`` key to ``true`` and to specify the ``fixed-cidr-v6`` to your desired IPv6 subnet."
 msgstr "Edite /etc/docker/daemon.json para establecer la clave ``ipv6`` en ``true`` y para especificar ``fixed-cidr-v6`` en la subred IPv6 deseada."
 
-#: ../../installation/vyos-on-baremetal.rst:407
+#: ../../installation/bare-metal.rst:407
 msgid "Enable USB 2.0 (EHCI) Support"
 msgstr "Habilitar la compatibilidad con USB 2.0 (EHCI)"
 
@@ -725,7 +785,7 @@ msgstr "Todos los meses hasta que salga RC"
 msgid "Every night"
 msgstr "Cada noche"
 
-#: ../../installation/install.rst:343
+#: ../../installation/install.rst:344
 msgid "Every version is contained in its own squashfs image that is mounted in a union filesystem together with a directory for mutable data such as configurations, keys, or custom scripts."
 msgstr "Cada versión está contenida en su propia imagen squashfs que está montada en un sistema de archivos de unión junto con un directorio para datos mutables como configuraciones, claves o scripts personalizados."
 
@@ -750,23 +810,23 @@ msgstr "Ejemplo"
 msgid "Example:"
 msgstr "Ejemplo:"
 
-#: ../../installation/install.rst:522
+#: ../../installation/install.rst:523
 msgid "Example of simple (no menu) configuration file:"
 msgstr "Ejemplo de archivo de configuración simple (sin menú):"
 
-#: ../../installation/install.rst:502
+#: ../../installation/install.rst:503
 msgid "Example of the contents of the TFTP server:"
 msgstr "Ejemplo del contenido del servidor TFTP:"
 
-#: ../../installation/vyos-on-baremetal.rst:109
+#: ../../installation/bare-metal.rst:109
 msgid "Extension Modules"
 msgstr "Módulos de extensión"
 
-#: ../../installation/install.rst:439
+#: ../../installation/install.rst:440
 msgid "Files *pxelinux.0* and *ldlinux.c32* `from the Syslinux distribution <https://kernel.org/pub/linux/utils/boot/syslinux/>`_"
 msgstr "Archivos *pxelinux.0* y *ldlinux.c32* `de la distribución Syslinux<https://kernel.org/pub/linux/utils/boot/syslinux/> `_"
 
-#: ../../installation/install.rst:567
+#: ../../installation/install.rst:568
 msgid "Finally, turn on your PXE-enabled client or clients. They will automatically get an IP address from the DHCP server and start booting into VyOS live from the files automatically taken from the TFTP and HTTP servers."
 msgstr "Finalmente, encienda su cliente o clientes habilitados para PXE. Obtendrán automáticamente una dirección IP del servidor DHCP y comenzarán a iniciarse en VyOS en vivo desde los archivos tomados automáticamente de los servidores TFTP y HTTP."
 
@@ -774,7 +834,7 @@ msgstr "Finalmente, encienda su cliente o clientes habilitados para PXE. Obtendr
 msgid "Finally, verify the authenticity of the downloaded image:"
 msgstr "Finalmente, verifica la autenticidad de la imagen descargada:"
 
-#: ../../installation/install.rst:285
+#: ../../installation/install.rst:286
 msgid "Find out the device name of your USB drive (you can use the ``lsblk`` command)"
 msgstr "Averigüe el nombre del dispositivo de su unidad USB (puede usar el comando ``lsblk``)"
 
@@ -794,7 +854,15 @@ msgstr "Primero, se debe crear una máquina virtual (VM) para la instalación de
 msgid "First, install GPG or another OpenPGP implementation. On most GNU+Linux distributions it is installed by default as package managers use it to verify package signatures. If not pre-installed, it will need to be downloaded and installed."
 msgstr "Primero, instale GPG u otra implementación de OpenPGP. En la mayoría de las distribuciones de GNU+Linux, está instalado de manera predeterminada, ya que los administradores de paquetes lo usan para verificar las firmas de los paquetes. Si no está preinstalado, será necesario descargarlo e instalarlo."
 
-#: ../../installation/vyos-on-baremetal.rst:384
+#: ../../installation/bare-metal.rst:481
+msgid "First Boot"
+msgstr "First Boot"
+
+#: ../../installation/secure-boot.rst:36
+msgid "First of all you will need to disable UEFI secure boot for the installation."
+msgstr "First of all you will need to disable UEFI secure boot for the installation."
+
+#: ../../installation/bare-metal.rst:384
 msgid "First thing you want to do is getting a more user friendly console to configure BIOS. Default VT100 brings a lot of issues. Configure VT100+ instead."
 msgstr "Lo primero que desea hacer es obtener una consola más fácil de usar para configurar el BIOS. El VT100 predeterminado trae muchos problemas. Configure VT100+ en su lugar."
 
@@ -802,9 +870,17 @@ msgstr "Lo primero que desea hacer es obtener una consola más fácil de usar pa
 msgid "For completion the key below corresponds to the key listed in the URL above."
 msgstr "Para completar, la clave a continuación corresponde a la clave enumerada en la URL anterior."
 
-#: ../../installation/vyos-on-baremetal.rst:387
+#: ../../installation/bare-metal.rst:678
+msgid "For more information please refer to chapter: :ref:`wwan-interface`"
+msgstr "For more information please refer to chapter: :ref:`wwan-interface`"
+
+#: ../../installation/bare-metal.rst:387
 msgid "For practical issues change speed from 115200 to 9600. 9600 is the default speed at which both linux kernel and VyOS will reconfigure the serial port when loading."
 msgstr "Por problemas prácticos, cambie la velocidad de 115200 a 9600. 9600 es la velocidad predeterminada a la que tanto el kernel de Linux como VyOS reconfigurarán el puerto serie al cargar."
+
+#: ../../installation/update.rst:84
+msgid "For updates to the Rolling Release for AMD64, the following URL may be used:"
+msgstr "For updates to the Rolling Release for AMD64, the following URL may be used:"
 
 #: ../../installation/migrate-from-vyatta.rst:161
 msgid "Future releases of VyOS will break the direct upgrade path from Vyatta core. Please upgrade through an intermediate VyOS version e.g. VyOS 1.2. After this you can continue upgrading to newer releases once you bootet into VyOS 1.2 once."
@@ -814,7 +890,7 @@ msgstr "Las versiones futuras de VyOS romperán la ruta de actualización direct
 msgid "GPG verification"
 msgstr "Verificación GPG"
 
-#: ../../installation/install.rst:585
+#: ../../installation/install.rst:586
 msgid "GRUB attempts to redirect all output to a serial port for ease of installation on headless hosts. This appears to cause an hard lockup on some hardware that lacks a serial port, with the result being a black screen after selecting the `Live system` option from the installation image."
 msgstr "GRUB intenta redirigir toda la salida a un puerto serie para facilitar la instalación en hosts sin periféricos. Esto parece provocar un bloqueo permanente en algún hardware que carece de un puerto serie, lo que da como resultado una pantalla negra después de seleccionar la opción &#39;Sistema en vivo&#39; de la imagen de instalación."
 
@@ -838,11 +914,16 @@ msgstr "Vaya al menú **Archivo** de GNS3, haga clic en **Nueva plantilla** y se
 msgid "Google Cloud Platform"
 msgstr "Plataforma en la nube de Google"
 
+#: ../../installation/bare-metal.rst:426
+msgid "Gowin GW-FN-1UR1-10G"
+msgstr "Gowin GW-FN-1UR1-10G"
+
 #: ../../installation/install.rst:37
 msgid "Guaranteed to be stable and carefully maintained for several years after the release. No features are introduced but security updates are released in a timely manner."
 msgstr "Garantizado para ser estable y cuidadosamente mantenido durante varios años después del lanzamiento. No se introducen funciones, pero las actualizaciones de seguridad se publican de manera oportuna."
 
-#: ../../installation/vyos-on-baremetal.rst:304
+#: ../../installation/bare-metal.rst:304
+#: ../../installation/bare-metal.rst:608
 msgid "Hardware"
 msgstr "Hardware"
 
@@ -862,11 +943,11 @@ msgstr "Altamente estable sin errores conocidos. Debe probarse repetidamente en 
 msgid "Home labs and simple networks that call for new features."
 msgstr "Laboratorios domésticos y redes sencillas que requieren nuevas funciones."
 
-#: ../../installation/vyos-on-baremetal.rst:132
+#: ../../installation/bare-metal.rst:132
 msgid "Huawei ME909u-521 miniPCIe card (LTE)"
 msgstr "Tarjeta miniPCIe Huawei ME909u-521 (LTE)"
 
-#: ../../installation/vyos-on-baremetal.rst:415
+#: ../../installation/bare-metal.rst:415
 msgid "I'm not sure if it helps the process but I changed default option to live-serial (line “default xxxx”) on the USB key under syslinux/syslinux.cfg."
 msgstr "No estoy seguro de si ayuda al proceso, pero cambié la opción predeterminada a serie en vivo (línea &quot;xxxx predeterminada&quot;) en la llave USB en syslinux/syslinux.cfg."
 
@@ -874,15 +955,15 @@ msgstr "No estoy seguro de si ayuda al proceso, pero cambié la opción predeter
 msgid "IPv6 Support for docker"
 msgstr "Compatibilidad con IPv6 para la ventana acoplable"
 
-#: ../../installation/vyos-on-baremetal.rst:346
+#: ../../installation/bare-metal.rst:346
 msgid "I believe this is actually the same hardware as the Protectli. I purchased it in June 2018. It came pre-loaded with pfSense."
 msgstr "Creo que este es en realidad el mismo hardware que Protectli. Lo compré en junio de 2018. Venía precargado con pfSense."
 
-#: ../../installation/vyos-on-baremetal.rst:418
+#: ../../installation/bare-metal.rst:418
 msgid "I connected the key to one black USB port on the back and powered on. The first VyOS screen has some readability issues. Press :kbd:`Enter` to continue."
 msgstr "Conecté la llave a un puerto USB negro en la parte posterior y la encendí. La primera pantalla de VyOS tiene algunos problemas de legibilidad. Presione :kbd:`Enter` para continuar."
 
-#: ../../installation/vyos-on-baremetal.rst:10
+#: ../../installation/bare-metal.rst:10
 msgid "I opted to get one of the new Intel Atom C3000 CPUs to spawn VyOS on it. Running VyOS on an UEFI only device is supported as of VyOS release 1.2."
 msgstr "Opté por obtener una de las nuevas CPU Intel Atom C3000 para generar VyOS en ella. Se admite la ejecución de VyOS en un dispositivo solo UEFI a partir de la versión 1.2 de VyOS."
 
@@ -902,11 +983,11 @@ msgstr "Si lo usa como un enrutador, querrá que su interfaz LAN absorba parte o
 msgid "If you can not go to this screen"
 msgstr "If you can not go to this screen"
 
-#: ../../installation/install.rst:319
+#: ../../installation/install.rst:320
 msgid "If you find difficulties with this method, prefer to use a GUI program, or have a different operating system, there are other programs you can use to create a bootable USB drive, like balenaEtcher_ (for GNU/Linux, macOS and Windows), Rufus_ (for Windows) and `many others`_. You can follow their instructions to create a bootable USB drive from an .iso file."
 msgstr "Si encuentra dificultades con este método, prefiere usar un programa GUI o tiene un sistema operativo diferente, hay otros programas que puede usar para crear una unidad USB de arranque, como balenaEtcher_ (para GNU/Linux, macOS y Windows), Rufus_ (para Windows) y `muchos otros`_. Puede seguir sus instrucciones para crear una unidad USB de arranque desde un archivo .iso."
 
-#: ../../installation/install.rst:280
+#: ../../installation/install.rst:281
 msgid "If you have a GNU+Linux system, you can create your VyOS bootable USB stick with with the ``dd`` command:"
 msgstr "Si tiene un sistema GNU+Linux, puede crear su memoria USB de arranque VyOS con el comando ``dd``:"
 
@@ -926,13 +1007,17 @@ msgstr "Si necesita retroceder a una imagen anterior, puede hacerlo fácilmente.
 msgid "If you want to create a new default route for VMs on the subnet, use **Address Prefix** ``0.0.0.0/0`` Also note that if you want to use this as a typical edge device, you'll want masquerade NAT for the ``WAN`` interface."
 msgstr "Si desea crear una nueva ruta predeterminada para las máquinas virtuales en la subred, use **Prefijo de dirección** ``0.0.0.0/0``. También tenga en cuenta que si desea usar esto como un dispositivo de borde típico, querrá enmascarar NAT para la interfaz ``WAN``."
 
-#: ../../installation/vyos-on-baremetal.rst:26
+#: ../../installation/bare-metal.rst:26
 msgid "If you want to get additional ethernet ports or even 10GE connectivity the following optional parts will be required:"
 msgstr "Si desea obtener puertos Ethernet adicionales o incluso conectividad 10GE, se requerirán las siguientes piezas opcionales:"
 
 #: ../../installation/image.rst:5
 msgid "Image Management"
 msgstr "Gestión de imágenes"
+
+#: ../../installation/secure-boot.rst:121
+msgid "Image Update"
+msgstr "Image Update"
 
 #: ../../installation/virtual/gns3.rst:90
 msgid "In **Category** select in which group you want to find your VM."
@@ -942,11 +1027,23 @@ msgstr "En **Categoría**, seleccione en qué grupo desea encontrar su VM."
 msgid "In 2015, OpenBSD introduced signify. An alternative implementation of the same protocol is minisign, which is also available for Windows and macOS, and in most GNU/Linux distros it's in the repositories now."
 msgstr "En 2015, OpenBSD introdujo signify. Una implementación alternativa del mismo protocolo es minisign, que también está disponible para Windows y macOS, y en la mayoría de las distribuciones de GNU/Linux ahora está en los repositorios."
 
+#: ../../installation/bare-metal.rst:434
+msgid "In addition there is a Mellanox ConnectX-3 2* 10GbE SFP+ NIC available."
+msgstr "In addition there is a Mellanox ConnectX-3 2* 10GbE SFP+ NIC available."
+
+#: ../../installation/secure-boot.rst:169
+msgid "In most of the cases if something goes wrong you will see the following error message during system boot:"
+msgstr "In most of the cases if something goes wrong you will see the following error message during system boot:"
+
 #: ../../installation/cloud/gcp.rst:20
 msgid "In name \"vyos@mypc\" The first value must be \"**vyos**\". Because default user is vyos and google api uses this option."
 msgstr "En el nombre &quot;vyos@mypc&quot; El primer valor debe ser &quot;**vyos**&quot;. Porque el usuario predeterminado es vyos y google api usa esta opción."
 
-#: ../../installation/install.rst:354
+#: ../../installation/secure-boot.rst:145
+msgid "In order to add an additional layer of security that can already be used in nonesecure boot images already is ephem,eral key signing of the Linux Kernel modules."
+msgstr "In order to add an additional layer of security that can already be used in nonesecure boot images already is ephem,eral key signing of the Linux Kernel modules."
+
+#: ../../installation/install.rst:355
 msgid "In order to proceed with a permanent installation:"
 msgstr "Para proceder con una instalación permanente:"
 
@@ -962,20 +1059,30 @@ msgstr "En la pestaña **Configuración general** de su **Configuración de plan
 msgid "In the **Network** tab,  set **0** as the number of adapters, set the **Name format** to **eth{0}** and the **Type** to **Paravirtualized Network I/O (virtio-net-pci)**."
 msgstr "En la pestaña **Red**, configure **0** como el número de adaptadores, configure el **Formato de nombre** en **eth{0}** y el **Tipo** en **Red paravirtualizada E/S (virtio-net-pci)**."
 
-#: ../../installation/install.rst:494
+#: ../../installation/install.rst:495
 msgid "In the example we configured our existent VyOS as the TFTP server too:"
 msgstr "En el ejemplo, también configuramos nuestro VyOS existente como servidor TFTP:"
 
-#: ../../installation/install.rst:454
+#: ../../installation/bare-metal.rst:512
+msgid "In this example I choose to install VyOS as RAID-1 on both NVMe drives. However, a previous installation on the 128GB eMMC storage worked without any issues, too."
+msgstr "In this example I choose to install VyOS as RAID-1 on both NVMe drives. However, a previous installation on the 128GB eMMC storage worked without any issues, too."
+
+#: ../../installation/install.rst:455
 msgid "In this example we configured an existent VyOS as the DHCP server:"
 msgstr "En este ejemplo, configuramos un VyOS existente como servidor DHCP:"
 
-#: ../../installation/vyos-on-baremetal.rst:410
+#: ../../installation/secure-boot.rst:7
+msgid "Initial UEFI secure boot support is available (:vytask:`T861`). We utilize ``shim`` from Debian 12 (Bookworm) which is properly signed by the UEFI SecureBoot key from Microsoft."
+msgstr "Initial UEFI secure boot support is available (:vytask:`T861`). We utilize ``shim`` from Debian 12 (Bookworm) which is properly signed by the UEFI SecureBoot key from Microsoft."
+
+#: ../../installation/bare-metal.rst:410
 msgid "Install VyOS:"
 msgstr "Instalar VyOS:"
 
+#: ../../installation/bare-metal.rst:352
+#: ../../installation/bare-metal.rst:475
 #: ../../installation/install.rst:5
-#: ../../installation/vyos-on-baremetal.rst:352
+#: ../../installation/secure-boot.rst:31
 msgid "Installation"
 msgstr "Instalación"
 
@@ -983,15 +1090,15 @@ msgstr "Instalación"
 msgid "Installation and Image Management"
 msgstr "Instalación y Gestión de Imágenes"
 
-#: ../../installation/install.rst:597
+#: ../../installation/install.rst:598
 msgid "Installation can then continue as outlined above."
 msgstr "La instalación puede continuar como se describe anteriormente."
 
-#: ../../installation/vyos-on-baremetal.rst:224
+#: ../../installation/bare-metal.rst:224
 msgid "Installing the rolling release on an APU2 board does not require any change on the serial console from your host side as :vytask:`T1327` was successfully implemented."
 msgstr "La instalación de la versión móvil en una placa APU2 no requiere ningún cambio en la consola serie desde el lado del host, ya que :vytask:`T1327` se implementó con éxito."
 
-#: ../../installation/vyos-on-baremetal.rst:118
+#: ../../installation/bare-metal.rst:118
 msgid "Intel Corporation AX200 mini-PCIe WiFi module, only supported in mPCIe slot 1. (see :ref:`wireless-interface-intel-ax200`)"
 msgstr "Módulo Wi-Fi mini-PCIe Intel Corporation AX200, solo compatible con la ranura mPCIe 1. (ver :ref:`wireless-interface-intel-ax200`)"
 
@@ -1015,11 +1122,15 @@ msgstr "Se puede recuperar directamente de un servidor de claves:"
 msgid "It is advised that VyOS routers are configured in a resource group with adequate memory reservations so that ballooning is not inflicted on virtual VyOS guests."
 msgstr "Se recomienda que los enrutadores VyOS estén configurados en un grupo de recursos con reservas de memoria adecuadas para que los invitados virtuales VyOS no se incrementen."
 
+#: ../../installation/secure-boot.rst:131
+msgid "It is no longer possible to boot into a CI generated rolling release as those are currently not signed by a trusted party (:vytask:`T861` work in progress). This also means that you need to sign all your successor builds you build on your own with the exact same key, otherwise you will see:"
+msgstr "It is no longer possible to boot into a CI generated rolling release as those are currently not signed by a trusted party (:vytask:`T861` work in progress). This also means that you need to sign all your successor builds you build on your own with the exact same key, otherwise you will see:"
+
 #: ../../installation/install.rst:235
 msgid "Its installed size (complete with libsodium) is less than that of GPG binary alone (not including libgcrypt and some other libs, which I think we only use for GPG). Since it uses elliptic curves, it gets away with much smaller keys, and it doesn't include as much metadata to begin with."
 msgstr "Su tamaño instalado (completo con libsodium) es menor que el del binario GPG solo (sin incluir libgcrypt y algunas otras librerías, que creo que solo usamos para GPG). Dado que utiliza curvas elípticas, se sale con la suya con claves mucho más pequeñas y, para empezar, no incluye tantos metadatos."
 
-#: ../../installation/install.rst:578
+#: ../../installation/install.rst:579
 msgid "Known Issues"
 msgstr "Problemas conocidos"
 
@@ -1035,7 +1146,7 @@ msgstr "Laboratorios, oficinas pequeñas y sistemas de producción no críticos 
 msgid "Large-scale enterprise networks, internet service providers, critical production environments that call for minimum downtime."
 msgstr "Redes empresariales a gran escala, proveedores de servicios de Internet, entornos de producción críticos que requieren un tiempo de inactividad mínimo."
 
-#: ../../installation/vyos-on-baremetal.rst:32
+#: ../../installation/bare-metal.rst:32
 msgid "Latest VyOS rolling releases boot without any problem on this board. You also receive a nice IPMI interface realized with an ASPEED AST2400 BMC (no information about `OpenBMC <https://www.openbmc.org/>`_ so far on this motherboard)."
 msgstr "Las últimas versiones rodantes de VyOS arrancan sin ningún problema en esta placa. También recibe una buena interfaz IPMI realizada con un BMC ASPEED AST2400 (no hay información sobre `OpenBMC<https://www.openbmc.org/> `_ hasta ahora en esta placa base)."
 
@@ -1043,19 +1154,23 @@ msgstr "Las últimas versiones rodantes de VyOS arrancan sin ningún problema en
 msgid "Libvirt is an open-source API, daemon and management tool for managing platform virtualization. There are several ways to deploy VyOS on libvirt kvm. Use Virt-manager and native CLI. In an example we will be use use 4 gigabytes of memory, 2 cores CPU and default network virbr0."
 msgstr "Libvirt es una API, un demonio y una herramienta de gestión de código abierto para gestionar la virtualización de plataformas. Hay varias formas de implementar VyOS en libvirt kvm. Utilice Virt-manager y CLI nativa. En un ejemplo, usaremos 4 gigabytes de memoria, CPU de 2 núcleos y red virbr0 predeterminada."
 
+#: ../../installation/secure-boot.rst:143
+msgid "Linux Kernel"
+msgstr "Linux Kernel"
+
 #: ../../installation/image.rst:33
 msgid "List all available system images which can be booted on the current system."
 msgstr "Enumere todas las imágenes del sistema disponibles que se pueden iniciar en el sistema actual."
 
-#: ../../installation/install.rst:267
+#: ../../installation/install.rst:268
 msgid "Live installation"
 msgstr "Instalación en vivo"
 
-#: ../../installation/install.rst:356
+#: ../../installation/install.rst:357
 msgid "Log into the VyOS live system (use the default credentials: vyos, vyos)"
 msgstr "Inicie sesión en el sistema VyOS en vivo (utilice las credenciales predeterminadas: vyos, vyos)"
 
-#: ../../installation/install.rst:558
+#: ../../installation/install.rst:559
 msgid "Make sure the available directories and files in both TFTP and HTTP server have the right permissions to be accessed from the booting clients."
 msgstr "Asegúrese de que los directorios y archivos disponibles en el servidor TFTP y HTTP tengan los permisos correctos para acceder desde los clientes de arranque."
 
@@ -1092,6 +1207,10 @@ msgstr "Se pueden agregar nuevas imágenes del sistema usando el comando :opcmd:
 msgid "Next add the VyOS image."
 msgstr "A continuación, agregue la imagen de VyOS."
 
+#: ../../installation/bare-metal.rst:472
+msgid "No settings needed to be altered, everything worked out of the box!"
+msgstr "No settings needed to be altered, everything worked out of the box!"
+
 #: ../../installation/install.rst:33
 msgid "Non-critical production environments, preparing for the LTS release."
 msgstr "Entornos de producción no críticos, preparándose para el lanzamiento de LTS."
@@ -1100,15 +1219,23 @@ msgstr "Entornos de producción no críticos, preparándose para el lanzamiento 
 msgid "Non-subscribers can always get the LTS release by building it from source. Instructions can be found in the :ref:`build` section of this manual. VyOS source code repository is available for everyone at https://github.com/vyos/vyos-build."
 msgstr "Los no suscriptores siempre pueden obtener el lanzamiento de LTS compilándolo desde la fuente. Las instrucciones se pueden encontrar en la sección :ref:`build` de este manual. El repositorio de código fuente de VyOS está disponible para todos en https://github.com/vyos/vyos-build."
 
-#: ../../installation/vyos-on-baremetal.rst:166
+#: ../../installation/bare-metal.rst:166
 msgid "Now boot from the ``USB MSC Drive Generic Flash Disk 8.07`` media by pressing ``2``, the VyOS boot menu will appear, just wait 10 seconds or press ``Enter`` to continue."
 msgstr "Ahora inicie desde el medio ``USB MSC Drive Generic Flash Disk 8.07`` presionando ``2``, aparecerá el menú de inicio de VyOS, solo espere 10 segundos o presione ``Enter`` para continuar."
+
+#: ../../installation/secure-boot.rst:77
+msgid "Now reboot and re-enable UEFI secure boot."
+msgstr "Now reboot and re-enable UEFI secure boot."
 
 #: ../../installation/virtual/gns3.rst:78
 msgid "Now the VM settings have to be edited."
 msgstr "Ahora se debe editar la configuración de la máquina virtual."
 
-#: ../../installation/install.rst:347
+#: ../../installation/secure-boot.rst:72
+msgid "Now you will need the password previously defined"
+msgstr "Now you will need the password previously defined"
+
+#: ../../installation/install.rst:348
 msgid "Older versions (prior to VyOS 1.1) used to support non-image installation (``install system`` command). Support for this has been removed from VyOS 1.2 and newer releases. Older releases can still be upgraded via the general ``add system image <image_path>`` upgrade command (consult :ref:`image-mgmt` for further information)."
 msgstr "Las versiones anteriores (anteriores a VyOS 1.1) solían admitir la instalación sin imágenes (comando ``instalar sistema``). El soporte para esto se eliminó de VyOS 1.2 y versiones más recientes. Las versiones anteriores aún se pueden actualizar a través de la imagen general `` agregar sistema<image_path> `` comando de actualización (consulte :ref:`image-mgmt` para obtener más información)."
 
@@ -1124,11 +1251,11 @@ msgstr "En la búsqueda del mercado &quot;VyOS&quot;"
 msgid "On the marketplace search ``VyOS`` and choose the appropriate subscription"
 msgstr "En el mercado, busque ``VyOS`` y elija la suscripción adecuada"
 
-#: ../../installation/install.rst:315
+#: ../../installation/install.rst:316
 msgid "Once VyOS is completely loaded, enter the default credentials (login: vyos, password: vyos)."
 msgstr "Una vez que VyOS esté completamente cargado, ingrese las credenciales predeterminadas (inicio de sesión: vyos, contraseña: vyos)."
 
-#: ../../installation/install.rst:309
+#: ../../installation/install.rst:310
 msgid "Once ``dd`` has finished, pull the USB drive out and plug it into the powered-off computer where you want to install (or test) VyOS."
 msgstr "Una vez que ``dd`` haya terminado, extraiga la unidad USB y conéctela a la computadora apagada donde desea instalar (o probar) VyOS."
 
@@ -1136,11 +1263,11 @@ msgstr "Una vez que ``dd`` haya terminado, extraiga la unidad USB y conéctela a
 msgid "Once booted into the live system, type ``install image`` into the command line and follow the prompts to install VyOS to the virtual drive."
 msgstr "Una vez que haya iniciado el sistema en vivo, escriba ``instalar imagen`` en la línea de comando y siga las indicaciones para instalar VyOS en la unidad virtual."
 
-#: ../../installation/install.rst:572
+#: ../../installation/install.rst:573
 msgid "Once finished you will be able to proceed with the ``install image`` command as in a regular VyOS installation."
 msgstr "Una vez que haya terminado, podrá continuar con el comando ``instalar imagen`` como en una instalación normal de VyOS."
 
-#: ../../installation/vyos-on-baremetal.rst:211
+#: ../../installation/bare-metal.rst:211
 msgid "Once you ``commit`` the above changes access to the serial interface is lost until you set your terminal emulator to 115200 8N1 again."
 msgstr "Una vez que &quot;compromete&quot; los cambios anteriores, se perderá el acceso a la interfaz serial hasta que configure su emulador de terminal en 115200 8N1 nuevamente."
 
@@ -1165,13 +1292,17 @@ msgstr "Abra una consola. La consola debería mostrar el sistema arrancando. Le 
 msgid "Open a secondary/parallel session and use this command to reboot the VM:"
 msgstr "Open a secondary/parallel session and use this command to reboot the VM:"
 
-#: ../../installation/install.rst:283
+#: ../../installation/install.rst:284
 msgid "Open your terminal emulator."
 msgstr "Abre tu emulador de terminal."
 
-#: ../../installation/vyos-on-baremetal.rst:25
+#: ../../installation/bare-metal.rst:25
 msgid "Optional (10GE)"
 msgstr "Opcional (10GE)"
+
+#: ../../installation/bare-metal.rst:446
+msgid "Optional (WiFi + WWAN)"
+msgstr "Optional (WiFi + WWAN)"
 
 #: ../../installation/virtual/proxmox.rst:24
 msgid "Optionally, the user can attach a CDROM with an ISO as a cloud-init data source. The below command assumes the ISO has been uploaded to the `local` storage pool with the name `seed.iso`."
@@ -1189,28 +1320,37 @@ msgstr "O se puede acceder a través de un navegador web:"
 msgid "Oracle"
 msgstr "Oráculo"
 
-#: ../../installation/vyos-on-baremetal.rst:80
+#: ../../installation/bare-metal.rst:80
 msgid "PC Engines APU4"
 msgstr "Motores de PC APU4"
 
-#: ../../installation/install.rst:427
+#: ../../installation/install.rst:428
 msgid "PXE Boot"
 msgstr "Arranque PXE"
 
-#: ../../installation/vyos-on-baremetal.rst:342
+#: ../../installation/bare-metal.rst:342
 msgid "Partaker i5"
 msgstr "Socio i5"
 
-#: ../../installation/install.rst:332
+#: ../../installation/bare-metal.rst:521
+msgid "Perform Image installation using `install image` CLI command. This installation uses two 128GB NVMe disks setup as RAID1."
+msgstr "Perform Image installation using `install image` CLI command. This installation uses two 128GB NVMe disks setup as RAID1."
+
+#: ../../installation/install.rst:333
 msgid "Permanent installation"
 msgstr "Instalación permanente"
 
-#: ../../installation/vyos-on-baremetal.rst:38
-#: ../../installation/vyos-on-baremetal.rst:234
+#: ../../installation/bare-metal.rst:38
+#: ../../installation/bare-metal.rst:234
+#: ../../installation/bare-metal.rst:452
 msgid "Pictures"
 msgstr "Fotos"
 
-#: ../../installation/vyos-on-baremetal.rst:355
+#: ../../installation/bare-metal.rst:483
+msgid "Please note that there is a weirdness on the network interface mapping. The interface <-> MAC mapping is going upwards but the NICs are placed somehow swapped on the mainboard/MACs programmed in a swapped order."
+msgstr "Please note that there is a weirdness on the network interface mapping. The interface <-> MAC mapping is going upwards but the NICs are placed somehow swapped on the mainboard/MACs programmed in a swapped order."
+
+#: ../../installation/bare-metal.rst:355
 msgid "Plug in VGA, power, USB keyboard, and USB drive"
 msgstr "Enchufe VGA, alimentación, teclado USB y unidad USB"
 
@@ -1218,11 +1358,11 @@ msgstr "Enchufe VGA, alimentación, teclado USB y unidad USB"
 msgid "Popularity of GPG for release signing comes from the fact that many people already had it installed for email encryption/signing. Inside a VyOS image, signature checking is the only reason to have it installed. However, it still comes with all the features no one needs, such as support for multiple outdated cipher suits and ability to embed a photo in the key file. More importantly, web of trust, the basic premise of PGP, is never used in release signing context. Once you have a knowingly authentic image, authenticity of upgrades is checked using a key that comes in the image, and to get their first image people never rely on keyservers either."
 msgstr "La popularidad de GPG para la firma de lanzamiento proviene del hecho de que muchas personas ya lo tenían instalado para el cifrado/firma de correo electrónico. Dentro de una imagen de VyOS, la verificación de firmas es la única razón para tenerla instalada. Sin embargo, todavía viene con todas las características que nadie necesita, como soporte para múltiples trajes de cifrado obsoletos y la capacidad de incrustar una foto en el archivo clave. Más importante aún, la red de confianza, la premisa básica de PGP, nunca se usa en el contexto de la firma de versiones. Una vez que tiene una imagen auténtica a sabiendas, la autenticidad de las actualizaciones se verifica utilizando una clave que viene en la imagen, y para obtener su primera imagen, las personas tampoco confían en los servidores de claves."
 
-#: ../../installation/vyos-on-baremetal.rst:324
+#: ../../installation/bare-metal.rst:324
 msgid "Power supply is a 12VDC barrel jack, and included switching power supply, which is why SATA power regulation is on-board. Internally it has a NUC-board-style on-board 12V input header as well, the molex locking style."
 msgstr "La fuente de alimentación es un conector cilíndrico de 12 V CC y se incluye una fuente de alimentación conmutada, por lo que la regulación de potencia SATA está integrada. Internamente, también tiene un encabezado de entrada de 12 V integrado estilo placa NUC, el estilo de bloqueo molex."
 
-#: ../../installation/install.rst:312
+#: ../../installation/install.rst:313
 msgid "Power the computer on, making sure it boots from the USB drive (you might need to select booting device or change booting settings)."
 msgstr "Encienda la computadora, asegurándose de que se inicie desde la unidad USB (es posible que deba seleccionar el dispositivo de inicio o cambiar la configuración de inicio)."
 
@@ -1234,19 +1374,23 @@ msgstr "Prepare la máquina virtual para la instalación desde medios ISO. Los s
 msgid "Preparing for the verification"
 msgstr "Preparándose para la verificación"
 
-#: ../../installation/vyos-on-baremetal.rst:356
+#: ../../installation/bare-metal.rst:356
 msgid "Press \"SW\" button on the front (this is the power button; I don't know what \"SW\" is supposed to mean)."
 msgstr "Presione el botón &quot;SW&quot; en el frente (este es el botón de encendido; no sé qué se supone que significa &quot;SW&quot;)."
+
+#: ../../installation/secure-boot.rst:41
+msgid "Proceed with the regular VyOS :ref:`installation <permanent_installation>` on your system, but instead of the final ``reboot`` we will enroll the :abbr:`MOK (Machine Owner Key)`."
+msgstr "Proceed with the regular VyOS :ref:`installation <permanent_installation>` on your system, but instead of the final ``reboot`` we will enroll the :abbr:`MOK (Machine Owner Key)`."
 
 #: ../../installation/virtual/proxmox.rst:7
 msgid "Proxmox is an open-source platform for virtualization. Please visit https://vyos.io to see how to get a qcow2 image that can be imported into Proxmox."
 msgstr "Proxmox es una plataforma de código abierto para la virtualización. Visite https://vyos.io para ver cómo obtener una imagen qcow2 que se pueda importar a Proxmox."
 
-#: ../../installation/vyos-on-baremetal.rst:291
+#: ../../installation/bare-metal.rst:291
 msgid "Qotom Q355G4"
 msgstr "Qotom Q355G4"
 
-#: ../../installation/vyos-on-baremetal.rst:240
+#: ../../installation/bare-metal.rst:240
 msgid "Rack Mount"
 msgstr "Montaje en rack"
 
@@ -1254,11 +1398,11 @@ msgstr "Montaje en rack"
 msgid "Rather stable. All development focuses on testing and hunting down remaining bugs following the feature freeze."
 msgstr "Más bien estable. Todo el desarrollo se centra en probar y buscar errores restantes después de la congelación de funciones."
 
-#: ../../installation/vyos-on-baremetal.rst:404
+#: ../../installation/bare-metal.rst:404
 msgid "Reboot into BIOS, Chipset > South Bridge > USB Configuration:"
 msgstr "Reinicie en BIOS, Chipset &gt; South Bridge &gt; Configuración USB:"
 
-#: ../../installation/install.rst:416
+#: ../../installation/install.rst:417
 msgid "Reboot the system."
 msgstr "Reinicie el sistema."
 
@@ -1266,11 +1410,11 @@ msgstr "Reinicie el sistema."
 msgid "Reboot the virtual machine using the GUI or ``qm reboot 200``."
 msgstr "Reinicie la máquina virtual usando la GUI o ``qm reboot 200``."
 
-#: ../../installation/vyos-on-baremetal.rst:114
+#: ../../installation/bare-metal.rst:114
 msgid "Refer to :ref:`wireless-interface` for additional information, below listed modules have been tested successfully on this Hardware platform:"
 msgstr "Consulte :ref:`wireless-interface` para obtener información adicional, los módulos enumerados a continuación se han probado con éxito en esta plataforma de hardware:"
 
-#: ../../installation/vyos-on-baremetal.rst:124
+#: ../../installation/bare-metal.rst:124
 msgid "Refer to :ref:`wwan-interface` for additional information, below listed modules have been tested successfully on this Hardware platform using VyOS 1.3 (equuleus):"
 msgstr "Consulte :ref:`wwan-interface` para obtener información adicional, los módulos enumerados a continuación se han probado con éxito en esta plataforma de hardware utilizando VyOS 1.3 (equuleus):"
 
@@ -1327,7 +1471,7 @@ msgstr "Las versiones continuas contienen todas las mejoras y correcciones más 
 msgid "Run Cloudwatch configuration wizard."
 msgstr "Ejecute el asistente de configuración de Cloudwatch."
 
-#: ../../installation/install.rst:359
+#: ../../installation/install.rst:360
 msgid "Run the ``install image`` command and follow the wizard:"
 msgstr "Ejecute el comando ``instalar imagen`` y siga el asistente:"
 
@@ -1363,9 +1507,17 @@ msgstr "Corriendo en Proxmox"
 msgid "Running on VMware ESXi"
 msgstr "Ejecutándose en VMware ESXi"
 
-#: ../../installation/vyos-on-baremetal.rst:399
+#: ../../installation/bare-metal.rst:399
 msgid "Save, reboot and change serial speed to 9600 on your client."
 msgstr "Guarde, reinicie y cambie la velocidad de serie a 9600 en su cliente."
+
+#: ../../installation/secure-boot.rst:5
+msgid "Secure Boot"
+msgstr "Secure Boot"
+
+#: ../../installation/bare-metal.rst:487
+msgid "See interface description for more detailed mapping."
+msgstr "See interface description for more detailed mapping."
 
 #: ../../installation/virtual/gns3.rst:55
 msgid "Select **New image** for the base disk image of your VM and click ``Create``."
@@ -1387,6 +1539,10 @@ msgstr "Seleccione **telnet** como su tipo de consola y haga clic en ``Siguiente
 msgid "Select SSH key pair and click ``Launch Instances``"
 msgstr "Seleccione el par de claves SSH y haga clic en ``Iniciar instancias``"
 
+#: ../../installation/secure-boot.rst:59
+msgid "Select ``Enroll MOK``"
+msgstr "Select ``Enroll MOK``"
+
 #: ../../installation/image.rst:105
 msgid "Select the default boot image which will be started on the next boot of the system."
 msgstr "Seleccione la imagen de inicio predeterminada que se iniciará en el próximo inicio del sistema."
@@ -1407,8 +1563,9 @@ msgstr "Establezca el tamaño del disco en 2000 MiB y haga clic en ``Finalizar``
 msgid "Set the number of required network adapters, for example **4**."
 msgstr "Establezca la cantidad de adaptadores de red requeridos, por ejemplo **4**."
 
-#: ../../installation/vyos-on-baremetal.rst:14
-#: ../../installation/vyos-on-baremetal.rst:99
+#: ../../installation/bare-metal.rst:14
+#: ../../installation/bare-metal.rst:99
+#: ../../installation/bare-metal.rst:440
 msgid "Shopping Cart"
 msgstr "Carro de compras"
 
@@ -1416,27 +1573,27 @@ msgstr "Carro de compras"
 msgid "Show current system image version."
 msgstr "Muestra la versión actual de la imagen del sistema."
 
-#: ../../installation/vyos-on-baremetal.rst:128
+#: ../../installation/bare-metal.rst:128
 msgid "Sierra Wireless AirPrime MC7304 miniPCIe card (LTE)"
 msgstr "Sierra Wireless AirPrime MC7304 tarjeta miniPCIe (LTE)"
 
-#: ../../installation/vyos-on-baremetal.rst:129
+#: ../../installation/bare-metal.rst:129
 msgid "Sierra Wireless AirPrime MC7430 miniPCIe card (LTE)"
 msgstr "Sierra Wireless AirPrime MC7430 tarjeta miniPCIe (LTE)"
 
-#: ../../installation/vyos-on-baremetal.rst:130
+#: ../../installation/bare-metal.rst:130
 msgid "Sierra Wireless AirPrime MC7455 miniPCIe card (LTE)"
 msgstr "Tarjeta miniPCIe (LTE) Sierra Wireless AirPrime MC7455"
 
-#: ../../installation/vyos-on-baremetal.rst:131
+#: ../../installation/bare-metal.rst:131
 msgid "Sierra Wireless AirPrime MC7710 miniPCIe card (LTE)"
 msgstr "Sierra Wireless AirPrime MC7710 tarjeta miniPCIe (LTE)"
 
-#: ../../installation/vyos-on-baremetal.rst:228
+#: ../../installation/bare-metal.rst:228
 msgid "Simply proceed with a regular image installation as described in :ref:`installation`."
 msgstr "Simplemente proceda con una instalación de imagen regular como se describe en :ref:`installation`."
 
-#: ../../installation/vyos-on-baremetal.rst:401
+#: ../../installation/bare-metal.rst:401
 msgid "Some options have to be changed for VyOS to boot correctly. With XHCI enabled the installer can’t access the USB key. Enable EHCI instead."
 msgstr "Algunas opciones deben cambiarse para que VyOS arranque correctamente. Con XHCI habilitado, el instalador no puede acceder a la llave USB. Habilite EHCI en su lugar."
 
@@ -1460,15 +1617,15 @@ msgstr "Inicie la máquina virtual en la GUI o CLI de proxmox usando ``qm start 
 msgid "Stayed in this stage. This is because the KVM console is chosen as the default boot option."
 msgstr "Stayed in this stage. This is because the KVM console is chosen as the default boot option."
 
-#: ../../installation/install.rst:446
+#: ../../installation/install.rst:447
 msgid "Step 1: DHCP"
 msgstr "Paso 1: DHCP"
 
-#: ../../installation/install.rst:477
+#: ../../installation/install.rst:478
 msgid "Step 2: TFTP"
 msgstr "Paso 2: TFTP"
 
-#: ../../installation/install.rst:534
+#: ../../installation/install.rst:535
 msgid "Step 3: HTTP"
 msgstr "Paso 3: HTTP"
 
@@ -1480,7 +1637,7 @@ msgstr "Guarde la clave en un nuevo archivo de texto e impórtelo a GPG mediante
 msgid "Subscribers, contributors, non-profits, emergency services, academic institutions"
 msgstr "Suscriptores, colaboradores, organizaciones sin fines de lucro, servicios de emergencia, instituciones académicas"
 
-#: ../../installation/vyos-on-baremetal.rst:8
+#: ../../installation/bare-metal.rst:8
 msgid "Supermicro A2SDi (Atom C3000)"
 msgstr "Supermicro A2SDi (Átomo C3000)"
 
@@ -1488,7 +1645,7 @@ msgstr "Supermicro A2SDi (Átomo C3000)"
 msgid "System rollback"
 msgstr "Reversión del sistema"
 
-#: ../../installation/vyos-on-baremetal.rst:396
+#: ../../installation/bare-metal.rst:396
 msgid "Terminal Type : VT100+"
 msgstr "Tipo de terminal: VT100+"
 
@@ -1496,27 +1653,31 @@ msgstr "Tipo de terminal: VT100+"
 msgid "The *VyOS-hda.qcow2* file now contains a working VyOS image and can be used as a template. But it still needs some fixes before we can deploy VyOS in our labs."
 msgstr "El archivo *VyOS-hda.qcow2* ahora contiene una imagen de VyOS que funciona y se puede usar como plantilla. Pero aún necesita algunas correcciones antes de que podamos implementar VyOS en nuestros laboratorios."
 
-#: ../../installation/install.rst:452
+#: ../../installation/install.rst:453
 msgid "The *bootfile name* (DHCP option 67), which is *pxelinux.0*"
 msgstr "El *nombre del archivo de arranque* (opción 67 de DHCP), que es *pxelinux.0*"
 
-#: ../../installation/install.rst:482
+#: ../../installation/install.rst:483
 msgid "The *ldlinux.c32* file from the Syslinux distribution"
 msgstr "El archivo *ldlinux.c32* de la distribución Syslinux"
 
-#: ../../installation/install.rst:481
+#: ../../installation/install.rst:482
 msgid "The *pxelinux.0* file from the Syslinux distribution"
 msgstr "El archivo *pxelinux.0* de la distribución Syslinux"
 
-#: ../../installation/vyos-on-baremetal.rst:105
+#: ../../installation/bare-metal.rst:105
 msgid "The 19\" enclosure can accommodate up to two APU4 boards - there is a single and dual front cover."
 msgstr "El gabinete de 19&quot; puede acomodar hasta dos placas APU4; hay una cubierta frontal simple y doble."
 
-#: ../../installation/vyos-on-baremetal.rst:187
+#: ../../installation/bare-metal.rst:187
 msgid "The Kernel will now spin up using a different console setting. Set terminal emulator to 9600 8N1 and after a while your console will show:"
 msgstr "El Kernel ahora girará usando una configuración de consola diferente. Configure el emulador de terminal en 9600 8N1 y después de un tiempo su consola mostrará:"
 
-#: ../../installation/install.rst:451
+#: ../../installation/bare-metal.rst:667
+msgid "The LTE module can be enabled as simple as this config snippet:"
+msgstr "The LTE module can be enabled as simple as this config snippet:"
+
+#: ../../installation/install.rst:452
 msgid "The TFTP server address (DHCP option 66). Sometimes referred as *boot server*"
 msgstr "La dirección del servidor TFTP (DHCP opción 66). A veces denominado *servidor de arranque*"
 
@@ -1540,11 +1701,15 @@ msgstr "El comando `agregar imagen del sistema` también admite la instalación 
 msgid "The amazon-cloudwatch-agent package is normally included in VyOS 1.3.3+ and 1.4+"
 msgstr "El paquete amazon-cloudwatch-agent normalmente se incluye en VyOS 1.3.3+ y 1.4+"
 
-#: ../../installation/vyos-on-baremetal.rst:94
+#: ../../installation/bare-metal.rst:431
+msgid "The appliance comes with 2 * 2.5GbE Intel I226-V and 3 * 1GbE Intel I210 where one supports IEEE802.3at PoE+ (Typical 30W)."
+msgstr "The appliance comes with 2 * 2.5GbE Intel I226-V and 3 * 1GbE Intel I210 where one supports IEEE802.3at PoE+ (Typical 30W)."
+
+#: ../../installation/bare-metal.rst:94
 msgid "The board can be powered via 12V from the front or via a 5V onboard connector."
 msgstr "La placa se puede alimentar a través de 12 V desde el frente o mediante un conector integrado de 5 V."
 
-#: ../../installation/vyos-on-baremetal.rst:314
+#: ../../installation/bare-metal.rst:314
 msgid "The chassis is a U-shaped alu extrusion with removable I/O plates and removable bottom plate. Cooling is completely passive with a heatsink on the SoC with internal and external fins, a flat interface surface, thermal pad on top of that, which then directly attaches to the chassis, which has fins as well. It comes with mounting hardware and rubber feet, so you could place it like a desktop model or mount it on a VESA mount, or even wall mount it with the provided mounting plate. The closing plate doubles as internal 2.5\" mounting place for an HDD or SSD, and comes supplied with a small SATA cable and SATA power cable."
 msgstr "El chasis es una extrusión de aluminio en forma de U con placas de E/S extraíbles y una placa inferior extraíble. El enfriamiento es completamente pasivo con un disipador de calor en el SoC con aletas internas y externas, una superficie de interfaz plana, una almohadilla térmica encima, que luego se conecta directamente al chasis, que también tiene aletas. Viene con hardware de montaje y pies de goma, por lo que puede colocarlo como un modelo de escritorio o montarlo en un soporte VESA, o incluso montarlo en la pared con la placa de montaje provista. La placa de cierre también sirve como lugar de montaje interno de 2,5&quot; para un HDD o SSD, y se suministra con un pequeño cable SATA y un cable de alimentación SATA."
 
@@ -1556,9 +1721,13 @@ msgstr "Los siguientes comandos asumen que la máquina virtual ID 200 no se usa 
 msgid "The convenience of using :abbr:`KVM (Kernel-based Virtual Machine)` images is that they don't need to be installed. Download predefined VyOS.qcow2 image for ``KVM``"
 msgstr "La comodidad de usar imágenes :abbr:`KVM (Máquina virtual basada en el kernel)` es que no es necesario instalarlas. Descargue la imagen VyOS.qcow2 predefinida para ``KVM``"
 
-#: ../../installation/install.rst:326
+#: ../../installation/install.rst:327
 msgid "The default username and password for the live system is *vyos*."
 msgstr "El nombre de usuario y la contraseña predeterminados para el sistema en vivo son *vyos*."
+
+#: ../../installation/bare-metal.rst:465
+msgid "The device itself is passivly cooled, whereas the power supply has an active fan. Even if the main processor is powered off, the power supply fan is operating and the entire chassis draws 7.5W. During operation the chassis drew arround 38W."
+msgstr "The device itself is passivly cooled, whereas the power supply has an active fan. Even if the main processor is powered off, the power supply fan is operating and the entire chassis draws 7.5W. During operation the chassis drew arround 38W."
 
 #: ../../installation/image.rst:10
 msgid "The directory structure of the boot device:"
@@ -1576,7 +1745,7 @@ msgstr "El siguiente enlace siempre obtendrá la versión más reciente de VyOS 
 msgid "The image directory contains the system kernel, a compressed image of the root filesystem for the OS, and a directory for persistent storage, such as configuration. On boot, the system will extract the OS image into memory and mount the appropriate live-rw sub-directories to provide persistent storage system configuration."
 msgstr "El directorio de imágenes contiene el kernel del sistema, una imagen comprimida del sistema de archivos raíz para el sistema operativo y un directorio para el almacenamiento persistente, como la configuración. En el arranque, el sistema extraerá la imagen del sistema operativo en la memoria y montará los subdirectorios live-rw apropiados para proporcionar una configuración de sistema de almacenamiento persistente."
 
-#: ../../installation/vyos-on-baremetal.rst:180
+#: ../../installation/bare-metal.rst:180
 msgid "The image will be loaded and the last lines you will get will be:"
 msgstr "La imagen se cargará y las últimas líneas que obtendrás serán:"
 
@@ -1584,15 +1753,15 @@ msgstr "La imagen se cargará y las últimas líneas que obtendrás serán:"
 msgid "The import can be verified with:"
 msgstr "La importación se puede verificar con:"
 
-#: ../../installation/install.rst:486
+#: ../../installation/install.rst:487
 msgid "The initial ramdisk of the VyOS ISO you want to deploy. That is the *initrd.img* file inside the */live* directory of the extracted contents from the ISO file. Do not use an empty (0 bytes) initrd.img file you might find, the correct file may have a longer name."
 msgstr "El ramdisk inicial de la ISO de VyOS que desea implementar. Ese es el archivo *initrd.img* dentro del directorio */live* de los contenidos extraídos del archivo ISO. No utilice un archivo initrd.img vacío (0 bytes) que pueda encontrar, el archivo correcto puede tener un nombre más largo."
 
-#: ../../installation/vyos-on-baremetal.rst:293
+#: ../../installation/bare-metal.rst:293
 msgid "The install on this Q355G4 box is pretty much plug and play. The port numbering the OS does might differ from the labels on the outside, but the UEFI firmware has a port blink test built in with MAC addresses so you can very quickly identify which is which. MAC labels are on the inside as well, and this test can be done from VyOS or plain Linux too. Default settings in the UEFI will make it boot, but depending on your installation wishes (i.e. storage type, boot type, console type) you might want to adjust them. This Qotom company seems to be the real OEM/ODM for many other relabelling companies like Protectli."
 msgstr "La instalación en esta caja Q355G4 es prácticamente plug and play. La numeración de puertos que hace el sistema operativo puede diferir de las etiquetas en el exterior, pero el firmware UEFI tiene una prueba de parpadeo de puertos incorporada con direcciones MAC para que pueda identificar rápidamente cuál es cuál. Las etiquetas MAC también están en el interior, y esta prueba también se puede realizar desde VyOS o Linux simple. La configuración predeterminada en UEFI hará que se inicie, pero dependiendo de sus deseos de instalación (es decir, tipo de almacenamiento, tipo de inicio, tipo de consola), es posible que desee ajustarlos. Esta empresa Qotom parece ser el verdadero OEM/ODM para muchas otras empresas de reetiquetado como Protectli."
 
-#: ../../installation/install.rst:483
+#: ../../installation/install.rst:484
 msgid "The kernel of the VyOS software you want to deploy. That is the *vmlinuz* file inside the */live* directory of the extracted contents from the ISO file."
 msgstr "El núcleo del software VyOS que desea implementar. Ese es el archivo *vmlinuz* dentro del directorio */live* de los contenidos extraídos del archivo ISO."
 
@@ -1604,9 +1773,17 @@ msgstr "Los requisitos mínimos del sistema son 1024 MiB de RAM y 2 GiB de almac
 msgid "The most up-do-date Rolling Release for AMD64 can be accessed using the following URL:"
 msgstr "Se puede acceder al Rolling Release más actualizado para AMD64 mediante la siguiente URL:"
 
+#: ../../installation/update.rst:88
+msgid "The most up-do-date Rolling Release for AMD64 can be accessed using the following URL from a web browser:"
+msgstr "The most up-do-date Rolling Release for AMD64 can be accessed using the following URL from a web browser:"
+
 #: ../../installation/install.rst:107
 msgid "The official VyOS public key can be retrieved in a number of ways. Skip to :ref:`gpg-verification` if the key is already present."
 msgstr "La clave pública oficial de VyOS se puede recuperar de varias maneras. Salta a :ref:`gpg-verification` si la clave ya está presente."
+
+#: ../../installation/secure-boot.rst:51
+msgid "The requested ``input password`` can be user chosen and is only needed after rebooting the system into MOK Manager to permanently install the keys."
+msgstr "The requested ``input password`` can be user chosen and is only needed after rebooting the system into MOK Manager to permanently install the keys."
 
 #: ../../installation/install.rst:197
 msgid "The signature can be downloaded by appending `.asc` to the URL of the downloaded VyOS image. That small *.asc* file is the signature for the associated image."
@@ -1616,15 +1793,19 @@ msgstr "La firma se puede descargar agregando `.asc` a la URL de la imagen VyOS 
 msgid "The system is fully operational."
 msgstr "El sistema está en pleno funcionamiento."
 
+#: ../../installation/bare-metal.rst:477
+msgid "The system provides a regular RS232 console port using 115200,8n1 setting which is sufficient to install VyOS from a USB pendrive."
+msgstr "The system provides a regular RS232 console port using 115200,8n1 setting which is sufficient to install VyOS from a USB pendrive."
+
 #: ../../installation/virtual/libvirt.rst:120
 msgid "The virt-manager application is a desktop user interface for managing virtual machines through libvirt. On the linux open :abbr:`VMM (Virtual Machine Manager)`."
 msgstr "La aplicación virt-manager es una interfaz de usuario de escritorio para administrar máquinas virtuales a través de libvirt. En Linux, abra :abbr:`VMM (Administrador de máquinas virtuales)`."
 
-#: ../../installation/install.rst:590
+#: ../../installation/install.rst:591
 msgid "The workaround is to type `e` when the boot menu appears and edit the GRUB boot options.  Specifically, remove the:"
 msgstr "La solución es escribir `e` cuando aparezca el menú de arranque y editar las opciones de arranque de GRUB. Específicamente, elimine:"
 
-#: ../../installation/vyos-on-baremetal.rst:421
+#: ../../installation/bare-metal.rst:421
 msgid "Then VyOS should boot and you can perform the ``install image``"
 msgstr "Luego, VyOS debería arrancar y puede realizar la ``imagen de instalación``"
 
@@ -1641,11 +1822,11 @@ msgstr "Luego reinicie el sistema."
 msgid "Then you will be taken to the console."
 msgstr "Luego serás llevado a la consola."
 
-#: ../../installation/vyos-on-baremetal.rst:328
+#: ../../installation/bare-metal.rst:328
 msgid "There are WDT options and auto-boot on power enable, which is great for remote setups. Firmware is reasonably secure (no backdoors found, BootGuard is enabled in enforcement mode, which is good but also means no coreboot option), yet has most options available to configure (so it's not locked out like most firmwares are)."
 msgstr "Hay opciones de WDT y arranque automático al habilitar la alimentación, lo cual es ideal para configuraciones remotas. El firmware es razonablemente seguro (no se encontraron puertas traseras, BootGuard está habilitado en modo de cumplimiento, lo cual es bueno pero también significa que no hay opción de arranque central), pero tiene la mayoría de las opciones disponibles para configurar (por lo que no está bloqueado como la mayoría de los firmwares)."
 
-#: ../../installation/vyos-on-baremetal.rst:306
+#: ../../installation/bare-metal.rst:306
 msgid "There are a number of other options, but they all seem to be close to Intel reference designs, with added features like more serial ports, more network interfaces and the likes. Because they don't deviate too much from standard designs all the hardware is well-supported by mainline. It accepts one LPDDR3 SO-DIMM, but chances are that if you need more than that, you'll also want something even beefier than an i5. There are options for antenna holes, and SIM slots, so you could in theory add an LTE/Cell modem (not tested so far)."
 msgstr "Hay una serie de otras opciones, pero todas parecen estar cerca de los diseños de referencia de Intel, con características adicionales como más puertos serie, más interfaces de red y similares. Debido a que no se desvían demasiado de los diseños estándar, todo el hardware está bien respaldado por la línea principal. Acepta un LPDDR3 SO-DIMM, pero lo más probable es que si necesita más que eso, también querrá algo aún más robusto que un i5. Hay opciones para orificios de antena y ranuras SIM, por lo que, en teoría, podría agregar un módem LTE/Cell (no probado hasta ahora)."
 
@@ -1653,11 +1834,16 @@ msgstr "Hay una serie de otras opciones, pero todas parecen estar cerca de los d
 msgid "There have been previous documented issues with GRE/IPSEC tunneling using the E1000 adapter on the VyOS guest, and use of the VMXNET3 has been advised."
 msgstr "Ha habido problemas documentados anteriormente con túneles GRE/IPSEC usando el adaptador E1000 en el invitado VyOS, y se ha recomendado el uso de VMXNET3."
 
+#: ../../installation/secure-boot.rst:11
+#: ../../installation/secure-boot.rst:123
+msgid "There is yet no signed version of ``shim`` for VyOS, thus we provide no signed image for secure boot yet. If you are interested in secure boot you can build an image on your own."
+msgstr "There is yet no signed version of ``shim`` for VyOS, thus we provide no signed image for secure boot yet. If you are interested in secure boot you can build an image on your own."
+
 #: ../../installation/migrate-from-vyatta.rst:101
 msgid "This example uses VyOS 1.0.0, however, it's better to install the latest release."
 msgstr "Este ejemplo usa VyOS 1.0.0, sin embargo, es mejor instalar la última versión."
 
-#: ../../installation/vyos-on-baremetal.rst:85
+#: ../../installation/bare-metal.rst:85
 msgid "This guide was developed using an APU4C4 board with the following specs:"
 msgstr "Esta guía fue desarrollada utilizando una placa APU4C4 con las siguientes especificaciones:"
 
@@ -1665,11 +1851,15 @@ msgstr "Esta guía fue desarrollada utilizando una placa APU4C4 con las siguient
 msgid "This guide will provide the necessary steps for installing and setting up VyOS on GNS3."
 msgstr "Esta guía proporcionará los pasos necesarios para instalar y configurar VyOS en GNS3."
 
-#: ../../installation/install.rst:580
+#: ../../installation/install.rst:581
 msgid "This is a list of known issues that can arise during installation."
 msgstr "Esta es una lista de problemas conocidos que pueden surgir durante la instalación."
 
-#: ../../installation/vyos-on-baremetal.rst:374
+#: ../../installation/secure-boot.rst:177
+msgid "This means that the Machine Owner Key used to sign the Kernel is not trusted by your UEFI. You need to install the MOK via ``install mok`` as stated above."
+msgstr "This means that the Machine Owner Key used to sign the Kernel is not trusted by your UEFI. You need to install the MOK via ``install mok`` as stated above."
+
+#: ../../installation/bare-metal.rst:374
 msgid "This microbox network appliance was build to create OpenVPN bridges. It can saturate a 100Mbps link. It is a small (serial console only) PC with 6 Gb LAN"
 msgstr "Este dispositivo de red de microcaja se creó para crear puentes OpenVPN. Puede saturar un enlace de 100Mbps. Es una PC pequeña (solo consola serial) con LAN de 6 Gb"
 
@@ -1685,9 +1875,17 @@ msgstr "Este paso también habilita el servicio systemd y lo ejecuta."
 msgid "This subsection only applies to LTS images, for Rolling images please jump to :ref:`live_installation`."
 msgstr "Esta subsección solo se aplica a las imágenes LTS; para las imágenes continuas, vaya a :ref:`live_installation`."
 
+#: ../../installation/secure-boot.rst:162
+msgid "Thos we close the door to load any malicious stuff after the image was assembled into the Kernel as module. You can of course disable this behavior on custom builds."
+msgstr "Thos we close the door to load any malicious stuff after the image was assembled into the Kernel as module. You can of course disable this behavior on custom builds."
+
 #: ../../installation/cloud/gcp.rst:8
 msgid "To deploy VyOS on GCP (Google Cloud Platform)"
 msgstr "Para implementar VyOS en GCP (Google Cloud Platform)"
+
+#: ../../installation/secure-boot.rst:15
+msgid "To generate a custom ISO with your own secure boot keys, run the following commands prior to your ISO image build:"
+msgstr "To generate a custom ISO with your own secure boot keys, run the following commands prior to your ISO image build:"
 
 #: ../../installation/virtual/gns3.rst:153
 msgid "To turn the template into a working VyOS machine, further steps are necessary as outlined below:"
@@ -1701,15 +1899,23 @@ msgstr "Para utilizar el agente de Amazon CloudWatch, configúrelo en el almacé
 msgid "To use the `latest` option the \"system update-check url\" must be configured."
 msgstr "To use the `latest` option the \"system update-check url\" must be configured."
 
+#: ../../installation/update.rst:81
+msgid "To use the `latest` option the \"system update-check url\" must be configured appropriately for the installed release."
+msgstr "To use the `latest` option the \"system update-check url\" must be configured appropriately for the installed release."
+
 #: ../../installation/install.rst:248
 msgid "To verify a VyOS image starting off with VyOS 1.3.0-rc6 you can run:"
 msgstr "Para verificar una imagen de VyOS que comienza con VyOS 1.3.0-rc6, puede ejecutar:"
 
-#: ../../installation/install.rst:337
+#: ../../installation/secure-boot.rst:167
+msgid "Troubleshoot"
+msgstr "Troubleshoot"
+
+#: ../../installation/install.rst:338
 msgid "Unlike general purpose Linux distributions, VyOS uses \"image installation\" that mimics the user experience of traditional hardware routers and allows keeping multiple VyOS versions installed simultaneously. This makes it possible to switch to a previous version if something breaks or miss-behaves after an image upgrade."
 msgstr "A diferencia de las distribuciones de Linux de uso general, VyOS utiliza una &quot;instalación de imágenes&quot; que imita la experiencia del usuario de los enrutadores de hardware tradicionales y permite mantener varias versiones de VyOS instaladas simultáneamente. Esto hace posible cambiar a una versión anterior si algo se rompe o se comporta mal después de una actualización de imagen."
 
-#: ../../installation/install.rst:288
+#: ../../installation/install.rst:289
 msgid "Unmount the USB drive. Replace X in the example below with the letter of your device and keep the asterisk (wildcard) to unmount all partitions."
 msgstr "Desmonte la unidad USB. Reemplace X en el ejemplo a continuación con la letra de su dispositivo y mantenga el asterisco (comodín) para desmontar todas las particiones."
 
@@ -1733,7 +1939,7 @@ msgstr "Use los valores predeterminados en la ventana **Binario y formato** y ha
 msgid "Use the defaults in the **Qcow2 options** window and click ``Next``."
 msgstr "Use los valores predeterminados en la ventana **Opciones de Qcow2** y haga clic en ``Siguiente``."
 
-#: ../../installation/vyos-on-baremetal.rst:205
+#: ../../installation/bare-metal.rst:205
 msgid "Use the following command to adjust the :ref:`serial-console` settings:"
 msgstr "Use el siguiente comando para ajustar la configuración de :ref:`serial-console`:"
 
@@ -1753,27 +1959,35 @@ msgstr "configuración de máquina virtual"
 msgid "Virt-manager"
 msgstr "Virtual-gerente"
 
+#: ../../installation/virtual/index.rst:3
+msgid "Virtual Environments"
+msgstr "Virtual Environments"
+
 #: ../../installation/virtual/proxmox.rst:54
 msgid "Visit https://www.proxmox.com/en/ for more information about the download and installation of this hypervisor."
 msgstr "Visite https://www.proxmox.com/en/ para obtener más información sobre la descarga e instalación de este hipervisor."
 
-#: ../../installation/install.rst:272
+#: ../../installation/install.rst:273
 msgid "VyOS, as other GNU+Linux distributions, can be tested without installing it in your hard drive. **With your downloaded VyOS .iso file you can create a bootable USB drive that will let you boot into a fully functional VyOS system**. Once you have tested it, you can either decide to begin a :ref:`permanent_installation` in your hard drive or power your system off, remove the USB drive, and leave everything as it was."
 msgstr "VyOS, como otras distribuciones de GNU+Linux, puede probarse sin instalarlo en su disco duro. **Con su archivo VyOS .iso descargado, puede crear una unidad USB de arranque que le permitirá arrancar en un sistema VyOS totalmente funcional**. Una vez que lo haya probado, puede decidir comenzar una :ref:`permanent_installation` en su disco duro o apagar su sistema, quitar la unidad USB y dejar todo como estaba."
 
-#: ../../installation/vyos-on-baremetal.rst:135
+#: ../../installation/bare-metal.rst:135
 msgid "VyOS 1.2 (crux)"
 msgstr "VyOS 1.2 (cruz)"
 
-#: ../../installation/vyos-on-baremetal.rst:222
+#: ../../installation/bare-metal.rst:222
 msgid "VyOS 1.2 (rolling)"
 msgstr "VyOS 1.2 (en movimiento)"
+
+#: ../../installation/bare-metal.rst:507
+msgid "VyOS 1.4 (sagitta)"
+msgstr "VyOS 1.4 (sagitta)"
 
 #: ../../installation/migrate-from-vyatta.rst:6
 msgid "VyOS 1.x line aims to preserve backward compatibility and provide a safe upgrade path for existing Vyatta Core users. You may think of VyOS 1.0.0 as VC7.0."
 msgstr "La línea VyOS 1.x tiene como objetivo preservar la compatibilidad con versiones anteriores y proporcionar una ruta de actualización segura para los usuarios existentes de Vyatta Core. Puede pensar en VyOS 1.0.0 como VC7.0."
 
-#: ../../installation/install.rst:438
+#: ../../installation/install.rst:439
 msgid "VyOS ISO image to be installed (do not use images prior to VyOS 1.2.3)"
 msgstr "Imagen ISO de VyOS para instalar (no use imágenes anteriores a VyOS 1.2.3)"
 
@@ -1785,7 +1999,7 @@ msgstr "Configuración de máquinas virtuales VyOS"
 msgid "VyOS automatically associates the configuration to the image, so you don't need to worry about that. Each image has a unique copy of its configuration."
 msgstr "VyOS asocia automáticamente la configuración a la imagen, por lo que no debe preocuparse por eso. Cada imagen tiene una copia única de su configuración."
 
-#: ../../installation/install.rst:429
+#: ../../installation/install.rst:430
 msgid "VyOS can also be installed through PXE. This is a more complex installation method that allows deploying VyOS through the network."
 msgstr "VyOS también se puede instalar a través de PXE. Este es un método de instalación más complejo que permite implementar VyOS a través de la red."
 
@@ -1793,7 +2007,7 @@ msgstr "VyOS también se puede instalar a través de PXE. Este es un método de 
 msgid "VyOS configuration is associated to each image, and **each image has a unique copy of its configuration**. This is different than a traditional network router where the configuration is shared across all images."
 msgstr "La configuración de VyOS está asociada a cada imagen y **cada imagen tiene una copia única de su configuración**. Esto es diferente a un enrutador de red tradicional donde la configuración se comparte entre todas las imágenes."
 
-#: ../../installation/vyos-on-baremetal.rst:263
+#: ../../installation/bare-metal.rst:263
 msgid "VyOS custom print"
 msgstr "Impresión personalizada VyOS"
 
@@ -1809,6 +2023,10 @@ msgstr "La instalación de VyOS requiere un archivo .iso de VyOS descargado. Ese
 msgid "VyOS requires an IPv6-enabled docker network. Currently linux distributions do not enable docker IPv6 support by default. You can enable IPv6 support in two ways."
 msgstr "VyOS requiere una red docker habilitada para IPv6. Actualmente, las distribuciones de Linux no habilitan la compatibilidad con Docker IPv6 de forma predeterminada. Puede habilitar la compatibilidad con IPv6 de dos maneras."
 
+#: ../../installation/secure-boot.rst:82
+msgid "VyOS will now launch in UEFI secure boot mode. This can be double-checked by running either one of the commands:"
+msgstr "VyOS will now launch in UEFI secure boot mode. This can be double-checked by running either one of the commands:"
+
 #: ../../installation/migrate-from-vyatta.rst:15
 msgid "Vyatta Core 6.4 and earlier may have incompatibilities. In Vyatta 6.5 the \"modify\" firewall was removed and replaced with the ``set policy route`` command family, old configs can not be automatically converted. You will have to adapt it to post-6.5 Vyatta syntax manually."
 msgstr "Vyatta Core 6.4 y anteriores pueden tener incompatibilidades. En Vyatta 6.5, el cortafuegos &quot;modificar&quot; se eliminó y se reemplazó con la familia de comandos &quot;establecer ruta de política&quot;, las configuraciones antiguas no se pueden convertir automáticamente. Tendrá que adaptarlo a la sintaxis posterior a 6.5 Vyatta manualmente."
@@ -1821,23 +2039,24 @@ msgstr "Las versiones de Vyatta Core de 6.5 a 6.6 deberían ser 100 % compatible
 msgid "Vyatta release compatibility"
 msgstr "Compatibilidad con versiones de Vyatta"
 
-#: ../../installation/vyos-on-baremetal.rst:122
+#: ../../installation/bare-metal.rst:122
+#: ../../installation/bare-metal.rst:665
 msgid "WWAN"
 msgstr "WWAN"
 
-#: ../../installation/install.rst:306
+#: ../../installation/install.rst:307
 msgid "Wait until you get the outcome (bytes copied). Be patient, in some computers it might take more than one minute."
 msgstr "Espere hasta obtener el resultado (bytes copiados). Ten paciencia, en algunos equipos puede tardar más de un minuto."
 
-#: ../../installation/vyos-on-baremetal.rst:364
+#: ../../installation/bare-metal.rst:364
 msgid "Warning the interface labels on my device are backwards; the left-most \"LAN4\" port is eth0 and the right-most \"LAN1\" port is eth3."
 msgstr "Advertencia: las etiquetas de interfaz de mi dispositivo están al revés; el puerto &quot;LAN4&quot; más a la izquierda es eth0 y el puerto &quot;LAN1&quot; más a la derecha es eth3."
 
-#: ../../installation/install.rst:536
+#: ../../installation/install.rst:537
 msgid "We also need to provide the *filesystem.squashfs* file. That is a heavy file and TFTP is slow, so you could send it through HTTP to speed up the transfer. That is how it is done in our example, you can find that in the configuration file above."
 msgstr "También debemos proporcionar el archivo *filesystem.squashfs*. Ese es un archivo pesado y TFTP es lento, por lo que podría enviarlo a través de HTTP para acelerar la transferencia. Así es como se hace en nuestro ejemplo, puede encontrarlo en el archivo de configuración anterior."
 
-#: ../../installation/install.rst:437
+#: ../../installation/install.rst:438
 msgid "Webserver (HTTP) - optional, but we will use it to speed up installation"
 msgstr "Servidor web (HTTP): opcional, pero lo usaremos para acelerar la instalación"
 
@@ -1849,15 +2068,23 @@ msgstr "Cuando se le solicite, responda &quot;sí&quot; a la pregunta &quot;¿De
 msgid "When the underlying ESXi host is approaching ~92% memory utilisation it will start the balloon process in a 'soft' state to start reclaiming memory from guest operating systems. This causes an artificial pressure using the vmmemctl driver on memory usage on the virtual guest. As VyOS by default does not have a swap file, this vmmemctl pressure is unable to force processes to move in memory data to the paging file, and blindly consumes memory forcing the virtual guest into a low memory state with no way to escape. The balloon can expand to 65% of guest allocated memory, so a VyOS guest running >35% of memory usage, can encounter an out of memory situation, and trigger the kernel oom_kill process. At this point a weighted lottery favouring memory hungry processes will be run with the unlucky winner being terminated by the kernel."
 msgstr "Cuando el host ESXi subyacente se acerca al ~92 % de la utilización de la memoria, iniciará el proceso de globo en un estado &quot;suave&quot; para comenzar a recuperar la memoria de los sistemas operativos invitados. Esto provoca una presión artificial usando el controlador vmmemctl sobre el uso de la memoria en el invitado virtual. Como VyOS de forma predeterminada no tiene un archivo de intercambio, esta presión de vmmemctl no puede obligar a los procesos a mover los datos de la memoria al archivo de paginación y consume memoria a ciegas, lo que obliga al invitado virtual a un estado de memoria baja sin forma de escapar. El globo puede expandirse al 65 % de la memoria asignada al invitado, por lo que un invitado de VyOS que ejecuta &gt;35 % del uso de la memoria puede encontrarse con una situación de falta de memoria y desencadenar el proceso kernel oom_kill. En este punto, se ejecutará una lotería ponderada que favorecerá a los procesos hambrientos de memoria y el núcleo terminará con el desafortunado ganador."
 
-#: ../../installation/vyos-on-baremetal.rst:112
+#: ../../installation/secure-boot.rst:150
+msgid "Whenever our CI system builds a Kernel package and the required 3rd party modules, we will generate a temporary (ephemeral) public/private key-pair that's used for signing the modules. The public key portion is embedded into the Kernel binary to verify the loaded modules."
+msgstr "Whenever our CI system builds a Kernel package and the required 3rd party modules, we will generate a temporary (ephemeral) public/private key-pair that's used for signing the modules. The public key portion is embedded into the Kernel binary to verify the loaded modules."
+
+#: ../../installation/bare-metal.rst:112
 msgid "WiFi"
 msgstr "Wifi"
+
+#: ../../installation/secure-boot.rst:54
+msgid "With the next reboot, MOK Manager will automatically launch"
+msgstr "With the next reboot, MOK Manager will automatically launch"
 
 #: ../../installation/install.rst:194
 msgid "With the public key imported, the signature for the desired image needs to be downloaded."
 msgstr "Con la clave pública importada, se debe descargar la firma de la imagen deseada."
 
-#: ../../installation/vyos-on-baremetal.rst:354
+#: ../../installation/bare-metal.rst:354
 msgid "Write VyOS ISO to USB drive of some sort"
 msgstr "Escriba VyOS ISO en una unidad USB de algún tipo"
 
@@ -1865,7 +2092,7 @@ msgstr "Escriba VyOS ISO en una unidad USB de algún tipo"
 msgid "Write a name for your VM, for instance \"VyOS\", and click ``Next``."
 msgstr "Escriba un nombre para su máquina virtual, por ejemplo, &quot;VyOS&quot;, y haga clic en ``Siguiente``."
 
-#: ../../installation/install.rst:296
+#: ../../installation/install.rst:297
 msgid "Write the image (your VyOS .iso file) to the USB drive. Note that here you want to use the device name (e.g. /dev/sdb), not the partition name (e.g. /dev/sdb1)."
 msgstr "Escriba la imagen (su archivo .iso de VyOS) en la unidad USB. Tenga en cuenta que aquí desea utilizar el nombre del dispositivo (p. ej., /dev/sdb), no el nombre de la partición (p. ej., /dev/sdb1)."
 
@@ -1881,9 +2108,13 @@ msgstr "Puede ejecutar ``docker stop vyos`` cuando haya terminado con el contene
 msgid "You can go back to your Vyatta install using the ``set system image default-boot`` command and selecting the your previous Vyatta Core image."
 msgstr "Puede volver a su instalación de Vyatta usando el comando ``set system image default-boot`` y seleccionando su imagen anterior de Vyatta Core."
 
-#: ../../installation/vyos-on-baremetal.rst:198
+#: ../../installation/bare-metal.rst:198
 msgid "You can now proceed with a regular image installation as described in :ref:`installation`."
 msgstr "Ahora puede continuar con una instalación de imagen normal como se describe en :ref:`installation`."
+
+#: ../../installation/secure-boot.rst:64
+msgid "You can now view the key to be installed and ``continue`` with the Key installation"
+msgstr "You can now view the key to be installed and ``continue`` with the Key installation"
 
 #: ../../installation/update.rst:75
 msgid "You can use ``latest`` option. It loads the latest available Rolling release."
@@ -1893,7 +2124,7 @@ msgstr "You can use ``latest`` option. It loads the latest available Rolling rel
 msgid "You just use ``add system image``, as if it was a new VC release (see :ref:`update_vyos` for additional information). The only thing you want to do is to verify the new images digital signature. You will have to add the public key manually once as it is not shipped the first time."
 msgstr "Simplemente use ``agregar imagen del sistema``, como si fuera una nueva versión de VC (consulte :ref:`update_vyos` para obtener información adicional). Lo único que desea hacer es verificar la firma digital de las nuevas imágenes. Tendrá que agregar la clave pública manualmente una vez, ya que no se envía la primera vez."
 
-#: ../../installation/vyos-on-baremetal.rst:377
+#: ../../installation/bare-metal.rst:377
 msgid "You may have to add your own RAM and HDD/SSD. There is no VGA connector. But Acrosser provides a DB25 adapter for the VGA header on the motherboard (not used)."
 msgstr "Es posible que deba agregar su propia RAM y HDD/SSD. No hay conector VGA. Pero Acrosser proporciona un adaptador DB25 para el encabezado VGA en la placa base (no se usa)."
 
@@ -1901,7 +2132,7 @@ msgstr "Es posible que deba agregar su propia RAM y HDD/SSD. No hay conector VGA
 msgid "You probably will want to accept to copy the .iso file to your default image directory when you are asked."
 msgstr "Probablemente querrá aceptar copiar el archivo .iso a su directorio de imágenes predeterminado cuando se le solicite."
 
-#: ../../installation/install.rst:423
+#: ../../installation/install.rst:424
 msgid "You will boot now into a permanent VyOS system."
 msgstr "Arrancará ahora en un sistema VyOS permanente."
 
@@ -1913,11 +2144,11 @@ msgstr "Los archivos .ova están disponibles para los usuarios de soporte, y un 
 msgid ":ref:`Install VyOS <installation>` as normal (that is, using the ``install image`` command)."
 msgstr ":ref:`Instalar VyOS<installation> ` como de costumbre (es decir, usando el comando ``instalar imagen``)."
 
-#: ../../installation/install.rst:435
+#: ../../installation/install.rst:436
 msgid ":ref:`dhcp-server`"
 msgstr ":ref:`servidor-dhcp`"
 
-#: ../../installation/install.rst:436
+#: ../../installation/install.rst:437
 msgid ":ref:`tftp-server`"
 msgstr ":ref:`servidor-tftp`"
 
@@ -1925,7 +2156,7 @@ msgstr ":ref:`servidor-tftp`"
 msgid ":vytask:`T2108` switched the validation system to prefer minisign over GPG keys."
 msgstr ":vytask:`T2108` cambió el sistema de validación para preferir minisign sobre claves GPG."
 
-#: ../../installation/vyos-on-baremetal.rst:349
+#: ../../installation/bare-metal.rst:349
 msgid "`Manufacturer product page <http://www.inctel.com.cn/product/detail/338.html>`_."
 msgstr "`Página de producto del fabricante<http://www.inctel.com.cn/product/detail/338.html> `_."
 
@@ -1933,7 +2164,11 @@ msgstr "`Página de producto del fabricante<http://www.inctel.com.cn/product/det
 msgid "``gpg --recv-keys FD220285A0FE6D7E``"
 msgstr "``gpg --recv-keys FD220285A0FE6D7E``"
 
-#: ../../installation/install.rst:593
+#: ../../installation/secure-boot.rst:160
+msgid "``insmod: ERROR: could not insert module malicious.ko: Key was rejected by service``"
+msgstr "``insmod: ERROR: could not insert module malicious.ko: Key was rejected by service``"
+
+#: ../../installation/install.rst:594
 msgid "`console=ttyS0,115200`"
 msgstr "`consola=ttyS0,115200`"
 
@@ -1961,11 +2196,19 @@ msgstr "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/install-C
 msgid "https://muralidba.blogspot.com/2018/03/how-does-linux-out-of-memory-oom-killer.html"
 msgstr "https://muralidba.blogspot.com/2018/03/how-does-linux-out-of-memory-oom-killer.html"
 
+#: ../../installation/secure-boot.rst:148
+msgid "https://patchwork.kernel.org/project/linux-integrity/patch/20210218220011.67625-5-nayna@linux.ibm.com/"
+msgstr "https://patchwork.kernel.org/project/linux-integrity/patch/20210218220011.67625-5-nayna@linux.ibm.com/"
+
 #: ../../installation/install.rst:116
 msgid "https://pgp.mit.edu/pks/lookup?op=get&search=0xFD220285A0FE6D7E"
 msgstr "https://pgp.mit.edu/pks/lookup?op=get&amp;search=0xFD220285A0FE6D7E"
 
 #: ../../installation/update.rst:86
+msgid "https://raw.githubusercontent.com/vyos/vyos-nightly-build/refs/heads/current/version.json"
+msgstr "https://raw.githubusercontent.com/vyos/vyos-nightly-build/refs/heads/current/version.json"
+
+#: ../../installation/update.rst:91
 msgid "https://vyos.net/get/nightly-builds/"
 msgstr "https://vyos.net/get/nightly-builds/"
 
@@ -1981,6 +2224,6 @@ msgstr "https://www.oracle.com/cloud/"
 msgid "ly-builds/releases/download/1.4-rolling-202308240020/vyos-1.4-rolling-202308240020-amd64.iso"
 msgstr "ly-builds/releases/download/1.4-rolling-202308240020/vyos-1.4-rolling-202308240020-amd64.iso"
 
-#: ../../installation/install.rst:595
+#: ../../installation/install.rst:596
 msgid "option, and type CTRL-X to boot."
 msgstr "y escriba CTRL-X para iniciar."

@@ -8,7 +8,7 @@ msgstr ""
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n==1) ? 0 : 1;\n"
 
-#: ../../configexamples/zone-policy.rst:162
+#: ../../configexamples/zone-policy.rst:152
 msgid "''It is important to note, that you do not want to add logging to the established state rule as you will be logging both the inbound and outbound packets for each session instead of just the initiation of the session. Your logs will be massive in a very short period of time.''"
 msgstr "''It is important to note, that you do not want to add logging to the established state rule as you will be logging both the inbound and outbound packets for each session instead of just the initiation of the session. Your logs will be massive in a very short period of time.''"
 
@@ -36,7 +36,7 @@ msgstr "**NOTE:** VyOS Router (tested with VyOS 1.4-rolling-202110310317) –  T
 msgid "**Note:** At the moment, trace mpls doesn’t show labels/paths. So we’ll see * * *  for the transit routers of the mpls backbone."
 msgstr "**Note:** At the moment, trace mpls doesn’t show labels/paths. So we’ll see * * *  for the transit routers of the mpls backbone."
 
-#: ../../configexamples/zone-policy.rst:34
+#: ../../configexamples/zone-policy.rst:24
 msgid "**This specific example is for a router on a stick, but is very easily adapted for however many NICs you have**:"
 msgstr "**This specific example is for a router on a stick, but is very easily adapted for however many NICs you have**:"
 
@@ -140,11 +140,11 @@ msgstr "172.17.1.40 CS0 by default"
 msgid "172.17.1.4 CS0 -> CS6"
 msgstr "172.17.1.4 CS0 -> CS6"
 
-#: ../../configexamples/zone-policy.rst:45
+#: ../../configexamples/zone-policy.rst:35
 msgid "192.168.100.10/2001:0DB8:0:AAAA::10 is the administrator's console. It can SSH to VyOS."
 msgstr "192.168.100.10/2001:0DB8:0:AAAA::10 is the administrator's console. It can SSH to VyOS."
 
-#: ../../configexamples/zone-policy.rst:43
+#: ../../configexamples/zone-policy.rst:33
 msgid "192.168.200.200/2001:0DB8:0:BBBB::200 is an internal/external DNS, web and mail (SMTP/IMAP) server."
 msgstr "192.168.200.200/2001:0DB8:0:BBBB::200 is an internal/external DNS, web and mail (SMTP/IMAP) server."
 
@@ -306,6 +306,35 @@ msgstr "A rule order for prioritizing traffic is useful in scenarios where the s
 msgid "A simple solution could be using different routing tables, or VRFs for all the networks so we can keep the routing restrictions. But for us to route between the different VRFs we would need a cable or a logical connection between each other:"
 msgstr "A simple solution could be using different routing tables, or VRFs for all the networks so we can keep the routing restrictions. But for us to route between the different VRFs we would need a cable or a logical connection between each other:"
 
+#: ../../configexamples/fwall-and-bridge.rst:25
+msgid "Accept access to router itself."
+msgstr "Accept access to router itself."
+
+#: ../../configexamples/fwall-and-bridge.rst:21
+#: ../../configexamples/fwall-and-bridge.rst:32
+msgid "Accept all ARP packets."
+msgstr "Accept all ARP packets."
+
+#: ../../configexamples/fwall-and-bridge.rst:30
+msgid "Accept all DHCP discover packets."
+msgstr "Accept all DHCP discover packets."
+
+#: ../../configexamples/fwall-and-bridge.rst:33
+msgid "Accept all IPv4 connections."
+msgstr "Accept all IPv4 connections."
+
+#: ../../configexamples/fwall-and-bridge.rst:31
+msgid "Accept only DHCP offers from valid server and|or trusted bridge port."
+msgstr "Accept only DHCP offers from valid server and|or trusted bridge port."
+
+#: ../../configexamples/fwall-and-bridge.rst:17
+msgid "Accept only IPv6 communication whithin the bridge."
+msgstr "Accept only IPv6 communication whithin the bridge."
+
+#: ../../configexamples/fwall-and-bridge.rst:270
+msgid "Access to the router itself is controlled by the base chain ``input``, and rules to accomplish all the requirements are:"
+msgstr "Access to the router itself is controlled by the base chain ``input``, and rules to accomplish all the requirements are:"
+
 #: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:19
 msgid "Account at https://www.tunnelbroker.net/"
 msgstr "Account at https://www.tunnelbroker.net/"
@@ -414,9 +443,45 @@ msgstr "Allow all icmpv6 packets for router and LAN"
 msgid "Allow all new connections from local subnets."
 msgstr "Allow all new connections from local subnets."
 
+#: ../../configexamples/fwall-and-vrf.rst:29
+msgid "Allow connection to PROD."
+msgstr "Allow connection to PROD."
+
+#: ../../configexamples/policy-based-ipsec-and-firewall.rst:40
+msgid "Allow connections from LANs to LANs through the tunnel."
+msgstr "Allow connections from LANs to LANs through the tunnel."
+
 #: ../../configexamples/policy-based-ipsec-and-firewall.rst:40
 msgid "Allow connections from LANs to LANs throught the tunnel."
 msgstr "Allow connections from LANs to LANs throught the tunnel."
+
+#: ../../configexamples/fwall-and-vrf.rst:20
+msgid "Allow connections to LAN and PROD."
+msgstr "Allow connections to LAN and PROD."
+
+#: ../../configexamples/fwall-and-vrf.rst:24
+msgid "Allow connections to PROD."
+msgstr "Allow connections to PROD."
+
+#: ../../configexamples/fwall-and-bridge.rst:37
+msgid "Allow connections to bridge br1."
+msgstr "Allow connections to bridge br1."
+
+#: ../../configexamples/fwall-and-bridge.rst:26
+msgid "Allow connections to internet"
+msgstr "Allow connections to internet"
+
+#: ../../configexamples/fwall-and-vrf.rst:25
+msgid "Allow connections to internet(WAN)."
+msgstr "Allow connections to internet(WAN)."
+
+#: ../../configexamples/fwall-and-bridge.rst:36
+msgid "Allow connections to internet."
+msgstr "Allow connections to internet."
+
+#: ../../configexamples/fwall-and-vrf.rst:22
+msgid "Allow connections to the router."
+msgstr "Allow connections to the router."
 
 #: ../../configexamples/policy-based-ipsec-and-firewall.rst:34
 msgid "Allow dns requests only only for local networks."
@@ -425,6 +490,14 @@ msgstr "Allow dns requests only only for local networks."
 #: ../../configexamples/policy-based-ipsec-and-firewall.rst:36
 msgid "Allow icmp on all interfaces."
 msgstr "Allow icmp on all interfaces."
+
+#: ../../configexamples/fwall-and-vrf.rst:103
+msgid "Also, we are adding global state policies, in order to allow established and related traffic, in order not to drop valid responses:"
+msgstr "Also, we are adding global state policies, in order to allow established and related traffic, in order not to drop valid responses:"
+
+#: ../../configexamples/fwall-and-bridge.rst:84
+msgid "Also, we are going to use firewall interface groups in order to simplify the firewall configuration."
+msgstr "Also, we are going to use firewall interface groups in order to simplify the firewall configuration."
 
 #: ../../configexamples/policy-based-ipsec-and-firewall.rst:220
 msgid "Also, we can check firewall counters:"
@@ -442,6 +515,18 @@ msgstr "An L3VPN consists of multiple access links, multiple VPN routing and for
 msgid "And NAT Configuration:"
 msgstr "And NAT Configuration:"
 
+#: ../../configexamples/fwall-and-vrf.rst:70
+msgid "And before firewall rules are shown, we need to pay attention how to configure and match interfaces and VRFs. In case where an interface is assigned to a non-default VRF, if we want to use inbound-interface or outbound-interface in firewall rules, we need to:"
+msgstr "And before firewall rules are shown, we need to pay attention how to configure and match interfaces and VRFs. In case where an interface is assigned to a non-default VRF, if we want to use inbound-interface or outbound-interface in firewall rules, we need to:"
+
+#: ../../configexamples/fwall-and-vrf.rst:112
+msgid "And finally, we need to allow input connections to the router itself only from vrf MGMT:"
+msgstr "And finally, we need to allow input connections to the router itself only from vrf MGMT:"
+
+#: ../../configexamples/fwall-and-bridge.rst:292
+msgid "And for traffic that is going to other local networks, and to he Internet, we need to use the base chain ``forward``. As in the bridge firewall, we are going to use custom rulesets for each bridge, that would be used in the ``forward`` chain. Those rulesets are ``ip-br1-fwd`` and ``ip-br2-fwd``:"
+msgstr "And for traffic that is going to other local networks, and to he Internet, we need to use the base chain ``forward``. As in the bridge firewall, we are going to use custom rulesets for each bridge, that would be used in the ``forward`` chain. Those rulesets are ``ip-br1-fwd`` and ``ip-br2-fwd``:"
+
 #: ../../configexamples/autotest/Wireguard/Wireguard.rst:99
 msgid "And ping the Branch PC from your central router to check the response."
 msgstr "And ping the Branch PC from your central router to check the response."
@@ -450,9 +535,22 @@ msgstr "And ping the Branch PC from your central router to check the response."
 msgid "And show all DHCP Leases"
 msgstr "And show all DHCP Leases"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:132
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:140
 msgid "And the ``client`` to receive an IPv6 address with stateless autoconfig."
 msgstr "And the ``client`` to receive an IPv6 address with stateless autoconfig."
+
+#: ../../configexamples/fwall-and-bridge.rst:202
+#: ../../configexamples/fwall-and-bridge.rst:321
+msgid "And the content of the custom rulesets:"
+msgstr "And the content of the custom rulesets:"
+
+#: ../../configexamples/fwall-and-bridge.rst:132
+msgid "And then create the custom rulesets:"
+msgstr "And then create the custom rulesets:"
+
+#: ../../configexamples/fwall-and-bridge.rst:364
+msgid "And with operational mode commands, we can check rules matchers, actions, and counters."
+msgstr "And with operational mode commands, we can check rules matchers, actions, and counters."
 
 #: ../../configexamples/autotest/DHCPRelay_through_GRE/DHCPRelay_through_GRE.rst:-1
 #: ../../configexamples/autotest/Wireguard/Wireguard.rst:-1
@@ -475,9 +573,21 @@ msgstr "Appendix-A"
 msgid "Appendix-B"
 msgstr "Appendix-B"
 
+#: ../../configexamples/fwall-and-bridge.rst:265
+msgid "As a reminder, here's a link to the :doc:`firewall documentation </configuration/firewall/index>`, where you can find more information about the packet flow for traffic that comes from bridge layer and should be analized by the IP firewall."
+msgstr "As a reminder, here's a link to the :doc:`firewall documentation </configuration/firewall/index>`, where you can find more information about the packet flow for traffic that comes from bridge layer and should be analized by the IP firewall."
+
 #: ../../configexamples/ha.rst:500
 msgid "As a reminder, only advertise routes that you are the default router for. This is why we are NOT announcing the 192.0.2.0/24 network, because if that was announced into OSPF, the other routers would try to connect to that network over a tunnel that connects to that network!"
 msgstr "As a reminder, only advertise routes that you are the default router for. This is why we are NOT announcing the 192.0.2.0/24 network, because if that was announced into OSPF, the other routers would try to connect to that network over a tunnel that connects to that network!"
+
+#: ../../configexamples/fwall-and-vrf.rst:16
+msgid "As exposed in the diagram, there are four VRFs. These VRFs are ``MGMT``, ``WAN``, ``LAN`` and ``PROD``, and their requirements are:"
+msgstr "As exposed in the diagram, there are four VRFs. These VRFs are ``MGMT``, ``WAN``, ``LAN`` and ``PROD``, and their requirements are:"
+
+#: ../../configexamples/fwall-and-bridge.rst:107
+msgid "As said before, we are going to create custom firewall rulesets for each bridge, that will be used in the ``prerouting`` chain, in order to drop as much unwanted traffic as early as possible. So, custom rulesets used in ``prerouting`` chain are going to be ``br0-pre``, ``br1-pre``, and ``br2-pre``:"
+msgstr "As said before, we are going to create custom firewall rulesets for each bridge, that will be used in the ``prerouting`` chain, in order to drop as much unwanted traffic as early as possible. So, custom rulesets used in ``prerouting`` chain are going to be ``br0-pre``, ``br1-pre``, and ``br2-pre``:"
 
 #: ../../configexamples/inter-vrf-routing-vrf-lite.rst:853
 msgid "As we can see even if both VRF LAN1 and LAN2 has the same import RTs we are able to select which routes are effectively imported and installed."
@@ -503,7 +613,7 @@ msgstr "As we see shaper is working and the traffic will not work over 5 Mbit/s.
 msgid "Assign external IP addresses"
 msgstr "Assign external IP addresses"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:74
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:82
 msgid "Assuming the pings are successful, you need to add some DNS servers. Some options:"
 msgstr "Assuming the pings are successful, you need to add some DNS servers. Some options:"
 
@@ -523,7 +633,7 @@ msgstr "At this point, you should be able to SSH into both of them, and will no 
 msgid "At this point, you should be able to see both IP addresses when you run ``show interfaces``\\ , and ``show vrrp`` should show both interfaces in MASTER state (and SLAVE state on router2)."
 msgstr "At this point, you should be able to see both IP addresses when you run ``show interfaces``\\ , and ``show vrrp`` should show both interfaces in MASTER state (and SLAVE state on router2)."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:102
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:110
 msgid "At this point, your VyOS install should have full IPv6, but now your LAN devices need access."
 msgstr "At this point, your VyOS install should have full IPv6, but now your LAN devices need access."
 
@@ -617,7 +727,35 @@ msgstr "Both LANs have to be able to route between each other, both will have ma
 msgid "Branch"
 msgstr "Branch"
 
-#: ../../configexamples/zone-policy.rst:151
+#: ../../configexamples/fwall-and-bridge.rst:4
+msgid "Bridge and firewall example"
+msgstr "Bridge and firewall example"
+
+#: ../../configexamples/fwall-and-bridge.rst:17
+msgid "Bridge br0:"
+msgstr "Bridge br0:"
+
+#: ../../configexamples/fwall-and-bridge.rst:27
+msgid "Bridge br1:"
+msgstr "Bridge br1:"
+
+#: ../../configexamples/fwall-and-bridge.rst:37
+msgid "Bridge br2:"
+msgstr "Bridge br2:"
+
+#: ../../configexamples/fwall-and-bridge.rst:75
+msgid "Bridge firewall configuration"
+msgstr "Bridge firewall configuration"
+
+#: ../../configexamples/fwall-and-bridge.rst:367
+msgid "Bridge firewall rulset:"
+msgstr "Bridge firewall rulset:"
+
+#: ../../configexamples/fwall-and-bridge.rst:43
+msgid "Bridges and interfaces configuration"
+msgstr "Bridges and interfaces configuration"
+
+#: ../../configexamples/zone-policy.rst:141
 msgid "By default, iptables does not allow traffic for established sessions to return, so you must explicitly allow this. I do this by adding two rules to every ruleset. 1 allows established and related state packets through and rule 2 drops and logs invalid state packets. We place the established/related rule at the top because the vast majority of traffic on a network is established and the invalid rule to prevent invalid state packets from mistakenly being matched against other rules. Having the most matched rule listed first reduces CPU load in high volume environments. Note: I have filed a bug to have this added as a default action as well."
 msgstr "By default, iptables does not allow traffic for established sessions to return, so you must explicitly allow this. I do this by adding two rules to every ruleset. 1 allows established and related state packets through and rule 2 drops and logs invalid state packets. We place the established/related rule at the top because the vast majority of traffic on a network is established and the invalid rule to prevent invalid state packets from mistakenly being matched against other rules. Having the most matched rule listed first reduces CPU load in high volume environments. Note: I have filed a bug to have this added as a default action as well."
 
@@ -704,6 +842,8 @@ msgstr "Conclusions"
 #: ../../configexamples/autotest/Wireguard/Wireguard.rst:25
 #: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:37
 #: ../../configexamples/bgp-ipv6-unnumbered.rst:12
+#: ../../configexamples/fwall-and-bridge.rst:40
+#: ../../configexamples/fwall-and-vrf.rst:32
 #: ../../configexamples/inter-vrf-routing-vrf-lite.rst:139
 #: ../../configexamples/inter-vrf-routing-vrf-lite.rst:231
 #: ../../configexamples/inter-vrf-routing-vrf-lite.rst:290
@@ -753,6 +893,14 @@ msgstr "Configuration of basic firewall in one site, in order to:"
 #: ../../configexamples/pppoe-ipv6-basic.rst:26
 msgid "Configurations"
 msgstr "Configurations"
+
+#: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:40
+msgid "Configure VyOS as OpenVPN Server"
+msgstr "Configure VyOS as OpenVPN Server"
+
+#: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:253
+msgid "Configure VyOS as client"
+msgstr "Configure VyOS as client"
 
 #: ../../configexamples/ha.rst:358
 msgid "Configure Wireguard"
@@ -882,13 +1030,21 @@ msgstr "DHCP Relay trough GRE-Bridge"
 msgid "DHCPv6-PD Setup"
 msgstr "DHCPv6-PD Setup"
 
-#: ../../configexamples/zone-policy.rst:374
+#: ../../configexamples/zone-policy.rst:364
 msgid "DMZ-LAN policy is LAN-DMZ. You can get a rhythm to it when you build out a bunch at one time."
 msgstr "DMZ-LAN policy is LAN-DMZ. You can get a rhythm to it when you build out a bunch at one time."
 
-#: ../../configexamples/zone-policy.rst:49
+#: ../../configexamples/zone-policy.rst:39
 msgid "DMZ cannot access LAN resources."
 msgstr "DMZ cannot access LAN resources."
+
+#: ../../configexamples/fwall-and-bridge.rst:35
+msgid "Deny access to the router."
+msgstr "Deny access to the router."
+
+#: ../../configexamples/fwall-and-vrf.rst:21
+msgid "Deny connections to internet(WAN)."
+msgstr "Deny connections to internet(WAN)."
 
 #: ../../configexamples/ha.rst:18
 msgid "Design"
@@ -902,6 +1058,27 @@ msgstr "Device-A"
 msgid "Device-B"
 msgstr "Device-B"
 
+#: ../../configexamples/fwall-and-vrf.rst:9
+msgid "Diagram used in this example:"
+msgstr "Diagram used in this example:"
+
+#: ../../configexamples/fwall-and-bridge.rst:20
+msgid "Drop all DHCP discover packets."
+msgstr "Drop all DHCP discover packets."
+
+#: ../../configexamples/fwall-and-bridge.rst:24
+#: ../../configexamples/fwall-and-bridge.rst:34
+msgid "Drop all IPv6 connections."
+msgstr "Drop all IPv6 connections."
+
+#: ../../configexamples/fwall-and-bridge.rst:23
+msgid "Drop all other IPv4 connections."
+msgstr "Drop all other IPv4 connections."
+
+#: ../../configexamples/fwall-and-bridge.rst:27
+msgid "Drop connections to other LANs."
+msgstr "Drop connections to other LANs."
+
 #: ../../configexamples/ha.rst:514
 msgid "Duplicate configuration"
 msgstr "Duplicate configuration"
@@ -914,7 +1091,7 @@ msgstr "During address configuration, in addition to assigning an address to the
 msgid "Dynamic routing used between CE and PE nodes and eBGP peering established for the route exchanging between them. All routes received by PEs are then exported to L3VPN and delivered from Spoke sites to Hub and vise-versa based on previously configured L3VPN parameters."
 msgstr "Dynamic routing used between CE and PE nodes and eBGP peering established for the route exchanging between them. All routes received by PEs are then exported to L3VPN and delivered from Spoke sites to Hub and vise-versa based on previously configured L3VPN parameters."
 
-#: ../../configexamples/zone-policy.rst:91
+#: ../../configexamples/zone-policy.rst:81
 msgid "Each interface is assigned to a zone. The interface can be physical or virtual such as tunnels (VPN, PPTP, GRE, etc) and are treated exactly the same."
 msgstr "Each interface is assigned to a zone. The interface can be physical or virtual such as tunnels (VPN, PPTP, GRE, etc) and are treated exactly the same."
 
@@ -939,9 +1116,13 @@ msgstr "Enable SSH"
 msgid "Enable SSH so you can now SSH into the routers, rather than using the console."
 msgstr "Enable SSH so you can now SSH into the routers, rather than using the console."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:140
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:148
 msgid "Enables router advertisements. This is an IPv6 alternative for DHCP (though DHCPv6 can still be used). With RAs, Your devices will automatically find the information they need for routing and DNS."
 msgstr "Enables router advertisements. This is an IPv6 alternative for DHCP (though DHCPv6 can still be used). With RAs, Your devices will automatically find the information they need for routing and DNS."
+
+#: ../../configexamples/zone-policy.rst:243
+msgid "Even if the two zones will never communicate, it is a good idea to create the zone-pair-direction rulesets and set default-log. This will allow you to log attempts to access the networks. Without it, you will never see the connection attempts."
+msgstr "Even if the two zones will never communicate, it is a good idea to create the zone-pair-direction rulesets and set default-log. This will allow you to log attempts to access the networks. Without it, you will never see the connection attempts."
 
 #: ../../configexamples/zone-policy.rst:253
 msgid "Even if the two zones will never communicate, it is a good idea to create the zone-pair-direction rulesets and set enable-default-log. This will allow you to log attempts to access the networks. Without it, you will never see the connection attempts."
@@ -992,7 +1173,11 @@ msgstr "Example Network"
 msgid "Fill ``password`` and ``user`` with the credential provided by your ISP."
 msgstr "Fill ``password`` and ``user`` with the credential provided by your ISP."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:202
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:210
+msgid "Finally, don't forget the :ref:`Firewall<configuration/firewall/index:Firewall>`. The usage is identical, except for instead of `set firewall name NAME`, you would use `set firewall ipv6-name NAME`."
+msgstr "Finally, don't forget the :ref:`Firewall<configuration/firewall/index:Firewall>`. The usage is identical, except for instead of `set firewall name NAME`, you would use `set firewall ipv6-name NAME`."
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:210
 msgid "Finally, don't forget the :ref:`firewall`. The usage is identical, except for instead of `set firewall name NAME`, you would use `set firewall ipv6-name NAME`."
 msgstr "Finally, don't forget the :ref:`firewall`. The usage is identical, except for instead of `set firewall name NAME`, you would use `set firewall ipv6-name NAME`."
 
@@ -1000,13 +1185,17 @@ msgstr "Finally, don't forget the :ref:`firewall`. The usage is identical, excep
 msgid "Finally, let’s check the reachability between CEs:"
 msgstr "Finally, let’s check the reachability between CEs:"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:200
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:208
 msgid "Firewall"
 msgstr "Firewall"
 
 #: ../../configexamples/policy-based-ipsec-and-firewall.rst:123
 msgid "Firewall Configuration:"
 msgstr "Firewall Configuration:"
+
+#: ../../configexamples/firewall.rst:4
+msgid "Firewall Examples"
+msgstr "Firewall Examples"
 
 #: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:39
 msgid "First, we configure the ``vyos-wan`` interface to get a DHCP address."
@@ -1016,6 +1205,14 @@ msgstr "First, we configure the ``vyos-wan`` interface to get a DHCP address."
 msgid "First, we configure the transport network and the Tunnel interface."
 msgstr "First, we configure the transport network and the Tunnel interface."
 
+#: ../../configexamples/fwall-and-vrf.rst:34
+msgid "First, we need to configure the interfaces and VRFs:"
+msgstr "First, we need to configure the interfaces and VRFs:"
+
+#: ../../configexamples/fwall-and-bridge.rst:45
+msgid "First, we need to configure the interfaces and bridges:"
+msgstr "First, we need to configure the interfaces and bridges:"
+
 #: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:44
 msgid "First a CA, a signed server and client ceftificate and a Diffie-Hellman parameter musst be generated and installed. Please look :ref:`here <configuration/pki/index:pki>` for more information."
 msgstr "First a CA, a signed server and client ceftificate and a Diffie-Hellman parameter musst be generated and installed. Please look :ref:`here <configuration/pki/index:pki>` for more information."
@@ -1024,13 +1221,29 @@ msgstr "First a CA, a signed server and client ceftificate and a Diffie-Hellman 
 msgid "First prepare our VyOS router for connection to NMP. We have to set up the SNMP protocol and connectivity between the router and NMP."
 msgstr "First prepare our VyOS router for connection to NMP. We have to set up the SNMP protocol and connectivity between the router and NMP."
 
+#: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:56
+msgid "First the CA"
+msgstr "First the CA"
+
 #: ../../configexamples/site-2-site-cisco.rst:9
 msgid "FlexVPN is a newer \"solution\" for deployment of VPNs and it utilizes IKEv2 as the key exchange protocol. The result is a flexible and scalable VPN solution that can be easily adapted to fit various network needs. It can also support a variety of encryption methods, including AES and 3DES."
 msgstr "FlexVPN is a newer \"solution\" for deployment of VPNs and it utilizes IKEv2 as the key exchange protocol. The result is a flexible and scalable VPN solution that can be easily adapted to fit various network needs. It can also support a variety of encryption methods, including AES and 3DES."
 
+#: ../../configexamples/fwall-and-vrf.rst:75
+msgid "For **inbound-interface**: use the interface name with the VRF name, like ``MGMT`` or ``LAN``."
+msgstr "For **inbound-interface**: use the interface name with the VRF name, like ``MGMT`` or ``LAN``."
+
+#: ../../configexamples/fwall-and-vrf.rst:77
+msgid "For **outbound-interface**: use the interface name, like ``eth0``, ``vtun0``, ``eth2*`` or similar."
+msgstr "For **outbound-interface**: use the interface name, like ``eth0``, ``vtun0``, ``eth2*`` or similar."
+
 #: ../../configexamples/ha.rst:60
 msgid "For connection between sites, we are running a WireGuard link to two REMOTE routers and using OSPF over those links to distribute routes. That remote site is expected to send traffic from anything in 10.201.0.0/16"
 msgstr "For connection between sites, we are running a WireGuard link to two REMOTE routers and using OSPF over those links to distribute routes. That remote site is expected to send traffic from anything in 10.201.0.0/16"
+
+#: ../../configexamples/fwall-and-bridge.rst:352
+msgid "For example, while a host tries to get an IP address from a DHCP server in br1 all DHCP discover are dropped, and in br2, we can see that DHCP offers from untrusted servers are dropped:"
+msgstr "For example, while a host tries to get an IP address from a DHCP server in br1 all DHCP discover are dropped, and in br2, we can see that DHCP offers from untrusted servers are dropped:"
 
 #: ../../configexamples/pppoe-ipv6-basic.rst:56
 msgid "For home network users, most of time ISP only provides /64 prefix, hence there is no need to set SLA ID and prefix length. See :ref:`pppoe-interface` for more information."
@@ -1096,7 +1309,7 @@ msgstr "Hardware"
 msgid "Hardware Router - Port 8 of each switch"
 msgstr "Hardware Router - Port 8 of each switch"
 
-#: ../../configexamples/zone-policy.rst:282
+#: ../../configexamples/zone-policy.rst:272
 msgid "Here is an example of an IPv6 DMZ-WAN ruleset."
 msgstr "Here is an example of an IPv6 DMZ-WAN ruleset."
 
@@ -1136,6 +1349,10 @@ msgstr "IPSec configuration:"
 msgid "IP Schema"
 msgstr "IP Schema"
 
+#: ../../configexamples/fwall-and-bridge.rst:258
+msgid "IP firewall configuration"
+msgstr "IP firewall configuration"
+
 #: ../../configexamples/site-2-site-cisco.rst:34
 msgid "IPsec:"
 msgstr "IPsec:"
@@ -1144,11 +1361,15 @@ msgstr "IPsec:"
 msgid "IPv4 Network"
 msgstr "IPv4 Network"
 
+#: ../../configexamples/fwall-and-bridge.rst:451
+msgid "IPv4 firewall rulset:"
+msgstr "IPv4 firewall rulset:"
+
 #: ../../configexamples/inter-vrf-routing-vrf-lite.rst:85
 msgid "IPv6 Network"
 msgstr "IPv6 Network"
 
-#: ../../configexamples/zone-policy.rst:383
+#: ../../configexamples/zone-policy.rst:373
 msgid "IPv6 Tunnel"
 msgstr "IPv6 Tunnel"
 
@@ -1169,11 +1390,11 @@ msgstr "ISP"
 msgid "I chose to run OSPF as the IGP (Interior Gateway Protocol). All required BGP sessions are established via a dummy interfaces (similar to the loopback, but in Linux you can have only one loopback, while there can be many dummy interfaces) on the PE routers. In case of a link failure, traffic is diverted in the other direction in this triangle setup and BGP sessions will not go down. One could even enable BFD (Bidirectional Forwarding Detection) on the links for a faster failover and resilience in the network."
 msgstr "I chose to run OSPF as the IGP (Interior Gateway Protocol). All required BGP sessions are established via a dummy interfaces (similar to the loopback, but in Linux you can have only one loopback, while there can be many dummy interfaces) on the PE routers. In case of a link failure, traffic is diverted in the other direction in this triangle setup and BGP sessions will not go down. One could even enable BFD (Bidirectional Forwarding Detection) on the links for a faster failover and resilience in the network."
 
-#: ../../configexamples/zone-policy.rst:171
+#: ../../configexamples/zone-policy.rst:161
 msgid "I create/configure the interfaces first. Build out the rulesets for each zone-pair-direction which includes at least the three state rules. Then I setup the zone-policies."
 msgstr "I create/configure the interfaces first. Build out the rulesets for each zone-pair-direction which includes at least the three state rules. Then I setup the zone-policies."
 
-#: ../../configexamples/zone-policy.rst:100
+#: ../../configexamples/zone-policy.rst:90
 msgid "I name rule sets to indicate which zone-pair-direction they represent. eg. ZoneA-ZoneB or ZoneB-ZoneA. LAN-DMZ, DMZ-LAN."
 msgstr "I name rule sets to indicate which zone-pair-direction they represent. eg. ZoneA-ZoneB or ZoneB-ZoneA. LAN-DMZ, DMZ-LAN."
 
@@ -1185,9 +1406,17 @@ msgstr "I named the customers blue, red and green which is common practice in VR
 msgid "I spun up a new lab in EVE-NG, which represents this as the \"Foo Bar - Service Provider Inc.\" that has 3 points of presence (PoP) in random datacenters/sites named PE1, PE2, and PE3. Each PoP aggregates at least two customers."
 msgstr "I spun up a new lab in EVE-NG, which represents this as the \"Foo Bar - Service Provider Inc.\" that has 3 points of presence (PoP) in random datacenters/sites named PE1, PE2, and PE3. Each PoP aggregates at least two customers."
 
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:54
+msgid "If `source-address` is  dynamic, the tunnel will cease working once the address changes. To avoid having to manually update `source-address` each time the dynamic IP changes, an address of '0.0.0.0' can be specified."
+msgstr "If `source-address` is  dynamic, the tunnel will cease working once the address changes. To avoid having to manually update `source-address` each time the dynamic IP changes, an address of '0.0.0.0' can be specified."
+
 #: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:256
 msgid "If the client is connect successfully you can check the output with"
 msgstr "If the client is connect successfully you can check the output with"
+
+#: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:272
+msgid "If the client is connected successfully you can check the status"
+msgstr "If the client is connected successfully you can check the status"
 
 #: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:236
 msgid "If we need to retrieve information about a specific host/network inside the EVPN network we need to run"
@@ -1197,7 +1426,7 @@ msgstr "If we need to retrieve information about a specific host/network inside 
 msgid "If you are following through this document, it is strongly suggested you complete the entire document, ONLY doing the virtual router1 steps, and then come back and walk through it AGAIN on the backup hardware router."
 msgstr "If you are following through this document, it is strongly suggested you complete the entire document, ONLY doing the virtual router1 steps, and then come back and walk through it AGAIN on the backup hardware router."
 
-#: ../../configexamples/zone-policy.rst:385
+#: ../../configexamples/zone-policy.rst:375
 msgid "If you are using a IPv6 tunnel from HE.net or someone else, the basis is the same except you have two WAN interfaces. One for v4 and one for v6."
 msgstr "If you are using a IPv6 tunnel from HE.net or someone else, the basis is the same except you have two WAN interfaces. One for v4 and one for v6."
 
@@ -1205,7 +1434,7 @@ msgstr "If you are using a IPv6 tunnel from HE.net or someone else, the basis is
 msgid "If you use a routing protocol itself, you solve two problems at once. This is only a basic example, and is provided as a starting point."
 msgstr "If you use a routing protocol itself, you solve two problems at once. This is only a basic example, and is provided as a starting point."
 
-#: ../../configexamples/zone-policy.rst:110
+#: ../../configexamples/zone-policy.rst:100
 msgid "If your computer is on the LAN and you need to SSH into your VyOS box, you would need a rule to allow it in the LAN-Local ruleset. If you want to access a webpage from your VyOS box, you need a rule to allow it in the Local-LAN ruleset."
 msgstr "If your computer is on the LAN and you need to SSH into your VyOS box, you would need a rule to allow it in the LAN-Local ruleset. If you want to access a webpage from your VyOS box, you need a rule to allow it in the Local-LAN ruleset."
 
@@ -1213,23 +1442,23 @@ msgstr "If your computer is on the LAN and you need to SSH into your VyOS box, y
 msgid "Image name: vyos-1.4-rolling-202110310317-amd64.iso"
 msgstr "Image name: vyos-1.4-rolling-202110310317-amd64.iso"
 
-#: ../../configexamples/zone-policy.rst:103
+#: ../../configexamples/zone-policy.rst:93
 msgid "In VyOS, you have to have unique Ruleset names. In the event of overlap, I add a \"-6\" to the end of v6 rulesets. eg. LAN-DMZ, LAN-DMZ-6. This allows for each auto-completion and uniqueness."
 msgstr "In VyOS, you have to have unique Ruleset names. In the event of overlap, I add a \"-6\" to the end of v6 rulesets. eg. LAN-DMZ, LAN-DMZ-6. This allows for each auto-completion and uniqueness."
 
-#: ../../configexamples/zone-policy.rst:167
+#: ../../configexamples/zone-policy.rst:157
 msgid "In VyOS you must have the interfaces created before you can apply it to the zone and the rulesets must be created prior to applying it to a zone-policy."
 msgstr "In VyOS you must have the interfaces created before you can apply it to the zone and the rulesets must be created prior to applying it to a zone-policy."
 
-#: ../../configexamples/zone-policy.rst:18
+#: ../../configexamples/zone-policy.rst:8
 msgid "In :vytask:`T2199` the syntax of the zone configuration was changed. The zone configuration moved from ``zone-policy zone <name>`` to ``firewall zone <name>``."
 msgstr "In :vytask:`T2199` the syntax of the zone configuration was changed. The zone configuration moved from ``zone-policy zone <name>`` to ``firewall zone <name>``."
 
-#: ../../configexamples/zone-policy.rst:115
+#: ../../configexamples/zone-policy.rst:105
 msgid "In rules, it is good to keep them named consistently. As the number of rules you have grows, the more consistency you have, the easier your life will be."
 msgstr "In rules, it is good to keep them named consistently. As the number of rules you have grows, the more consistency you have, the easier your life will be."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:176
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:184
 msgid "In the above examples, 1,2,ffff are all chosen by you. You can use 1-ffff (1-65535)."
 msgstr "In the above examples, 1,2,ffff are all chosen by you. You can use 1-ffff (1-65535)."
 
@@ -1245,7 +1474,7 @@ msgstr "In the end, we will configure the traffic shaper using QoS mechanisms on
 msgid "In the end, you'll get a powerful instrument for monitoring the VyOS systems."
 msgstr "In the end, you'll get a powerful instrument for monitoring the VyOS systems."
 
-#: ../../configexamples/zone-policy.rst:377
+#: ../../configexamples/zone-policy.rst:367
 msgid "In the end, you will end up with something like this config. I took out everything but the Firewall, Interfaces, and zone-policy sections. It is long enough as is."
 msgstr "In the end, you will end up with something like this config. I took out everything but the Firewall, Interfaces, and zone-policy sections. It is long enough as is."
 
@@ -1265,7 +1494,7 @@ msgstr "In this case, the hardware router has a different IP, so it would be"
 msgid "In this case, we'll try to make a simple lab using QoS and the general ability of the VyOS system. We recommend you to go through the main article about `QoS <https://docs.vyos.io/en/latest/configuration/trafficpolicy/index.html>`_ first."
 msgstr "In this case, we'll try to make a simple lab using QoS and the general ability of the VyOS system. We recommend you to go through the main article about `QoS <https://docs.vyos.io/en/latest/configuration/trafficpolicy/index.html>`_ first."
 
-#: ../../configexamples/zone-policy.rst:365
+#: ../../configexamples/zone-policy.rst:355
 msgid "In this case, we are setting the v6 ruleset that represents traffic sourced from the LAN, destined for the DMZ. Because the zone-policy firewall syntax is a little awkward, I keep it straight by thinking of it backwards."
 msgstr "In this case, we are setting the v6 ruleset that represents traffic sourced from the LAN, destined for the DMZ. Because the zone-policy firewall syntax is a little awkward, I keep it straight by thinking of it backwards."
 
@@ -1289,7 +1518,7 @@ msgstr "In this example OpenVPN will be setup with a client certificate and user
 msgid "In this example two LAN interfaces exist in different subnets instead of one like in the previous examples:"
 msgstr "In this example two LAN interfaces exist in different subnets instead of one like in the previous examples:"
 
-#: ../../configexamples/zone-policy.rst:107
+#: ../../configexamples/zone-policy.rst:97
 msgid "In this example we have 4 zones. LAN, WAN, DMZ, Local. The local zone is the firewall itself."
 msgstr "In this example we have 4 zones. LAN, WAN, DMZ, Local. The local zone is the firewall itself."
 
@@ -1301,7 +1530,11 @@ msgstr "In this example we use VyOS 1.5 as LNS and Cisco IOS as LAC. All users w
 msgid "In this lab we use Windows PPPoE client."
 msgstr "In this lab we use Windows PPPoE client."
 
-#: ../../configexamples/zone-policy.rst:50
+#: ../../configexamples/fwall-and-bridge.rst:77
+msgid "In this section, we are going to configure the firewall rules that will be used in bridge firewall, and will control the traffic within each bridge."
+msgstr "In this section, we are going to configure the firewall rules that will be used in bridge firewall, and will control the traffic within each bridge."
+
+#: ../../configexamples/zone-policy.rst:40
 msgid "Inbound WAN connect to DMZ host."
 msgstr "Inbound WAN connect to DMZ host."
 
@@ -1350,21 +1583,25 @@ msgstr "Internal Network"
 msgid "Internet"
 msgstr "Internet"
 
-#: ../../configexamples/zone-policy.rst:40
+#: ../../configexamples/zone-policy.rst:30
 msgid "Internet - 192.168.200.100 - TCP/25"
 msgstr "Internet - 192.168.200.100 - TCP/25"
 
-#: ../../configexamples/zone-policy.rst:39
+#: ../../configexamples/zone-policy.rst:29
 msgid "Internet - 192.168.200.100 - TCP/443"
 msgstr "Internet - 192.168.200.100 - TCP/443"
 
-#: ../../configexamples/zone-policy.rst:41
+#: ../../configexamples/zone-policy.rst:31
 msgid "Internet - 192.168.200.100 - TCP/53"
 msgstr "Internet - 192.168.200.100 - TCP/53"
 
-#: ../../configexamples/zone-policy.rst:38
+#: ../../configexamples/zone-policy.rst:28
 msgid "Internet - 192.168.200.100 - TCP/80"
 msgstr "Internet - 192.168.200.100 - TCP/80"
+
+#: ../../configexamples/fwall-and-bridge.rst:16
+msgid "Isolated layer 2 bridge."
+msgstr "Isolated layer 2 bridge."
 
 #: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:79
 msgid "It's important to note that all your existing configurations will be migrated automatically on image upgrade. Nothing to do on your side."
@@ -1374,11 +1611,11 @@ msgstr "It's important to note that all your existing configurations will be mig
 msgid "It is assumed that the routers provided by upstream are capable of acting as a default router, add that as a static route."
 msgstr "It is assumed that the routers provided by upstream are capable of acting as a default router, add that as a static route."
 
-#: ../../configexamples/zone-policy.rst:140
+#: ../../configexamples/zone-policy.rst:130
 msgid "It is good practice to log both accepted and denied traffic. It can save you significant headaches when trying to troubleshoot a connectivity issue."
 msgstr "It is good practice to log both accepted and denied traffic. It can save you significant headaches when trying to troubleshoot a connectivity issue."
 
-#: ../../configexamples/zone-policy.rst:60
+#: ../../configexamples/zone-policy.rst:50
 msgid "It will look something like this:"
 msgstr "It will look something like this:"
 
@@ -1406,7 +1643,7 @@ msgstr "L3VPN for Hub-and-Spoke connectivity with VyOS"
 msgid "LAC"
 msgstr "LAC"
 
-#: ../../configexamples/zone-policy.rst:392
+#: ../../configexamples/zone-policy.rst:382
 msgid "LAN, WAN, DMZ, local and TUN (tunnel)"
 msgstr "LAN, WAN, DMZ, local and TUN (tunnel)"
 
@@ -1438,15 +1675,15 @@ msgstr "LAN 1"
 msgid "LAN 2"
 msgstr "LAN 2"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:100
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:108
 msgid "LAN Configuration"
 msgstr "LAN Configuration"
 
-#: ../../configexamples/zone-policy.rst:47
+#: ../../configexamples/zone-policy.rst:37
 msgid "LAN and DMZ hosts have basic outbound access: Web, FTP, SSH."
 msgstr "LAN and DMZ hosts have basic outbound access: Web, FTP, SSH."
 
-#: ../../configexamples/zone-policy.rst:48
+#: ../../configexamples/zone-policy.rst:38
 msgid "LAN can access DMZ resources."
 msgstr "LAN can access DMZ resources."
 
@@ -1501,7 +1738,7 @@ msgstr "Many other Hypervisors do this, and I'm hoping that this document will b
 msgid "Masquerade Traffic originating from 10.200.201.0/24 that is heading out the public interface."
 msgstr "Masquerade Traffic originating from 10.200.201.0/24 that is heading out the public interface."
 
-#: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:254
+#: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:270
 #: ../../configexamples/lac-lns.rst:106
 msgid "Monitoring"
 msgstr "Monitoring"
@@ -1518,7 +1755,7 @@ msgstr "Monitoring on LNS side"
 msgid "Monitoring on RADIUS Server side"
 msgstr "Monitoring on RADIUS Server side"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:162
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:170
 msgid "Multiple LAN/DMZ Setup"
 msgstr "Multiple LAN/DMZ Setup"
 
@@ -1530,7 +1767,7 @@ msgstr "NAT and conntrack-sync"
 msgid "NMP example"
 msgstr "NMP example"
 
-#: ../../configexamples/zone-policy.rst:23
+#: ../../configexamples/zone-policy.rst:13
 msgid "Native IPv4 and IPv6"
 msgstr "Native IPv4 and IPv6"
 
@@ -1544,6 +1781,7 @@ msgid "Network Topology"
 msgstr "Network Topology"
 
 #: ../../configexamples/ansible.rst:-1
+#: ../../configexamples/fwall-and-vrf.rst:-1
 #: ../../configexamples/inter-vrf-routing-vrf-lite.rst:-1
 #: ../../configexamples/l3vpn-hub-and-spoke.rst:-1
 #: ../../configexamples/lac-lns.rst:-1
@@ -1558,6 +1796,10 @@ msgstr "Network Topology Diagram"
 #: ../../configexamples/policy-based-ipsec-and-firewall.rst:14
 msgid "Network Topology and requirements"
 msgstr "Network Topology and requirements"
+
+#: ../../configexamples/fwall-and-vrf.rst:80
+msgid "Next, we need to configure the firewall rules. First we will define all rules for transit traffic between VRFs."
+msgstr "Next, we need to configure the firewall rules. First we will define all rules for transit traffic between VRFs."
 
 #: ../../configexamples/qos.rst:31
 msgid "Next, we will replace only all CS4 labels on the “VyOS2” router."
@@ -1587,9 +1829,13 @@ msgstr "Note that router1 is a VM that runs on one of the compute nodes."
 msgid "Note to allow the router to receive DHCPv6 response from ISP. We need to allow packets with source port 547 (server) and destination port 546 (client)."
 msgstr "Note to allow the router to receive DHCPv6 response from ISP. We need to allow packets with source port 547 (server) and destination port 546 (client)."
 
-#: ../../configexamples/zone-policy.rst:411
+#: ../../configexamples/zone-policy.rst:401
 msgid "Notice, none go to WAN since WAN wouldn't have a v6 address on it."
 msgstr "Notice, none go to WAN since WAN wouldn't have a v6 address on it."
+
+#: ../../configexamples/fwall-and-bridge.rst:168
+msgid "Now, in the ``forward`` chain, we are going to define state policies, and custom rulesets for each bridge that would be used in the ``forward`` chain. These rulesets are ``br0-fwd``, ``br1-fwd``, and ``br2-fwd``:"
+msgstr "Now, in the ``forward`` chain, we are going to define state policies, and custom rulesets for each bridge that would be used in the ``forward`` chain. These rulesets are ``br0-fwd``, ``br1-fwd``, and ``br2-fwd``:"
 
 #: ../../configexamples/l3vpn-hub-and-spoke.rst:831
 msgid "Now, let’s check routing information on out Hub PE:"
@@ -1603,7 +1849,7 @@ msgstr "Now enable replication between nodes. Replace eth0.201 with bond0.201 on
 msgid "Now generate all required certificates on the ovpn-server:"
 msgstr "Now generate all required certificates on the ovpn-server:"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:144
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:152
 msgid "Now the Client is able to ping a public IPv6 address"
 msgstr "Now the Client is able to ping a public IPv6 address"
 
@@ -1619,7 +1865,7 @@ msgstr "Now we perform some end-to-end testing"
 msgid "Now we’re checking iBGP status and routes from route-reflector nodes to other devices:"
 msgstr "Now we’re checking iBGP status and routes from route-reflector nodes to other devices:"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:57
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:65
 msgid "Now you should be able to ping a public IPv6 Address"
 msgstr "Now you should be able to ping a public IPv6 Address"
 
@@ -1648,7 +1894,7 @@ msgstr "Once all routers can be safely remotely managed and the core network is 
 msgid "Once all the required certificates and keys are installed, the remaining OpenVPN Server configuration can be carried out."
 msgstr "Once all the required certificates and keys are installed, the remaining OpenVPN Server configuration can be carried out."
 
-#: ../../configexamples/zone-policy.rst:355
+#: ../../configexamples/zone-policy.rst:345
 msgid "Once you have all of your rulesets built, then you need to create your zone-policy."
 msgstr "Once you have all of your rulesets built, then you need to create your zone-policy."
 
@@ -1675,6 +1921,10 @@ msgstr "One cable/logical connection between LAN2 and Internet"
 #: ../../configexamples/inter-vrf-routing-vrf-lite.rst:50
 msgid "One cable/logical connection between LAN2 and Management"
 msgstr "One cable/logical connection between LAN2 and Management"
+
+#: ../../configexamples/fwall-and-vrf.rst:27
+msgid "Only accepts connections."
+msgstr "Only accepts connections."
 
 #: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:5
 msgid "OpenVPN with LDAP"
@@ -1755,8 +2005,8 @@ msgstr "Ping the Client from the DHCP Server."
 msgid "Pings will be sent to four targets for health testing (33.44.55.66, 44.55.66.77, 55.66.77.88 and 66.77.88.99)."
 msgstr "Pings will be sent to four targets for health testing (33.44.55.66, 44.55.66.77, 55.66.77.88 and 66.77.88.99)."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:128
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:195
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:136
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:203
 msgid "Please note, 'autonomous-flag' and 'on-link-flag' are enabled by default, 'valid-lifetime' and 'preferred-lifetime' are set to default values of 30 days and 4 hours respectively."
 msgstr "Please note, 'autonomous-flag' and 'on-link-flag' are enabled by default, 'valid-lifetime' and 'preferred-lifetime' are set to default values of 30 days and 4 hours respectively."
 
@@ -1853,11 +2103,11 @@ msgstr "Route-Based Site-to-Site VPN to Azure (BGP over IKEv2/IPsec)"
 msgid "Route-Filtering"
 msgstr "Route-Filtering"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:110
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:118
 msgid "Routed /48. This is something you can request by clicking the \"Assign /48\" link in the Tunnelbroker.net tunnel config. It allows you to have up to 65k"
 msgstr "Routed /48. This is something you can request by clicking the \"Assign /48\" link in the Tunnelbroker.net tunnel config. It allows you to have up to 65k"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:107
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:115
 msgid "Routed /64. This is the default assignment. In IPv6-land, it's good for a single \"LAN\", and is somewhat equivalent to a /24."
 msgstr "Routed /64. This is the default assignment. In IPv6-land, it's good for a single \"LAN\", and is somewhat equivalent to a /24."
 
@@ -1883,9 +2133,14 @@ msgstr "Router B:"
 msgid "Router id's must be unique."
 msgstr "Router id's must be unique."
 
-#: ../../configexamples/zone-policy.rst:98
+#: ../../configexamples/zone-policy.rst:88
 msgid "Ruleset are created per zone-pair-direction."
 msgstr "Ruleset are created per zone-pair-direction."
+
+#: ../../configexamples/fwall-and-bridge.rst:7
+#: ../../configexamples/fwall-and-vrf.rst:5
+msgid "Scenario and requirements"
+msgstr "Scenario and requirements"
 
 #: ../../configexamples/segment-routing-isis.rst:7
 msgid "Segment-routing IS-IS example"
@@ -1919,7 +2174,7 @@ msgstr "Set the local subnet on eth2 and the public ip address eth1 on each site
 msgid "Set up bandwidth limits on the eth2 interface of the router “VyOS2”."
 msgstr "Set up bandwidth limits on the eth2 interface of the router “VyOS2”."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:139
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:147
 msgid "Sets your LAN interface's IP address"
 msgstr "Sets your LAN interface's IP address"
 
@@ -1930,6 +2185,10 @@ msgstr "Setting BGP global local-as as well inside the VRF. Redistribute static 
 #: ../../configexamples/ansible.rst:10
 msgid "Setting up Ansible on a server running the Debian operating system."
 msgstr "Setting up Ansible on a server running the Debian operating system."
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:59
+msgid "Setup the IPv6 default route to the tunnel interface"
+msgstr "Setup the IPv6 default route to the tunnel interface"
 
 #: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:51
 msgid "Setup the ipv6 default route to the tunnel interface"
@@ -1943,23 +2202,31 @@ msgstr "Show routes for all VRFs"
 msgid "Similarly, to attach the firewall, you would use `set interfaces ethernet eth0 firewall in ipv6-name` or `et firewall zone LOCAL from WAN firewall ipv6-name`."
 msgstr "Similarly, to attach the firewall, you would use `set interfaces ethernet eth0 firewall in ipv6-name` or `et firewall zone LOCAL from WAN firewall ipv6-name`."
 
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:214
+msgid "Similarly, to attach the firewall, you would use `set interfaces ethernet eth0 firewall in ipv6-name` or `set firewall zone LOCAL from WAN firewall ipv6-name`."
+msgstr "Similarly, to attach the firewall, you would use `set interfaces ethernet eth0 firewall in ipv6-name` or `set firewall zone LOCAL from WAN firewall ipv6-name`."
+
 #: ../../configexamples/pppoe-ipv6-basic.rst:78
 msgid "Since some ISPs disconnects continuous connection for every 2~3 days, we set ``valid-lifetime`` to 2 days to allow PC for phasing out old address."
 msgstr "Since some ISPs disconnects continuous connection for every 2~3 days, we set ``valid-lifetime`` to 2 days to allow PC for phasing out old address."
+
+#: ../../configexamples/fwall-and-bridge.rst:260
+msgid "Since some of the requirements listed above exceed the capabilities of the bridge firewall, we need to use the IP firewall to implement them. For bridge br1 and br2, we need to control the traffic that is going to the router itself, to other local networks, and to the Internet."
+msgstr "Since some of the requirements listed above exceed the capabilities of the bridge firewall, we need to use the IP firewall to implement them. For bridge br1 and br2, we need to control the traffic that is going to the router itself, to other local networks, and to the Internet."
 
 #: ../../configexamples/site-2-site-cisco.rst:128
 msgid "Since the tunnel is a point-to-point GRE tunnel, it behaves like any other point-to-point interface (for example: serial, dialer), and it is possible to run any Interior Gateway Protocol (IGP)/Exterior Gateway Protocol (EGP) over the link in order to exchange routing information"
 msgstr "Since the tunnel is a point-to-point GRE tunnel, it behaves like any other point-to-point interface (for example: serial, dialer), and it is possible to run any Interior Gateway Protocol (IGP)/Exterior Gateway Protocol (EGP) over the link in order to exchange routing information"
 
-#: ../../configexamples/zone-policy.rst:236
+#: ../../configexamples/zone-policy.rst:226
 msgid "Since we have 4 zones, we need to setup the following rulesets."
 msgstr "Since we have 4 zones, we need to setup the following rulesets."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:119
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:127
 msgid "Single LAN Setup"
 msgstr "Single LAN Setup"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:121
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:129
 msgid "Single LAN setup where eth2 is your LAN interface. Use the Tunnelbroker Routed /64 prefix:"
 msgstr "Single LAN setup where eth2 is your LAN interface. Use the Tunnelbroker Routed /64 prefix:"
 
@@ -1967,11 +2234,15 @@ msgstr "Single LAN setup where eth2 is your LAN interface. Use the Tunnelbroker 
 msgid "Site-to-Site IPSec VPN to Cisco using FlexVPN"
 msgstr "Site-to-Site IPSec VPN to Cisco using FlexVPN"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:179
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:187
 msgid "So, when your LAN is eth1, your DMZ is eth2, your cameras are on eth3, etc:"
 msgstr "So, when your LAN is eth1, your DMZ is eth2, your cameras are on eth3, etc:"
 
-#: ../../configexamples/zone-policy.rst:416
+#: ../../configexamples/fwall-and-bridge.rst:87
+msgid "So first, let's create the required firewall interface groups:"
+msgstr "So first, let's create the required firewall interface groups:"
+
+#: ../../configexamples/zone-policy.rst:406
 msgid "Something like:"
 msgstr "Something like:"
 
@@ -1980,7 +2251,7 @@ msgstr "Something like:"
 msgid "Spoke"
 msgstr "Spoke"
 
-#: ../../configexamples/zone-policy.rst:358
+#: ../../configexamples/zone-policy.rst:348
 msgid "Start by setting the interface and default action for each zone."
 msgstr "Start by setting the interface and default action for each zone."
 
@@ -1991,6 +2262,10 @@ msgstr "Start the playbook:"
 #: ../../configexamples/zone-policy.rst:8
 msgid "Starting from VyOS 1.4-rolling-202308040557, a new firewall structure can be found on all vyos instalations, and zone based firewall is no longer supported. Documentation for most of the new firewall CLI can be found in the `firewall <https://docs.vyos.io/en/latest/configuration/firewall/general.html>`_ chapter. The legacy firewall is still available for versions before 1.4-rolling-202308040557 and can be found in the :ref:`firewall-legacy` chapter. The examples in this section use the legacy firewall configuration commands, since this feature has been removed in earlier releases."
 msgstr "Starting from VyOS 1.4-rolling-202308040557, a new firewall structure can be found on all vyos instalations, and zone based firewall is no longer supported. Documentation for most of the new firewall CLI can be found in the `firewall <https://docs.vyos.io/en/latest/configuration/firewall/general.html>`_ chapter. The legacy firewall is still available for versions before 1.4-rolling-202308040557 and can be found in the :ref:`firewall-legacy` chapter. The examples in this section use the legacy firewall configuration commands, since this feature has been removed in earlier releases."
+
+#: ../../configexamples/zone-policy.rst:8
+msgid "Starting from VyOS 1.4-rolling-202308040557, a new firewall structure can be found on all vyos installations, and zone based firewall is no longer supported. Documentation for most of the new firewall CLI can be found in the `firewall <https://docs.vyos.io/en/latest/configuration/firewall/general.html>`_ chapter. The legacy firewall is still available for versions before 1.4-rolling-202308040557 and can be found in the :ref:`firewall-legacy` chapter. The examples in this section use the legacy firewall configuration commands, since this feature has been removed in earlier releases."
+msgstr "Starting from VyOS 1.4-rolling-202308040557, a new firewall structure can be found on all vyos installations, and zone based firewall is no longer supported. Documentation for most of the new firewall CLI can be found in the `firewall <https://docs.vyos.io/en/latest/configuration/firewall/general.html>`_ chapter. The legacy firewall is still available for versions before 1.4-rolling-202308040557 and can be found in the :ref:`firewall-legacy` chapter. The examples in this section use the legacy firewall configuration commands, since this feature has been removed in earlier releases."
 
 #: ../../configexamples/l3vpn-hub-and-spoke.rst:105
 msgid "Step-1: Configuring IGP and enabling MPLS LDP"
@@ -2074,7 +2349,7 @@ msgstr "Testing"
 msgid "Testing and debugging"
 msgstr "Testing and debugging"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:164
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:172
 msgid "That's how you can expand the example above. Use the `Routed /48` information. This allows you to assign a different /64 to every interface, LAN, or even device. Or you could break your network into smaller chunks like /56 or /60."
 msgstr "That's how you can expand the example above. Use the `Routed /48` information. This allows you to assign a different /64 to every interface, LAN, or even device. Or you could break your network into smaller chunks like /56 or /60."
 
@@ -2086,7 +2361,7 @@ msgstr "The Lab asume a full running Active Directory on the Windows Server. Her
 msgid "The Topology are consists of:"
 msgstr "The Topology are consists of:"
 
-#: ../../configexamples/zone-policy.rst:57
+#: ../../configexamples/zone-policy.rst:47
 msgid "The VyOS interface is assigned the .1/:1 address of their respective networks. WAN is on VLAN 10, LAN on VLAN 20, and DMZ on VLAN 30."
 msgstr "The VyOS interface is assigned the .1/:1 address of their respective networks. WAN is on VLAN 10, LAN on VLAN 20, and DMZ on VLAN 30."
 
@@ -2097,6 +2372,10 @@ msgstr "The ``commit`` command is implied after every section. If you make an er
 #: ../../configexamples/ha.rst:543
 msgid "The ``redistribute ospf`` command is there purely as an example of how this can be expanded. In this walkthrough, it will be filtered by BGPOUT rule 10000, as it is not 203.0.113.0/24."
 msgstr "The ``redistribute ospf`` command is there purely as an example of how this can be expanded. In this walkthrough, it will be filtered by BGPOUT rule 10000, as it is not 203.0.113.0/24."
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:51
+msgid "The `source-address` is the Tunnelbroker client IPv4 address or if there is NAT the current WAN interface address."
+msgstr "The `source-address` is the Tunnelbroker client IPv4 address or if there is NAT the current WAN interface address."
 
 #: ../../configexamples/segment-routing-isis.rst:19
 msgid "The below configuration is used as example where we keep focus on VyOS-P1/VyOS-P2/XRv-P3 which we share the settings."
@@ -2110,11 +2389,11 @@ msgstr "The configuration steps are the same as in the previous example, except 
 msgid "The example topology has 2 VyOS routers. One as The WAN Router and on as a Client, to test a single LAN setup"
 msgstr "The example topology has 2 VyOS routers. One as The WAN Router and on as a Client, to test a single LAN setup"
 
-#: ../../configexamples/zone-policy.rst:133
+#: ../../configexamples/zone-policy.rst:123
 msgid "The first two rules are to deal with the idiosyncrasies of VyOS and iptables."
 msgstr "The first two rules are to deal with the idiosyncrasies of VyOS and iptables."
 
-#: ../../configexamples/zone-policy.rst:182
+#: ../../configexamples/zone-policy.rst:172
 msgid "The following are the rules that were created for this example (may not be complete), both in IPv4 and IPv6. If there is no IP specified, then the source/destination address is not explicit."
 msgstr "The following are the rules that were created for this example (may not be complete), both in IPv4 and IPv6. If there is no IP specified, then the source/destination address is not explicit."
 
@@ -2126,13 +2405,17 @@ msgstr "The following software was used in the creation of this document:"
 msgid "The following template configuration can be used in each remote router based in our topology."
 msgstr "The following template configuration can be used in each remote router based in our topology."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:169
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:177
 msgid "The format of these addresses:"
 msgstr "The format of these addresses:"
 
 #: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:42
 msgid "The lab I built is using a VRF (called **mgmt**) to provide out-of-band SSH access to the PE (Provider Edge) routers."
 msgstr "The lab I built is using a VRF (called **mgmt**) to provide out-of-band SSH access to the PE (Provider Edge) routers."
+
+#: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:23
+msgid "The lab assumes a full running Active Directory on the Windows Server. Here are some PowerShell commands to quickly add a Test Active Directory."
+msgstr "The lab assumes a full running Active Directory on the Windows Server. Here are some PowerShell commands to quickly add a Test Active Directory."
 
 #: ../../configexamples/site-2-site-cisco.rst:14
 msgid "The lab was built using EVE-NG."
@@ -2206,13 +2489,21 @@ msgstr "They want us to establish a BGP session to their routers on 192.0.2.11 a
 msgid "This LAB show how to uwe OpenVPN with a Active Directory authentication backend."
 msgstr "This LAB show how to uwe OpenVPN with a Active Directory authentication backend."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:137
+#: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:10
+msgid "This LAB shows how to use OpenVPN with a Active Directory authentication method."
+msgstr "This LAB shows how to use OpenVPN with a Active Directory authentication method."
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:145
 msgid "This accomplishes a few things:"
 msgstr "This accomplishes a few things:"
 
 #: ../../configexamples/index.rst:6
 msgid "This chapter contains various configuration examples:"
 msgstr "This chapter contains various configuration examples:"
+
+#: ../../configexamples/policy-based-ipsec-and-firewall.rst:16
+msgid "This configuration example and the requirements consists of:"
+msgstr "This configuration example and the requirements consists of:"
 
 #: ../../configexamples/policy-based-ipsec-and-firewall.rst:16
 msgid "This configuration example and the requirments consists of:"
@@ -2241,6 +2532,14 @@ msgstr "This document walks you through a complete HA setup of two VyOS machines
 #: ../../configexamples/ha.rst:38
 msgid "This ensures you don't go too fast or miss a step. However, it will make your life easier to configure the fixed IP address and default route now on the hardware router."
 msgstr "This ensures you don't go too fast or miss a step. However, it will make your life easier to configure the fixed IP address and default route now on the hardware router."
+
+#: ../../configexamples/fwall-and-vrf.rst:7
+msgid "This example shows how to configure a VyOS router with VRFs and firewall rules."
+msgstr "This example shows how to configure a VyOS router with VRFs and firewall rules."
+
+#: ../../configexamples/fwall-and-bridge.rst:9
+msgid "This example shows how to configure a VyOS router with bridge interfaces and firewall rules."
+msgstr "This example shows how to configure a VyOS router with bridge interfaces and firewall rules."
 
 #: ../../configexamples/wan-load-balancing.rst:70
 msgid "This example uses the failover mode."
@@ -2282,7 +2581,7 @@ msgstr "This has a floating IP address of 10.200.201.1/24, using virtual router 
 msgid "This has a floating IP address of 203.0.113.1/24, using virtual router ID 113. The virtual router ID is just a random number between 1 and 254, and can be set to whatever you want. Best practices suggest you try to keep them unique enterprise-wide."
 msgstr "This has a floating IP address of 203.0.113.1/24, using virtual router ID 113. The virtual router ID is just a random number between 1 and 254, and can be set to whatever you want. Best practices suggest you try to keep them unique enterprise-wide."
 
-#: ../../configexamples/zone-policy.rst:258
+#: ../../configexamples/zone-policy.rst:248
 msgid "This is an example of the three base rules."
 msgstr "This is an example of the three base rules."
 
@@ -2305,6 +2604,10 @@ msgstr "This is ignoring the extra Out-of-band management networking, which shou
 #: ../../configexamples/inter-vrf-routing-vrf-lite.rst:38
 msgid "This scenario could be a nightmare applying regular routing and might need filtering in multiple interfaces."
 msgstr "This scenario could be a nightmare applying regular routing and might need filtering in multiple interfaces."
+
+#: ../../configexamples/firewall.rst:6
+msgid "This section contains examples of firewall configurations for various deployments."
+msgstr "This section contains examples of firewall configurations for various deployments."
 
 #: ../../configexamples/l3vpn-hub-and-spoke.rst:547
 msgid "This section describes verification commands for MPLS/BGP/LDP protocols and L3VPN related routes as well as diagnosis and reachability checks between CE nodes."
@@ -2330,6 +2633,10 @@ msgstr "This simple structure shows how to configure a DHCP Relay over a GRE Bri
 msgid "This will be visible in 'show ip route'."
 msgstr "This will be visible in 'show ip route'."
 
+#: ../../configexamples/fwall-and-bridge.rst:12
+msgid "Three non VLAN-aware bridges are going to be configured, and each one has its own requirements."
+msgstr "Three non VLAN-aware bridges are going to be configured, and each one has its own requirements."
+
 #: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:112
 msgid "Thus you can easily match it to one of the devices/networks below."
 msgstr "Thus you can easily match it to one of the devices/networks below."
@@ -2338,7 +2645,7 @@ msgstr "Thus you can easily match it to one of the devices/networks below."
 msgid "To achieve this, your ISP is required to support DHCPv6-PD. If you're not sure, please contact your ISP for more information."
 msgstr "To achieve this, your ISP is required to support DHCPv6-PD. If you're not sure, please contact your ISP for more information."
 
-#: ../../configexamples/zone-policy.rst:144
+#: ../../configexamples/zone-policy.rst:134
 msgid "To add logging to the default rule, do:"
 msgstr "To add logging to the default rule, do:"
 
@@ -2367,7 +2674,11 @@ msgstr "To reach the network, a route must be set on each VyOS host. In this str
 msgid "Topology"
 msgstr "Topology"
 
-#: ../../configexamples/zone-policy.rst:95
+#: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:15
+msgid "Topology consists of:"
+msgstr "Topology consists of:"
+
+#: ../../configexamples/zone-policy.rst:85
 msgid "Traffic flows from zone A to zone B. That flow is what I refer to as a zone-pair-direction. eg. A->B and B->A are two zone-pair-destinations."
 msgstr "Traffic flows from zone A to zone B. That flow is what I refer to as a zone-pair-direction. eg. A->B and B->A are two zone-pair-destinations."
 
@@ -2391,7 +2702,7 @@ msgstr "Two VyOS routers with public IP address."
 msgid "Two rules will be created, the first rule directs traffic coming in from eth2 to eth0 and the second rule directs the traffic to eth1. If eth0 fails the first rule is bypassed and the second rule matches, directing traffic to eth1."
 msgstr "Two rules will be created, the first rule directs traffic coming in from eth2 to eth0 and the second rule directs the traffic to eth1. If eth0 fails the first rule is bypassed and the second rule matches, directing traffic to eth1."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:113
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:121
 msgid "Unlike IPv4, IPv6 is really not designed to be broken up smaller than /64. So if you ever want to have multiple LANs, VLANs, DMZ, etc, you'll want to ignore the assigned /64, and request the /48 and use that."
 msgstr "Unlike IPv4, IPv6 is really not designed to be broken up smaller than /64. So if you ever want to have multiple LANs, VLANs, DMZ, etc, you'll want to ignore the assigned /64, and request the /48 and use that."
 
@@ -2421,9 +2732,33 @@ msgstr "VMware: You must DISABLE SECURITY on this Port group. Make sure that ``P
 msgid "VRF"
 msgstr "VRF"
 
+#: ../../configexamples/fwall-and-vrf.rst:24
+msgid "VRF LAN:"
+msgstr "VRF LAN:"
+
+#: ../../configexamples/fwall-and-vrf.rst:21
+msgid "VRF MGMT:"
+msgstr "VRF MGMT:"
+
+#: ../../configexamples/fwall-and-vrf.rst:26
+msgid "VRF PROD:"
+msgstr "VRF PROD:"
+
+#: ../../configexamples/fwall-and-vrf.rst:29
+msgid "VRF WAN:"
+msgstr "VRF WAN:"
+
+#: ../../configexamples/fwall-and-vrf.rst:2
+msgid "VRF and firewall example"
+msgstr "VRF and firewall example"
+
 #: ../../configexamples/ha.rst:189
 msgid "VRRP Configuration"
 msgstr "VRRP Configuration"
+
+#: ../../configexamples/fwall-and-bridge.rst:347
+msgid "Validation"
+msgstr "Validation"
 
 #: ../../configexamples/inter-vrf-routing-vrf-lite.rst:160
 #: ../../configexamples/inter-vrf-routing-vrf-lite.rst:248
@@ -2555,7 +2890,7 @@ msgstr "VyOS-RR2:"
 msgid "VyOS 1.3 added initial support for VRFs (including IPv4/IPv6 static routing) and VyOS 1.4 now enables full dynamic routing protocol support for OSPF, IS-IS, and BGP for individual VRFs."
 msgstr "VyOS 1.3 added initial support for VRFs (including IPv4/IPv6 static routing) and VyOS 1.4 now enables full dynamic routing protocol support for OSPF, IS-IS, and BGP for individual VRFs."
 
-#: ../../configexamples/zone-policy.rst:42
+#: ../../configexamples/zone-policy.rst:32
 msgid "VyOS acts as DHCP, DNS forwarder, NAT, router and firewall."
 msgstr "VyOS acts as DHCP, DNS forwarder, NAT, router and firewall."
 
@@ -2608,6 +2943,10 @@ msgstr "Walkthrough suggestion"
 msgid "We are going to use 10.200.201.0/24 for an 'internal' network on VLAN201."
 msgstr "We are going to use 10.200.201.0/24 for an 'internal' network on VLAN201."
 
+#: ../../configexamples/fwall-and-bridge.rst:80
+msgid "We are going to use custom firewall rulesets, one for each bridge that will be used in ``prerouting``, and one for each bridge that will be used in the ``forward`` chain."
+msgstr "We are going to use custom firewall rulesets, one for each bridge that will be used in ``prerouting``, and one for each bridge that will be used in the ``forward`` chain."
+
 #: ../../configexamples/ha.rst:191
 msgid "We are setting up VRRP so that it does NOT fail back when a machine returns into service, and it prioritizes router1 over router2."
 msgstr "We are setting up VRRP so that it does NOT fail back when a machine returns into service, and it prioritizes router1 over router2."
@@ -2632,7 +2971,7 @@ msgstr "We have four hosts on the local network 172.17.1.0/24. All hosts are lab
 msgid "We have four pre-configured routers with this configuration:"
 msgstr "We have four pre-configured routers with this configuration:"
 
-#: ../../configexamples/zone-policy.rst:25
+#: ../../configexamples/zone-policy.rst:15
 msgid "We have three networks."
 msgstr "We have three networks."
 
@@ -2688,6 +3027,10 @@ msgstr "When you have both routers up, you should be able to establish a connect
 msgid "When you have enabled OSPF on both routers, you should be able to see each other with the command ``show ip ospf neighbour``. The state must be 'Full' or '2-Way'. If it is not, then there is a network connectivity issue between the hosts. This is often caused by NAT or MTU issues. You should not see any new routes (unless this is the second pass) in the output of ``show ip route``"
 msgstr "When you have enabled OSPF on both routers, you should be able to see each other with the command ``show ip ospf neighbour``. The state must be 'Full' or '2-Way'. If it is not, then there is a network connectivity issue between the hosts. This is often caused by NAT or MTU issues. You should not see any new routes (unless this is the second pass) in the output of ``show ip route``"
 
+#: ../../configexamples/fwall-and-bridge.rst:349
+msgid "While testing the configuration, we can check logs in order to ensure that we are accepting and/or blocking the correct traffic."
+msgstr "While testing the configuration, we can check logs in order to ensure that we are accepting and/or blocking the correct traffic."
+
 #: ../../configexamples/lac-lns.rst:-1
 msgid "Window PPPoE Client Configuration"
 msgstr "Window PPPoE Client Configuration"
@@ -2704,7 +3047,7 @@ msgstr "Wireguard"
 msgid "Wireguard doesn't have the concept of an up or down link, due to its design. This complicates AND simplifies using it for network transport, as for reliable state detection you need to use SOMETHING to detect when the link is down."
 msgstr "Wireguard doesn't have the concept of an up or down link, due to its design. This complicates AND simplifies using it for network transport, as for reliable state detection you need to use SOMETHING to detect when the link is down."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:105
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:113
 msgid "With Tunnelbroker.net, you have two options:"
 msgstr "With Tunnelbroker.net, you have two options:"
 
@@ -2715,6 +3058,10 @@ msgstr "With this command we are able to check the transport and customer label 
 #: ../../configexamples/inter-vrf-routing-vrf-lite.rst:293
 msgid "Within the VRF we set the Route-Distinguisher (RD) and Route-Targets (RT), then we enable the export/import VPN."
 msgstr "Within the VRF we set the Route-Distinguisher (RD) and Route-Targets (RT), then we enable the export/import VPN."
+
+#: ../../configexamples/fwall-and-bridge.rst:22
+msgid "Within the bridge, accept only new IPv4 connections from host 10.1.1.102"
+msgstr "Within the bridge, accept only new IPv4 connections from host 10.1.1.102"
 
 #: ../../configexamples/segment-routing-isis.rst:48
 msgid "XRv-P3:"
@@ -2728,7 +3075,7 @@ msgstr "You managed to come this far, now we want to see the network and routing
 msgid "You should be able to ping to and from all the IPs you have allocated."
 msgstr "You should be able to ping to and from all the IPs you have allocated."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:81
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:89
 msgid "You should now be able to ping something by IPv6 DNS name:"
 msgstr "You should now be able to ping something by IPv6 DNS name:"
 
@@ -2736,11 +3083,11 @@ msgstr "You should now be able to ping something by IPv6 DNS name:"
 msgid "You should now be able to see the advertised network on the other host."
 msgstr "You should now be able to see the advertised network on the other host."
 
-#: ../../configexamples/zone-policy.rst:388
+#: ../../configexamples/zone-policy.rst:378
 msgid "You would have 5 zones instead of just 4 and you would configure your v6 ruleset between your tunnel interface and your LAN/DMZ zones instead of to the WAN."
 msgstr "You would have 5 zones instead of just 4 and you would configure your v6 ruleset between your tunnel interface and your LAN/DMZ zones instead of to the WAN."
 
-#: ../../configexamples/zone-policy.rst:413
+#: ../../configexamples/zone-policy.rst:403
 msgid "You would have to add a couple of rules on your wan-local ruleset to allow protocol 41 in."
 msgstr "You would have to add a couple of rules on your wan-local ruleset to allow protocol 41 in."
 
@@ -2748,31 +3095,31 @@ msgstr "You would have to add a couple of rules on your wan-local ruleset to all
 msgid "Zone-Policy example"
 msgstr "Zone-Policy example"
 
-#: ../../configexamples/zone-policy.rst:89
+#: ../../configexamples/zone-policy.rst:79
 msgid "Zones Basics"
 msgstr "Zones Basics"
 
-#: ../../configexamples/zone-policy.rst:136
+#: ../../configexamples/zone-policy.rst:126
 msgid "Zones and Rulesets both have a default action statement. When using Zone-Policies, the default action is set by the zone-policy statement and is represented by rule 10000."
 msgstr "Zones and Rulesets both have a default action statement. When using Zone-Policies, the default action is set by the zone-policy statement and is represented by rule 10000."
 
-#: ../../configexamples/zone-policy.rst:175
+#: ../../configexamples/zone-policy.rst:165
 msgid "Zones do not allow for a default action of accept; either drop or reject. It is important to remember this because if you apply an interface to a zone and commit, any active connections will be dropped. Specifically, if you are SSH’d into VyOS and add local or the interface you are connecting through to a zone and do not have rulesets in place to allow SSH and established sessions, you will not be able to connect."
 msgstr "Zones do not allow for a default action of accept; either drop or reject. It is important to remember this because if you apply an interface to a zone and commit, any active connections will be dropped. Specifically, if you are SSH’d into VyOS and add local or the interface you are connecting through to a zone and do not have rulesets in place to allow SSH and established sessions, you will not be able to connect."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:172
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:180
 msgid "`2001:470:xxxx:1::/64`: A subnet suitable for a LAN"
 msgstr "`2001:470:xxxx:1::/64`: A subnet suitable for a LAN"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:173
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:181
 msgid "`2001:470:xxxx:2::/64`: Another subnet"
 msgstr "`2001:470:xxxx:2::/64`: Another subnet"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:171
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:179
 msgid "`2001:470:xxxx::/48`: The whole subnet. xxxx should come from Tunnelbroker."
 msgstr "`2001:470:xxxx::/48`: The whole subnet. xxxx should come from Tunnelbroker."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:174
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:182
 msgid "`2001:470:xxxx:ffff:/64`: The last usable /64 subnet."
 msgstr "`2001:470:xxxx:ffff:/64`: The last usable /64 subnet."
 
@@ -2898,7 +3245,7 @@ msgstr "switch1 (Nexus 10gb Switch)"
 msgid "switch2 (Nexus 10gb Switch)"
 msgstr "switch2 (Nexus 10gb Switch)"
 
-#: ../../configexamples/zone-policy.rst:394
+#: ../../configexamples/zone-policy.rst:384
 msgid "v6 pairs would be:"
 msgstr "v6 pairs would be:"
 

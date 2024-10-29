@@ -8,7 +8,7 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=3; plural=((n%10==1) && (n%100!=11)) ? 0 : ((n%10>=2 && n%10<=4) && ((n%100<12 || n%100>14))) ? 1 : 2;\n"
 
-#: ../../configexamples/zone-policy.rst:162
+#: ../../configexamples/zone-policy.rst:152
 msgid "''It is important to note, that you do not want to add logging to the established state rule as you will be logging both the inbound and outbound packets for each session instead of just the initiation of the session. Your logs will be massive in a very short period of time.''"
 msgstr "&#39;&#39;Важливо зауважити, що ви не хочете додавати журналювання до встановленого правила стану, оскільки ви реєструватимете як вхідні, так і вихідні пакети для кожного сеансу, а не лише початок сеансу. Ваші журнали стануть масивними за дуже короткий проміжок часу."
 
@@ -36,7 +36,7 @@ msgstr "**ПРИМІТКА.** Маршрутизатор VyOS (перевіре�
 msgid "**Note:** At the moment, trace mpls doesn’t show labels/paths. So we’ll see * * *  for the transit routers of the mpls backbone."
 msgstr "**Примітка.** На даний момент trace mpls не показує мітки/шляхи. Отже, ми побачимо * * * для транзитних маршрутизаторів магістралі mpls."
 
-#: ../../configexamples/zone-policy.rst:34
+#: ../../configexamples/zone-policy.rst:24
 msgid "**This specific example is for a router on a stick, but is very easily adapted for however many NICs you have**:"
 msgstr "**Цей конкретний приклад стосується маршрутизатора на накопичувачі, але його дуже легко адаптувати для будь-якої кількості мережевих карток, які у вас є**:"
 
@@ -140,11 +140,11 @@ msgstr "172.17.1.40 CS0 за замовчуванням"
 msgid "172.17.1.4 CS0 -> CS6"
 msgstr "172.17.1.4 CS0 -&gt; CS6"
 
-#: ../../configexamples/zone-policy.rst:45
+#: ../../configexamples/zone-policy.rst:35
 msgid "192.168.100.10/2001:0DB8:0:AAAA::10 is the administrator's console. It can SSH to VyOS."
 msgstr "192.168.100.10/2001:0DB8:0:AAAA::10 — це консоль адміністратора. Він може SSH до VyOS."
 
-#: ../../configexamples/zone-policy.rst:43
+#: ../../configexamples/zone-policy.rst:33
 msgid "192.168.200.200/2001:0DB8:0:BBBB::200 is an internal/external DNS, web and mail (SMTP/IMAP) server."
 msgstr "192.168.200.200/2001:0DB8:0:BBBB::200 — внутрішній/зовнішній DNS, веб-сервер і поштовий (SMTP/IMAP) сервер."
 
@@ -306,6 +306,35 @@ msgstr "Порядок правил для визначення пріорите
 msgid "A simple solution could be using different routing tables, or VRFs for all the networks so we can keep the routing restrictions. But for us to route between the different VRFs we would need a cable or a logical connection between each other:"
 msgstr "Простим рішенням може бути використання різних таблиць маршрутизації або VRF для всіх мереж, щоб ми могли зберегти обмеження маршрутизації. Але для маршрутизації між різними VRF нам знадобиться кабель або логічне з’єднання між собою:"
 
+#: ../../configexamples/fwall-and-bridge.rst:25
+msgid "Accept access to router itself."
+msgstr "Accept access to router itself."
+
+#: ../../configexamples/fwall-and-bridge.rst:21
+#: ../../configexamples/fwall-and-bridge.rst:32
+msgid "Accept all ARP packets."
+msgstr "Accept all ARP packets."
+
+#: ../../configexamples/fwall-and-bridge.rst:30
+msgid "Accept all DHCP discover packets."
+msgstr "Accept all DHCP discover packets."
+
+#: ../../configexamples/fwall-and-bridge.rst:33
+msgid "Accept all IPv4 connections."
+msgstr "Accept all IPv4 connections."
+
+#: ../../configexamples/fwall-and-bridge.rst:31
+msgid "Accept only DHCP offers from valid server and|or trusted bridge port."
+msgstr "Accept only DHCP offers from valid server and|or trusted bridge port."
+
+#: ../../configexamples/fwall-and-bridge.rst:17
+msgid "Accept only IPv6 communication whithin the bridge."
+msgstr "Accept only IPv6 communication whithin the bridge."
+
+#: ../../configexamples/fwall-and-bridge.rst:270
+msgid "Access to the router itself is controlled by the base chain ``input``, and rules to accomplish all the requirements are:"
+msgstr "Access to the router itself is controlled by the base chain ``input``, and rules to accomplish all the requirements are:"
+
 #: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:19
 msgid "Account at https://www.tunnelbroker.net/"
 msgstr "Обліковий запис на https://www.tunnelbroker.net/"
@@ -414,9 +443,45 @@ msgstr "Дозволити всі пакети icmpv6 для маршрутиз�
 msgid "Allow all new connections from local subnets."
 msgstr "Allow all new connections from local subnets."
 
+#: ../../configexamples/fwall-and-vrf.rst:29
+msgid "Allow connection to PROD."
+msgstr "Allow connection to PROD."
+
+#: ../../configexamples/policy-based-ipsec-and-firewall.rst:40
+msgid "Allow connections from LANs to LANs through the tunnel."
+msgstr "Allow connections from LANs to LANs through the tunnel."
+
 #: ../../configexamples/policy-based-ipsec-and-firewall.rst:40
 msgid "Allow connections from LANs to LANs throught the tunnel."
 msgstr "Allow connections from LANs to LANs throught the tunnel."
+
+#: ../../configexamples/fwall-and-vrf.rst:20
+msgid "Allow connections to LAN and PROD."
+msgstr "Allow connections to LAN and PROD."
+
+#: ../../configexamples/fwall-and-vrf.rst:24
+msgid "Allow connections to PROD."
+msgstr "Allow connections to PROD."
+
+#: ../../configexamples/fwall-and-bridge.rst:37
+msgid "Allow connections to bridge br1."
+msgstr "Allow connections to bridge br1."
+
+#: ../../configexamples/fwall-and-bridge.rst:26
+msgid "Allow connections to internet"
+msgstr "Allow connections to internet"
+
+#: ../../configexamples/fwall-and-vrf.rst:25
+msgid "Allow connections to internet(WAN)."
+msgstr "Allow connections to internet(WAN)."
+
+#: ../../configexamples/fwall-and-bridge.rst:36
+msgid "Allow connections to internet."
+msgstr "Allow connections to internet."
+
+#: ../../configexamples/fwall-and-vrf.rst:22
+msgid "Allow connections to the router."
+msgstr "Allow connections to the router."
 
 #: ../../configexamples/policy-based-ipsec-and-firewall.rst:34
 msgid "Allow dns requests only only for local networks."
@@ -425,6 +490,14 @@ msgstr "Allow dns requests only only for local networks."
 #: ../../configexamples/policy-based-ipsec-and-firewall.rst:36
 msgid "Allow icmp on all interfaces."
 msgstr "Allow icmp on all interfaces."
+
+#: ../../configexamples/fwall-and-vrf.rst:103
+msgid "Also, we are adding global state policies, in order to allow established and related traffic, in order not to drop valid responses:"
+msgstr "Also, we are adding global state policies, in order to allow established and related traffic, in order not to drop valid responses:"
+
+#: ../../configexamples/fwall-and-bridge.rst:84
+msgid "Also, we are going to use firewall interface groups in order to simplify the firewall configuration."
+msgstr "Also, we are going to use firewall interface groups in order to simplify the firewall configuration."
 
 #: ../../configexamples/policy-based-ipsec-and-firewall.rst:220
 msgid "Also, we can check firewall counters:"
@@ -442,6 +515,18 @@ msgstr "L3VPN складається з кількох каналів досту
 msgid "And NAT Configuration:"
 msgstr "And NAT Configuration:"
 
+#: ../../configexamples/fwall-and-vrf.rst:70
+msgid "And before firewall rules are shown, we need to pay attention how to configure and match interfaces and VRFs. In case where an interface is assigned to a non-default VRF, if we want to use inbound-interface or outbound-interface in firewall rules, we need to:"
+msgstr "And before firewall rules are shown, we need to pay attention how to configure and match interfaces and VRFs. In case where an interface is assigned to a non-default VRF, if we want to use inbound-interface or outbound-interface in firewall rules, we need to:"
+
+#: ../../configexamples/fwall-and-vrf.rst:112
+msgid "And finally, we need to allow input connections to the router itself only from vrf MGMT:"
+msgstr "And finally, we need to allow input connections to the router itself only from vrf MGMT:"
+
+#: ../../configexamples/fwall-and-bridge.rst:292
+msgid "And for traffic that is going to other local networks, and to he Internet, we need to use the base chain ``forward``. As in the bridge firewall, we are going to use custom rulesets for each bridge, that would be used in the ``forward`` chain. Those rulesets are ``ip-br1-fwd`` and ``ip-br2-fwd``:"
+msgstr "And for traffic that is going to other local networks, and to he Internet, we need to use the base chain ``forward``. As in the bridge firewall, we are going to use custom rulesets for each bridge, that would be used in the ``forward`` chain. Those rulesets are ``ip-br1-fwd`` and ``ip-br2-fwd``:"
+
 #: ../../configexamples/autotest/Wireguard/Wireguard.rst:99
 msgid "And ping the Branch PC from your central router to check the response."
 msgstr "І перевірте відповідь на Branch PC із центрального маршрутизатора."
@@ -450,9 +535,22 @@ msgstr "І перевірте відповідь на Branch PC із центр�
 msgid "And show all DHCP Leases"
 msgstr "І показати всі оренди DHCP"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:132
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:140
 msgid "And the ``client`` to receive an IPv6 address with stateless autoconfig."
 msgstr "І ``клієнт`` для отримання IPv6-адреси з автоконфігурацією без збереження стану."
+
+#: ../../configexamples/fwall-and-bridge.rst:202
+#: ../../configexamples/fwall-and-bridge.rst:321
+msgid "And the content of the custom rulesets:"
+msgstr "And the content of the custom rulesets:"
+
+#: ../../configexamples/fwall-and-bridge.rst:132
+msgid "And then create the custom rulesets:"
+msgstr "And then create the custom rulesets:"
+
+#: ../../configexamples/fwall-and-bridge.rst:364
+msgid "And with operational mode commands, we can check rules matchers, actions, and counters."
+msgstr "And with operational mode commands, we can check rules matchers, actions, and counters."
 
 #: ../../configexamples/autotest/DHCPRelay_through_GRE/DHCPRelay_through_GRE.rst:-1
 #: ../../configexamples/autotest/Wireguard/Wireguard.rst:-1
@@ -475,9 +573,21 @@ msgstr "Додаток-А"
 msgid "Appendix-B"
 msgstr "Додаток-Б"
 
+#: ../../configexamples/fwall-and-bridge.rst:265
+msgid "As a reminder, here's a link to the :doc:`firewall documentation </configuration/firewall/index>`, where you can find more information about the packet flow for traffic that comes from bridge layer and should be analized by the IP firewall."
+msgstr "As a reminder, here's a link to the :doc:`firewall documentation </configuration/firewall/index>`, where you can find more information about the packet flow for traffic that comes from bridge layer and should be analized by the IP firewall."
+
 #: ../../configexamples/ha.rst:500
 msgid "As a reminder, only advertise routes that you are the default router for. This is why we are NOT announcing the 192.0.2.0/24 network, because if that was announced into OSPF, the other routers would try to connect to that network over a tunnel that connects to that network!"
 msgstr "Нагадуємо, рекламуйте лише маршрути, для яких ви є маршрутизатором за умовчанням. Ось чому ми НЕ анонсуємо мережу 192.0.2.0/24, тому що якби це було оголошено в OSPF, інші маршрутизатори намагалися б підключитися до цієї мережі через тунель, який з’єднується з цією мережею!"
+
+#: ../../configexamples/fwall-and-vrf.rst:16
+msgid "As exposed in the diagram, there are four VRFs. These VRFs are ``MGMT``, ``WAN``, ``LAN`` and ``PROD``, and their requirements are:"
+msgstr "As exposed in the diagram, there are four VRFs. These VRFs are ``MGMT``, ``WAN``, ``LAN`` and ``PROD``, and their requirements are:"
+
+#: ../../configexamples/fwall-and-bridge.rst:107
+msgid "As said before, we are going to create custom firewall rulesets for each bridge, that will be used in the ``prerouting`` chain, in order to drop as much unwanted traffic as early as possible. So, custom rulesets used in ``prerouting`` chain are going to be ``br0-pre``, ``br1-pre``, and ``br2-pre``:"
+msgstr "As said before, we are going to create custom firewall rulesets for each bridge, that will be used in the ``prerouting`` chain, in order to drop as much unwanted traffic as early as possible. So, custom rulesets used in ``prerouting`` chain are going to be ``br0-pre``, ``br1-pre``, and ``br2-pre``:"
 
 #: ../../configexamples/inter-vrf-routing-vrf-lite.rst:853
 msgid "As we can see even if both VRF LAN1 and LAN2 has the same import RTs we are able to select which routes are effectively imported and installed."
@@ -503,7 +613,7 @@ msgstr "Як ми бачимо, шейпер працює і трафік біл
 msgid "Assign external IP addresses"
 msgstr "Призначити зовнішні IP-адреси"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:74
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:82
 msgid "Assuming the pings are successful, you need to add some DNS servers. Some options:"
 msgstr "Якщо пінг пройшов успішно, вам потрібно додати кілька DNS-серверів. Деякі варіанти:"
 
@@ -523,7 +633,7 @@ msgstr "На цьому етапі ви зможете підключатися 
 msgid "At this point, you should be able to see both IP addresses when you run ``show interfaces``\\ , and ``show vrrp`` should show both interfaces in MASTER state (and SLAVE state on router2)."
 msgstr "На цьому етапі ви повинні бачити обидві IP-адреси, коли запускаєте ``show interfaces``\\ , а ``show vrrp`` має показувати обидва інтерфейси в стані MASTER (і стані SLAVE на router2)."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:102
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:110
 msgid "At this point, your VyOS install should have full IPv6, but now your LAN devices need access."
 msgstr "На даний момент ваша інсталяція VyOS повинна мати повний IPv6, але тепер вашим пристроям локальної мережі потрібен доступ."
 
@@ -617,7 +727,35 @@ msgstr "Обидві локальні мережі повинні мати мо�
 msgid "Branch"
 msgstr "Відділення"
 
-#: ../../configexamples/zone-policy.rst:151
+#: ../../configexamples/fwall-and-bridge.rst:4
+msgid "Bridge and firewall example"
+msgstr "Bridge and firewall example"
+
+#: ../../configexamples/fwall-and-bridge.rst:17
+msgid "Bridge br0:"
+msgstr "Bridge br0:"
+
+#: ../../configexamples/fwall-and-bridge.rst:27
+msgid "Bridge br1:"
+msgstr "Bridge br1:"
+
+#: ../../configexamples/fwall-and-bridge.rst:37
+msgid "Bridge br2:"
+msgstr "Bridge br2:"
+
+#: ../../configexamples/fwall-and-bridge.rst:75
+msgid "Bridge firewall configuration"
+msgstr "Bridge firewall configuration"
+
+#: ../../configexamples/fwall-and-bridge.rst:367
+msgid "Bridge firewall rulset:"
+msgstr "Bridge firewall rulset:"
+
+#: ../../configexamples/fwall-and-bridge.rst:43
+msgid "Bridges and interfaces configuration"
+msgstr "Bridges and interfaces configuration"
+
+#: ../../configexamples/zone-policy.rst:141
 msgid "By default, iptables does not allow traffic for established sessions to return, so you must explicitly allow this. I do this by adding two rules to every ruleset. 1 allows established and related state packets through and rule 2 drops and logs invalid state packets. We place the established/related rule at the top because the vast majority of traffic on a network is established and the invalid rule to prevent invalid state packets from mistakenly being matched against other rules. Having the most matched rule listed first reduces CPU load in high volume environments. Note: I have filed a bug to have this added as a default action as well."
 msgstr "За замовчуванням iptables не дозволяє повертати трафік для встановлених сеансів, тому ви повинні явно дозволити це. Я роблю це, додаючи два правила до кожного набору правил. 1 дозволяє пакети встановленого та пов’язаного стану, а правило 2 відкидає та реєструє недійсні пакети стану. Ми розміщуємо встановлене/пов’язане правило вгорі, оскільки переважна більшість трафіку в мережі встановлено, а правило недійсності запобігає помилковому зіставленню недійсних пакетів стану з іншими правилами. Якщо правило, яке найбільше відповідає першим, зменшує навантаження на ЦП у середовищах із великим обсягом. Примітка: я повідомив про помилку, щоб також додати цю дію як дію за замовчуванням."
 
@@ -704,6 +842,8 @@ msgstr "Висновки"
 #: ../../configexamples/autotest/Wireguard/Wireguard.rst:25
 #: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:37
 #: ../../configexamples/bgp-ipv6-unnumbered.rst:12
+#: ../../configexamples/fwall-and-bridge.rst:40
+#: ../../configexamples/fwall-and-vrf.rst:32
 #: ../../configexamples/inter-vrf-routing-vrf-lite.rst:139
 #: ../../configexamples/inter-vrf-routing-vrf-lite.rst:231
 #: ../../configexamples/inter-vrf-routing-vrf-lite.rst:290
@@ -753,6 +893,14 @@ msgstr "Configuration of basic firewall in one site, in order to:"
 #: ../../configexamples/pppoe-ipv6-basic.rst:26
 msgid "Configurations"
 msgstr "Конфігурації"
+
+#: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:40
+msgid "Configure VyOS as OpenVPN Server"
+msgstr "Configure VyOS as OpenVPN Server"
+
+#: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:253
+msgid "Configure VyOS as client"
+msgstr "Configure VyOS as client"
 
 #: ../../configexamples/ha.rst:358
 msgid "Configure Wireguard"
@@ -882,13 +1030,21 @@ msgstr "DHCP Relay через GRE-Bridge"
 msgid "DHCPv6-PD Setup"
 msgstr "Налаштування DHCPv6-PD"
 
-#: ../../configexamples/zone-policy.rst:374
+#: ../../configexamples/zone-policy.rst:364
 msgid "DMZ-LAN policy is LAN-DMZ. You can get a rhythm to it when you build out a bunch at one time."
 msgstr "Політика DMZ-LAN – LAN-DMZ. Ви можете досягти ритму, коли ви створюєте купу одночасно."
 
-#: ../../configexamples/zone-policy.rst:49
+#: ../../configexamples/zone-policy.rst:39
 msgid "DMZ cannot access LAN resources."
 msgstr "DMZ не може отримати доступ до ресурсів локальної мережі."
+
+#: ../../configexamples/fwall-and-bridge.rst:35
+msgid "Deny access to the router."
+msgstr "Deny access to the router."
+
+#: ../../configexamples/fwall-and-vrf.rst:21
+msgid "Deny connections to internet(WAN)."
+msgstr "Deny connections to internet(WAN)."
 
 #: ../../configexamples/ha.rst:18
 msgid "Design"
@@ -902,6 +1058,27 @@ msgstr "Пристрій-А"
 msgid "Device-B"
 msgstr "Пристрій-Б"
 
+#: ../../configexamples/fwall-and-vrf.rst:9
+msgid "Diagram used in this example:"
+msgstr "Diagram used in this example:"
+
+#: ../../configexamples/fwall-and-bridge.rst:20
+msgid "Drop all DHCP discover packets."
+msgstr "Drop all DHCP discover packets."
+
+#: ../../configexamples/fwall-and-bridge.rst:24
+#: ../../configexamples/fwall-and-bridge.rst:34
+msgid "Drop all IPv6 connections."
+msgstr "Drop all IPv6 connections."
+
+#: ../../configexamples/fwall-and-bridge.rst:23
+msgid "Drop all other IPv4 connections."
+msgstr "Drop all other IPv4 connections."
+
+#: ../../configexamples/fwall-and-bridge.rst:27
+msgid "Drop connections to other LANs."
+msgstr "Drop connections to other LANs."
+
 #: ../../configexamples/ha.rst:514
 msgid "Duplicate configuration"
 msgstr "Дубльована конфігурація"
@@ -914,7 +1091,7 @@ msgstr "Під час конфігурації адреси, окрім приз
 msgid "Dynamic routing used between CE and PE nodes and eBGP peering established for the route exchanging between them. All routes received by PEs are then exported to L3VPN and delivered from Spoke sites to Hub and vise-versa based on previously configured L3VPN parameters."
 msgstr "Динамічна маршрутизація, що використовується між вузлами CE і PE, і eBGP, встановлений для обміну маршрутами між ними. Усі маршрути, отримані PE, потім експортуються до L3VPN і доставляються з Spoke-сайтів до Hub і навпаки на основі попередньо налаштованих параметрів L3VPN."
 
-#: ../../configexamples/zone-policy.rst:91
+#: ../../configexamples/zone-policy.rst:81
 msgid "Each interface is assigned to a zone. The interface can be physical or virtual such as tunnels (VPN, PPTP, GRE, etc) and are treated exactly the same."
 msgstr "Кожен інтерфейс призначений для зони. Інтерфейс може бути фізичним або віртуальним, як-от тунелі (VPN, PPTP, GRE тощо), і обробляється однаково."
 
@@ -939,9 +1116,13 @@ msgstr "Увімкніть SSH"
 msgid "Enable SSH so you can now SSH into the routers, rather than using the console."
 msgstr "Увімкніть SSH, щоб тепер ви могли підключатися через SSH до маршрутизаторів, а не використовувати консоль."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:140
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:148
 msgid "Enables router advertisements. This is an IPv6 alternative for DHCP (though DHCPv6 can still be used). With RAs, Your devices will automatically find the information they need for routing and DNS."
 msgstr "Вмикає оголошення маршрутизатора. Це альтернатива IPv6 для DHCP (хоча DHCPv6 все ще можна використовувати). За допомогою RA ваші пристрої автоматично знайдуть інформацію, необхідну для маршрутизації та DNS."
+
+#: ../../configexamples/zone-policy.rst:243
+msgid "Even if the two zones will never communicate, it is a good idea to create the zone-pair-direction rulesets and set default-log. This will allow you to log attempts to access the networks. Without it, you will never see the connection attempts."
+msgstr "Even if the two zones will never communicate, it is a good idea to create the zone-pair-direction rulesets and set default-log. This will allow you to log attempts to access the networks. Without it, you will never see the connection attempts."
 
 #: ../../configexamples/zone-policy.rst:253
 msgid "Even if the two zones will never communicate, it is a good idea to create the zone-pair-direction rulesets and set enable-default-log. This will allow you to log attempts to access the networks. Without it, you will never see the connection attempts."
@@ -992,7 +1173,11 @@ msgstr "Приклад мережі"
 msgid "Fill ``password`` and ``user`` with the credential provided by your ISP."
 msgstr "Заповніть ``password`` і ``user`` обліковими даними, наданими вашим провайдером."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:202
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:210
+msgid "Finally, don't forget the :ref:`Firewall<configuration/firewall/index:Firewall>`. The usage is identical, except for instead of `set firewall name NAME`, you would use `set firewall ipv6-name NAME`."
+msgstr "Finally, don't forget the :ref:`Firewall<configuration/firewall/index:Firewall>`. The usage is identical, except for instead of `set firewall name NAME`, you would use `set firewall ipv6-name NAME`."
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:210
 msgid "Finally, don't forget the :ref:`firewall`. The usage is identical, except for instead of `set firewall name NAME`, you would use `set firewall ipv6-name NAME`."
 msgstr "Нарешті, не забудьте про :ref:`firewall`. Використання ідентичне, за винятком того, що замість «встановити ім’я брандмауера ІМ’Я» ви використовуєте «встановити ім’я ipv6 брандмауера ІМ’Я»."
 
@@ -1000,13 +1185,17 @@ msgstr "Нарешті, не забудьте про :ref:`firewall`. Викор
 msgid "Finally, let’s check the reachability between CEs:"
 msgstr "Нарешті, давайте перевіримо доступність між CE:"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:200
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:208
 msgid "Firewall"
 msgstr "Брандмауер"
 
 #: ../../configexamples/policy-based-ipsec-and-firewall.rst:123
 msgid "Firewall Configuration:"
 msgstr "Firewall Configuration:"
+
+#: ../../configexamples/firewall.rst:4
+msgid "Firewall Examples"
+msgstr "Firewall Examples"
 
 #: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:39
 msgid "First, we configure the ``vyos-wan`` interface to get a DHCP address."
@@ -1016,6 +1205,14 @@ msgstr "Спочатку ми налаштовуємо інтерфейс ``vyos
 msgid "First, we configure the transport network and the Tunnel interface."
 msgstr "Спочатку ми налаштовуємо транспортну мережу та інтерфейс тунелю."
 
+#: ../../configexamples/fwall-and-vrf.rst:34
+msgid "First, we need to configure the interfaces and VRFs:"
+msgstr "First, we need to configure the interfaces and VRFs:"
+
+#: ../../configexamples/fwall-and-bridge.rst:45
+msgid "First, we need to configure the interfaces and bridges:"
+msgstr "First, we need to configure the interfaces and bridges:"
+
 #: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:44
 msgid "First a CA, a signed server and client ceftificate and a Diffie-Hellman parameter musst be generated and installed. Please look :ref:`here <configuration/pki/index:pki>` for more information."
 msgstr "Спочатку необхідно створити та встановити ЦС, підписаний сертифікат сервера та клієнта та параметр Діффі-Хеллмана. Подивіться :ref:`тут<configuration/pki/index:pki> ` для отримання додаткової інформації."
@@ -1024,13 +1221,29 @@ msgstr "Спочатку необхідно створити та встанов
 msgid "First prepare our VyOS router for connection to NMP. We have to set up the SNMP protocol and connectivity between the router and NMP."
 msgstr "Спочатку підготуйте наш маршрутизатор VyOS для підключення до NMP. Нам потрібно налаштувати протокол SNMP і підключення між маршрутизатором і NMP."
 
+#: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:56
+msgid "First the CA"
+msgstr "First the CA"
+
 #: ../../configexamples/site-2-site-cisco.rst:9
 msgid "FlexVPN is a newer \"solution\" for deployment of VPNs and it utilizes IKEv2 as the key exchange protocol. The result is a flexible and scalable VPN solution that can be easily adapted to fit various network needs. It can also support a variety of encryption methods, including AES and 3DES."
 msgstr "FlexVPN is a newer \"solution\" for deployment of VPNs and it utilizes IKEv2 as the key exchange protocol. The result is a flexible and scalable VPN solution that can be easily adapted to fit various network needs. It can also support a variety of encryption methods, including AES and 3DES."
 
+#: ../../configexamples/fwall-and-vrf.rst:75
+msgid "For **inbound-interface**: use the interface name with the VRF name, like ``MGMT`` or ``LAN``."
+msgstr "For **inbound-interface**: use the interface name with the VRF name, like ``MGMT`` or ``LAN``."
+
+#: ../../configexamples/fwall-and-vrf.rst:77
+msgid "For **outbound-interface**: use the interface name, like ``eth0``, ``vtun0``, ``eth2*`` or similar."
+msgstr "For **outbound-interface**: use the interface name, like ``eth0``, ``vtun0``, ``eth2*`` or similar."
+
 #: ../../configexamples/ha.rst:60
 msgid "For connection between sites, we are running a WireGuard link to two REMOTE routers and using OSPF over those links to distribute routes. That remote site is expected to send traffic from anything in 10.201.0.0/16"
 msgstr "Для з’єднання між сайтами ми запускаємо зв’язок WireGuard із двома ВІДДАЛЕНИМИ маршрутизаторами та використовуємо OSPF для цих посилань для розподілу маршрутів. Очікується, що цей віддалений сайт надсилатиме трафік із будь-якого місця в 10.201.0.0/16"
+
+#: ../../configexamples/fwall-and-bridge.rst:352
+msgid "For example, while a host tries to get an IP address from a DHCP server in br1 all DHCP discover are dropped, and in br2, we can see that DHCP offers from untrusted servers are dropped:"
+msgstr "For example, while a host tries to get an IP address from a DHCP server in br1 all DHCP discover are dropped, and in br2, we can see that DHCP offers from untrusted servers are dropped:"
 
 #: ../../configexamples/pppoe-ipv6-basic.rst:56
 msgid "For home network users, most of time ISP only provides /64 prefix, hence there is no need to set SLA ID and prefix length. See :ref:`pppoe-interface` for more information."
@@ -1096,7 +1309,7 @@ msgstr "Обладнання"
 msgid "Hardware Router - Port 8 of each switch"
 msgstr "Апаратний маршрутизатор - порт 8 кожного комутатора"
 
-#: ../../configexamples/zone-policy.rst:282
+#: ../../configexamples/zone-policy.rst:272
 msgid "Here is an example of an IPv6 DMZ-WAN ruleset."
 msgstr "Ось приклад набору правил IPv6 DMZ-WAN."
 
@@ -1136,6 +1349,10 @@ msgstr "IPSec configuration:"
 msgid "IP Schema"
 msgstr "IP-схема"
 
+#: ../../configexamples/fwall-and-bridge.rst:258
+msgid "IP firewall configuration"
+msgstr "IP firewall configuration"
+
 #: ../../configexamples/site-2-site-cisco.rst:34
 msgid "IPsec:"
 msgstr "IPsec:"
@@ -1144,11 +1361,15 @@ msgstr "IPsec:"
 msgid "IPv4 Network"
 msgstr "Мережа IPv4"
 
+#: ../../configexamples/fwall-and-bridge.rst:451
+msgid "IPv4 firewall rulset:"
+msgstr "IPv4 firewall rulset:"
+
 #: ../../configexamples/inter-vrf-routing-vrf-lite.rst:85
 msgid "IPv6 Network"
 msgstr "Мережа IPv6"
 
-#: ../../configexamples/zone-policy.rst:383
+#: ../../configexamples/zone-policy.rst:373
 msgid "IPv6 Tunnel"
 msgstr "Тунель IPv6"
 
@@ -1169,11 +1390,11 @@ msgstr "ISP"
 msgid "I chose to run OSPF as the IGP (Interior Gateway Protocol). All required BGP sessions are established via a dummy interfaces (similar to the loopback, but in Linux you can have only one loopback, while there can be many dummy interfaces) on the PE routers. In case of a link failure, traffic is diverted in the other direction in this triangle setup and BGP sessions will not go down. One could even enable BFD (Bidirectional Forwarding Detection) on the links for a faster failover and resilience in the network."
 msgstr "Я вирішив запустити OSPF як IGP (Interior Gateway Protocol). Усі необхідні сеанси BGP встановлюються за допомогою фіктивних інтерфейсів (подібно до loopback, але в Linux ви можете мати лише один loopback, тоді як фіктивних інтерфейсів може бути багато) на маршрутизаторах PE. У разі збою з’єднання трафік перенаправляється в іншому напрямку в цьому трикутнику, і сеанси BGP не припиняються. Можна навіть увімкнути BFD (Bidirectional Forwarding Detection) на з’єднаннях для швидшого відмовостійкості та стійкості мережі."
 
-#: ../../configexamples/zone-policy.rst:171
+#: ../../configexamples/zone-policy.rst:161
 msgid "I create/configure the interfaces first. Build out the rulesets for each zone-pair-direction which includes at least the three state rules. Then I setup the zone-policies."
 msgstr "Спочатку я створюю/налаштовую інтерфейси. Створіть набори правил для кожної зони-пари-напрямку, які включають принаймні три правила стану. Потім я встановлюю політику зони."
 
-#: ../../configexamples/zone-policy.rst:100
+#: ../../configexamples/zone-policy.rst:90
 msgid "I name rule sets to indicate which zone-pair-direction they represent. eg. ZoneA-ZoneB or ZoneB-ZoneA. LAN-DMZ, DMZ-LAN."
 msgstr "Я називаю набори правил, щоб вказати, яку зону-пару-напрямок вони представляють. напр. ЗонаА-ЗонаБ або ЗонаБ-ЗонаА. LAN-DMZ, DMZ-LAN."
 
@@ -1185,9 +1406,17 @@ msgstr "Я назвав клієнтів синім, червоним і зел�
 msgid "I spun up a new lab in EVE-NG, which represents this as the \"Foo Bar - Service Provider Inc.\" that has 3 points of presence (PoP) in random datacenters/sites named PE1, PE2, and PE3. Each PoP aggregates at least two customers."
 msgstr "Я створив нову лабораторію в EVE-NG, яка представляє це як &quot;Foo Bar - Service Provider Inc.&quot; який має 3 точки присутності (PoP) у випадкових центрах обробки даних/сайтах під назвою PE1, PE2 і PE3. Кожен PoP об’єднує принаймні двох клієнтів."
 
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:54
+msgid "If `source-address` is  dynamic, the tunnel will cease working once the address changes. To avoid having to manually update `source-address` each time the dynamic IP changes, an address of '0.0.0.0' can be specified."
+msgstr "If `source-address` is  dynamic, the tunnel will cease working once the address changes. To avoid having to manually update `source-address` each time the dynamic IP changes, an address of '0.0.0.0' can be specified."
+
 #: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:256
 msgid "If the client is connect successfully you can check the output with"
 msgstr "Якщо клієнт підключено успішно, ви можете перевірити вихід за допомогою"
+
+#: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:272
+msgid "If the client is connected successfully you can check the status"
+msgstr "If the client is connected successfully you can check the status"
 
 #: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:236
 msgid "If we need to retrieve information about a specific host/network inside the EVPN network we need to run"
@@ -1197,7 +1426,7 @@ msgstr "Якщо нам потрібно отримати інформацію �
 msgid "If you are following through this document, it is strongly suggested you complete the entire document, ONLY doing the virtual router1 steps, and then come back and walk through it AGAIN on the backup hardware router."
 msgstr "Якщо ви дотримуєтеся цього документа, наполегливо рекомендуємо пройти весь документ, ЛИШЕ виконавши кроки віртуального маршрутизатора1, а потім повернутися та переглянути його ЩЕ РАВНО на резервному апаратному маршрутизаторі."
 
-#: ../../configexamples/zone-policy.rst:385
+#: ../../configexamples/zone-policy.rst:375
 msgid "If you are using a IPv6 tunnel from HE.net or someone else, the basis is the same except you have two WAN interfaces. One for v4 and one for v6."
 msgstr "Якщо ви використовуєте тунель IPv6 від HE.net або когось іншого, основа така сама, за винятком того, що у вас є два інтерфейси WAN. Один для v4 і один для v6."
 
@@ -1205,7 +1434,7 @@ msgstr "Якщо ви використовуєте тунель IPv6 від HE.n
 msgid "If you use a routing protocol itself, you solve two problems at once. This is only a basic example, and is provided as a starting point."
 msgstr "Якщо ви використовуєте сам протокол маршрутизації, ви вирішуєте дві проблеми одночасно. Це лише базовий приклад, який надається як відправна точка."
 
-#: ../../configexamples/zone-policy.rst:110
+#: ../../configexamples/zone-policy.rst:100
 msgid "If your computer is on the LAN and you need to SSH into your VyOS box, you would need a rule to allow it in the LAN-Local ruleset. If you want to access a webpage from your VyOS box, you need a rule to allow it in the Local-LAN ruleset."
 msgstr "Якщо ваш комп’ютер під’єднано до локальної мережі, і вам потрібно підключитися через SSH до свого блоку VyOS, вам знадобиться правило, яке дозволятиме це в наборі правил LAN-Local. Якщо ви хочете отримати доступ до веб-сторінки зі свого вікна VyOS, вам потрібне правило, щоб дозволити це в наборі правил локальної локальної мережі."
 
@@ -1213,23 +1442,23 @@ msgstr "Якщо ваш комп’ютер під’єднано до лока�
 msgid "Image name: vyos-1.4-rolling-202110310317-amd64.iso"
 msgstr "Назва зображення: vyos-1.4-rolling-202110310317-amd64.iso"
 
-#: ../../configexamples/zone-policy.rst:103
+#: ../../configexamples/zone-policy.rst:93
 msgid "In VyOS, you have to have unique Ruleset names. In the event of overlap, I add a \"-6\" to the end of v6 rulesets. eg. LAN-DMZ, LAN-DMZ-6. This allows for each auto-completion and uniqueness."
 msgstr "У VyOS ви повинні мати унікальні імена набору правил. У разі збігу я додаю «-6» у кінець наборів правил v6. напр. LAN-DMZ, LAN-DMZ-6. Це забезпечує кожне автозавершення та унікальність."
 
-#: ../../configexamples/zone-policy.rst:167
+#: ../../configexamples/zone-policy.rst:157
 msgid "In VyOS you must have the interfaces created before you can apply it to the zone and the rulesets must be created prior to applying it to a zone-policy."
 msgstr "У VyOS у вас повинні бути створені інтерфейси, перш ніж ви зможете застосувати його до зони, а набори правил мають бути створені перед застосуванням його до зональної політики."
 
-#: ../../configexamples/zone-policy.rst:18
+#: ../../configexamples/zone-policy.rst:8
 msgid "In :vytask:`T2199` the syntax of the zone configuration was changed. The zone configuration moved from ``zone-policy zone <name>`` to ``firewall zone <name>``."
 msgstr "У :vytask:`T2199` змінено синтаксис конфігурації зони. Конфігурацію зони переміщено з ``zone-policy zone<name> `` до ``зони брандмауера<name> ``."
 
-#: ../../configexamples/zone-policy.rst:115
+#: ../../configexamples/zone-policy.rst:105
 msgid "In rules, it is good to keep them named consistently. As the number of rules you have grows, the more consistency you have, the easier your life will be."
 msgstr "У правилах добре, щоб вони називалися послідовно. У міру того, як кількість ваших правил зростає, чим більше у вас послідовності, тим легше вам буде жити."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:176
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:184
 msgid "In the above examples, 1,2,ffff are all chosen by you. You can use 1-ffff (1-65535)."
 msgstr "У наведених вище прикладах 1,2,ffff вибрано вами. Ви можете використовувати 1-ffff (1-65535)."
 
@@ -1245,7 +1474,7 @@ msgstr "На завершення ми налаштуємо формувач т�
 msgid "In the end, you'll get a powerful instrument for monitoring the VyOS systems."
 msgstr "У підсумку ви отримаєте потужний інструмент для моніторингу систем VyOS."
 
-#: ../../configexamples/zone-policy.rst:377
+#: ../../configexamples/zone-policy.rst:367
 msgid "In the end, you will end up with something like this config. I took out everything but the Firewall, Interfaces, and zone-policy sections. It is long enough as is."
 msgstr "Зрештою, ви отримаєте щось на зразок цієї конфігурації. Я видалив усе, окрім розділів Firewall, Interfaces і zone-policy. Він досить довгий як є."
 
@@ -1265,7 +1494,7 @@ msgstr "У цьому випадку апаратний маршрутизато
 msgid "In this case, we'll try to make a simple lab using QoS and the general ability of the VyOS system. We recommend you to go through the main article about `QoS <https://docs.vyos.io/en/latest/configuration/trafficpolicy/index.html>`_ first."
 msgstr "У цьому випадку ми спробуємо зробити просту лабораторну роботу, використовуючи QoS і загальні можливості системи VyOS. Ми рекомендуємо вам переглянути основну статтю про `QoS<https://docs.vyos.io/en/latest/configuration/trafficpolicy/index.html> `_ перший."
 
-#: ../../configexamples/zone-policy.rst:365
+#: ../../configexamples/zone-policy.rst:355
 msgid "In this case, we are setting the v6 ruleset that represents traffic sourced from the LAN, destined for the DMZ. Because the zone-policy firewall syntax is a little awkward, I keep it straight by thinking of it backwards."
 msgstr "У цьому випадку ми встановлюємо набір правил v6, який представляє трафік, отриманий з локальної мережі, призначений для DMZ. Оскільки синтаксис брандмауера політики зони трохи незграбний, я тримаю його чітким, думаючи про це в зворотному порядку."
 
@@ -1289,7 +1518,7 @@ msgstr "У цьому прикладі OpenVPN буде налаштовано �
 msgid "In this example two LAN interfaces exist in different subnets instead of one like in the previous examples:"
 msgstr "У цьому прикладі два інтерфейси LAN існують у різних підмережах замість одного, як у попередніх прикладах:"
 
-#: ../../configexamples/zone-policy.rst:107
+#: ../../configexamples/zone-policy.rst:97
 msgid "In this example we have 4 zones. LAN, WAN, DMZ, Local. The local zone is the firewall itself."
 msgstr "У цьому прикладі ми маємо 4 зони. LAN, WAN, DMZ, локальний. Локальною зоною є сам брандмауер."
 
@@ -1301,7 +1530,11 @@ msgstr "In this example we use VyOS 1.5 as LNS and Cisco IOS as LAC. All users w
 msgid "In this lab we use Windows PPPoE client."
 msgstr "In this lab we use Windows PPPoE client."
 
-#: ../../configexamples/zone-policy.rst:50
+#: ../../configexamples/fwall-and-bridge.rst:77
+msgid "In this section, we are going to configure the firewall rules that will be used in bridge firewall, and will control the traffic within each bridge."
+msgstr "In this section, we are going to configure the firewall rules that will be used in bridge firewall, and will control the traffic within each bridge."
+
+#: ../../configexamples/zone-policy.rst:40
 msgid "Inbound WAN connect to DMZ host."
 msgstr "Вхідне підключення WAN до хосту DMZ."
 
@@ -1350,21 +1583,25 @@ msgstr "Внутрішня мережа"
 msgid "Internet"
 msgstr "Інтернет"
 
-#: ../../configexamples/zone-policy.rst:40
+#: ../../configexamples/zone-policy.rst:30
 msgid "Internet - 192.168.200.100 - TCP/25"
 msgstr "Інтернет - 192.168.200.100 - TCP/25"
 
-#: ../../configexamples/zone-policy.rst:39
+#: ../../configexamples/zone-policy.rst:29
 msgid "Internet - 192.168.200.100 - TCP/443"
 msgstr "Інтернет - 192.168.200.100 - TCP/443"
 
-#: ../../configexamples/zone-policy.rst:41
+#: ../../configexamples/zone-policy.rst:31
 msgid "Internet - 192.168.200.100 - TCP/53"
 msgstr "Інтернет - 192.168.200.100 - TCP/53"
 
-#: ../../configexamples/zone-policy.rst:38
+#: ../../configexamples/zone-policy.rst:28
 msgid "Internet - 192.168.200.100 - TCP/80"
 msgstr "Інтернет - 192.168.200.100 - TCP/80"
+
+#: ../../configexamples/fwall-and-bridge.rst:16
+msgid "Isolated layer 2 bridge."
+msgstr "Isolated layer 2 bridge."
 
 #: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:79
 msgid "It's important to note that all your existing configurations will be migrated automatically on image upgrade. Nothing to do on your side."
@@ -1374,11 +1611,11 @@ msgstr "Важливо зазначити, що всі ваші наявні к�
 msgid "It is assumed that the routers provided by upstream are capable of acting as a default router, add that as a static route."
 msgstr "Передбачається, що маршрутизатори, надані вищим потоком, можуть діяти як маршрутизатор за замовчуванням, додайте це як статичний маршрут."
 
-#: ../../configexamples/zone-policy.rst:140
+#: ../../configexamples/zone-policy.rst:130
 msgid "It is good practice to log both accepted and denied traffic. It can save you significant headaches when trying to troubleshoot a connectivity issue."
 msgstr "Рекомендується реєструвати як прийнятий, так і заборонений трафік. Це може позбавити вас значних головних болів під час спроб усунути проблему підключення."
 
-#: ../../configexamples/zone-policy.rst:60
+#: ../../configexamples/zone-policy.rst:50
 msgid "It will look something like this:"
 msgstr "Це буде виглядати приблизно так:"
 
@@ -1406,7 +1643,7 @@ msgstr "L3VPN для підключення Hub-and-Spoke із VyOS"
 msgid "LAC"
 msgstr "LAC"
 
-#: ../../configexamples/zone-policy.rst:392
+#: ../../configexamples/zone-policy.rst:382
 msgid "LAN, WAN, DMZ, local and TUN (tunnel)"
 msgstr "LAN, WAN, DMZ, локальний і TUN (тунель)"
 
@@ -1438,15 +1675,15 @@ msgstr "І 1"
 msgid "LAN 2"
 msgstr "І 2"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:100
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:108
 msgid "LAN Configuration"
 msgstr "Конфігурація локальної мережі"
 
-#: ../../configexamples/zone-policy.rst:47
+#: ../../configexamples/zone-policy.rst:37
 msgid "LAN and DMZ hosts have basic outbound access: Web, FTP, SSH."
 msgstr "Хости LAN і DMZ мають базовий вихідний доступ: Web, FTP, SSH."
 
-#: ../../configexamples/zone-policy.rst:48
+#: ../../configexamples/zone-policy.rst:38
 msgid "LAN can access DMZ resources."
 msgstr "LAN може отримати доступ до ресурсів DMZ."
 
@@ -1501,7 +1738,7 @@ msgstr "Багато інших гіпервізорів роблять це, і
 msgid "Masquerade Traffic originating from 10.200.201.0/24 that is heading out the public interface."
 msgstr "Маскарадний трафік, що надходить із 10.200.201.0/24, що надходить через публічний інтерфейс."
 
-#: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:254
+#: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:270
 #: ../../configexamples/lac-lns.rst:106
 msgid "Monitoring"
 msgstr "Моніторинг"
@@ -1518,7 +1755,7 @@ msgstr "Monitoring on LNS side"
 msgid "Monitoring on RADIUS Server side"
 msgstr "Monitoring on RADIUS Server side"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:162
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:170
 msgid "Multiple LAN/DMZ Setup"
 msgstr "Налаштування декількох LAN/DMZ"
 
@@ -1530,7 +1767,7 @@ msgstr "NAT і conntrack-sync"
 msgid "NMP example"
 msgstr "Приклад НМП"
 
-#: ../../configexamples/zone-policy.rst:23
+#: ../../configexamples/zone-policy.rst:13
 msgid "Native IPv4 and IPv6"
 msgstr "Власний IPv4 та IPv6"
 
@@ -1544,6 +1781,7 @@ msgid "Network Topology"
 msgstr "Топологія мережі"
 
 #: ../../configexamples/ansible.rst:-1
+#: ../../configexamples/fwall-and-vrf.rst:-1
 #: ../../configexamples/inter-vrf-routing-vrf-lite.rst:-1
 #: ../../configexamples/l3vpn-hub-and-spoke.rst:-1
 #: ../../configexamples/lac-lns.rst:-1
@@ -1558,6 +1796,10 @@ msgstr "Схема топології мережі"
 #: ../../configexamples/policy-based-ipsec-and-firewall.rst:14
 msgid "Network Topology and requirements"
 msgstr "Network Topology and requirements"
+
+#: ../../configexamples/fwall-and-vrf.rst:80
+msgid "Next, we need to configure the firewall rules. First we will define all rules for transit traffic between VRFs."
+msgstr "Next, we need to configure the firewall rules. First we will define all rules for transit traffic between VRFs."
 
 #: ../../configexamples/qos.rst:31
 msgid "Next, we will replace only all CS4 labels on the “VyOS2” router."
@@ -1587,9 +1829,13 @@ msgstr "Зауважте, що router1 — це віртуальна машин�
 msgid "Note to allow the router to receive DHCPv6 response from ISP. We need to allow packets with source port 547 (server) and destination port 546 (client)."
 msgstr "Зверніть увагу, щоб дозволити маршрутизатору отримувати відповідь DHCPv6 від провайдера. Нам потрібно дозволити пакети з портом джерела 547 (сервер) і портом призначення 546 (клієнт)."
 
-#: ../../configexamples/zone-policy.rst:411
+#: ../../configexamples/zone-policy.rst:401
 msgid "Notice, none go to WAN since WAN wouldn't have a v6 address on it."
 msgstr "Зауважте, ніхто не переходить до WAN, оскільки WAN не матиме адреси v6."
+
+#: ../../configexamples/fwall-and-bridge.rst:168
+msgid "Now, in the ``forward`` chain, we are going to define state policies, and custom rulesets for each bridge that would be used in the ``forward`` chain. These rulesets are ``br0-fwd``, ``br1-fwd``, and ``br2-fwd``:"
+msgstr "Now, in the ``forward`` chain, we are going to define state policies, and custom rulesets for each bridge that would be used in the ``forward`` chain. These rulesets are ``br0-fwd``, ``br1-fwd``, and ``br2-fwd``:"
 
 #: ../../configexamples/l3vpn-hub-and-spoke.rst:831
 msgid "Now, let’s check routing information on out Hub PE:"
@@ -1603,7 +1849,7 @@ msgstr "Тепер увімкніть реплікацію між вузлами
 msgid "Now generate all required certificates on the ovpn-server:"
 msgstr "Тепер згенеруйте всі необхідні сертифікати на ovpn-сервері:"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:144
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:152
 msgid "Now the Client is able to ping a public IPv6 address"
 msgstr "Тепер клієнт може перевіряти загальнодоступну адресу IPv6"
 
@@ -1619,7 +1865,7 @@ msgstr "Тепер ми проводимо наскрізне тестуванн
 msgid "Now we’re checking iBGP status and routes from route-reflector nodes to other devices:"
 msgstr "Зараз ми перевіряємо статус iBGP і маршрути від вузлів маршрутизатора до інших пристроїв:"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:57
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:65
 msgid "Now you should be able to ping a public IPv6 Address"
 msgstr "Тепер ви зможете перевіряти загальнодоступну IPv6-адресу"
 
@@ -1648,7 +1894,7 @@ msgstr "Коли всіма маршрутизаторами можна буде
 msgid "Once all the required certificates and keys are installed, the remaining OpenVPN Server configuration can be carried out."
 msgstr "Після встановлення всіх необхідних сертифікатів і ключів можна виконати решту конфігурації сервера OpenVPN."
 
-#: ../../configexamples/zone-policy.rst:355
+#: ../../configexamples/zone-policy.rst:345
 msgid "Once you have all of your rulesets built, then you need to create your zone-policy."
 msgstr "Коли ви створите всі набори правил, вам потрібно створити політику зони."
 
@@ -1675,6 +1921,10 @@ msgstr "Один кабель/логічне з&#39;єднання між LAN2 �
 #: ../../configexamples/inter-vrf-routing-vrf-lite.rst:50
 msgid "One cable/logical connection between LAN2 and Management"
 msgstr "Один кабель/логічне з&#39;єднання між LAN2 і керуванням"
+
+#: ../../configexamples/fwall-and-vrf.rst:27
+msgid "Only accepts connections."
+msgstr "Only accepts connections."
 
 #: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:5
 msgid "OpenVPN with LDAP"
@@ -1755,8 +2005,8 @@ msgstr "Передайте клієнту ping із сервера DHCP."
 msgid "Pings will be sent to four targets for health testing (33.44.55.66, 44.55.66.77, 55.66.77.88 and 66.77.88.99)."
 msgstr "Пінги будуть надіслані до чотирьох цілей для перевірки справності (33.44.55.66, 44.55.66.77, 55.66.77.88 і 66.77.88.99)."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:128
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:195
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:136
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:203
 msgid "Please note, 'autonomous-flag' and 'on-link-flag' are enabled by default, 'valid-lifetime' and 'preferred-lifetime' are set to default values of 30 days and 4 hours respectively."
 msgstr "Зауважте, що «autonomous-flag» і «on-link-flag» увімкнено за умовчанням, «valid-lifetime» і «preferred-lifetime» встановлено значення за замовчуванням 30 днів і 4 години відповідно."
 
@@ -1853,11 +2103,11 @@ msgstr "VPN на основі маршруту Site-to-Site VPN до Azure (BGP 
 msgid "Route-Filtering"
 msgstr "Фільтрація маршруту"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:110
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:118
 msgid "Routed /48. This is something you can request by clicking the \"Assign /48\" link in the Tunnelbroker.net tunnel config. It allows you to have up to 65k"
 msgstr "Розбитий /48. Це те, що ви можете запросити, натиснувши посилання «Призначити /48» у конфігурації тунелю Tunnelbroker.net. Це дозволяє мати до 65 тис"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:107
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:115
 msgid "Routed /64. This is the default assignment. In IPv6-land, it's good for a single \"LAN\", and is somewhat equivalent to a /24."
 msgstr "Розбитий /64. Це призначення за замовчуванням. У країнах IPv6 це добре для однієї «LAN» і дещо еквівалентно /24."
 
@@ -1883,9 +2133,14 @@ msgstr "Маршрутизатор B:"
 msgid "Router id's must be unique."
 msgstr "Ідентифікатори маршрутизатора мають бути унікальними."
 
-#: ../../configexamples/zone-policy.rst:98
+#: ../../configexamples/zone-policy.rst:88
 msgid "Ruleset are created per zone-pair-direction."
 msgstr "Набір правил створюється для зони-пари-напрямку."
+
+#: ../../configexamples/fwall-and-bridge.rst:7
+#: ../../configexamples/fwall-and-vrf.rst:5
+msgid "Scenario and requirements"
+msgstr "Scenario and requirements"
 
 #: ../../configexamples/segment-routing-isis.rst:7
 msgid "Segment-routing IS-IS example"
@@ -1919,7 +2174,7 @@ msgstr "Встановіть локальну підмережу на eth2 та 
 msgid "Set up bandwidth limits on the eth2 interface of the router “VyOS2”."
 msgstr "Налаштуйте обмеження пропускної здатності на інтерфейсі eth2 роутера «VyOS2»."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:139
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:147
 msgid "Sets your LAN interface's IP address"
 msgstr "Встановлює IP-адресу вашого інтерфейсу локальної мережі"
 
@@ -1930,6 +2185,10 @@ msgstr "Налаштування глобального локального BGP
 #: ../../configexamples/ansible.rst:10
 msgid "Setting up Ansible on a server running the Debian operating system."
 msgstr "Setting up Ansible on a server running the Debian operating system."
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:59
+msgid "Setup the IPv6 default route to the tunnel interface"
+msgstr "Setup the IPv6 default route to the tunnel interface"
 
 #: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:51
 msgid "Setup the ipv6 default route to the tunnel interface"
@@ -1943,23 +2202,31 @@ msgstr "Показати маршрути для всіх VRF"
 msgid "Similarly, to attach the firewall, you would use `set interfaces ethernet eth0 firewall in ipv6-name` or `et firewall zone LOCAL from WAN firewall ipv6-name`."
 msgstr "Подібним чином, щоб під’єднати брандмауер, ви повинні використати `set interfaces ethernet eth0 firewall in ipv6-name` або `et firewall zone LOCAL from WAN firewall ipv6-name`."
 
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:214
+msgid "Similarly, to attach the firewall, you would use `set interfaces ethernet eth0 firewall in ipv6-name` or `set firewall zone LOCAL from WAN firewall ipv6-name`."
+msgstr "Similarly, to attach the firewall, you would use `set interfaces ethernet eth0 firewall in ipv6-name` or `set firewall zone LOCAL from WAN firewall ipv6-name`."
+
 #: ../../configexamples/pppoe-ipv6-basic.rst:78
 msgid "Since some ISPs disconnects continuous connection for every 2~3 days, we set ``valid-lifetime`` to 2 days to allow PC for phasing out old address."
 msgstr "Оскільки деякі інтернет-провайдери відключають безперервне з’єднання кожні 2–3 дні, ми встановлюємо ``valid-lifetime`` на 2 дні, щоб дозволити ПК поступово відключати стару адресу."
+
+#: ../../configexamples/fwall-and-bridge.rst:260
+msgid "Since some of the requirements listed above exceed the capabilities of the bridge firewall, we need to use the IP firewall to implement them. For bridge br1 and br2, we need to control the traffic that is going to the router itself, to other local networks, and to the Internet."
+msgstr "Since some of the requirements listed above exceed the capabilities of the bridge firewall, we need to use the IP firewall to implement them. For bridge br1 and br2, we need to control the traffic that is going to the router itself, to other local networks, and to the Internet."
 
 #: ../../configexamples/site-2-site-cisco.rst:128
 msgid "Since the tunnel is a point-to-point GRE tunnel, it behaves like any other point-to-point interface (for example: serial, dialer), and it is possible to run any Interior Gateway Protocol (IGP)/Exterior Gateway Protocol (EGP) over the link in order to exchange routing information"
 msgstr "Since the tunnel is a point-to-point GRE tunnel, it behaves like any other point-to-point interface (for example: serial, dialer), and it is possible to run any Interior Gateway Protocol (IGP)/Exterior Gateway Protocol (EGP) over the link in order to exchange routing information"
 
-#: ../../configexamples/zone-policy.rst:236
+#: ../../configexamples/zone-policy.rst:226
 msgid "Since we have 4 zones, we need to setup the following rulesets."
 msgstr "Оскільки у нас 4 зони, нам потрібно налаштувати наступні набори правил."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:119
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:127
 msgid "Single LAN Setup"
 msgstr "Налаштування однієї локальної мережі"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:121
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:129
 msgid "Single LAN setup where eth2 is your LAN interface. Use the Tunnelbroker Routed /64 prefix:"
 msgstr "Налаштування однієї локальної мережі, де eth2 є вашим інтерфейсом локальної мережі. Використовуйте префікс Tunnelbroker Routed /64:"
 
@@ -1967,11 +2234,15 @@ msgstr "Налаштування однієї локальної мережі, �
 msgid "Site-to-Site IPSec VPN to Cisco using FlexVPN"
 msgstr "Site-to-Site IPSec VPN to Cisco using FlexVPN"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:179
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:187
 msgid "So, when your LAN is eth1, your DMZ is eth2, your cameras are on eth3, etc:"
 msgstr "Отже, коли ваша локальна мережа — eth1, ваша DMZ — eth2, ваші камери — на eth3 тощо:"
 
-#: ../../configexamples/zone-policy.rst:416
+#: ../../configexamples/fwall-and-bridge.rst:87
+msgid "So first, let's create the required firewall interface groups:"
+msgstr "So first, let's create the required firewall interface groups:"
+
+#: ../../configexamples/zone-policy.rst:406
 msgid "Something like:"
 msgstr "Щось на зразок:"
 
@@ -1980,7 +2251,7 @@ msgstr "Щось на зразок:"
 msgid "Spoke"
 msgstr "Говорив"
 
-#: ../../configexamples/zone-policy.rst:358
+#: ../../configexamples/zone-policy.rst:348
 msgid "Start by setting the interface and default action for each zone."
 msgstr "Почніть із встановлення інтерфейсу та дії за замовчуванням для кожної зони."
 
@@ -1991,6 +2262,10 @@ msgstr "Start the playbook:"
 #: ../../configexamples/zone-policy.rst:8
 msgid "Starting from VyOS 1.4-rolling-202308040557, a new firewall structure can be found on all vyos instalations, and zone based firewall is no longer supported. Documentation for most of the new firewall CLI can be found in the `firewall <https://docs.vyos.io/en/latest/configuration/firewall/general.html>`_ chapter. The legacy firewall is still available for versions before 1.4-rolling-202308040557 and can be found in the :ref:`firewall-legacy` chapter. The examples in this section use the legacy firewall configuration commands, since this feature has been removed in earlier releases."
 msgstr "Starting from VyOS 1.4-rolling-202308040557, a new firewall structure can be found on all vyos instalations, and zone based firewall is no longer supported. Documentation for most of the new firewall CLI can be found in the `firewall <https://docs.vyos.io/en/latest/configuration/firewall/general.html>`_ chapter. The legacy firewall is still available for versions before 1.4-rolling-202308040557 and can be found in the :ref:`firewall-legacy` chapter. The examples in this section use the legacy firewall configuration commands, since this feature has been removed in earlier releases."
+
+#: ../../configexamples/zone-policy.rst:8
+msgid "Starting from VyOS 1.4-rolling-202308040557, a new firewall structure can be found on all vyos installations, and zone based firewall is no longer supported. Documentation for most of the new firewall CLI can be found in the `firewall <https://docs.vyos.io/en/latest/configuration/firewall/general.html>`_ chapter. The legacy firewall is still available for versions before 1.4-rolling-202308040557 and can be found in the :ref:`firewall-legacy` chapter. The examples in this section use the legacy firewall configuration commands, since this feature has been removed in earlier releases."
+msgstr "Starting from VyOS 1.4-rolling-202308040557, a new firewall structure can be found on all vyos installations, and zone based firewall is no longer supported. Documentation for most of the new firewall CLI can be found in the `firewall <https://docs.vyos.io/en/latest/configuration/firewall/general.html>`_ chapter. The legacy firewall is still available for versions before 1.4-rolling-202308040557 and can be found in the :ref:`firewall-legacy` chapter. The examples in this section use the legacy firewall configuration commands, since this feature has been removed in earlier releases."
 
 #: ../../configexamples/l3vpn-hub-and-spoke.rst:105
 msgid "Step-1: Configuring IGP and enabling MPLS LDP"
@@ -2074,7 +2349,7 @@ msgstr "Тестування"
 msgid "Testing and debugging"
 msgstr "Тестування та налагодження"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:164
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:172
 msgid "That's how you can expand the example above. Use the `Routed /48` information. This allows you to assign a different /64 to every interface, LAN, or even device. Or you could break your network into smaller chunks like /56 or /60."
 msgstr "Таким чином ви можете розширити наведений вище приклад. Використовуйте інформацію `Routed /48`. Це дозволяє призначати різні /64 для кожного інтерфейсу, локальної мережі чи навіть пристрою. Або ви можете розбити свою мережу на менші частини, наприклад /56 або /60."
 
@@ -2086,7 +2361,7 @@ msgstr "Лабораторія припускає повноцінну робо�
 msgid "The Topology are consists of:"
 msgstr "Топологія складається з:"
 
-#: ../../configexamples/zone-policy.rst:57
+#: ../../configexamples/zone-policy.rst:47
 msgid "The VyOS interface is assigned the .1/:1 address of their respective networks. WAN is on VLAN 10, LAN on VLAN 20, and DMZ on VLAN 30."
 msgstr "Інтерфейсу VyOS призначається адреса .1/:1 відповідних мереж. WAN знаходиться у VLAN 10, LAN у VLAN 20, а DMZ у VLAN 30."
 
@@ -2097,6 +2372,10 @@ msgstr "Після кожного розділу мається на увазі 
 #: ../../configexamples/ha.rst:543
 msgid "The ``redistribute ospf`` command is there purely as an example of how this can be expanded. In this walkthrough, it will be filtered by BGPOUT rule 10000, as it is not 203.0.113.0/24."
 msgstr "Команда ``redistribute ospf`` є лише як приклад того, як це можна розширити. У цьому покроковому керівництві його буде відфільтровано за правилом BGPOUT 10000, оскільки це не 203.0.113.0/24."
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:51
+msgid "The `source-address` is the Tunnelbroker client IPv4 address or if there is NAT the current WAN interface address."
+msgstr "The `source-address` is the Tunnelbroker client IPv4 address or if there is NAT the current WAN interface address."
 
 #: ../../configexamples/segment-routing-isis.rst:19
 msgid "The below configuration is used as example where we keep focus on VyOS-P1/VyOS-P2/XRv-P3 which we share the settings."
@@ -2110,11 +2389,11 @@ msgstr "Кроки конфігурації такі ж, як і в попере
 msgid "The example topology has 2 VyOS routers. One as The WAN Router and on as a Client, to test a single LAN setup"
 msgstr "Приклад топології містить 2 маршрутизатори VyOS. Один як WAN-маршрутизатор і як клієнт, щоб перевірити налаштування однієї локальної мережі"
 
-#: ../../configexamples/zone-policy.rst:133
+#: ../../configexamples/zone-policy.rst:123
 msgid "The first two rules are to deal with the idiosyncrasies of VyOS and iptables."
 msgstr "Перші два правила стосуються особливостей VyOS та iptables."
 
-#: ../../configexamples/zone-policy.rst:182
+#: ../../configexamples/zone-policy.rst:172
 msgid "The following are the rules that were created for this example (may not be complete), both in IPv4 and IPv6. If there is no IP specified, then the source/destination address is not explicit."
 msgstr "Нижче наведено правила, створені для цього прикладу (можуть бути неповними) як для IPv4, так і для IPv6. Якщо IP-адреса не вказана, адреса джерела/одержувача не є явною."
 
@@ -2126,13 +2405,17 @@ msgstr "Для створення цього документа використ
 msgid "The following template configuration can be used in each remote router based in our topology."
 msgstr "Наступну конфігурацію шаблону можна використовувати в кожному віддаленому маршрутизаторі в нашій топології."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:169
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:177
 msgid "The format of these addresses:"
 msgstr "Формат цих адрес:"
 
 #: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:42
 msgid "The lab I built is using a VRF (called **mgmt**) to provide out-of-band SSH access to the PE (Provider Edge) routers."
 msgstr "Лабораторія, яку я створив, використовує VRF (називається **mgmt**) для забезпечення позасмугового доступу SSH до маршрутизаторів PE (Provider Edge)."
+
+#: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:23
+msgid "The lab assumes a full running Active Directory on the Windows Server. Here are some PowerShell commands to quickly add a Test Active Directory."
+msgstr "The lab assumes a full running Active Directory on the Windows Server. Here are some PowerShell commands to quickly add a Test Active Directory."
 
 #: ../../configexamples/site-2-site-cisco.rst:14
 msgid "The lab was built using EVE-NG."
@@ -2206,13 +2489,21 @@ msgstr "Вони хочуть, щоб ми встановили сеанс BGP �
 msgid "This LAB show how to uwe OpenVPN with a Active Directory authentication backend."
 msgstr "Ця ЛАБ показує, як використовувати OpenVPN із серверною частиною автентифікації Active Directory."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:137
+#: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:10
+msgid "This LAB shows how to use OpenVPN with a Active Directory authentication method."
+msgstr "This LAB shows how to use OpenVPN with a Active Directory authentication method."
+
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:145
 msgid "This accomplishes a few things:"
 msgstr "Це досягає кількох речей:"
 
 #: ../../configexamples/index.rst:6
 msgid "This chapter contains various configuration examples:"
 msgstr "Цей розділ містить різні приклади конфігурації:"
+
+#: ../../configexamples/policy-based-ipsec-and-firewall.rst:16
+msgid "This configuration example and the requirements consists of:"
+msgstr "This configuration example and the requirements consists of:"
 
 #: ../../configexamples/policy-based-ipsec-and-firewall.rst:16
 msgid "This configuration example and the requirments consists of:"
@@ -2241,6 +2532,14 @@ msgstr "Цей документ проведе вас через повне на
 #: ../../configexamples/ha.rst:38
 msgid "This ensures you don't go too fast or miss a step. However, it will make your life easier to configure the fixed IP address and default route now on the hardware router."
 msgstr "Це гарантує, що ви не їдете надто швидко або не пропустите крок. Однак це полегшить ваше життя, якщо налаштувати фіксовану IP-адресу та маршрут за замовчуванням зараз на апаратному маршрутизаторі."
+
+#: ../../configexamples/fwall-and-vrf.rst:7
+msgid "This example shows how to configure a VyOS router with VRFs and firewall rules."
+msgstr "This example shows how to configure a VyOS router with VRFs and firewall rules."
+
+#: ../../configexamples/fwall-and-bridge.rst:9
+msgid "This example shows how to configure a VyOS router with bridge interfaces and firewall rules."
+msgstr "This example shows how to configure a VyOS router with bridge interfaces and firewall rules."
 
 #: ../../configexamples/wan-load-balancing.rst:70
 msgid "This example uses the failover mode."
@@ -2282,7 +2581,7 @@ msgstr "Він має плаваючу IP-адресу 10.200.201.1/24, вико
 msgid "This has a floating IP address of 203.0.113.1/24, using virtual router ID 113. The virtual router ID is just a random number between 1 and 254, and can be set to whatever you want. Best practices suggest you try to keep them unique enterprise-wide."
 msgstr "Він має плаваючу IP-адресу 203.0.113.1/24 із використанням ідентифікатора віртуального маршрутизатора 113. Ідентифікатор віртуального маршрутизатора — це лише випадкове число від 1 до 254, яке можна встановити будь-яким. Рекомендації з найкращих практик рекомендують вам намагатися зберегти їх унікальними для всього підприємства."
 
-#: ../../configexamples/zone-policy.rst:258
+#: ../../configexamples/zone-policy.rst:248
 msgid "This is an example of the three base rules."
 msgstr "Це приклад трьох основних правил."
 
@@ -2305,6 +2604,10 @@ msgstr "Це ігнорує додаткову мережу позасмугов
 #: ../../configexamples/inter-vrf-routing-vrf-lite.rst:38
 msgid "This scenario could be a nightmare applying regular routing and might need filtering in multiple interfaces."
 msgstr "Цей сценарій може стати кошмаром із застосуванням звичайної маршрутизації та потребує фільтрації в кількох інтерфейсах."
+
+#: ../../configexamples/firewall.rst:6
+msgid "This section contains examples of firewall configurations for various deployments."
+msgstr "This section contains examples of firewall configurations for various deployments."
 
 #: ../../configexamples/l3vpn-hub-and-spoke.rst:547
 msgid "This section describes verification commands for MPLS/BGP/LDP protocols and L3VPN related routes as well as diagnosis and reachability checks between CE nodes."
@@ -2330,6 +2633,10 @@ msgstr "Ця проста структура показує, як налашту
 msgid "This will be visible in 'show ip route'."
 msgstr "Це буде видно в «show ip route»."
 
+#: ../../configexamples/fwall-and-bridge.rst:12
+msgid "Three non VLAN-aware bridges are going to be configured, and each one has its own requirements."
+msgstr "Three non VLAN-aware bridges are going to be configured, and each one has its own requirements."
+
 #: ../../configexamples/autotest/L3VPN_EVPN/L3VPN_EVPN.rst:112
 msgid "Thus you can easily match it to one of the devices/networks below."
 msgstr "Таким чином, ви можете легко підключити його до одного з пристроїв/мереж нижче."
@@ -2338,7 +2645,7 @@ msgstr "Таким чином, ви можете легко підключити
 msgid "To achieve this, your ISP is required to support DHCPv6-PD. If you're not sure, please contact your ISP for more information."
 msgstr "Для цього ваш провайдер повинен підтримувати DHCPv6-PD. Якщо ви не впевнені, будь ласка, зверніться до свого провайдера для отримання додаткової інформації."
 
-#: ../../configexamples/zone-policy.rst:144
+#: ../../configexamples/zone-policy.rst:134
 msgid "To add logging to the default rule, do:"
 msgstr "Щоб додати журналювання до правила за замовчуванням, виконайте:"
 
@@ -2367,7 +2674,11 @@ msgstr "Щоб отримати доступ до мережі, на кожно�
 msgid "Topology"
 msgstr "Топологія"
 
-#: ../../configexamples/zone-policy.rst:95
+#: ../../configexamples/autotest/OpenVPN_with_LDAP/OpenVPN_with_LDAP.rst:15
+msgid "Topology consists of:"
+msgstr "Topology consists of:"
+
+#: ../../configexamples/zone-policy.rst:85
 msgid "Traffic flows from zone A to zone B. That flow is what I refer to as a zone-pair-direction. eg. A->B and B->A are two zone-pair-destinations."
 msgstr "Трафік рухається із зони A в зону B. Цей потік я називаю напрямком пари зон. напр. A-&gt;B і B-&gt;A є двома зонами призначення."
 
@@ -2391,7 +2702,7 @@ msgstr "Two VyOS routers with public IP address."
 msgid "Two rules will be created, the first rule directs traffic coming in from eth2 to eth0 and the second rule directs the traffic to eth1. If eth0 fails the first rule is bypassed and the second rule matches, directing traffic to eth1."
 msgstr "Буде створено два правила: перше правило спрямовує трафік, що надходить від eth2 до eth0, а друге правило спрямовує трафік до eth1. Якщо eth0 виходить з ладу, перше правило обходиться, а друге правило збігається, спрямовуючи трафік на eth1."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:113
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:121
 msgid "Unlike IPv4, IPv6 is really not designed to be broken up smaller than /64. So if you ever want to have multiple LANs, VLANs, DMZ, etc, you'll want to ignore the assigned /64, and request the /48 and use that."
 msgstr "На відміну від IPv4, IPv6 справді не призначений для розбивання меншого ніж /64. Отже, якщо ви коли-небудь захочете мати кілька локальних мереж, VLAN, DMZ тощо, ви захочете проігнорувати призначений /64 і запросити /48 і використовувати його."
 
@@ -2421,9 +2732,33 @@ msgstr "VMware: ви повинні ВИМКНУТИ БЕЗПЕКУ для ці�
 msgid "VRF"
 msgstr "VRF"
 
+#: ../../configexamples/fwall-and-vrf.rst:24
+msgid "VRF LAN:"
+msgstr "VRF LAN:"
+
+#: ../../configexamples/fwall-and-vrf.rst:21
+msgid "VRF MGMT:"
+msgstr "VRF MGMT:"
+
+#: ../../configexamples/fwall-and-vrf.rst:26
+msgid "VRF PROD:"
+msgstr "VRF PROD:"
+
+#: ../../configexamples/fwall-and-vrf.rst:29
+msgid "VRF WAN:"
+msgstr "VRF WAN:"
+
+#: ../../configexamples/fwall-and-vrf.rst:2
+msgid "VRF and firewall example"
+msgstr "VRF and firewall example"
+
 #: ../../configexamples/ha.rst:189
 msgid "VRRP Configuration"
 msgstr "Конфігурація VRRP"
+
+#: ../../configexamples/fwall-and-bridge.rst:347
+msgid "Validation"
+msgstr "Validation"
 
 #: ../../configexamples/inter-vrf-routing-vrf-lite.rst:160
 #: ../../configexamples/inter-vrf-routing-vrf-lite.rst:248
@@ -2555,7 +2890,7 @@ msgstr "VyOS-RR2:"
 msgid "VyOS 1.3 added initial support for VRFs (including IPv4/IPv6 static routing) and VyOS 1.4 now enables full dynamic routing protocol support for OSPF, IS-IS, and BGP for individual VRFs."
 msgstr "У VyOS 1.3 додано початкову підтримку для VRF (включаючи статичну маршрутизацію IPv4/IPv6), а VyOS 1.4 тепер забезпечує повну підтримку протоколу динамічної маршрутизації для OSPF, IS-IS і BGP для окремих VRF."
 
-#: ../../configexamples/zone-policy.rst:42
+#: ../../configexamples/zone-policy.rst:32
 msgid "VyOS acts as DHCP, DNS forwarder, NAT, router and firewall."
 msgstr "VyOS діє як DHCP, DNS-переадресатор, NAT, маршрутизатор і брандмауер."
 
@@ -2608,6 +2943,10 @@ msgstr "Пропозиція покрокового керівництва"
 msgid "We are going to use 10.200.201.0/24 for an 'internal' network on VLAN201."
 msgstr "Ми збираємося використовувати 10.200.201.0/24 для «внутрішньої» мережі на VLAN201."
 
+#: ../../configexamples/fwall-and-bridge.rst:80
+msgid "We are going to use custom firewall rulesets, one for each bridge that will be used in ``prerouting``, and one for each bridge that will be used in the ``forward`` chain."
+msgstr "We are going to use custom firewall rulesets, one for each bridge that will be used in ``prerouting``, and one for each bridge that will be used in the ``forward`` chain."
+
 #: ../../configexamples/ha.rst:191
 msgid "We are setting up VRRP so that it does NOT fail back when a machine returns into service, and it prioritizes router1 over router2."
 msgstr "Ми налаштовуємо VRRP так, щоб він НЕ виходив з ладу, коли машина повертається в експлуатацію, і він надавав пріоритет маршрутизатору1 над маршрутизатором2."
@@ -2632,7 +2971,7 @@ msgstr "У нас є чотири хости в локальній мережі 
 msgid "We have four pre-configured routers with this configuration:"
 msgstr "We have four pre-configured routers with this configuration:"
 
-#: ../../configexamples/zone-policy.rst:25
+#: ../../configexamples/zone-policy.rst:15
 msgid "We have three networks."
 msgstr "У нас три мережі."
 
@@ -2688,6 +3027,10 @@ msgstr "Коли у вас підключено обидва маршрутиз�
 msgid "When you have enabled OSPF on both routers, you should be able to see each other with the command ``show ip ospf neighbour``. The state must be 'Full' or '2-Way'. If it is not, then there is a network connectivity issue between the hosts. This is often caused by NAT or MTU issues. You should not see any new routes (unless this is the second pass) in the output of ``show ip route``"
 msgstr "Коли ви ввімкнули OSPF на обох маршрутизаторах, ви зможете бачити один одного за допомогою команди ``show ip ospf neighbour``. Стан має бути «Повний» або «2-сторонній». Якщо це не так, між хостами виникла проблема мережевого з’єднання. Це часто спричинено проблемами NAT або MTU. Ви не повинні побачити жодних нових маршрутів (якщо це не другий прохід) у виводі ``show ip route``"
 
+#: ../../configexamples/fwall-and-bridge.rst:349
+msgid "While testing the configuration, we can check logs in order to ensure that we are accepting and/or blocking the correct traffic."
+msgstr "While testing the configuration, we can check logs in order to ensure that we are accepting and/or blocking the correct traffic."
+
 #: ../../configexamples/lac-lns.rst:-1
 msgid "Window PPPoE Client Configuration"
 msgstr "Window PPPoE Client Configuration"
@@ -2704,7 +3047,7 @@ msgstr "WireGuard"
 msgid "Wireguard doesn't have the concept of an up or down link, due to its design. This complicates AND simplifies using it for network transport, as for reliable state detection you need to use SOMETHING to detect when the link is down."
 msgstr "Wireguard не має концепції висхідного або низхідного зв’язку через свою конструкцію. Це ускладнює ТА спрощує його використання для мережевого транспорту, оскільки для надійного виявлення стану потрібно використовувати ЩОСЬ, щоб виявити, коли з’єднання не працює."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:105
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:113
 msgid "With Tunnelbroker.net, you have two options:"
 msgstr "З Tunnelbroker.net у вас є два варіанти:"
 
@@ -2715,6 +3058,10 @@ msgstr "За допомогою цієї команди ми можемо пер
 #: ../../configexamples/inter-vrf-routing-vrf-lite.rst:293
 msgid "Within the VRF we set the Route-Distinguisher (RD) and Route-Targets (RT), then we enable the export/import VPN."
 msgstr "У VRF ми встановлюємо Route-Distinguisher (RD) і Route-Targets (RT), а потім вмикаємо експорт/імпорт VPN."
+
+#: ../../configexamples/fwall-and-bridge.rst:22
+msgid "Within the bridge, accept only new IPv4 connections from host 10.1.1.102"
+msgstr "Within the bridge, accept only new IPv4 connections from host 10.1.1.102"
 
 #: ../../configexamples/segment-routing-isis.rst:48
 msgid "XRv-P3:"
@@ -2728,7 +3075,7 @@ msgstr "Вам вдалося зайти так далеко, тепер ми х
 msgid "You should be able to ping to and from all the IPs you have allocated."
 msgstr "Ви повинні мати можливість перевіряти зв’язок із усіма IP-адресами, які ви виділили."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:81
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:89
 msgid "You should now be able to ping something by IPv6 DNS name:"
 msgstr "Тепер ви повинні мати можливість запитувати щось за DNS-іменем IPv6:"
 
@@ -2736,11 +3083,11 @@ msgstr "Тепер ви повинні мати можливість запит�
 msgid "You should now be able to see the advertised network on the other host."
 msgstr "Тепер ви зможете побачити рекламовану мережу на іншому хості."
 
-#: ../../configexamples/zone-policy.rst:388
+#: ../../configexamples/zone-policy.rst:378
 msgid "You would have 5 zones instead of just 4 and you would configure your v6 ruleset between your tunnel interface and your LAN/DMZ zones instead of to the WAN."
 msgstr "У вас буде 5 зон замість 4, і ви налаштуєте свій набір правил v6 між інтерфейсом тунелю та зонами LAN/DMZ замість WAN."
 
-#: ../../configexamples/zone-policy.rst:413
+#: ../../configexamples/zone-policy.rst:403
 msgid "You would have to add a couple of rules on your wan-local ruleset to allow protocol 41 in."
 msgstr "Вам потрібно буде додати пару правил у свій набір правил wan-local, щоб дозволити протокол 41 in."
 
@@ -2748,31 +3095,31 @@ msgstr "Вам потрібно буде додати пару правил у �
 msgid "Zone-Policy example"
 msgstr "Приклад Zone-Policy"
 
-#: ../../configexamples/zone-policy.rst:89
+#: ../../configexamples/zone-policy.rst:79
 msgid "Zones Basics"
 msgstr "Основи зон"
 
-#: ../../configexamples/zone-policy.rst:136
+#: ../../configexamples/zone-policy.rst:126
 msgid "Zones and Rulesets both have a default action statement. When using Zone-Policies, the default action is set by the zone-policy statement and is represented by rule 10000."
 msgstr "І зони, і набори правил мають оператор дії за замовчуванням. Під час використання Zone-Policies дія за умовчанням встановлюється оператором zone-policy і представлена правилом 10000."
 
-#: ../../configexamples/zone-policy.rst:175
+#: ../../configexamples/zone-policy.rst:165
 msgid "Zones do not allow for a default action of accept; either drop or reject. It is important to remember this because if you apply an interface to a zone and commit, any active connections will be dropped. Specifically, if you are SSH’d into VyOS and add local or the interface you are connecting through to a zone and do not have rulesets in place to allow SSH and established sessions, you will not be able to connect."
 msgstr "Зони не дозволяють дії за замовчуванням прийняти; або відкинути, або відхилити. Важливо пам’ятати про це, оскільки якщо ви застосуєте інтерфейс до зони та зафіксуєте, будь-які активні з’єднання будуть розірвані. Зокрема, якщо ви використовуєте SSH у VyOS і додаєте локальний або інтерфейс, через який ви підключаєтеся, до зони та не маєте наборів правил, які дозволяють SSH і встановлені сеанси, ви не зможете підключитися."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:172
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:180
 msgid "`2001:470:xxxx:1::/64`: A subnet suitable for a LAN"
 msgstr "`2001:470:xxxx:1::/64`: підмережа, придатна для локальної мережі"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:173
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:181
 msgid "`2001:470:xxxx:2::/64`: Another subnet"
 msgstr "`2001:470:xxxx:2::/64`: інша підмережа"
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:171
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:179
 msgid "`2001:470:xxxx::/48`: The whole subnet. xxxx should come from Tunnelbroker."
 msgstr "`2001:470:xxxx::/48`: уся підмережа. xxxx має надходити від Tunnelbroker."
 
-#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:174
+#: ../../configexamples/autotest/tunnelbroker/tunnelbroker.rst:182
 msgid "`2001:470:xxxx:ffff:/64`: The last usable /64 subnet."
 msgstr "`2001:470:xxxx:ffff:/64`: остання доступна підмережа /64."
 
@@ -2898,7 +3245,7 @@ msgstr "switch1 (коммутатор Nexus 10 Гб)"
 msgid "switch2 (Nexus 10gb Switch)"
 msgstr "switch2 (коммутатор Nexus 10 Гб)"
 
-#: ../../configexamples/zone-policy.rst:394
+#: ../../configexamples/zone-policy.rst:384
 msgid "v6 pairs would be:"
 msgstr "v6 пари будуть:"
 
