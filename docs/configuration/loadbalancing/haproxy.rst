@@ -43,7 +43,7 @@ Service
 .. cfgcmd:: set load-balancing haproxy service <name> ssl
    certificate <name>
 
-  Set SSL certificate <name> for service <name>
+  Set SSL certificate <name> for service <name>. Multiple certificates could be defined.
 
 .. cfgcmd:: set load-balancing haproxy service <name>
   http-response-headers <header-name> value <header-value>
