@@ -762,13 +762,13 @@ geoip) to keep database and rules updated.
    invert the criteria to match is also supported. For example ``!IFACE_GROUP``
 
 .. cfgcmd:: set firewall ipv6 forward filter rule <1-999999>
-   ipsec [match-ipsec | match-none]
+   ipsec [match-ipsec-in | match-ipsec-out | match-none-in | match-none-out]
 .. cfgcmd:: set firewall ipv6 input filter rule <1-999999>
-   ipsec [match-ipsec | match-none]
+   ipsec [match-ipsec-in | match-none-in]
 .. cfgcmd:: set firewall ipv6 output filter rule <1-999999>
-   ipsec [match-ipsec | match-none]
+   ipsec [match-ipsec-out | match-none-out]
 .. cfgcmd:: set firewall ipv6 name <name> rule <1-999999>
-   ipsec [match-ipsec | match-none]
+   ipsec [match-ipsec-in | match-ipsec-out | match-none-in | match-none-out]
 
    Match based on ipsec.
 
