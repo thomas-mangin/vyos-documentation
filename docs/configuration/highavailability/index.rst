@@ -308,8 +308,15 @@ execute custom checks in addition to the master router reachability. Transition
 scripts are executed when VRRP state changes from master to backup or fault and
 vice versa and can be used to enable or disable certain services, for example.
 
+.. warning:: It is not recommended to change VRRP configuration inside health-check
+   and transition scripts.
+
 Health check scripts
 ^^^^^^^^^^^^^^^^^^^^
+
+There is the ability to run an arbitrary script at regular intervals according to health-check
+parameters. If a script returns 0, it indicates success. If a script returns anything
+else, it will indicate that the VRRP instance should enter the FAULT state.
 
 This setup will make the VRRP process execute the
 ``/config/scripts/vrrp-check.sh script`` every 60 seconds, and transition the
