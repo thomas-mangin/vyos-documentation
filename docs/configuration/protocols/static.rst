@@ -138,8 +138,47 @@ Interface Routes
 
      set protocols static route6 2001:db8:1000::/36 interface eth0 segments '2001:db8:aaaa::7/2002::4/2002::3/2002::2'
 
-Blackhole
-=========
+
+DHCP Interface Routes
+=====================
+
+.. cfgcmd:: set protocols static route <subnet> dhcp-interface <interface>
+
+   Defines route with DHCP interface supplying next-hop IP address.
+
+
+Reject Routes
+=============
+
+.. cfgcmd:: set protocol static route <subnet> reject
+
+   Defines route which emits an ICMP unreachable when matched.
+
+.. cfgcmd:: set protocols static route <subnet> reject distance <distance>
+
+   Defines distance for this route, routes with smaller administrative
+   distance are elected prior to those with a higher distance.
+
+.. cfgcmd:: set protocols static route <subnet> reject tag <tag>
+
+   Sets a tag for this route.
+
+.. cfgcmd:: set protocol static route6 <subnet> reject
+
+   Defines route which emits an ICMP unreachable when matched.
+
+.. cfgcmd:: set protocols static route6 <subnet> reject distance <distance>
+
+   Defines distance for this route, routes with smaller administrative
+   distance are elected prior to those with a higher distance.
+
+.. cfgcmd:: set protocols static route6 <subnet> reject tag <tag>
+
+   Sets a tag for this route.
+
+
+Blackhole Routes
+================
 
 .. cfgcmd:: set protocols static route <subnet> blackhole
 
@@ -154,6 +193,10 @@ Blackhole
    Defines blackhole distance for this route, routes with smaller administrative
    distance are elected prior to those with a higher distance.
 
+.. cfgcmd:: set protocols static route <subnet> blackhole tag <tag>
+
+   Sets a tag for this route.
+
 .. cfgcmd:: set protocols static route6 <subnet> blackhole
 
    Use this command to configure a "black-hole" route on the router. A
@@ -166,6 +209,10 @@ Blackhole
 
    Defines blackhole distance for this route, routes with smaller administrative
    distance are elected prior to those with a higher distance.
+
+.. cfgcmd:: set protocols static route6 <subnet> blackhole tag <tag>
+
+   Sets a tag for this route.
 
 Alternate Routing Tables
 ========================
