@@ -167,7 +167,7 @@ Unifi controller at ``172.16.100.1`` to clients of that subnet.
 
 
 Dynamic DNS Update (RFC 2136)
------------------
+-----------------------------
 
 VyOS DHCP service supports RFC-2136 DDNS protocol. Based on DHCP lease change
 events, DHCP server generates DDNS update requests (defines as NameChangeRequests
