@@ -6,7 +6,7 @@ go-vyos
 =======
 
 go-vyos is a Go library designed for interacting with VyOS devices through
-their API. This documentation is intended to guide you in using go-vyos for
+their REST API. This documentation is intended to guide you in using go-vyos for
 programmatic management of your VyOS devices.
 
 - `go-vyos Documentation & Source Code on GitHub <https://github.com/ganawaj/go-vyos>`_
