@@ -671,7 +671,7 @@ different levels in the hierarchy.
 
    .. code-block:: none
 
-     vyos@vyos# set system config-management commit-confirm
+     vyos@vyos# set system config-management commit-confirm action
      Possible completions:
      reload               Reload previous configuration if not confirmed
      reboot               Reboot to saved configuration if not confirmed (default)
