@@ -15,6 +15,9 @@ Since the mDNS protocol sends the :abbr:`AA(Authoritative Answer)` records in
 the packet itself, the repeater does not need to forge the source address.
 Instead, the source address is of the interface that repeats the packet.
 
+.. note:: You can not run this in a VRRP setup, if multiple mDNS repeaters
+   are launched in a subnet you will experience the mDNS packet storm death!
+
 Configuration
 =============
 
@@ -43,8 +46,12 @@ Configuration
    Allow listing additional custom domains to be browsed (in addition to the
    default ``local``) so that they can be reflected.
 
-.. note:: You can not run this in a VRRP setup, if multiple mDNS repeaters
-   are launched in a subnet you will experience the mDNS packet storm death!
+.. cfgcmd:: set service mdns repeater cache-entries <entries>
+
+   Specify how many resource records are cached per interface. Bigger values
+   allow mDNS work correctly in large LANs but also increase memory consumption.
+
+   Defaults to: 4096
 
 Example
 =======
