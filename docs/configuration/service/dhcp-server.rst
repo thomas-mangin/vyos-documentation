@@ -186,18 +186,18 @@ server with RFC-2136 DDNS support.
 These settings can be configured on the global level and overridden on the scope
 level, i.e. for individual shared networks or subnets. See examples below.
 
-.. cfgcmd:: set service dhcp-server dynamic-dns-update send-updates
+.. cfgcmd:: set service dhcp-server dynamic-dns-update force-updates
 
    If set on global level, updates for all scopes will be enabled, except if
    explicitly disabled on the scope level. If unset, updates will only be sent for
-   scopes, where ``send-updates`` is explicity enabled.
+   scopes, where ``force-updates`` is explicity enabled.
 
-.. cfgcmd:: set service dhcp-server dynamic-dns-update override-no-update
+.. cfgcmd:: set service dhcp-server dynamic-dns-update force-no-update
 
    VyOS will ignore client request to not update DNS records and send DDNS
    update requests regardless.
 
-.. cfgcmd:: set service dhcp-server dynamic-dns-update override-client-update
+.. cfgcmd:: set service dhcp-server dynamic-dns-update force-client-update
 
    VyOS will override client DDNS request settings and always update both
    forward and reverse DNS records.
@@ -258,13 +258,13 @@ level, i.e. for individual shared networks or subnets. See examples below.
 This is the global list of TSIG keys for DDNS updates. They need to be specified by
 the name in the DNS domain definitions.
 
-.. cfgcmd:: set service dhcp-server dynamic-dns-update tsig-key-name <key-name>
+.. cfgcmd:: set service dhcp-server dynamic-dns-update tsig-key <key-name>
    algorithm <algorithm>
 
    Sets the algorithm for the TSIG key. Supported algorithms are ``hmac-md5``,
    ``hmac-sha1``, ``hmac-sha224``, ``hmac-sha256``, ``hmac-sha384``, ``hmac-sha512``
 
-.. cfgcmd:: set service dhcp-server dynamic-dns-update tsig-key-name <key-name>
+.. cfgcmd:: set service dhcp-server dynamic-dns-update tsig-key <key-name>
    secret <key-secret>
 
    base64-encoded TSIG key secret value
@@ -274,17 +274,17 @@ the name in the DNS domain definitions.
 This is global configuration of DNS servers for the updatable forward and reverse 
 DNS domains. For every domain multiple DNS servers can be specified.
 
-.. cfgcmd:: set service dhcp-server dynamic-dns-update [forward|reverse]-ddns-domain-name 
+.. cfgcmd:: set service dhcp-server dynamic-dns-update [forward|reverse]-domain
    <domain-name> key-name <tsig-key-name>
 
    TSIG key used for the domain.
 
-.. cfgcmd:: set service dhcp-server dynamic-dns-update [forward|reverse]-ddns-domain-name 
+.. cfgcmd:: set service dhcp-server dynamic-dns-update [forward|reverse]-domain
    <domain-name> dns-server <number> address <ip-address>
 
    IP address of the DNS server.
 
-.. cfgcmd:: set service dhcp-server dynamic-dns-update [forward|reverse]-ddns-domain-name 
+.. cfgcmd:: set service dhcp-server dynamic-dns-update [forward|reverse]-domain
    <domain-name> dns-server <number> port <port>
 
    UDP port of the DNS server. ``53`` is the default.
@@ -295,7 +295,7 @@ Global configuration you will most likely want:
 
 .. code-block:: none
 
-  set service dhcp-server dynamic-dns-update send-updates
+  set service dhcp-server dynamic-dns-update force-updates
   set service dhcp-server dynamic-dns-update use-conflict-resolution
 
 Override the above configuration for a shared network NET1:
@@ -316,25 +316,25 @@ Configure TSIG keys:
 
 .. code-block:: none
   
-  set service dhcp-server dynamic-dns-update tsig-key-name mydomain-net algorithm hmac-sha256
-  set service dhcp-server dynamic-dns-update tsig-key-name mydomain-net secret eWF5YW15bGl0dGxla2V5IQ==
-  set service dhcp-server dynamic-dns-update tsig-key-name reverse-172-18-201 algorithm hmac-sha256
-  set service dhcp-server dynamic-dns-update tsig-key-name reverse-172-18-201 secret eWF5YW15YW5vdGhlcmxpdHRsZWtleSE=
+  set service dhcp-server dynamic-dns-update tsig-key mydomain-net algorithm hmac-sha256
+  set service dhcp-server dynamic-dns-update tsig-key mydomain-net secret eWF5YW15bGl0dGxla2V5IQ==
+  set service dhcp-server dynamic-dns-update tsig-key reverse-172-18-201 algorithm hmac-sha256
+  set service dhcp-server dynamic-dns-update tsig-key reverse-172-18-201 secret eWF5YW15YW5vdGhlcmxpdHRsZWtleSE=
 
 Configure DDNS domains:
 
 .. code-block:: none
   
-  set service dhcp-server dynamic-dns-update forward-ddns-domain-name mydomain.net key-name mydomain-net
-  set service dhcp-server dynamic-dns-update forward-ddns-domain-name mydomain.net dns-server 1 address '172.18.0.254'
-  set service dhcp-server dynamic-dns-update forward-ddns-domain-name mydomain.net dns-server 1 port 1053
-  set service dhcp-server dynamic-dns-update forward-ddns-domain-name mydomain.net dns-server 2 address '192.168.124.254'
-  set service dhcp-server dynamic-dns-update forward-ddns-domain-name mydomain.net dns-server 2 port 53
-  set service dhcp-server dynamic-dns-update forward-ddns-domain-name 201.18.172.in-addr.arpa key-name reverse-172-18-201
-  set service dhcp-server dynamic-dns-update reverse-ddns-domain-name 201.18.172.in-addr.arpa dns-server 1 address '172.18.0.254'
-  set service dhcp-server dynamic-dns-update reverse-ddns-domain-name 201.18.172.in-addr.arpa dns-server 1 port 1053
-  set service dhcp-server dynamic-dns-update reverse-ddns-domain-name 201.18.172.in-addr.arpa dns-server 2 address '192.168.124.254'
-  set service dhcp-server dynamic-dns-update reverse-ddns-domain-name 201.18.172.in-addr.arpa dns-server 2 port 53
+  set service dhcp-server dynamic-dns-update forward-domain mydomain.net key-name mydomain-net
+  set service dhcp-server dynamic-dns-update forward-domain mydomain.net dns-server 1 address '172.18.0.254'
+  set service dhcp-server dynamic-dns-update forward-domain mydomain.net dns-server 1 port 1053
+  set service dhcp-server dynamic-dns-update forward-domain mydomain.net dns-server 2 address '192.168.124.254'
+  set service dhcp-server dynamic-dns-update forward-domain mydomain.net dns-server 2 port 53
+  set service dhcp-server dynamic-dns-update forward-domain 201.18.172.in-addr.arpa key-name reverse-172-18-201
+  set service dhcp-server dynamic-dns-update reverse-domain 201.18.172.in-addr.arpa dns-server 1 address '172.18.0.254'
+  set service dhcp-server dynamic-dns-update reverse-domain 201.18.172.in-addr.arpa dns-server 1 port 1053
+  set service dhcp-server dynamic-dns-update reverse-domain 201.18.172.in-addr.arpa dns-server 2 address '192.168.124.254'
+  set service dhcp-server dynamic-dns-update reverse-domain 201.18.172.in-addr.arpa dns-server 2 port 53
 
 
 High Availability
