@@ -25,8 +25,11 @@ Each site-to-site peer has the next options:
     dynamically;
   * ``id`` - static ID's for authentication. In general local and remote
     address ``<x.x.x.x>``, ``<h:h:h:h:h:h:h:h>`` or ``%any``;
-  * ``secret`` - predefined shared secret. Used if configured mode
-    ``pre-shared-secret``;
+  * ``secret`` - a predefined shared secret used in configured mode
+    ``pre-shared-secret``. Base64-encoded secrets are allowed if
+    `secret-type base64` is configured;
+  * ``secret-type`` - specifies the secret type, either ``plaintext`` or
+    ``base64``. Default to ``plaintext``;
 
 
  * ``local-id`` - ID for the local VyOS router. If defined, during the
