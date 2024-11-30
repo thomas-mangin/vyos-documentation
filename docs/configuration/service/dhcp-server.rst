@@ -186,28 +186,38 @@ server with RFC-2136 DDNS support.
 These settings can be configured on the global level and overridden on the scope
 level, i.e. for individual shared networks or subnets. See examples below.
 
-.. cfgcmd:: set service dhcp-server dynamic-dns-update force-updates
+.. cfgcmd:: set service dhcp-server dynamic-dns-update send-updates [ enable
+   | disable ]
 
-   If set on global level, updates for all scopes will be enabled, except if
-   explicitly disabled on the scope level. If unset, updates will only be sent for
-   scopes, where ``force-updates`` is explicity enabled.
+   If set to ``enable`` on global level, updates for all scopes will be enabled,
+   except if explicitly set to ``disable`` on the scope level. If set to ``disable``,
+   updates will only be sent for scopes, where ``send-updates`` is explicity 
+   set to ``enable``.
 
-.. cfgcmd:: set service dhcp-server dynamic-dns-update force-no-update
+   This model is followed for a few behavioral settings below: if the option is 
+   not set, the setting is inherited from the parent scope. You can override the
+   parent scope setting by setting the option explicitly.
 
-   VyOS will ignore client request to not update DNS records and send DDNS
+.. cfgcmd:: set service dhcp-server dynamic-dns-update force-update [ enable
+   | disable ]
+
+   VyOS will ignore client request not to update DNS records and send DDNS
    update requests regardless.
 
-.. cfgcmd:: set service dhcp-server dynamic-dns-update force-client-update
+.. cfgcmd:: set service dhcp-server dynamic-dns-update force-update-both [ enable
+   | disable ]
 
    VyOS will override client DDNS request settings and always update both
    forward and reverse DNS records.
 
-.. cfgcmd:: set service dhcp-server dynamic-dns-update update-on-renew
+.. cfgcmd:: set service dhcp-server dynamic-dns-update update-on-renew [ enable
+   | disable ]
 
    Issue DDNS update requests on DHCP lease renew. In busy networks this may
    generate a lot of traffic.
 
-.. cfgcmd:: set service dhcp-server dynamic-dns-update use-conflict-resolution
+.. cfgcmd:: set service dhcp-server dynamic-dns-update conflict-resolution [ enable
+   | disable ]
 
    Use RFC-4703 conflict resolution. This algorithm helps in situation when
    multiple clients reserve same IP addresses or advertise identical hostnames.
@@ -295,8 +305,8 @@ Global configuration you will most likely want:
 
 .. code-block:: none
 
-  set service dhcp-server dynamic-dns-update force-updates
-  set service dhcp-server dynamic-dns-update use-conflict-resolution
+  set service dhcp-server dynamic-dns-update send-updates enable
+  set service dhcp-server dynamic-dns-update conflict-resolution enable
 
 Override the above configuration for a shared network NET1:
 
