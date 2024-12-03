@@ -74,6 +74,12 @@ Configuration
     .. note:: The first IP in the container network is reserved by the
        engine and cannot be used
 
+.. cfgcmd:: set container name <name> name-server <address>
+
+    Optionally set a custom name server.
+    If a container network is used with DNS enabled,
+    this setting will not have any effect.
+
 .. cfgcmd:: set container name <name> description <text>
 
     Set a container description
