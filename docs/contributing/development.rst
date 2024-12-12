@@ -290,7 +290,7 @@ device if you happen to be a crazy scientist.
   from vyos.config import Config
   from vyos import ConfigError
 
-  def get_config():
+  def get_config(config=None):
       if config:
           conf = config
       else:
@@ -306,7 +306,6 @@ device if you happen to be a crazy scientist.
       # Verify that configuration is valid
       if invalid:
           raise ConfigError("Descriptive message")
-      return True
 
   def generate(config):
       # Generate daemon configs
@@ -385,6 +384,24 @@ For easy orientation we suggest you take a look on the ``ntp.py`` or
 ``interfaces-bonding.py`` (for tag nodes) implementation. Both files can be
 found in the vyos-1x_ repository.
 
+Other considerations: vyos-configd
+----------------------------------
+
+All scripts now run under the config daemon and must conform to the
+following:
+
+1. The signature and initial four lines of ``get_config(...)`` `must` be as
+   above.
+
+2. Each of ``get_config``, ``verify``, ``apply``, ``generate`` `must`
+   appear, with signatures as above, even if they are a no-op.
+
+3. Instantiations of ``Config`` other than that in ``get_config`` `must not`
+   appear.
+
+4. The legacy function ``my_set`` `must not` appear: modifications of the
+   active config `should not` appear in new code (if absolutely necessary,
+   alternative mechanisms may be used).
 
 XML (used for CLI definitions)
 ==============================
