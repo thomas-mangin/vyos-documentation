@@ -20,6 +20,17 @@ Common interface configuration
    :var0: ethernet
    :var1: eth0
 
+.. cfgcmd:: set interface ethernet <interface> switchdev
+
+  Switches this interface to `switchdev` mode that allows network interfaces to offload
+  certain networking functions directly to hardware, like a network switch or a SmartNIC.
+  This enables higher performance and lower latency for network processing by
+  bypassing the kernel's network stack for supported operations.
+
+.. note:: This is only supported on certain physical network interfaces
+   and depends on specific models and drivers.
+
+
 Ethernet options
 ================
 
