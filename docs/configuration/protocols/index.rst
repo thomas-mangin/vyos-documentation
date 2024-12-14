@@ -14,6 +14,7 @@ Protocols
    igmp-proxy
    isis
    mpls
+   multicast
    segment-routing
    openfabric
    ospf
