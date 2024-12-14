@@ -39,8 +39,8 @@ IPv4 Unicast Routes
    .. note:: Routes with a distance of 255 are effectively disabled and not
       installed into the kernel.
 
-Interface Routes
-================
+IPv4 Interface Routes
+=====================
 
 .. cfgcmd:: set protocols static route <subnet> interface
    <interface>
@@ -69,9 +69,8 @@ DHCP Interface Routes
 
    Defines route with DHCP interface supplying next-hop IP address.
 
-
-Reject Routes
-=============
+IPv4 Reject Routes
+==================
 
 .. cfgcmd:: set protocol static route <subnet> reject
 
@@ -90,8 +89,8 @@ Reject Routes
 
    Defines route which emits an ICMP unreachable when matched.
 
-Blackhole Routes
-================
+IPv4 Blackhole Routes
+=====================
 
 .. cfgcmd:: set protocols static route <subnet> blackhole
 
@@ -157,8 +156,8 @@ IPv6 Unicast Routes
      C>* 2001:db8:201::/64 is directly connected, eth0.201, 00:00:46
      S>* 2001:db8:1000::/36 [1/0] via 2001:db8:201::ffff, eth0.201, seg6 2001:db8:aaaa::7,2002::4,2002::3,2002::2, weight 1, 00:00:08
 
-Interface Routes
-================
+IPv6 Interface Routes
+=====================
 
 .. cfgcmd:: set protocols static route6 <subnet> interface
    <interface>
@@ -192,8 +191,8 @@ Interface Routes
 
      set protocols static route6 2001:db8:1000::/36 interface eth0 segments '2001:db8:aaaa::7/2002::4/2002::3/2002::2'
 
-Reject Routes
-=============
+IPv6 Reject Routes
+==================
 
 .. cfgcmd:: set protocol static route6 <subnet> reject
 
@@ -208,8 +207,8 @@ Reject Routes
 
    Sets a tag for this route.
 
-Blackhole Routes
-================
+IPv6 Blackhole Routes
+=====================
 
 .. cfgcmd:: set protocols static route6 <subnet> blackhole
 
@@ -228,8 +227,9 @@ Blackhole Routes
 
    Sets a tag for this route.
 
+************************
 Alternate Routing Tables
-========================
+************************
 
 TBD
 
