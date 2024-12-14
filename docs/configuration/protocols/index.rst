@@ -6,6 +6,7 @@ Protocols
    :maxdepth: 1
    :includehidden:
 
+   arp
    babel
    bfd
    bgp
