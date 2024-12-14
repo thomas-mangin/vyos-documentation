@@ -131,28 +131,49 @@ Useful commands are:
 Config Migration Scripts
 ------------------------
 
-When writing a new configuration migrator it may happen that you see an error
-when you try to invoke it manually on a development system. This error will
-look like:
+Starting with VyOS 1.5 a new mechanism is used for config migration whichwill improve
+migration performance. New migrators only exist in the new format with a migration()
+function.
+
+.. code-block:: python
+
+  from vyos.configtree import ConfigTree
+  base = ['vpn', 'ipsec']
+  def migrate(config: ConfigTree) -> None:
+      if not config.exists(base):
+          # Nothing to do
+          return
+      # do your stuff here
+
+New style migrations scripts can no longer be executed on their own. The new
+handler of the entire migration subsystem on the other hand comes with a handy
+test kit:
 
 .. code-block:: none
 
-  vyos@vyos:~$ /opt/vyatta/etc/config-migrate/migrate/ssh/0-to-1 /tmp/config.boot
-  Traceback (most recent call last):
-    File "/opt/vyatta/etc/config-migrate/migrate/ssh/0-to-1", line 31, in <module>
-      config = ConfigTree(config_file)
-    File "/usr/lib/python3/dist-packages/vyos/configtree.py", line 134, in __init__
-      raise ValueError("Failed to parse config: {0}".format(msg))
-  ValueError: Failed to parse config: Syntax error on line 240, character 1: Invalid syntax.
+  vyos@vyos:~$ /usr/libexec/vyos/run-config-migration.py --help
+  usage: run-config-migration.py [-h] [--test-script TEST_SCRIPT] [--output-file OUTPUT_FILE] [--force] config_file
 
-The reason is that the configuration migration backend is rewritten and uses
-a new form of "magic string" which is applied on demand when real config
-migration is run on boot. When running individual migrators for testing,
-you need to convert the "magic string" on your own by:
+  positional arguments:
+    config_file           configuration file to migrate
+
+  options:
+    -h, --help            show this help message and exit
+    --test-script TEST_SCRIPT
+                          test named script
+    --output-file OUTPUT_FILE
+                          write to named output file instead of config file
+    --force               force run of all migration scripts
+
+
+So in order to test your migrator you can run this as simple as:
 
 .. code-block:: none
 
-  vyos@vyos:~$ /usr/libexec/vyos/run-config-migration.py --virtual --set-vintage vyos /tmp/config.boot
+  vyos@vyos:~$ /usr/libexec/vyos/run-config-migration.py --test-script /opt/vyatta/etc/config-migrate/migrate/quagga/11-to-12 --output-file /tmp/foo /tmp/static-route-basic
+  vyos@vyos:~$ cat /tmp/foo
+
+Where `/tmp/foo` will contain the migrated configuration.
 
 Configuration Error on System Boot
 ----------------------------------
