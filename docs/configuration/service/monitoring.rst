@@ -1,9 +1,27 @@
+##########
 Monitoring
-----------
+##########
 
-Azure-data-explorer
+VyOS supports monitoring through Telegraf as well as through Prometheus exporters.
+
+********
+Telegraf
+********
+
+Telegraf is the open source server agent to help you collect metrics, events
+and logs from your routers.
+
+The following Telegraf plugins are configurable to export metrics and logs:
+ * Azure Data Explorer
+ * Prometheus Client
+ * Splunk
+ * InfluxDB
+ * Loki
+
+
+Azure data explorer
 ===================
-Telegraf output plugin azure-data-explorer_
+Telegraf output plugin azure-data-explorer_.
 
 .. cfgcmd:: set service monitoring telegraf azure-data-explorer authentication client-id <client-id>
 
@@ -34,9 +52,12 @@ Telegraf output plugin azure-data-explorer_
 
    Remote URL.
 
-Prometheus-client
+
+Prometheus client
 =================
-Telegraf output plugin prometheus-client_
+Telegraf output plugin prometheus-client_.
+This plugin allows export of Telegraf metrics to Prometheus,
+for Prometheus native metrics through exporters see section below.
 
 .. cfgcmd:: set service monitoring telegraf prometheus-client
 
@@ -79,9 +100,10 @@ Example:
   cpu_usage_system{cpu="cpu0",host="r14"} 0.17182130584191915
   cpu_usage_system{cpu="cpu1",host="r14"} 0.22896393817971655
 
+
 Splunk
 ======
-Telegraf output plugin splunk_. HTTP Event Collector.
+Telegraf output plugin splunk_ HTTP Event Collector.
 
 .. cfgcmd:: set service monitoring telegraf splunk authentication insecure
 
@@ -103,11 +125,10 @@ Example:
   set service monitoring telegraf splunk authentication token 'xxxxf5b8-xxxx-452a-xxxx-43828911xxxx'
   set service monitoring telegraf splunk url 'https://192.0.2.10:8088/services/collector'
 
-Telegraf
+
+InfluxDB
 ========
-Monitoring functionality with ``telegraf`` and ``InfluxDB 2`` is provided.
-Telegraf is the open source server agent to help you collect metrics, events
-and logs from your routers.
+Telegraf output plugin influxdb_ to write metrics to ``InfluxDB`` via HTTP.
 
 .. cfgcmd:: set service monitoring telegraf influxdb authentication organization <organization>
 
@@ -130,10 +151,21 @@ and logs from your routers.
    Remote URL
 
 
+Example:
+
+.. code-block:: none
+
+  set service monitoring telegraf influxdb authentication organization 'vyos'
+  set service monitoring telegraf influxdb authentication token 'ZAml9Uy5wrhA...=='
+  set service monitoring telegraf influxdb bucket 'bucket_vyos'
+  set service monitoring telegraf influxdb port '8086'
+  set service monitoring telegraf influxdb url 'http://r1.influxdb2.local'
+
+
 Loki
 ====
 
-Telegraf can be used to send logs to Loki using tags as labels.
+Telegraf can be used to send logs to loki_ using tags as labels.
 
 .. cfgcmd:: set service monitoring telegraf loki port <port>
 
@@ -160,20 +192,8 @@ Telegraf can be used to send logs to Loki using tags as labels.
    This is NOT recommended, as it makes it impossible to differentiate
    between multiple metrics.
 
-Example
-=======
-
-An example of a configuration that sends ``telegraf`` metrics to remote
-``InfluxDB 2``
-
-.. code-block:: none
-
-  set service monitoring telegraf influxdb authentication organization 'vyos'
-  set service monitoring telegraf influxdb authentication token 'ZAml9Uy5wrhA...=='
-  set service monitoring telegraf influxdb bucket 'bucket_vyos'
-  set service monitoring telegraf influxdb port '8086'
-  set service monitoring telegraf influxdb url 'http://r1.influxdb2.local'
-
 .. _azure-data-explorer: https://github.com/influxdata/telegraf/tree/master/plugins/outputs/azure_data_explorer
 .. _prometheus-client: https://github.com/influxdata/telegraf/tree/master/plugins/outputs/prometheus_client
+.. _influxdb: https://github.com/influxdata/telegraf/tree/master/plugins/outputs/influxdb_v2
 .. _splunk: https://www.splunk.com/en_us/blog/it/splunk-metrics-via-telegraf.html
+.. _loki: https://github.com/influxdata/telegraf/tree/master/plugins/outputs/loki
