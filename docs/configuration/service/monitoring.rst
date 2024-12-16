@@ -55,7 +55,7 @@ Telegraf output plugin azure-data-explorer_.
 
 Prometheus client
 =================
-Telegraf output plugin prometheus-client_.
+Telegraf output plugin prometheus-client_
 This plugin allows export of Telegraf metrics to Prometheus,
 for Prometheus native metrics through exporters see section below.
 
@@ -197,3 +197,49 @@ Telegraf can be used to send logs to loki_ using tags as labels.
 .. _influxdb: https://github.com/influxdata/telegraf/tree/master/plugins/outputs/influxdb_v2
 .. _splunk: https://www.splunk.com/en_us/blog/it/splunk-metrics-via-telegraf.html
 .. _loki: https://github.com/influxdata/telegraf/tree/master/plugins/outputs/loki
+
+
+**********
+Prometheus
+**********
+
+The following Prometheus exporters are configurable to export metrics:
+ * Node Exporter
+ * FRR Exporter
+
+
+Node Exporter
+=============
+Prometheus node_exporter_ which provides a wide range of hardware and OS metrics.
+
+.. cfgcmd:: set service monitoring node-exporter listen-address <address>
+
+  Configure the address node_exporter is listening on.
+
+.. cfgcmd:: set service monitoring node-exporter port <port>
+
+  Configure the port number node_exporter is listening on.
+
+.. cfgcmd:: set service monitoring node-exporter vrf <name>
+
+  Configure name of the :abbr:`VRF (Virtual Routing and Forwarding)` instance.
+
+
+FRR Exporter
+============
+Prometheus frr_exporter_ which provides free range routing metrics.
+
+.. cfgcmd:: set service monitoring frr-exporter listen-address <address>
+
+  Configure the address frr_exporter is listening on.
+
+.. cfgcmd:: set service monitoring frr-exporter port <port>
+
+  Configure the port number frr_exporter is listening on.
+
+.. cfgcmd:: set service monitoring frr-exporter vrf <name>
+
+  Configure name of the :abbr:`VRF (Virtual Routing and Forwarding)` instance.
+
+.. _node_exporter: https://github.com/prometheus/node_exporter
+.. _frr_exporter: https://github.com/tynany/frr_exporter
