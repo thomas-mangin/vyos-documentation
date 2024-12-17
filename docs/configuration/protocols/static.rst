@@ -62,6 +62,26 @@ IPv4 Interface Routes
 
    Range is 1 to 255, default is 1.
 
+IPv4 BFD
+========
+
+.. cfgcmd:: set protocols static route <subnet> next-hop <address> bfd
+
+   Configure a static route for `<subnet>` using gateway `<address>` and use the
+   gateway address as BFD peer destination address.
+
+.. cfgcmd:: set protocols static route <subnet> next-hop <address> bfd profile <profile>
+
+   Configure a static route for `<subnet>` using gateway `<address>` and use the
+   gateway address as BFD peer destination address with BFD profile `<profile>`.
+
+.. cfgcmd:: set protocols static route <subnet> next-hop <address> bfd multi-hop
+   source-address <source-address>
+
+   Configure a static route for `<subnet>` using gateway `<address>` and use the
+   gateway address as BFD peer destination address with source address
+   `<source>` but initiate a multi-hop session.
+
 DHCP Interface Routes
 =====================
 
@@ -190,6 +210,26 @@ IPv6 Interface Routes
    .. code-block:: none
 
      set protocols static route6 2001:db8:1000::/36 interface eth0 segments '2001:db8:aaaa::7/2002::4/2002::3/2002::2'
+
+IPv6 BFD
+========
+
+.. cfgcmd:: set protocols static route6 <subnet> next-hop <address> bfd
+
+   Configure a static route for `<subnet>` using gateway `<address>` and use the
+   gateway address as BFD peer destination address.
+
+.. cfgcmd:: set protocols static route6 <subnet> next-hop <address> bfd profile <profile>
+
+   Configure a static route for `<subnet>` using gateway `<address>` and use the
+   gateway address as BFD peer destination address with BFD profile `<profile>`.
+
+.. cfgcmd:: set protocols static route6 <subnet> next-hop <address> bfd multi-hop
+   source-address <source>
+
+   Configure a static route for `<subnet>` using gateway `<address>` and use the
+   gateway address as BFD peer destination address with source address
+   `<source>` but initiate a multi-hop session.
 
 IPv6 Reject Routes
 ==================
