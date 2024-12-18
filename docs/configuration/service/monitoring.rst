@@ -212,15 +212,15 @@ Node Exporter
 =============
 Prometheus node_exporter_ which provides a wide range of hardware and OS metrics.
 
-.. cfgcmd:: set service monitoring node-exporter listen-address <address>
+.. cfgcmd:: set service monitoring prometheus node-exporter listen-address <address>
 
   Configure the address node_exporter is listening on.
 
-.. cfgcmd:: set service monitoring node-exporter port <port>
+.. cfgcmd:: set service monitoring prometheus node-exporter port <port>
 
   Configure the port number node_exporter is listening on.
 
-.. cfgcmd:: set service monitoring node-exporter vrf <name>
+.. cfgcmd:: set service monitoring prometheus node-exporter vrf <name>
 
   Configure name of the :abbr:`VRF (Virtual Routing and Forwarding)` instance.
 
@@ -229,15 +229,15 @@ FRR Exporter
 ============
 Prometheus frr_exporter_ which provides free range routing metrics.
 
-.. cfgcmd:: set service monitoring frr-exporter listen-address <address>
+.. cfgcmd:: set service monitoring prometheus frr-exporter listen-address <address>
 
   Configure the address frr_exporter is listening on.
 
-.. cfgcmd:: set service monitoring frr-exporter port <port>
+.. cfgcmd:: set service monitoring prometheus frr-exporter port <port>
 
   Configure the port number frr_exporter is listening on.
 
-.. cfgcmd:: set service monitoring frr-exporter vrf <name>
+.. cfgcmd:: set service monitoring prometheus frr-exporter vrf <name>
 
   Configure name of the :abbr:`VRF (Virtual Routing and Forwarding)` instance.
 
