@@ -241,5 +241,28 @@ Prometheus frr_exporter_ which provides free range routing metrics.
 
   Configure name of the :abbr:`VRF (Virtual Routing and Forwarding)` instance.
 
+
+Blackbox Exporter
+=================
+Prometheus blackbox_exporter_ which allows probing of endpoints over
+HTTP, HTTPS, DNS, TCP, ICMP and gRPC .
+
+.. cfgcmd:: set service monitoring prometheus blackbox-exporter listen-address <address>
+
+  Configure the address blackbox_exporter is listening on.
+
+.. cfgcmd:: set service monitoring prometheus blackbox-exporter port <port>
+
+  Configure the port number blackbox_exporter is listening on.
+
+.. cfgcmd:: set service monitoring prometheus blackbox-exporter vrf <name>
+
+  Configure name of the :abbr:`VRF (Virtual Routing and Forwarding)` instance.
+
+.. cfgcmd:: set service monitoring prometheus blackbox-exporter config-file <path>
+
+  Configure a custom config file under `/config/prometheus_exporter/`
+
 .. _node_exporter: https://github.com/prometheus/node_exporter
 .. _frr_exporter: https://github.com/tynany/frr_exporter
+.. _blackbox_exporter: https://github.com/prometheus/blackbox_exporter
