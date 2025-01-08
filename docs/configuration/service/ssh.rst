@@ -129,7 +129,7 @@ Configuration
   ``rsa-sha2-256-cert-v01@openssh.com``, ``rsa-sha2-512``,
   ``rsa-sha2-512-cert-v01@openssh.com``
 
-.. cfgcmd::set service ssh trusted-user-ca-key ca-certificate <ca_cert_name>
+.. cfgcmd:: set service ssh trusted-user-ca-key ca-certificate <ca_cert_name>
 
   Specify the name of the CA certificate that will be used to verify the user
   certificates.
