@@ -246,5 +246,44 @@ Prometheus frr_exporter_ which provides free range routing metrics.
 
   Configure name of the :abbr:`VRF (Virtual Routing and Forwarding)` instance.
 
+
+Blackbox Exporter
+=================
+Prometheus blackbox_exporter_ which allows probing of endpoints over
+HTTP, HTTPS, DNS, TCP, ICMP and gRPC .
+
+.. cfgcmd:: set service monitoring prometheus blackbox-exporter listen-address <address>
+
+  Configure the address blackbox_exporter is listening on.
+
+.. cfgcmd:: set service monitoring prometheus blackbox-exporter port <port>
+
+  Configure the port number blackbox_exporter is listening on.
+
+.. cfgcmd:: set service monitoring prometheus blackbox-exporter vrf <name>
+
+  Configure name of the :abbr:`VRF (Virtual Routing and Forwarding)` instance.
+
+Configuring modules
+-------------------
+Blackbox exporter can be configured with different modules for probing DNS or ICMP.
+
+DNS module example:
+
+.. code-block:: none
+
+  set service monitoring prometheus blackbox-exporter modules dns name dns4 preferred-ip-protocol ip4
+  set service monitoring prometheus blackbox-exporter modules dns name dns4 query-name vyos.io
+  set service monitoring prometheus blackbox-exporter modules dns name dns4 query-type A
+
+ICMP module example:
+
+.. code-block:: none
+
+  set service monitoring prometheus blackbox-exporter modules icmp name ping6 preferred-ip-protocol ip6
+  set service monitoring prometheus blackbox-exporter modules icmp name ping6 ip-protocol-fallback
+  set service monitoring prometheus blackbox-exporter modules icmp name ping6 timeout 3
+
 .. _node_exporter: https://github.com/prometheus/node_exporter
 .. _frr_exporter: https://github.com/tynany/frr_exporter
+.. _blackbox_exporter: https://github.com/prometheus/blackbox_exporter
