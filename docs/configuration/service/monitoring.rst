@@ -224,6 +224,11 @@ Prometheus node_exporter_ which provides a wide range of hardware and OS metrics
 
   Configure name of the :abbr:`VRF (Virtual Routing and Forwarding)` instance.
 
+.. cfgcmd:: set service monitoring prometheus node-exporter collectors textfile
+
+  Configure textfile collector to export custom metrics read from
+  `/run/node_exporter/collector`
+
 
 FRR Exporter
 ============
