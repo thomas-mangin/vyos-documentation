@@ -37,142 +37,175 @@ peers.
 Configuration
 *************
 
+Tunnel interface configuration
+==============================
+
+NHRP never handles routing of prefixes itself. You need to run some real routing
+protocol (e.g. BGP) to advertise routes over the tunnels. What nhrpd does it
+establishes ‘shortcut routes’ that optimizes the routing protocol to avoid going
+through extra nodes in NBMA GRE mesh.
+
+NHRP does route NHRP domain addresses individually using per-host prefixes.
+This is similar to Cisco FlexVPN, but in contrast to opennhrp which uses
+a generic subnet route.
+
+To create NBMA GRE tunnel you might use the following:
+
+.. code-block:: none
+
+  set interfaces tunnel tun100 address '10.0.0.1/32'
+  set interfaces tunnel tun100 enable-multicast
+  set interfaces tunnel tun100 encapsulation 'gre'
+  set interfaces tunnel tun100 ip adjust-mss '1360'
+  set interfaces tunnel tun100 mtu '1400'
+  set interfaces tunnel tun100 parameters ip key '42'
+  set interfaces tunnel tun100 source-interface 'eth0'
+
 * Please refer to the :ref:`tunnel-interface` documentation for the individual
   tunnel related options.
+
+  .. note:: The IP-address is assigned as host prefix to tunnel interface.
+    NHRP will automatically create additional host routes pointing to tunnel interface
+    when a connection with these hosts is established.
+
+The tunnel interface subnet prefix should be announced by routing protocol
+from the hub nodes (e.g. BGP ‘network’ announce). This allows the routing
+protocol to decide which is the closest hub and determine the relay hub on
+prefix basis when direct tunnel is not established.
+
+NHRP protocol configuration
+==============================
+
+.. cfgcmd:: set protocols nhrp tunnel <tunnel> authentication <secret>
+
+  Enables Cisco style authentication on NHRP packets. This embeds the
+  plaintext password to the outgoing NHRP packets. Maximum length of
+  the password is 8 characters.
+
+.. cfgcmd:: set protocols nhrp tunnel <tunnel> holdtime <timeout>
+
+  Holdtime is the number of seconds that have to pass before stopping to
+  advertise an NHRP NBMA address as valid. It also controls how often NHRP
+  registration requests are sent. By default registrations are sent every
+  one third of the holdtime
+
+.. cfgcmd:: set protocols nhrp tunnel <tunnel> map tunnel-ip <tunnel-ip>
+  nbma <nbma-ip>
+
+  * **tunnel-ip** - Tunnel ip address in format **x.x.x.x**.
+  * **nbma-ip** - NBMA ip address in format **x.x.x.x** or **local**
+
+  Map an IP address of a station to the station’s NBMA address.
+
+.. cfgcmd:: set protocols nhrp tunnel <tunnel> mtu <mtu>
+
+  Configure NHRP advertised MTU.
+
+.. cfgcmd:: set protocols nhrp tunnel <tunnel> multicast <nbma-ip>
+
+  * **nbma-ip** - NBMA ip address in format **x.x.x.x** or **dynamic**
+
+  Sends multicast packets to the specified NBMA address. If dynamic is specified
+  then destination NBMA address (or addresses) are learnt dynamically.
+
+.. cfgcmd:: set protocols nhrp tunnel <tunnel> network-id <network-id>
+
+  * **network-id** - NHRP network id <1-4294967295>
+
+  Enable NHRP on this interface and set the interface’s network ID. The network ID
+  is used to allow creating multiple nhrp domains on a router when multiple interfaces
+  are configured on the router. Interfaces configured with the same ID are part of the
+  same logical NBMA network. The ID is a local only parameter and is not sent to other
+  NHRP nodes and so IDs on different nodes do not need to match. When NHRP packets are
+  received on an interface they are assigned to the local NHRP domain for that interface.
+
+.. cfgcmd:: set protocols nhrp tunnel <tunnel> nhs tunnel-ip <tunnel-ip> nbma <nbma-ip>
+
+  * **tunnel-ip** - Tunnel ip address in format **x.x.x.x** or **dynamic**
+  * **nbma-ip** - NBMA ip address in format **x.x.x.x**
+
+  Configure the Next Hop Server address and its NBMA address. If dynamic is specified
+  then Next Hop Server can have dynamic address which maps to its NBMA address.
+
+.. cfgcmd:: set protocols nhrp tunnel <tunnel> redirect
+
+  This enable redirect replies on the NHS similar to ICMP redirects except this is
+  managed by the nhrp protocol. This setting allows spokes to communicate with each
+  others directly.
+
+.. cfgcmd:: set protocols nhrp tunnel <tunnel> registration-no-unique
+
+  Allow the client to not set the unique flag in the NHRP packets. This is useful when
+  a station has a dynamic IP address that could change over time.
+
+.. cfgcmd:: set protocols nhrp tunnel <tunnel> shortcut
+
+  Enable shortcut (spoke-to-spoke) tunnels to allow NHC to talk to each others directly
+  after establishing a connection without going through the hub.
+
+IPSEC configuration
+==============================
 
 * Please refer to the :ref:`ipsec` documentation for the individual IPSec
   related options.
 
-.. cfgcmd:: set protocols nhrp tunnel <tunnel> cisco-authentication <secret>
+.. note:: NHRP daemon based on FRR nhrpd. It controls IPSEC. That's why 'close-action'
+  parameter in IKE configuration always is set to 'close' and 'dead-peer-detection action'
+  always is set to 'clear'.
 
-  Enables Cisco style authentication on NHRP packets. This embeds the secret
-  plaintext password to the outgoing NHRP packets. Incoming NHRP packets on
-  this interface are discarded unless the secret password is present. Maximum
-  length of the secret is 8 characters.
+.. cfgcmd:: set vpn ipsec profile <profile-name> authentication mode pre-shared-secret
 
-.. cfgcmd:: set protocols nhrp tunnel <tunnel> dynamic-map <address>
-  nbma-domain-name <fqdn>
+  Set preshared secret mode authentication
 
-  Specifies that the :abbr:`NBMA (Non-broadcast multiple-access network)`
-  addresses of the next hop servers are defined in the domain name
-  nbma-domain-name. For each A record opennhrp creates a dynamic NHS entry.
+.. cfgcmd:: set vpn ipsec profile <profile-name> authentication pre-shared-secret <secret>
 
-  Each dynamic NHS will get a peer entry with the configured network address
-  and the discovered NBMA address.
+  Set preshared secret
 
-  The first registration request is sent to the protocol broadcast address, and
-  the server's real protocol address is dynamically detected from the first
-  registration reply.
+.. cfgcmd:: set vpn ipsec profile <profile-name> bind tunnel <tunnel name>
 
-.. cfgcmd:: set protocols nhrp tunnel <tunnel> holding-time <timeout>
+  Bind IPSEC profile to the specific tunnel interface.
 
-  Specifies the holding time for NHRP Registration Requests and Resolution
-  Replies sent from this interface or shortcut-target. The holdtime is specified
-  in seconds and defaults to two hours.
+.. cfgcmd:: set vpn ipsec profile <profile-name> esp-group 'ESP-HUB'
 
-.. cfgcmd:: set protocols nhrp tunnel <tunnel> map cisco
+  Map ESP group to IPSEC profile
 
-  If the statically mapped peer is running Cisco IOS, specify the cisco keyword.
-  It is used to fix statically the Registration Request ID so that a matching
-  Purge Request can be sent if NBMA address has changed. This is to work around
-  broken IOS which requires Purge Request ID to match the original Registration
-  Request ID.
+.. cfgcmd:: set vpn ipsec profile <profile-name> ike-group 'IKE-HUB'
 
-.. cfgcmd:: set protocols nhrp tunnel <tunnel> map nbma-address <address>
+  Map IKE group to IPSEC profile
 
-  Creates static peer mapping of protocol-address to :abbr:`NBMA (Non-broadcast
-  multiple-access network)` address.
+**********
+Monitoring
+**********
+.. opcmd:: show ip nhrp cache
 
-  If the IP prefix mask is present, it directs opennhrp to use this peer as a
-  next hop server when sending Resolution Requests matching this subnet.
+  Forwarding cache information.
 
-  This is also known as the HUBs IP address or FQDN.
+.. opcmd:: show ip nhrp nhs
 
-.. cfgcmd:: set protocols nhrp tunnel <tunnel> map register
+  Next hop server information.
 
-  The optional parameter register specifies that Registration Request should be
-  sent to this peer on startup.
+.. opcmd:: show ip nhrp shortcut
 
-  This option is required when running a DMVPN spoke.
-
-.. cfgcmd:: set protocols nhrp tunnel <tunnel> multicast <dynamic | nhs>
-
-  Determines how opennhrp daemon should soft switch the multicast traffic.
-  Currently, multicast traffic is captured by opennhrp daemon using a packet
-  socket, and resent back to proper destinations. This means that multicast
-  packet sending is CPU intensive.
-
-  Specfying nhs makes all multicast packets to be repeated to each statically
-  configured next hop.
-
-  Synamic instructs to forward to all peers which we have a direct connection
-  with. Alternatively, you can specify the directive multiple times for each
-  protocol-address the multicast traffic should be sent to.
-
-  .. warning:: It is very easy to misconfigure multicast repeating if you have
-    multiple NHSes.
-
-.. cfgcmd:: set protocols nhrp tunnel <tunnel> non-caching
-
-   Disables caching of peer information from forwarded NHRP Resolution Reply
-   packets. This can be used to reduce memory consumption on big NBMA subnets.
-
-  .. note:: Currently does not do much as caching is not implemented.
-
-.. cfgcmd:: set protocols nhrp tunnel <tunnel> redirect
-
-  Enable sending of Cisco style NHRP Traffic Indication packets. If this is
-  enabled and opennhrp detects a forwarded  packet, it will send a message to
-  the original sender of the packet instructing it to create a direct connection
-  with the destination. This is basically a protocol independent equivalent of
-  ICMP redirect.
-
-.. cfgcmd:: set protocols nhrp tunnel <tunnel> shortcut
-
-  Enable creation of shortcut routes.
-
-  A received NHRP Traffic Indication will trigger the resolution and
-  establishment of a shortcut route.
-
-.. cfgcmd:: set protocols nhrp tunnel <tunnel> shortcut-destination
-
-  This instructs opennhrp to reply with authorative answers on NHRP Resolution
-  Requests destinied to addresses in this interface (instead of forwarding the
-  packets). This effectively allows the creation of shortcut routes to subnets
-  located on the interface.
-
-  When specified, this should be the only keyword for the interface.
-
-.. cfgcmd:: set protocols nhrp tunnel <tunnel> shortcut-target <address>
-
-  Defines an off-NBMA network prefix for which the GRE interface will act as a
-  gateway. This an alternative to defining local interfaces with
-  shortcut-destination flag.
-
-.. cfgcmd:: set protocols nhrp tunnel <tunnel> shortcut-target <address>
-  holding-time <timeout>
-
-  Specifies the holding time for NHRP Registration Requests and Resolution
-  Replies sent from this interface or shortcut-target. The holdtime is specified
-  in seconds and defaults to two hours.
+  Shortcut information.
 
 *******
 Example
 *******
 
-
-This blueprint uses VyOS as the DMVPN Hub and Cisco (7206VXR) and VyOS as
-multiple spoke sites. The lab was built using :abbr:`EVE-NG (Emulated Virtual
-Environment NG)`.
+This blueprint uses VyOS as the DMVPN Hub and Cisco IOSv 15.5(3)M and VyOS as
+multiple spoke sites.
 
 .. figure:: /_static/images/blueprint-dmvpn.png
-   :alt: DMVPN network
+   :width: 70%
+   :align: center
+   :alt: DMVPN Network Topology Diagram
 
-   DMVPN example network
 
-Each node (Hub and Spoke) uses an IP address from the network 172.16.253.128/29.
+   DMVPN Network Topology Diagram
 
-The below referenced IP address `192.0.2.1` is used as example address
+Each node (Hub and Spoke) uses an IP address from the network 10.0.0.0/24.
+
+The below referenced IP address `192.168.0.2` is used as example address
 representing a global unicast address under which the HUB can be contacted by
 each and every individual spoke.
 
@@ -183,46 +216,45 @@ Configuration
 
 Hub
 ---
+VyOS-HUB-1
+^^^^^^^^^^
 
 .. code-block:: none
 
-  set interfaces ethernet eth0 address 192.0.2.1/24
+  set interfaces ethernet eth0 address '192.168.0.2/30'
 
-  set interfaces tunnel tun100 address '172.16.253.134/29'
-  set interfaces tunnel tun100 encapsulation 'gre'
-  set interfaces tunnel tun100 source-address '192.0.2.1'
+  set interfaces tunnel tun100 address '10.0.0.100/32'
   set interfaces tunnel tun100 enable-multicast
-  set interfaces tunnel tun100 parameters ip key '1'
+  set interfaces tunnel tun100 encapsulation 'gre'
+  set interfaces tunnel tun100 parameters ip key '42'
+  set interfaces tunnel tun100 source-interface 'eth0'
 
-  set protocols nhrp tunnel tun100 cisco-authentication 'secret'
-  set protocols nhrp tunnel tun100 holding-time '300'
+  set protocols nhrp tunnel tun100 authentication 'test123'
+  set protocols nhrp tunnel tun100 holdtime '300'
   set protocols nhrp tunnel tun100 multicast 'dynamic'
+  set protocols nhrp tunnel tun100 network-id '1'
   set protocols nhrp tunnel tun100 redirect
-  set protocols nhrp tunnel tun100 shortcut
+  set protocols nhrp tunnel tun100 registration-no-unique
+
+  set protocols static route 0.0.0.0/0 next-hop 192.168.0.1
 
   set vpn ipsec esp-group ESP-HUB lifetime '1800'
   set vpn ipsec esp-group ESP-HUB mode 'transport'
   set vpn ipsec esp-group ESP-HUB pfs 'dh-group2'
   set vpn ipsec esp-group ESP-HUB proposal 1 encryption 'aes256'
   set vpn ipsec esp-group ESP-HUB proposal 1 hash 'sha1'
-  set vpn ipsec esp-group ESP-HUB proposal 2 encryption '3des'
-  set vpn ipsec esp-group ESP-HUB proposal 2 hash 'md5'
   set vpn ipsec ike-group IKE-HUB key-exchange 'ikev1'
   set vpn ipsec ike-group IKE-HUB lifetime '3600'
   set vpn ipsec ike-group IKE-HUB proposal 1 dh-group '2'
   set vpn ipsec ike-group IKE-HUB proposal 1 encryption 'aes256'
   set vpn ipsec ike-group IKE-HUB proposal 1 hash 'sha1'
-  set vpn ipsec ike-group IKE-HUB proposal 2 dh-group '2'
-  set vpn ipsec ike-group IKE-HUB proposal 2 encryption 'aes128'
-  set vpn ipsec ike-group IKE-HUB proposal 2 hash 'sha1'
-
   set vpn ipsec interface 'eth0'
-
   set vpn ipsec profile NHRPVPN authentication mode 'pre-shared-secret'
   set vpn ipsec profile NHRPVPN authentication pre-shared-secret 'secret'
   set vpn ipsec profile NHRPVPN bind tunnel 'tun100'
   set vpn ipsec profile NHRPVPN esp-group 'ESP-HUB'
   set vpn ipsec profile NHRPVPN ike-group 'IKE-HUB'
+
 
 .. note:: Setting this up on AWS will require a "Custom Protocol Rule" for
   protocol number "47" (GRE) Allow Rule in TWO places. Firstly on the VPC
@@ -231,105 +263,160 @@ Hub
   the AWS Marketplace. (Locate the correct VPC and security group by navigating
   through the details pane below your EC2 instance in the AWS console).
 
-Spoke
------
+Spokes
+------
 
-The individual spoke configurations only differ in the local IP address on the
-``tun10`` interface. See the above diagram for the individual IP addresses.
+ The individual spoke configurations only differ in interface IP addresses.
 
-spoke01-spoke04
-^^^^^^^^^^^^^^^
-
-.. code-block:: none
-
-  crypto keyring DMVPN
-    pre-shared-key address 192.0.2.1 key secret
-  !
-  crypto isakmp policy 10
-   encr aes 256
-   authentication pre-share
-   group 2
-  crypto isakmp invalid-spi-recovery
-  crypto isakmp keepalive 30 30 periodic
-  crypto isakmp profile DMVPN
-     keyring DMVPN
-     match identity address 192.0.2.1 255.255.255.255
-  !
-  crypto ipsec transform-set DMVPN-AES256 esp-aes 256 esp-sha-hmac
-   mode transport
-  !
-  crypto ipsec profile DMVPN
-   set security-association idle-time 720
-   set transform-set DMVPN-AES256
-   set isakmp-profile DMVPN
-  !
-  interface Tunnel10
-   ! individual spoke tunnel IP must change
-   ip address 172.16.253.129 255.255.255.248
-   no ip redirects
-   ip nhrp authentication secret
-   ip nhrp map 172.16.253.134 192.0.2.1
-   ip nhrp map multicast 192.0.2.1
-   ip nhrp network-id 1
-   ip nhrp holdtime 600
-   ip nhrp nhs 172.16.253.134
-   ip nhrp registration timeout 75
-   tunnel source FastEthernet0/0
-   tunnel mode gre multipoint
-   tunnel protection ipsec profile DMVPN
-   tunnel key 1
-  !
-  interface FastEthernet0/0
-   ip address dhcp
-   duplex half
-
-
-spoke05
-^^^^^^^
-
-VyOS can also run in DMVPN spoke mode.
+VyOS-Spoke-1 and VyOS-Spoke-2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: none
 
-  set interfaces ethernet eth0 address 'dhcp'
+  set interfaces ethernet eth0 address '192.168.1.2/30'
 
-  set interfaces tunnel tun100 address '172.16.253.133/29'
-  set interfaces tunnel tun100 source-address 0.0.0.0
-  set interfaces tunnel tun100 encapsulation 'gre'
+  set interfaces tunnel tun100 address '10.0.0.1/32'
   set interfaces tunnel tun100 enable-multicast
-  set interfaces tunnel tun100 parameters ip key '1'
+  set interfaces tunnel tun100 encapsulation 'gre'
+  set interfaces tunnel tun100 parameters ip key '42'
+  set interfaces tunnel tun100 source-interface 'eth0'
 
-  set protocols nhrp tunnel tun100 cisco-authentication 'secret'
-  set protocols nhrp tunnel tun100 holding-time '300'
-  set protocols nhrp tunnel tun100 map 172.16.253.134/29 nbma-address '192.0.2.1'
-  set protocols nhrp tunnel tun100 map 172.16.253.134/29 register
-  set protocols nhrp tunnel tun100 multicast 'nhs'
-  set protocols nhrp tunnel tun100 redirect
+  set protocols nhrp tunnel tun100 authentication 'test123'
+  set protocols nhrp tunnel tun100 holdtime '300'
+  set protocols nhrp tunnel tun100 multicast 'dynamic'
+  set protocols nhrp tunnel tun100 network-id '1'
+  set protocols nhrp tunnel tun100 nhs tunnel-ip dynamic nbma '192.168.0.2'
+  set protocols nhrp tunnel tun100 registration-no-unique
   set protocols nhrp tunnel tun100 shortcut
+
+  set protocols static route 0.0.0.0/0 next-hop 192.168.1.1
+  set protocols static route 10.0.0.0/24 next-hop 10.0.0.100
 
   set vpn ipsec esp-group ESP-HUB lifetime '1800'
   set vpn ipsec esp-group ESP-HUB mode 'transport'
   set vpn ipsec esp-group ESP-HUB pfs 'dh-group2'
   set vpn ipsec esp-group ESP-HUB proposal 1 encryption 'aes256'
   set vpn ipsec esp-group ESP-HUB proposal 1 hash 'sha1'
-  set vpn ipsec esp-group ESP-HUB proposal 2 encryption '3des'
-  set vpn ipsec esp-group ESP-HUB proposal 2 hash 'md5'
-  set vpn ipsec ike-group IKE-HUB close-action 'none'
   set vpn ipsec ike-group IKE-HUB key-exchange 'ikev1'
   set vpn ipsec ike-group IKE-HUB lifetime '3600'
   set vpn ipsec ike-group IKE-HUB proposal 1 dh-group '2'
   set vpn ipsec ike-group IKE-HUB proposal 1 encryption 'aes256'
   set vpn ipsec ike-group IKE-HUB proposal 1 hash 'sha1'
-  set vpn ipsec ike-group IKE-HUB proposal 2 dh-group '2'
-  set vpn ipsec ike-group IKE-HUB proposal 2 encryption 'aes128'
-  set vpn ipsec ike-group IKE-HUB proposal 2 hash 'sha1'
-
   set vpn ipsec interface 'eth0'
-
   set vpn ipsec profile NHRPVPN authentication mode 'pre-shared-secret'
   set vpn ipsec profile NHRPVPN authentication pre-shared-secret 'secret'
   set vpn ipsec profile NHRPVPN bind tunnel 'tun100'
   set vpn ipsec profile NHRPVPN esp-group 'ESP-HUB'
   set vpn ipsec profile NHRPVPN ike-group 'IKE-HUB'
 
+Cisco-Spoke-3
+^^^^^^^^^^^^^
+
+.. code-block:: none
+
+  crypto isakmp policy 10
+   encr aes 256
+   authentication pre-share
+   group 2
+   lifetime 3600
+  crypto isakmp key secret address 0.0.0.0
+  !
+  !
+  crypto ipsec transform-set DMVPNESP esp-aes 256 esp-sha-hmac
+   mode transport
+  !
+  crypto ipsec profile DMVPNPROFILE
+   set security-association lifetime seconds 1800
+   set transform-set DMVPNESP
+   set pfs group2
+  !
+  !
+  !
+  !
+  !
+  !
+  !
+  interface Tunnel100
+   ip address 10.0.0.3 255.255.255.0
+   no ip redirects
+   ip nhrp authentication test123
+   ip nhrp map multicast dynamic
+   ip nhrp network-id 1
+   ip nhrp holdtime 300
+   ip nhrp nhs 10.0.0.100 nbma 192.168.0.2
+   ip nhrp registration no-unique
+   ip nhrp redirect
+  tunnel source GigabitEthernet0/0
+   tunnel mode gre multipoint
+   tunnel key 42
+   tunnel protection ipsec profile DMVPNPROFILE
+  !
+  interface GigabitEthernet0/0
+   ip address 192.168.3.2 255.255.255.252
+   duplex auto
+   speed auto
+   media-type rj45
+  !
+  ip route 0.0.0.0 0.0.0.0 192.168.3.1
+
+
+Monitoring DMVPN Network
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Let send ICMP packets from VyOS-SPOKE-1 to Cisco-SPOKE-3
+
+.. code-block:: none
+
+  vyos@vyos:~$ ping 10.0.0.3
+  PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
+  64 bytes from 10.0.0.3: icmp_seq=1 ttl=255 time=3.44 ms
+  64 bytes from 10.0.0.3: icmp_seq=2 ttl=255 time=3.07 ms
+  ^C
+  --- 10.0.0.3 ping statistics ---
+  2 packets transmitted, 2 received, 0% packet loss, time 1002ms
+  rtt min/avg/max/mdev = 3.072/3.257/3.442/0.185 ms
+
+Monitoring on HUB
+^^^^^^^^^^^^^^^^^
+
+.. code-block:: none
+
+  vyos@vyos:~$ show ip nhrp cache
+  Iface    Type     Protocol                 NBMA                     Claimed NBMA             Flags  Identity
+  tun100   dynamic  10.0.0.1                 192.168.1.2              192.168.1.2               T     192.168.1.2
+  tun100   dynamic  10.0.0.3                 192.168.3.2              192.168.3.2               T     192.168.3.2
+  tun100   dynamic  10.0.0.2                 192.168.2.2              192.168.2.2               T     192.168.2.2
+  tun100   local    10.0.0.100               192.168.0.2              192.168.0.2                     -
+
+  vyos@vyos:~$ show vpn ipsec sa
+  Connection                  State    Uptime    Bytes In/Out    Packets In/Out    Remote address    Remote ID    Proposal
+  --------------------------  -------  --------  --------------  ----------------  ----------------  -----------  ----------------------------------
+  dmvpn-NHRPVPN-tun100-child  up       3m46s     230B/270B       2/2               192.168.1.2       192.168.1.2  AES_CBC_256/HMAC_SHA1_96/MODP_1024
+  dmvpn-NHRPVPN-tun100-child  up       5m48s     460B/540B       4/4               192.168.2.2       192.168.2.2  AES_CBC_256/HMAC_SHA1_96/MODP_1024
+  dmvpn-NHRPVPN-tun100-child  up       16m26s    1K/1K           13/12             192.168.3.2       192.168.3.2  AES_CBC_256/HMAC_SHA1_96/MODP_1024
+
+Monitoring on Spokes
+^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: none
+
+  vyos@vyos:~$ show ip nhrp cache
+  Iface    Type     Protocol                 NBMA                     Claimed NBMA             Flags  Identity
+  tun100   local    10.0.0.1                 192.168.1.2              192.168.1.2                     -
+  tun100   dynamic  10.0.0.3                 192.168.3.2              192.168.3.2               T     192.168.3.2
+  tun100   nhs      10.0.0.100               192.168.0.2              192.168.0.2               T     192.168.0.2
+
+  vyos@vyos:~$ show ip nhrp nhs
+  Iface    FQDN                     NBMA             Protocol
+  tun100   192.168.0.2              192.168.0.2      10.0.0.100
+
+  vyos@vyos:~$ show ip nhrp shortcut
+  Type     Prefix                   Via                      Identity
+  dynamic  10.0.0.3/32              10.0.0.3                 192.168.3.2
+
+  vyos@vyos:~$ show vpn ipsec sa
+  Connection                  State    Uptime    Bytes In/Out    Packets In/Out    Remote address    Remote ID    Proposal
+  --------------------------  -------  --------  --------------  ----------------  ----------------  -----------  ----------------------------------
+  dmvpn-NHRPVPN-tun100-child  up       6m43s     898B/695B       7/6               192.168.0.2       192.168.0.2  AES_CBC_256/HMAC_SHA1_96/MODP_1024
+  dmvpn-NHRPVPN-tun100-child  up       49s       215B/187B       2/2               192.168.3.2       192.168.3.2  AES_CBC_256/HMAC_SHA1_96/MODP_1024
 
