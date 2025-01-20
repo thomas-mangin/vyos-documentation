@@ -585,7 +585,7 @@ rule, using ``connection-status`` matcher:
 
   set firewall ipv4 forward filter rule 10 action accept
   set firewall ipv4 forward filter rule 10 connection-status nat destination
-  set firewall ipv4 forward filter rule 10 state new enable
+  set firewall ipv4 forward filter rule 10 state new
 
 This would generate the following configuration:
 
@@ -599,9 +599,7 @@ This would generate the following configuration:
                   connection-status {
                       nat destination
                   }
-                  state {
-                      new enable
-                  }
+                  state new
               }
           }
       }
