@@ -14,72 +14,41 @@ Building using a :ref:`build_docker` container, although not the only way,
 is the easiest way as all dependencies are managed for you. However, you can
 also set up your own build machine and run a :ref:`build_native`.
 
-.. note:: Starting with VyOS 1.2 the release model of VyOS has changed. VyOS
-   is now **free as in speech, but not as in beer**. This means that while
-   VyOS is still an open source project, the release ISOs are no longer free
-   and can only be obtained via subscription, or by contributing to the
-   community.
+.. note:: Starting with VyOS 1.4, only source code and Debian package repositories
+   of the rolling release (the **current** branch) are publicly available.
 
-   The source code remains public and an ISO can be built using the process
-   outlined in this chapter.
+   The source code and pre-built Debian package repositories of LTS releases
+   are only available to subscription holders (customers and active community members
+   with contributors subscriptions).
 
-   The following includes the build process for VyOS 1.2 to the latest version.
+   The following includes the build process for VyOS rolling release.
 
 This will guide you through the process of building a VyOS ISO using Docker_.
-This process has been tested on clean installs of Debian Jessie, Stretch, and
-Buster.
+This process has been tested on clean installs of Debian Bookworm.
 
 .. _build_native:
 
 Native Build
 ============
 
-To build VyOS natively you require a properly configured build host with the
+To build VyOS natively you need a properly configured build host with the
 following Debian versions installed:
 
-- Debian Jessie for VyOS 1.2 (crux)
-- Debian Buster for VyOS 1.3 (equuleus) 
-- Debian Bookworm for VyOS 1.4 (sagitta)
-- Debian Bookworm for the upcoming VyOS 1.5/circinus/current 
-  (subject to change) - aka the rolling release
+- Debian Bookworm
 
 To start, clone the repository to your local machine:
 
 .. code-block:: none
 
-  # For VyOS 1.2 (crux)
-  $ git clone -b crux --single-branch https://github.com/vyos/vyos-build
-
-  # For VyOS 1.3 (equuleus)
-  $ git clone -b equuleus --single-branch https://github.com/vyos/vyos-build
-
-  # For VyOS 1.4 (sagitta)
-  $ git clone -b sagitta --single-branch https://github.com/vyos/vyos-build
-
-  # For VyOS 1.5 (circinus,current)
-  $ git clone -b current --single-branch https://github.com/vyos/vyos-build
-
-  $ cd vyos-build
-
-  # For VyOS 1.2 (crux) and VyOS 1.3 (equuleus)
-  $ ./configure --architecture amd64 --build-by "j.randomhacker@vyos.io"
-  $ sudo make iso
-
-  # For VyOS 1.4 (sagitta)
   $ sudo make clean
-  $ sudo ./build-vyos-image iso --architecture amd64 --build-by "j.randomhacker@vyos.io"
-
-  # For VyOS 1.5 (circinus,current)
-  $ sudo make clean
-  $ sudo ./build-vyos-image generic --architecture amd64 --build-by "j.randomhacker@vyos.io"
+  $ sudo ./build-vyos-image --architecture amd64 --build-by "j.randomhacker@vyos.io" generic
 
 For the packages required, you can refer to the ``docker/Dockerfile`` file
 in the repository_. The ``./build-vyos-image`` script will also warn you if any
 dependencies are missing.
 
 This will guide you through the process of building a VyOS ISO using Docker. 
-This process has been tested on clean installs of Debian Bullseye (11) and 
-Bookworm (12).
+This process has been tested on clean installs of Bookworm (12).
 
 .. _build_docker:
 
@@ -142,10 +111,7 @@ To manually download the container from DockerHub, run:
 
 .. code-block:: none
 
-  $ docker pull vyos/vyos-build:crux     # For VyOS 1.2
-  $ docker pull vyos/vyos-build:equuleus # For VyOS 1.3
-  $ docker pull vyos/vyos-build:sagitta  # For VyOS 1.4
-  $ docker pull vyos/vyos-build:current  # For VyOS 1.5 rolling release
+  $ docker pull vyos/vyos-build:current  # For VyOS rolling release
 
 Build from source
 ^^^^^^^^^^^^^^^^^
@@ -154,20 +120,10 @@ The container can also be built directly from source:
 
 .. code-block:: none
 
-  # For VyOS 1.2 (crux)
-  $ git clone -b crux --single-branch https://github.com/vyos/vyos-build
-  # For VyOS 1.3 (equuleus)
-  $ git clone -b equuleus --single-branch https://github.com/vyos/vyos-build
-  # For VyOS 1.4 (sagitta)
-  $ git clone -b sagitta --single-branch https://github.com/vyos/vyos-build
-  # For VyOS 1.5 (circinus,current)
   $ git clone -b current --single-branch https://github.com/vyos/vyos-build
   
   $ cd vyos-build
-  $ docker build -t vyos/vyos-build:crux docker           # For VyOS 1.2
-  $ docker build -t vyos/vyos-build:equuleus docker       # For VyOS 1.3
-  $ docker build -t vyos/vyos-build:sagitta docker        # For VyOS 1.4
-  $ docker build -t vyos/vyos-build:current docker        # For VyOS 1.5 rolling release
+  $ docker build -t vyos/vyos-build:current docker
 
 .. note:: VyOS has switched to Debian (12) Bookworm in its ``current`` branch,
    Due to software version updates, it is recommended to use the official 
@@ -177,7 +133,7 @@ Tips and Tricks
 ---------------
 
 You can create yourself some handy Bash aliases to always launch the latest -
-per release train (`current` or `crux`) - container. Add the following to your
+per release train (`current`) - container. Add the following to your
 ``.bash_aliases`` file:
 
 .. code-block:: none
@@ -191,16 +147,7 @@ per release train (`current` or `crux`) - container. Add the following to your
       -e GOSU_UID=$(id -u) -e GOSU_GID=$(id -g) \
       vyos/vyos-build:current bash'
 
-  alias vybld_crux='docker pull vyos/vyos-build:crux && docker run --rm -it \
-      -v "$(pwd)":/vyos \
-      -v "$HOME/.gitconfig":/etc/gitconfig \
-      -v "$HOME/.bash_aliases":/home/vyos_bld/.bash_aliases \
-      -v "$HOME/.bashrc":/home/vyos_bld/.bashrc \
-      -w /vyos --privileged --sysctl net.ipv6.conf.lo.disable_ipv6=0 \
-      -e GOSU_UID=$(id -u) -e GOSU_GID=$(id -g) \
-      vyos/vyos-build:crux bash'
-
-Now you are prepared with two new aliases ``vybld`` and ``vybld_crux`` to spawn
+Now you are prepared with a new aliase ``vybld`` to spawn
 your development containers in your current working directory.
 
 .. note:: Some VyOS packages (namely vyos-1x) come with build-time tests which
@@ -220,20 +167,9 @@ Build ISO
 
 Now as you are aware of the prerequisites we can continue and build our own
 ISO from source. For this we have to fetch the latest source code from GitHub.
-Please note as this will differ for both `current` and `crux`.
 
 .. code-block:: none
 
-  # For VyOS 1.2 (crux)
-  $ git clone -b crux --single-branch https://github.com/vyos/vyos-build
-
-  # For VyOS 1.3 (equuleus)
-  $ git clone -b equuleus --single-branch https://github.com/vyos/vyos-build
-
-  # For VyOS 1.4 (sagitta)
-  $ git clone -b sagitta --single-branch https://github.com/vyos/vyos-build
-
-  # For VyOS 1.5 (circinus,current)
   $ git clone -b current --single-branch https://github.com/vyos/vyos-build
 
 
@@ -243,56 +179,19 @@ Now a fresh build of the VyOS ISO can begin. Change directory to the
 .. code-block:: none
 
   $ cd vyos-build
-  # For VyOS 1.2 (crux)
-  $ docker run --rm -it --privileged -v $(pwd):/vyos -w /vyos vyos/vyos-build:crux bash
-
-  # For VyOS 1.3 (equuleus)
-  $ docker run --rm -it --privileged -v $(pwd):/vyos -w /vyos vyos/vyos-build:equuleus bash
-
-  # For VyOS 1.4 (sagitta)
-  $ docker run --rm -it --privileged -v $(pwd):/vyos -w /vyos vyos/vyos-build:sagitta bash
-
-  # For VyOS 1.5 (current)
   $ docker run --rm -it --privileged -v $(pwd):/vyos -w /vyos vyos/vyos-build:current bash
     
 .. code-block:: none
-
-  # For MacOS (crux, equuleus, sagitta)
-  $ git clone https://github.com/vyos/vyos-utils-misc
-  $ cd build-tools/macos-build
-
-  # For VyOS 1.2 (crux)
-  $ os=jessie64 branch=crux make build
-
-  # For VyOS 1.3 (equuleus)
-  $ os=buster64 branch=equuleus make build
-
-  # For VyOS 1.4 (sagitta)
-  $ os=buster64 branch=sagitta make build
 
 Start the build:
 
 .. code-block:: none
 
-  # For VyOS 1.2 (crux) and VyOS 1.3 (equuleus)
-  vyos_bld@8153428c7e1f:/vyos$ ./configure --architecture amd64 --build-by "j.randomhacker@vyos.io"
-  vyos_bld@8153428c7e1f:/vyos$ sudo make iso
-
-  # For VyOS 1.4 (sagitta)
   vyos_bld@8153428c7e1f:/vyos$ sudo make clean
-  vyos_bld@8153428c7e1f:/vyos$ sudo ./build-vyos-image iso --architecture amd64 --build-by "j.randomhacker@vyos.io"
-
-  # For VyOS 1.5 (circinus,current)
-  vyos_bld@8153428c7e1f:/vyos$ sudo make clean
-  vyos_bld@8153428c7e1f:/vyos$ sudo ./build-vyos-image generic --architecture amd64 --build-by "j.randomhacker@vyos.io"
+  vyos_bld@8153428c7e1f:/vyos$ sudo ./build-vyos-image --architecture amd64 --build-by "j.randomhacker@vyos.io" generic
 
 When the build is successful, the resulting iso can be found inside the
 ``build`` directory as ``live-image-[architecture].hybrid.iso``.
-
-Good luck!
-
-.. hint:: Building VyOS on Windows WSL2 with Docker integrated into WSL2 will
-   work like a charm. No problems are known so far!
 
 .. _build source:
 
@@ -740,39 +639,6 @@ After compiling the packages you will find yourself the newly generated `*.deb`
 binaries in ``vyos-build/packages/linux-kernel`` from which you can copy them
 to the ``vyos-build/packages`` folder for inclusion during the ISO build.
 
-
-Mellanox OFED
-^^^^^^^^^^^^^
-
-The Mellanox OFED drivers do not come from a Git repository, instead we fetch the
-tarball from Nvidia and compile the sources its contains against our kernel tree.
-
-Simply use our wrapper script to build all of the driver modules.
-
-.. code-block:: none
-
-  ./build-mellanox-ofed.sh
-  ...
-  Below is the list of OFED packages that you have chosen
-  (some may have been added by the installer due to package dependencies):
-
-  ofed-scripts
-  mlnx-tools
-  mlnx-ofed-kernel-utils
-  mlnx-ofed-kernel-modules
-  ...
-  Building packages
-  Building DEB for ofed-scripts-24.04.OFED.24.04.0.6.6 (ofed-scripts)...
-  Running  /usr/bin/dpkg-buildpackage -us -uc 
-  Installing ofed-scripts-24.04.OFED.24.04.0.6.6...
-  Running /usr/bin/dpkg -i --force-confmiss '/vyos/packages/linux-kernel/MLNX_OFED_SRC-debian-24.04-0.6.6.0/DEBS/debian12.1/x86_64/ofed-scripts_24.04.OFED.24.04.0.6.6-1_amd64.deb'
-  Building DEB for mlnx-tools-24.04.0 (mlnx-tools)...
-
-
-After compiling the packages you will find yourself the newly generated `*.deb`
-binaries in ``vyos-build/packages/linux-kernel`` from which you can copy them
-to the ``vyos-build/packages`` folder for inclusion during the ISO build.
-
 Packages
 ========
 
@@ -815,29 +681,6 @@ during ISO build.
    """
 
 .. start_vyoslinter
-
-
-
-Virtualization Platforms
-========================
-
-QEMU
-----
-
-Run the following command after building the ISO image.
-
-.. code-block:: none
-
-  $ make qemu
-
-VMware
-------
-
-Run the following command after building the QEMU image.
-
-.. code-block:: none
-
-  $ make vmware
 
 .. _build_packages:
 
