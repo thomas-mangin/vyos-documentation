@@ -7,8 +7,8 @@ Flow Accounting
 VyOS supports flow-accounting for both IPv4 and IPv6 traffic. The system acts
 as a flow exporter, and you are free to use it with any compatible collector.
 
-Flows can be exported via two different protocols: NetFlow (versions 5, 9 and
-10/IPFIX) and sFlow. Additionally, you may save flows to an in-memory table
+Flows can be exported via protocol NetFlow (versions 5, 9 and
+10/IPFIX). Additionally, you may save flows to an in-memory table
 internally in a router.
 
 .. warning:: You need to disable the in-memory table in production environments!
@@ -143,26 +143,6 @@ NetFlow
 
    If you want to change the maximum number of flows, which are tracking
    simultaneously, you may do this with this command (default 8192).
-
-sFlow
-^^^^^
-
-.. cfgcmd:: set system flow-accounting sflow server <address>
-
-   Configure address of sFlow collector. sFlow server at `<address>` can
-   be an IPv4 or IPv6 address. But you cannot export to both IPv4 and
-   IPv6 collectors at the same time!
-
-.. cfgcmd:: set system flow-accounting sflow sampling-rate <rate>
-
-   Enable sampling of packets, which will be transmitted to sFlow collectors.
-
-.. cfgcmd:: set system flow-accounting sflow agent-address <address>
-
-   Configure a sFlow agent address. It can be IPv4 or IPv6 address, but you
-   must set the same protocol, which is used for sFlow collector addresses. By
-   default, using router-id from BGP or OSPF protocol, or the primary IP
-   address from the first interface.
 
 Example:
 --------

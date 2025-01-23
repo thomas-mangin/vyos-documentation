@@ -44,6 +44,10 @@ Configuration
 
    Configure address of sFlow collector. sFlow server at <address> can be both listening on an IPv4 or IPv6 address.
 
+.. cfgcmd:: set system sflow enable-egress
+
+   Use this command to if you need to sample also egress traffic
+
 
 Example
 =======
