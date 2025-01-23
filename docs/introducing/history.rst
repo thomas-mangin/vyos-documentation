@@ -12,7 +12,7 @@ called Vyatta. [*]_ 2006 onwards, it was a great free software
 alternative to Cisco IOS and Jupiter JUNOS. It came in two editions:
 Vyatta Core (previously Vyatta Community Edition) that was completely
 free software, and Vyatta Subscription Edition that had proprietary
-features and was only available to paying customers. [*]_
+features and was only available to paying customers.
 
 Vyatta was acquired by Brocade Communication Systems in 2012. Shortly
 after, Brocade renamed Vyatta Subscription Edition to Brocade vRouter,
@@ -30,7 +30,7 @@ the last Vyatta Core version (6.6R1) and VyOS Project came into being.
 `Sentrium SL <https://blog.vyos.io/sentrium-what-sentrium>`_ was
 established by VyOS maintainers in 2014 to fund VyOS development by
 selling support, consulting services and prebuilt long-term support
-images.
+images. The company was later reorganized under the VyOS brand.
 
 Brocade was acquired by Broadcom in 2016 and sold what remains of
 erstwhile Vyatta to AT&T in 2017, who in turn sold it to Ciena in 2021.
@@ -85,7 +85,7 @@ configuration migration. Introduction of new Perl and shell code was
 proscribed and the rewriting of legacy Perl code in pure Python began
 with Crux.
 
-As of 2022, Crux is still supported and maintained.
+Crux reached end of support in 2023..
 
 Equuleus (1.3)
 --------------
@@ -101,13 +101,12 @@ interfaces, support for GENEVE and MACSec interfaces, VRF, IS-IS
 routing, preliminary support for MPLS and LDP, and many other
 initialisms.
 
-As of 2022, Equuleus is in the stable.
+Equuleus reached end of support in 2025.
 
 Sagitta (1.4)
 -------------
 
-Sagitta (the Arrow) is the codename of the current development
-branch, so there's no VyOS 1.4 yet.
+Sagitta (the Arrow) was released in 2024 and is currently a supported LTS release.
 
 Circinus (1.5)
 --------------
@@ -131,6 +130,4 @@ any pre-built image for more precise information.
 
 
 .. [*] From the Sanskrit adjective "Vyātta" (व्यात्त), meaning opened.
-.. [*] A business model comparable to that of Redis, rather than that
-       of VyOS today.
 .. [*] This is not unlike how Linus Torvalds owns the trademark "Linux".

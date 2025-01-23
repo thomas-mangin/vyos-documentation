@@ -119,19 +119,10 @@ repositories found in the VyOS GitHub organisation at https://github.com/vyos
 Determinine source package
 --------------------------
 
-Suppose you want to make a change in the webproxy script but yet you do not know
-which of the many VyOS packages ship this file. You can determine the VyOS
+Suppose you want to make a change in a file but yet you do not know
+which of the VyOS packages ship this file. You can determine the VyOS
 package name in question by using Debian's ``dpkg -S`` command of your running
 VyOS installation.
-
-.. code-block:: none
-
-  vyos@vyos:~ dpkg -S /opt/vyatta/sbin/vyatta-update-webproxy.pl
-  vyatta-webproxy: /opt/vyatta/sbin/vyatta-update-webproxy.pl
-
-This means the file in question (``/opt/vyatta/sbin/vyatta-update-webproxy.pl``)
-is located in the ``vyatta-webproxy`` package which can be found here:
-https://github.com/vyos/vyatta-webproxy
 
 
 Fork Repository and submit Patch
@@ -171,7 +162,7 @@ record them in your created Git commit:
 * Submit the patch ``git push`` and create the GitHub pull-request.
 
 
-Attach patch to Phabricator task
+Attach patch to Phorge task
 --------------------------------
 
 Follow the above steps on how to "Fork repository to submit a Patch". Instead
@@ -191,9 +182,6 @@ The rules we have are not there to punish you - the rules are in place to help
 us all. By having a consistent coding style it becomes very easy for new
 and also longtime contributors to navigate through the sources and all the
 implied logic of any one source file..
-
-Python 3 **shall** be used. How long can we keep Python 2 alive anyway? No
-considerations for Python 2 compatibility **should** be taken at any time.
 
 
 Formatting
@@ -217,43 +205,6 @@ line is self-contained, such as iptables rules. Template processor **must** be
 used for structured, multi-line formats such as those used by ISC DHCPd.
 
 The default template processor for VyOS code is Jinja2_.
-
-
-Summary
--------
-
-When modifying the source code, remember these rules of the legacy elimination
-campaign:
-
-* No new features in Perl
-* No old style command definitions
-* No code incompatible with Python3
-
-
-Python
-======
-
-The switch to the Python programming language for new code is not merely a
-change of the language, but a chance to rethink and improve the programming
-approach.
-
-Let's face it: VyOS is full of spaghetti code where logic for reading the VyOS
-config, generating daemon configs, and restarting processes is all mixed up.
-
-Python (or any other language, for that matter) does not provide automatic
-protection from bad design, so we need to also devise design guidelines and
-follow them to keep the system extensible and maintainable.
-
-But we are here to assist you and want to guide you through how you can become
-a good VyOS contributor. The rules we have are not there to punish you - the
-rules are in place to help us all. What does it mean? By having a consistent
-coding style it becomes very easy for new contributors and also longtime
-contributors to navigate through the sources and all the implied logic of
-the spaghetti code.
-
-Please use the following template as good starting point when developing new
-modules or even rewrite a whole bunch of code in the new style XML/Python
-interface.
 
 
 Configuration Script Structure and Behaviour
@@ -635,69 +586,6 @@ Examples:
 * Good: "Disable IPv6 forwarding"
 * Bad: "Disables IPv6 forwarding"
 
-Migrating old CLI
------------------
-
-.. list-table::
-   :widths: 25 25 50
-   :header-rows: 1
-
-   * - Old concept/syntax
-     - New syntax
-     - Notes
-   * - mynode/node.def
-     - <node name="mynode"> </node>
-     - Leaf nodes (nodes with values) use <leafNode> tag instead
-   * - mynode/node.tag , tag:
-     - <tagNode name="mynode> </node>
-     -
-   * - help: My node
-     - <properties> <help>My node</help>
-     -
-   * - val_help: <format>; some string
-     - <properties> <valueHelp> <format> format </format> <description> some
-       string </description>
-     - Do not add angle brackets around the format, they will be inserted
-       automatically
-   * - syntax:expression: pattern
-     - <properties> <constraint> <regex> ...
-     - <constraintErrorMessage> will be displayed on failure
-   * - syntax:expression: $VAR(@) in "foo", "bar", "baz"
-     - None
-     - Use regex
-   * - syntax:expression: exec ...
-     - <properties> <constraint> <validator> <name ="foo" argument="bar">
-     - "${vyos_libexecdir}/validators/foo bar $VAR(@)" will be executed,
-       <constraintErrorMessage> will be displayed on failure
-   * - syntax:expression: (arithmetic expression)
-     - None
-     - External arithmetic validator may be added if there's demand, complex
-       validation is better left to commit-time scripts
-   * - priority: 999
-     - <properties> <priority>999</priority>
-     - Please leave a comment explaining why the priority was chosen
-       (e.g. "after interfaces are configured")
-   * - multi:
-     - <properties> <multi/>
-     - Only applicable to leaf nodes
-   * - allowed: echo foo bar
-     - <properties> <completionHelp> <list> foo bar </list>
-     -
-   * - allowed: cli-shell-api listNodes vpn ipsec esp-group
-     - <properties> <completionHelp> <path> vpn ipsec esp-group </path> ...
-     -
-   * - allowed: /path/to/script
-     - <properties> <completionHelp> <script> /path/to/script </script> ...
-     -
-   * - default:
-     - None
-     - Move default values to scripts
-   * - commit:expression:
-     - None
-     - All commit time checks should be in the verify() function of the script
-   * - begin:/create:/delete:
-     - None
-     - All logic should be in the scripts
 
 C++ Backend Code
 ================
@@ -716,39 +604,6 @@ in the C/C++ code.
 * ``commit``
 
   - https://github.com/vyos/vyatta-cfg/blob/0f42786a0b3/src/commit/commit-algorithm.cpp#L1252
-
-
-Continuous Integration
-======================
-
-VyOS makes use of Jenkins_ as our Continuous Integration (CI) service. Our
-`VyOS CI`_ server is publicly accessible here: https://ci.vyos.net. You can get
-a brief overview of all required components shipped in a VyOS ISO.
-
-To build our modules we utilize a CI/CD Pipeline script. Each and every VyOS
-component comes with it's own ``Jenkinsfile`` which is (more or less) a copy.
-The Pipeline utilizes the Docker container from the :ref:`build_iso` section -
-but instead of building it from source on every run, we rather always fetch a
-fresh copy (if needed) from Dockerhub_.
-
-Each module is build on demand if a new commit on the branch in question is
-found. After a successful run the resulting Debian Package(s) will be deployed
-to our Debian repository which is used during build time. It is located here:
-http://dev.packages.vyos.net/repositories/.
-
-
-.. stop_vyoslinter
-
-.. _Jenkins: https://jenkins.io/
-.. _Dockerhub: https://hub.docker.com/u/vyos/
-.. _process: https://blog.vyos.io/vyos-development-digest-10
-.. _VyConf: https://github.com/vyos/vyconf/tree/master/data/schemata
-.. _vyos-1x: https://github.com/vyos/vyos-1x/tree/current/schema
-.. _Jinja2: https://jinja.palletsprojects.com/
-.. _`IPv4, IPv6 and DHCP(v6)`: https://github.com/vyos/vyos-1x/blob/current/interface-definitions/include/interface/address-ipv4-ipv6-dhcp.xml.i
-.. _`IPv4, IPv6`: https://github.com/vyos/vyos-1x/blob/current/interface-definitions/include/interface/address-ipv4-ipv6.xml.i
-.. _`VLAN (VIF)`: https://github.com/vyos/vyos-1x/blob/current/interface-definitions/include/interface/vif.xml.i
-.. _`MAC address`: https://github.com/vyos/vyos-1x/blob/current/interface-definitions/include/interface/mac.xml.i
 
 .. include:: /_include/common-references.txt
 
