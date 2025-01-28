@@ -57,6 +57,16 @@ Service
   For an explanation on :ref:`syslog_facilities` and :ref:`syslog_severity_level`
   see tables in syslog configuration section.
 
+.. cfgcmd:: set load-balancing haproxy service <name> http-compression algorithm
+  <gzip | deflate | identity | raw-deflate>
+
+  Set the compression algorithm to be used when compressing HTTP responses.
+
+.. cfgcmd:: set load-balancing haproxy service <name> http-compression mime-type
+  <mime-type>
+
+  Set the list of HTTP response MIME types which haproxy will attempt to
+  compress, if received uncompressed from backend server.
 
 Rules
 ^^^^^
