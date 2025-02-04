@@ -19,6 +19,7 @@ This chapter contains various configuration examples:
    l3vpn-hub-and-spoke
    lac-lns
    inter-vrf-routing-vrf-lite
+   dmvpn-dualhub-dualcloud
    qos
    segment-routing-isis
    nmp
