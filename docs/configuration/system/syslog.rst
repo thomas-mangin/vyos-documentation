@@ -17,23 +17,36 @@ Syslog supports logging to multiple targets, those targets could be a plain
 file on your VyOS installation itself, a serial console or a remote syslog
 server which is reached via :abbr:`IP (Internet Protocol)` UDP/TCP.
 
-Global
-------
+Global Settings
+---------------
 
-.. cfgcmd:: system syslog global marker interval <number>
+.. cfgcmd:: system syslog marker interval <number>
 
-Interval (in seconds) for sending mark messages to the syslog input to
-indicate that the logging system is functioning.
+   Interval (in seconds) for sending mark messages to the syslog input to
+   indicate that the logging system is functioning.
 
-.. cfgcmd:: system syslog global preserve-fqdn
+   This defaults to 1200 seconds.
 
-If set, the domain part of the hostname is always sent,
-even within the same domain as the receiving system.
+.. cfgcmd:: system syslog preserve-fqdn
 
-.. cfgcmd:: system rsyslog global facility <keyword> level <keyword>
+   If set, the domain part of the hostname is always sent, even within the same
+   domain as the receiving system.
 
-Filter syslog messages based on facility and level.
+.. cfgcmd:: set system syslog source-address <address>
 
+   Source IP address used to initiate connection when sending log data to a
+   remote host.
+
+Local Logging
+-------------
+
+Enable logging to a local target (``/var/log/messages``) on the system.
+
+.. cfgcmd:: system rsyslog local facility <keyword> level <keyword>
+
+   Filter syslog messages based on facility and level.
+
+.. _syslog_console:
 
 Console
 -------
@@ -44,29 +57,7 @@ Console
    :ref:`syslog_facilities` keywords and :ref:`syslog_severity_level` keywords
    see tables below.
 
-.. _custom-file:
-
-Custom File
------------
-
-.. cfgcmd:: set system syslog file <filename> facility <keyword> level <keyword>
-
-   Log syslog messages to file specified via `<filename>`, for an explanation on
-   :ref:`syslog_facilities` keywords and :ref:`syslog_severity_level` keywords
-   see tables below.
-
-.. cfgcmd:: set system syslog file <filename> archive size <size>
-
-   Syslog will write `<size>` kilobytes into the file specified by `<filename>`.
-   After this limit has been reached, the custom file is "rotated" by logrotate
-   and a new custom file is created.
-
-.. cfgcmd:: set system syslog file <filename> archive file <number>
-
-   Syslog uses logrotate to rotate logfiles after a number of gives bytes.
-   We keep as many as `<number>` rotated file before they are deleted on the
-   system.
-
+.. _syslog_remote:
 
 Remote Host
 -----------
@@ -76,37 +67,35 @@ can be configured in parallel to a custom file or console logging. You can log
 to multiple hosts at the same time, using either TCP or UDP. The default is
 sending the messages via port 514/UDP.
 
-
-.. cfgcmd:: set system syslog host <address> facility <keyword> level <keyword>
+.. cfgcmd:: set system syslog remote <address> facility <keyword> level <keyword>
 
    Log syslog messages to remote host specified by `<address>`. The address
    can be specified by either FQDN or IP address. For an explanation on
    :ref:`syslog_facilities` keywords and :ref:`syslog_severity_level`
    keywords see tables below.
 
-
-.. cfgcmd:: set system syslog host <address> facility <keyword> protocol
-   <udp|tcp>
+.. cfgcmd:: set system syslog remote <address> protocol <udp|tcp>
 
    Configure protocol used for communication to remote syslog host. This can be
    either UDP or TCP.
 
+.. cfgcmd:: set system syslog remote <address> format include-timezone
 
-.. cfgcmd:: set system syslog vrf <name>
+   Include system timezone in syslog message
 
-  Specify name of the :abbr:`VRF (Virtual Routing and Forwarding)` instance.
+.. cfgcmd:: set system syslog remote <address> format octet-counted
 
+   Allows for the transmission of all characters inside a syslog message.
 
-Local User Account
-------------------
+.. cfgcmd:: set system syslog remote <address> vrf <name>
 
-.. cfgcmd:: set system syslog user <username> facility <keyword> level <keyword>
+   Specify name of the :abbr:`VRF (Virtual Routing and Forwarding)` instance
+   used when forwarding logs to remote syslog server.
 
-   If logging to a local user account is configured, all defined log messages
-   are display on the console if the local user is logged in, if the user is not
-   logged in, no messages are being displayed. For an explanation on
-   :ref:`syslog_facilities` keywords and :ref:`syslog_severity_level` keywords
-   see tables below.
+.. cfgcmd:: set system syslog remote <address> source-address <address>
+
+   Define IPv4 or IPv6 source address used when forwarding logs to remote
+   syslog server.
 
 .. _syslog_facilities:
 
@@ -253,16 +242,3 @@ displayed.
 
 .. hint:: Use ``show log | strip-private`` if you want to hide private data
    when sharing your logs.
-
-Delete Logs
-===========
-
-.. opcmd:: delete log file <text>
-
-Deletes the specified user-defined file <text> in the /var/log/user directory
-
-Note that deleting the log file does not stop the system from logging events.
-If you use this command while the system is logging events, old log events
-will be deleted, but events after the delete operation will be recorded in
-the new file. To delete the file altogether, first delete logging to the
-file using system syslog :ref:`custom-file` command, and then delete the file.
