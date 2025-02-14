@@ -319,28 +319,28 @@ TACACS is defined in :rfc:`8907`.
 Configuration
 -------------
 
-.. cfgcmd:: set system login tacas server <address> key <secret>
+.. cfgcmd:: set system login tacacs server <address> key <secret>
 
    Specify the IP `<address>` of the TACACS server user with the pre-shared-secret
    given in `<secret>`.
 
    Multiple servers can be specified.
 
-.. cfgcmd:: set system login tacas server <address> port <port>
+.. cfgcmd:: set system login tacacs server <address> port <port>
 
    Configure the discrete port under which the TACACS server can be reached.
 
    This defaults to 49.
 
-.. cfgcmd:: set system login tacas server <address> disable
+.. cfgcmd:: set system login tacacs server <address> disable
 
    Temporary disable this TACACS server. It won't be queried.
 
-.. cfgcmd:: set system login tacas server <address> timeout <timeout>
+.. cfgcmd:: set system login tacacs server <address> timeout <timeout>
 
    Setup the `<timeout>` in seconds when querying the TACACS server.
 
-.. cfgcmd:: set system login tacas source-address <address>
+.. cfgcmd:: set system login tacacs source-address <address>
 
    TACACS servers could be hardened by only allowing certain IP addresses to
    connect. As of this the source address of each TACACS query can be
@@ -350,7 +350,7 @@ Configuration
    interface address pointing towards the server - making it error prone on
    e.g. OSPF networks when a link fails and a backup route is taken.
 
-.. cfgcmd:: set system login tacas vrf <name>
+.. cfgcmd:: set system login tacacs vrf <name>
 
    Source all connections to the TACACS servers from given VRF `<name>`.
 
