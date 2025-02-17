@@ -1,4 +1,4 @@
-:lastproofread: 2024-07-03
+:lastproofread: 2025-02-14
 
 .. _firewall-ipv4-configuration:
 
@@ -188,7 +188,7 @@ The action can be :
    distribute packets between several queues.
 
 Also, **default-action** is an action that takes place whenever a packet does
-not match any rule in it's chain. For base chains, possible options for
+not match any rule in its chain. For base chains, possible options for
 **default-action** are **accept** or **drop**. 
 
 .. cfgcmd:: set firewall ipv4 forward filter default-action
@@ -219,7 +219,7 @@ not match any rule in it's chain. For base chains, possible options for
 Firewall Logs
 =============
 
-Logging can be enable for every single firewall rule. If enabled, other
+Logging can be enabled for every single firewall rule. If enabled, other
 log options can be defined. 
 
 .. cfgcmd:: set firewall ipv4 forward filter rule <1-999999> log
@@ -1236,7 +1236,7 @@ Rule-set overview
 
 .. opcmd:: show firewall statistics
 
-   This will show you a statistic of all rule-sets since the last boot.
+   This will show you statistics of all rule-sets since the last boot.
 
 Show Firewall log
 =================
