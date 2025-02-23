@@ -57,6 +57,12 @@ Service
   For an explanation on :ref:`syslog_facilities` and :ref:`syslog_severity_level`
   see tables in syslog configuration section.
 
+.. cfgcmd:: set load-balancing haproxy service <name> timeout client
+  <seconds>
+
+  Set the maximum inactivity time on the client side for this service.
+  Value range 1-3600 seconds.
+
 .. cfgcmd:: set load-balancing haproxy service <name> http-compression algorithm
   <gzip | deflate | identity | raw-deflate>
 
@@ -184,6 +190,26 @@ Backend
   For an explanation on :ref:`syslog_facilities` and :ref:`syslog_severity_level`
   see tables in syslog configuration section.
 
+.. cfgcmd:: set load-balancing haproxy backend <name> timeout check
+  <seconds>
+
+  Set the timeout in seconds for established connections.
+  Value range 1-3600 seconds.
+
+
+.. cfgcmd:: set load-balancing haproxy backend <name> timeout connect
+  <seconds>
+
+  Set the maximum time to wait for a connection attempt to a server to succeed.
+  Value range 1-3600 seconds.
+
+.. cfgcmd:: set load-balancing haproxy backend <name> timeout server
+  <seconds>
+
+  Set the maximum inactivity time on the server side.
+  Value range 1-3600 seconds.
+
+
 
 Global
 -------
@@ -211,6 +237,26 @@ Global parameters
   Specify facility and level for logging.
   For an explanation on :ref:`syslog_facilities` and :ref:`syslog_severity_level`
   see tables in syslog configuration section.
+
+.. cfgcmd:: set load-balancing haproxy timeout check <seconds>
+
+  Set the timeout in seconds for established connections.
+  Value range 1-3600 seconds. Default is 5 seconds.
+
+.. cfgcmd:: set load-balancing haproxy timeout client <seconds>
+
+  Set the maximum inactivity time on the client side.
+  Value range 1-3600 seconds. Default is 50 seconds.
+
+.. cfgcmd:: set load-balancing haproxy timeout connect <seconds>
+
+  Set the maximum time to wait for a connection attempt to a server to succeed.
+  Value range 1-3600 seconds. Default is 10 seconds.
+
+.. cfgcmd:: set load-balancing haproxy timeout server <seconds>
+
+  Set the maximum inactivity time on the server side.
+  Value range 1-3600 seconds. Default is 50 seconds.
 
 Health checks
 =============
