@@ -124,6 +124,15 @@ Configuration
 
     Volume is either mounted as rw (read-write - default) or ro (read-only)
 
+.. cfgcmd:: set container name <name> tmpfs <tmpfsname> destination <path>
+
+    Mount a tmpfs *(ramdisk)* filesystem to the given path within the container.
+
+.. cfgcmd:: set container name <name> tmpfs <tmpfsname> size <MB>
+
+    Size in MB for tmpfs filesystem, maximum size is 64GB or 50% of the
+    systems total available memory.
+
 .. cfgcmd:: set container name <name> uid <number>
 .. cfgcmd:: set container name <name> gid <number>
 
