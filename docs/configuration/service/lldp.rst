@@ -49,10 +49,16 @@ Configuration
    Enable transmission of LLDP information on given `<interface>`. You can also
    say ``all`` here so LLDP is turned on on every interface.
 
-.. cfgcmd:: set service lldp interface <interface> disable
+.. cfgcmd:: set service lldp interface <interface> mode [disable|rx-tx|rx|tx]
 
-   Disable transmit of LLDP frames on given `<interface>`. Useful to exclude
-   certain interfaces from LLDP when ``all`` have been enabled.
+    Configure the administrative status of the given port.
+
+    By default, all ports are configured to be in rx-tx mode. This means they
+    can receive and transmit LLDP frames.
+
+    In rx mode, they won't emit any frames. In tx mode, they won't receive
+    any frames. In disabled mode, no frame will be sent and any incoming frame
+    will be discarded.
 
 .. cfgcmd:: set service lldp snmp
 
