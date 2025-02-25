@@ -30,6 +30,6 @@ policy community-list
    Set description for rule.
 
 .. cfgcmd:: set policy community-list <text> rule <1-65535> regex
-   <aa:nn|local-AS|no-advertise|no-export|internet|additive>
+   <aa:nn|local-AS|no-advertise|no-export|additive>
 
    Regular expression to match against a community-list.
