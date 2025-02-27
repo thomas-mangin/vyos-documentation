@@ -85,3 +85,8 @@ GENEVE options
    decisions or MAY be used as a mechanism to distinguish between overlapping
    address spaces contained in the encapsulated packet when load balancing
    across CPUs.
+
+.. cfgcmd:: set interfaces gnv0 <interface> port <port>
+
+  Configure port number of remote GENEVE endpoint.
+
