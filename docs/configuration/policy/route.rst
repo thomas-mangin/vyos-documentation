@@ -24,6 +24,11 @@ from 1 - 999999, at the first match the action of the rule will be executed.
 
    Option to log packets hitting default-action.
 
+.. cfgcmd:: set policy route <name> interface <interface>
+.. cfgcmd:: set policy route6 <name> interface <interface>
+
+   Apply routing policy to interface
+
 .. cfgcmd:: set policy route <name> rule <n> description <text>
 .. cfgcmd:: set policy route6 <name> rule <n> description <text>
 
