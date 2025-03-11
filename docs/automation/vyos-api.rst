@@ -12,8 +12,9 @@ For configuration and enabling the API see :ref:`http-api`
 Authentication
 **************
 
-All endpoints only listen on HTTP POST requests and the API KEY must set as
-``key`` in the formdata.
+All endpoints except one listen on HTTP POST requests and the API KEY must set
+as ``key`` in the formdata. The only public endpoint listens to HTTP GET request
+and takes optional query parameters.
 
 Below see one example for curl and one for python.
 The rest of the documentation is reduced to curl.
@@ -39,6 +40,118 @@ The rest of the documentation is reduced to curl.
 *************
 API Endpoints
 *************
+/info
+=========
+
+This is the only endpoint provided by the API service that does not require
+authentication and can be queried by anonymous users. Requesting the ``info``
+endpoint you obtain general information about the system, namely the VyOS
+version, the system host name and a welcome banner for anonymous users.
+
+This endpoint responds **only** to HTTP GET requests.
+
+.. code-block:: none
+
+    curl --location --request GET 'https://vyos/info'
+
+    response
+    {
+        "success": true,
+        "data": {
+            "version": "1.5-rolling",
+            "hostname: "vyos"
+            "banner": "Welcome to VyOS"
+        },
+        "error": null
+    }
+
+This endpoint can take two optional query parameters - ``version`` and
+``hostname``. These parameters accept all values that can be converted to
+Boolean - e.g. ``yes/no``, ``1/0``, ``true/false`` etc, and they dictate whether
+to include the respective values into the response.
+
+If request is sent without any query parameters, the endpoints treats them as
+if they are set to ``true`` by default:
+
+.. code-block:: none
+
+    curl --location --request GET 'https://vyos/info?version=1&hostname=1'
+
+    response {
+        "success": true,
+        "data": {
+            "version": "1.5-rolling",
+            "hostname": "vyos",
+            "banner": "Welcome to VyOS"
+        },
+        "error": null
+    }
+
+If any of the parameters is set to a value that corresponds to ``false``, the
+response object will have an empty string instead of the respective value:
+
+.. code-block:: none
+
+    curl --location --request GET 'https://vyos/info?version=0&hostname=1'
+
+    response {
+        "success": true,
+        "data": {
+            "version": "",
+            "hostname": "vyos",
+            "banner": "Welcome to VyOS"
+        },
+        "error": null
+    }
+
+Please note, that there is no need to specify both parameters if you want to
+hide just one of the fields - a missing query parameter is treated as ``true``:
+
+.. code-block:: none
+
+    curl --location --request GET 'https://vyos/info?hostname=no'
+
+    response {
+        "success": true,
+        "data": {
+            "version": "1.5-rolling",
+            "hostname": "",
+            "banner": "Welcome to VyOS"
+        },
+        "error": null
+    }
+
+Please note, that while you can disable output for both ``hostname`` and
+``version``, the ``banner`` is included into the response in any case.
+
+**Important:** The endpoint accepts **ONLY** ``hostname`` and ``version`` query
+parameters. Including any other besides them, or instead of them, will respond
+with HTTP 400 Bad Request:
+
+.. code-block:: none
+
+    curl --location --request GET \
+        'https://192.168.56.119/info?hostname=1&url=https://evilsite.com'
+
+    response {
+        "success": false,
+        "error": "{'type': 'extra_forbidden', 'loc': ('query', 'url'), 'msg': 'Extra inputs are not permitted', 'input': 'https://evilsite.com'}",
+        "data": null
+    }
+
+As well as the values passed to the query string are validated to ensure they
+are strictly Boolean and won't accept any other data type:
+
+.. code-block:: none
+
+    curl --location --request GET 'https://vyos/info?hostname=1; eval"sudo rm -rf /"
+
+    response
+    {
+        "success": false,
+        "error": "{'type': 'bool_parsing', 'loc': ('query', 'hostname'), 'msg': 'Input should be a valid boolean, unable to interpret input', 'input': '1; eval \"sudo rm -rf /\"'}",
+        "data": null
+    }
 
 /retrieve
 =========
