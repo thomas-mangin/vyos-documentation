@@ -252,6 +252,35 @@ Container Registry
     Credentials can be defined here and will only be used when adding a
     container image to the system.
 
+.. cfgcmd:: set container registry <name> insecure
+
+    Allow registry access over unencrypted HTTP or TLS connections with
+    untrusted certificates.
+
+.. cfgcmd:: set container registry <name> mirror address <address>
+
+.. cfgcmd:: set container registry <name> mirror host-name <host-name>
+
+.. cfgcmd:: set container registry <name> mirror port <port>
+
+.. cfgcmd:: set container registry <name> mirror path <path>
+
+    Registry mirror, use ``(host-name|address)[:port][/path]``.
+
+    If you have mirror http://192.168.1.1:8080 for docker.io, you can use ``docker.io/some/repo`` or run ``podman pull docker.io/some/repo``
+
+    .. code-block:: none
+
+        set container registry docker.io mirror address 192.168.1.1
+        set container registry docker.io mirror port 8080
+        set container registry docker.io insecure
+
+    If http://192.168.1.1:8080 is your own registry, you can use ``192.168.1.1:8080/some/repo`` or run ``podman pull 192.168.1.1:8080/some/repo``
+
+    .. code-block:: none
+
+        set container registry 192.168.1.1:8080 insecure
+
 
 ******************
 Operation Commands
