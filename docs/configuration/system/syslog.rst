@@ -20,18 +20,18 @@ server which is reached via :abbr:`IP (Internet Protocol)` UDP/TCP.
 Global Settings
 ---------------
 
-.. cfgcmd:: system syslog marker interval <number>
+.. cfgcmd:: set system syslog marker interval <number>
 
    Interval (in seconds) for sending mark messages to the syslog input to
    indicate that the logging system is functioning.
 
    This defaults to 1200 seconds.
 
-.. cfgcmd:: system syslog marker disable
+.. cfgcmd:: set system syslog marker disable
 
    Disable periodic injection of mark messages.
 
-.. cfgcmd:: system syslog preserve-fqdn
+.. cfgcmd:: set system syslog preserve-fqdn
 
    If set, the domain part of the hostname is always sent, even within the same
    domain as the receiving system.
