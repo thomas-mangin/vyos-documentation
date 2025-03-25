@@ -83,13 +83,32 @@ sending the messages via port 514/UDP.
    Configure protocol used for communication to remote syslog host. This can be
    either UDP or TCP.
 
+.. cfgcmd:: set system syslog remote <address> port <port>
+
+   Configure the TCP or UDP port to connect to on the remote syslog host.
+   By default, the standard port 514 is used.
+
 .. cfgcmd:: set system syslog remote <address> format include-timezone
 
-   Include system timezone in syslog message
+   Send syslog messages in the :rfc:`5424` format, rather than the
+   default :rfc:`3164` (BSD syslog) format.
+
+   .. note::
+      The :rfc:`5424` format utilises an :rfc:`3339` / ISO 8601 formatted
+      timestamp, including the system timezone.
+
+      Examples of the two syslog message formats:
+
+      :rfc:`3164` format: <34>Oct 11 22:14:15 mymachine su: 'su root' failed for lonvick on /dev/pts/8
+
+      :rfc:`5424` format: <34>1 2003-10-11T22:14:15.003-07:00 mymachine.example.com su - ID47 - BOM'su root' failed for lonvick on /dev/pts/8
 
 .. cfgcmd:: set system syslog remote <address> format octet-counted
 
-   Allows for the transmission of all characters inside a syslog message.
+   Allows for the transmission of multi-line messages, without them being split
+   across separate syslog messages. This only applies for the TCP protocol
+   (this setting is ignored for UDP protocol). Ensure the receiving system is
+   compatible before enabling this.
 
 .. cfgcmd:: set system syslog remote <address> vrf <name>
 
@@ -164,7 +183,7 @@ Facilities can be adjusted to meet the needs of the user:
 +----------+----------+----------------------------------------------------+
 | 21       | local5   | local use 5 (local5)                               |
 +----------+----------+----------------------------------------------------+
-| 22       | local6   |  use 6 (local6)                                    |
+| 22       | local6   | local use 6 (local6)                               |
 +----------+----------+----------------------------------------------------+
 | 23       | local7   | local use 7 (local7)                               |
 +----------+----------+----------------------------------------------------+
