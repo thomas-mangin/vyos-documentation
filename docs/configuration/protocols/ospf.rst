@@ -1341,9 +1341,8 @@ A typical configuration using 2 nodes.
 
   show ipv6 ospfv3 redistribute
 
-.. note:: You cannot easily redistribute IPv6 routes via OSPFv3 on a
-   WireGuard interface link. This requires you to configure link-local
-   addresses manually on the WireGuard interfaces, see :vytask:`T1483`.
+Cost calculation wireguard interfaces is unreliable as ospfv3 uses the link speed to calculate the link cost.
+You might therefore want to set the link cost to a fixed value on WireGuard tunnels.
 
 Example configuration for WireGuard interfaces:
 
@@ -1351,30 +1350,26 @@ Example configuration for WireGuard interfaces:
 
 .. code-block:: none
 
-  set interfaces wireguard wg01 address 'fe80::216:3eff:fe51:fd8c/64'
-  set interfaces wireguard wg01 address '192.168.0.1/24'
   set interfaces wireguard wg01 peer ospf02 allowed-ips '::/0'
-  set interfaces wireguard wg01 peer ospf02 allowed-ips '0.0.0.0/0'
   set interfaces wireguard wg01 peer ospf02 endpoint '10.1.1.101:12345'
   set interfaces wireguard wg01 peer ospf02 pubkey 'ie3...='
   set interfaces wireguard wg01 port '12345'
   set protocols ospfv3 parameters router-id 192.168.1.1
   set protocols ospfv3 interface 'wg01' area 0.0.0.0
+  set protocols ospfv3 interface 'wg01' cost 10
   set protocols ospfv3 interface 'lo' area 0.0.0.0
 
 **Node 2**
 
 .. code-block:: none
 
-  set interfaces wireguard wg01 address 'fe80::216:3eff:fe0a:7ada/64'
-  set interfaces wireguard wg01 address '192.168.0.2/24'
   set interfaces wireguard wg01 peer ospf01 allowed-ips '::/0'
-  set interfaces wireguard wg01 peer ospf01 allowed-ips '0.0.0.0/0'
   set interfaces wireguard wg01 peer ospf01 endpoint '10.1.1.100:12345'
   set interfaces wireguard wg01 peer ospf01 pubkey 'NHI...='
   set interfaces wireguard wg01 port '12345'
   set protocols ospfv3 parameters router-id 192.168.1.2
   set protocols ospfv3 interface 'wg01' area 0.0.0.0
+  set protocols ospfv3 interface 'wg01' cost 10
   set protocols ospfv3 interface 'lo' area 0.0.0.0
 
 **Status**
