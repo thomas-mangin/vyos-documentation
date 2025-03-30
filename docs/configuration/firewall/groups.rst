@@ -37,6 +37,33 @@ In an **address group** a single IP address or IP address range is defined.
 
    Provide a IPv4 or IPv6 address group description
 
+Remote Groups
+==============
+
+A **remote-group** takes an argument of a URL hosting a linebreak-deliminated
+list of IPv4s addresses, CIDRs and ranges. VyOS will pull this list periodicity
+according to the frequency defined in the firewall **resolver-interval** and load
+matching entries into the group for use in rules. The list will be cached in
+persistent storage, so in cases of update failure rules will still function.
+
+.. cfgcmd:: set firewall group remote-group <name> url <http(s) url>
+
+   Define remote list of IPv4 addresses/ranges/CIDRs to fetch
+
+.. cfgcmd:: set firewall group remote-group <name> description <text>
+
+    Set a description for a remote group
+
+The format of the remote list is very flexible. VyOS will attempt to parse the
+first word of each line as an entry, and will skip if it cannot find a valid
+match. Below is a list of acceptable matches that would be parsed correctly:
+
+.. code-block:: none
+
+      127.0.0.1
+      127.0.0.0/24
+      127.0.0.1-127.0.0.254
+
 Network Groups
 ==============
 
