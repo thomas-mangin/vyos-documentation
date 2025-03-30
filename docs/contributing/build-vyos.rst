@@ -702,7 +702,7 @@ needs. We first need to clone the repository from GitHub.
 
 .. code-block:: none
 
-  $ git clone https://github.com/vyos/vyos-1x
+  $ git clone --recurse-submodules https://github.com/vyos/vyos-1x
 
 Build
 =====
