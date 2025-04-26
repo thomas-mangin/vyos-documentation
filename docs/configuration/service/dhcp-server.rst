@@ -49,15 +49,15 @@ Configuration
    Inform client that the DNS server can be found at `<address>`.
 
    This is the configuration parameter for the entire shared network definition.
-   All subnets will inherit this configuration item if not specified locally. 
+   All subnets will inherit this configuration item if not specified locally.
    Multiple DNS servers can be defined.
 
-.. cfgcmd:: set service dhcp-server shared-network-name <name> option 
+.. cfgcmd:: set service dhcp-server shared-network-name <name> option
    vendor-option <option-name>
 
-   This configuration parameter lets you specify a vendor-option for the 
-   entire shared network definition. All subnets will inherit this 
-   configuration item if not specified locally. An example for Ubiquiti is 
+   This configuration parameter lets you specify a vendor-option for the
+   entire shared network definition. All subnets will inherit this
+   configuration item if not specified locally. An example for Ubiquiti is
    shown below:
 
 **Example:**
@@ -66,14 +66,14 @@ Pass address of Unifi controller at ``172.16.100.1`` to all clients of ``NET1``
 
 .. code-block:: none
 
-  set service dhcp-server shared-network-name 'NET1' option vendor-option  
+  set service dhcp-server shared-network-name 'NET1' option vendor-option
   ubiquiti '172.16.100.1'
 
 .. cfgcmd:: set service dhcp-server listen-address <address>
 
-   This configuration parameter lets the DHCP server to listen for DHCP 
-   requests sent to the specified address, it is only realistically useful for 
-   a server whose only clients are reached via unicasts, such as via DHCP relay 
+   This configuration parameter lets the DHCP server to listen for DHCP
+   requests sent to the specified address, it is only realistically useful for
+   a server whose only clients are reached via unicasts, such as via DHCP relay
    agents.
 
 Individual Client Subnet
@@ -148,21 +148,21 @@ Individual Client Subnet
    request where no full FQDN is passed. This option can be given multiple times
    if you need multiple search domains (DHCP Option 119).
 
-.. cfgcmd:: set service dhcp-server shared-network-name <name> subnet <subnet> 
+.. cfgcmd:: set service dhcp-server shared-network-name <name> subnet <subnet>
    option vendor-option <option-name>
 
    This configuration parameter lets you specify a vendor-option for the
-   subnet specified within the shared network definition. An example for  
+   subnet specified within the shared network definition. An example for
    Ubiquiti is shown below:
 
 **Example:**
 
-Create ``172.18.201.0/24`` as a subnet within ``NET1`` and pass address of  
+Create ``172.18.201.0/24`` as a subnet within ``NET1`` and pass address of
 Unifi controller at ``172.16.100.1`` to clients of that subnet.
 
 .. code-block:: none
 
-  set service dhcp-server shared-network-name 'NET1' subnet 
+  set service dhcp-server shared-network-name 'NET1' subnet
   '172.18.201.0/24' option vendor-option ubiquiti '172.16.100.1'
 
 
@@ -179,7 +179,7 @@ server with RFC-2136 DDNS support.
 
 .. cfgcmd:: set service dhcp-server dynamic-dns-update
 
-   Enables DDNS globally. 
+   Enables DDNS globally.
 
 **Behavioral settings**
 
@@ -191,20 +191,20 @@ level, i.e. for individual shared networks or subnets. See examples below.
 
    If set to ``enable`` on global level, updates for all scopes will be enabled,
    except if explicitly set to ``disable`` on the scope level. If set to ``disable``,
-   updates will only be sent for scopes, where ``send-updates`` is explicity 
+   updates will only be sent for scopes, where ``send-updates`` is explicity
    set to ``enable``.
 
-   This model is followed for a few behavioral settings below: if the option is 
+   This model is followed for a few behavioral settings below: if the option is
    not set, the setting is inherited from the parent scope. You can override the
    parent scope setting by setting the option explicitly.
 
-.. cfgcmd:: set service dhcp-server dynamic-dns-update force-update [ enable
+.. cfgcmd:: set service dhcp-server dynamic-dns-update override-no-update [ enable
    | disable ]
 
    VyOS will ignore client request not to update DNS records and send DDNS
    update requests regardless.
 
-.. cfgcmd:: set service dhcp-server dynamic-dns-update force-update-both [ enable
+.. cfgcmd:: set service dhcp-server dynamic-dns-update override-client-update [ enable
    | disable ]
 
    VyOS will override client DDNS request settings and always update both
@@ -228,15 +228,15 @@ level, i.e. for individual shared networks or subnets. See examples below.
 
    * **never**: use the name sent by the client. If the client didn't provide any,
      do not generate one. This is the default behavior
-   
+
    * **always**: always generate a name for the client
 
    * **when-present**: replace the name the client sent with a generated one, if
      the client didn't send any, do not generate one
-   
+
    * **when-not-present**: use the name sent by the client. If the client didn't
      send any, generate one for the client
-   
+
    The names are generated using ``generated-prefix``, ``qualifying-suffix`` and the
    client's IP address string.
 
@@ -281,7 +281,7 @@ the name in the DNS domain definitions.
 
 **DNS domains definition**
 
-This is global configuration of DNS servers for the updatable forward and reverse 
+This is global configuration of DNS servers for the updatable forward and reverse
 DNS domains. For every domain multiple DNS servers can be specified.
 
 .. cfgcmd:: set service dhcp-server dynamic-dns-update [forward|reverse]-domain
@@ -325,7 +325,7 @@ And in a subnet within the same shared network:
 Configure TSIG keys:
 
 .. code-block:: none
-  
+
   set service dhcp-server dynamic-dns-update tsig-key mydomain-net algorithm hmac-sha256
   set service dhcp-server dynamic-dns-update tsig-key mydomain-net secret eWF5YW15bGl0dGxla2V5IQ==
   set service dhcp-server dynamic-dns-update tsig-key reverse-172-18-201 algorithm hmac-sha256
@@ -334,7 +334,7 @@ Configure TSIG keys:
 Configure DDNS domains:
 
 .. code-block:: none
-  
+
   set service dhcp-server dynamic-dns-update forward-domain mydomain.net key-name mydomain-net
   set service dhcp-server dynamic-dns-update forward-domain mydomain.net dns-server 1 address '172.18.0.254'
   set service dhcp-server dynamic-dns-update forward-domain mydomain.net dns-server 1 port 1053
@@ -826,7 +826,7 @@ used:
 
 
 .. cfgcmd:: set service dhcpv6-server shared-network-name <name> subnet
-   <prefix> prefix-delegation prefix <pd-prefix> excluded-prefix-length <length> 
+   <prefix> prefix-delegation prefix <pd-prefix> excluded-prefix-length <length>
 
    Define lenght of exclude prefix in `<pd-prefix>`.
 
