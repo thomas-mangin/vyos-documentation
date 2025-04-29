@@ -41,28 +41,33 @@ Remote Groups
 ==============
 
 A **remote-group** takes an argument of a URL hosting a linebreak-deliminated
-list of IPv4s addresses, CIDRs and ranges. VyOS will pull this list periodicity
+list of IPv4 and/or IPv6 addresses, CIDRs and ranges. VyOS will pull this list periodicity
 according to the frequency defined in the firewall **resolver-interval** and load
 matching entries into the group for use in rules. The list will be cached in
 persistent storage, so in cases of update failure rules will still function.
 
 .. cfgcmd:: set firewall group remote-group <name> url <http(s) url>
 
-   Define remote list of IPv4 addresses/ranges/CIDRs to fetch
+   Define remote list of IPv4 and/or IPv6 addresses/ranges/CIDRs to fetch
 
 .. cfgcmd:: set firewall group remote-group <name> description <text>
 
-    Set a description for a remote group
+   Set a description for a remote group
 
 The format of the remote list is very flexible. VyOS will attempt to parse the
 first word of each line as an entry, and will skip if it cannot find a valid
-match. Below is a list of acceptable matches that would be parsed correctly:
+match. Lines that begin with an alphanumeric character but do not match valid IPv4
+or IPv6 addresses, ranges, or CIDRs will be logged to the system log. Below is a
+list of acceptable matches that would be parsed correctly:
 
 .. code-block:: none
 
       127.0.0.1
       127.0.0.0/24
       127.0.0.1-127.0.0.254
+      2001:db8::1
+      2001:db8:cafe::/48
+      2001:db8:cafe::1-2001:db8:cafe::ffff
 
 Network Groups
 ==============
@@ -258,7 +263,7 @@ As any other firewall group, dynamic firewall groups can be used in firewall
 rules as matching options. For example:
 
 .. code-block:: none
-   
+
    set firewall ipv4 input filter rule 10 source group dynamic-address-group FOO
    set firewall ipv4 input filter rule 10 destination group dynamic-address-group BAR
 
@@ -272,10 +277,10 @@ General example
 As said before, once firewall groups are created, they can be referenced
 either in firewall, nat, nat66 and/or policy-route rules.
 
-Here is an example were multiple groups are created: 
+Here is an example were multiple groups are created:
 
    .. code-block:: none
-      
+
       set firewall group address-group SERVERS address 198.51.100.101
       set firewall group address-group SERVERS address 198.51.100.102
       set firewall group network-group TRUSTEDv4 network 192.0.2.0/30
@@ -290,7 +295,7 @@ Here is an example were multiple groups are created:
 And next, some configuration example where groups are used:
 
    .. code-block:: none
-      
+
       set firewall ipv4 output filter rule 10 action accept
       set firewall ipv4 output filter rule 10 outbound-interface group !LAN
       set firewall ipv4 forward filter rule 20 action accept
