@@ -18,6 +18,16 @@ General
 
    Automatically reboot system on kernel panic after 60 seconds.
 
+.. cfgcmd:: set system option reboot-on-upgrade-failure <timeout>
+
+   Automatically reboot after `timeout` minutes into the previous running
+   image, that was used to perform the image upgrade.
+
+   Reboot `timeout` is configurable in minutes. This gives the user the change
+   to log into the system and perform some analysis before automatic rebooting.
+
+   Automatic reboot can be cancelled after login using: :opcmd:`reboot cancel`
+
 .. cfgcmd:: set system option startup-beep
 
     Play an audible beep to the system speaker when system is ready.
