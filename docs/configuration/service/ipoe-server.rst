@@ -174,11 +174,12 @@ RADIUS advanced options
 
 .. cfgcmd:: set service ipoe-server authentication radius dynamic-author server <address>
 
-  Specifies IP address for Dynamic Authorization Extension server (DM/CoA)
+  Specifies IP address for Dynamic Authorization Extension server (DM/CoA). 
+  This IP must exist on any VyOS interface or it can be ``0.0.0.0``.
 
 .. cfgcmd:: set service ipoe-server authentication radius dynamic-author port <port>
 
-  Port for Dynamic Authorization Extension server (DM/CoA)
+  UDP port for Dynamic Authorization Extension server (DM/CoA)
 
 .. cfgcmd:: set service ipoe-server authentication radius dynamic-author key <secret>
 
