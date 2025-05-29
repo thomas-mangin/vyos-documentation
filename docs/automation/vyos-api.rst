@@ -517,3 +517,34 @@ To Load a configuration file.
       "data": null,
       "error": null
    }
+
+To Merge a configuration file.
+
+.. code-block:: none
+
+   curl -k --location --request POST 'https://vyos/config-file' \
+   --form data='{"op": "merge", "file": "/config/test.config"}' \
+   --form key='MY-HTTPS-API-PLAINTEXT-KEY'
+
+   response:
+   {
+      "success": true,
+      "data": null,
+      "error": null
+   }
+
+In either of the last two cases, one can pass a string in the body of the
+request, for example:
+
+.. code-block:: none
+
+   curl -k --location --request POST 'https://vyos/config-file' \
+   --form data='{"op": "merge", "string": "interfaces {\nethernet eth1 {\naddress "192.168.2.137/24"\ndescription "test"\n}\n}\n"}' \
+   --form key='MY-HTTPS-API-PLAINTEXT-KEY'
+
+   response:
+   {
+      "success": true,
+      "data": null,
+      "error": null
+   }
