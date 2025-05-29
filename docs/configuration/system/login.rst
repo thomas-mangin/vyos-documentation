@@ -34,6 +34,13 @@ Local
    Setup encrypted password for given username. This is useful for
    transferring a hashed password from system to system.
 
+.. cfgcmd:: set system login user <name> authentication principal <principal>
+
+   When using SSH certificate based authentication, define which principals are
+   alled to use this account.
+
+   If unset, the principal will be set to the login name of the user bz default.
+
 .. cfgcmd:: set system login user <name> disable
 
    Disable (lock) account. User will not be able to log in.
