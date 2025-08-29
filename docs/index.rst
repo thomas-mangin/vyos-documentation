@@ -79,6 +79,7 @@ VyOS User Guide
    automation/index
    troubleshooting/index
    configexamples/index
+   vpp/index
 
 
 .. toctree::
