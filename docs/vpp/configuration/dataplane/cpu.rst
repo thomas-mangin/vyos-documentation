@@ -1,4 +1,4 @@
-:lastproofread: 2025-09-04
+:lastproofread: 2025-09-05
 
 .. _vpp_config_dataplane_cpu:
 
@@ -12,18 +12,30 @@ VPP can utilize multiple CPU cores to enhance packet processing performance. Pro
 
 There are several parameters that can be configured to optimize CPU usage for VPP.
 
+.. important::
+
+   Please read carefully the system configuration settings page before making any changes to CPU settings: :doc:`system`.
+
+If CPU settings are not configured, VPP will start a single main thread on core 1 (``main-core``), without any additional worker threads.
+
 CPU Configuration Parameters
 ============================
 
-main-core
-^^^^^^^^^
+Mandatory settings
+------------------
 
-The main core is responsible for handling control plane operations and managing worker threads. It should be set to a core that is not heavily utilized by other processes. If not set, VPP will automatically select a core `1`.
+``main-core``
+^^^^^^^^^^^^^
+
+The main core is responsible for handling control plane operations, managing worker threads, and processing packets. It should be set to a core that is not heavily utilized by other processes. The option should be always set if you apply any other CPU settings.
 
 .. cfgcmd:: set vpp settings cpu main-core <core-number>
 
-corelist-workers
-^^^^^^^^^^^^^^^^
+Manual cores selection
+----------------------
+
+``corelist-workers``
+^^^^^^^^^^^^^^^^^^^^
 
 This parameter specifies the list of CPU cores that will be used as worker threads for packet processing.
 
@@ -36,8 +48,8 @@ Automatic cores selection
 
 There is a possibility to let VPP select CPU cores automatically. This can be done by configuring the following two parameters:
 
-skip-cores
-^^^^^^^^^^
+``skip-cores``
+^^^^^^^^^^^^^^
 
 This parameter allows you to specify number of first CPU cores that should be excluded from being used for main or worker threads. The main thread will be assigned to the first available core after the skipped ones, and worker threads will be assigned to subsequent cores.
 
@@ -45,8 +57,8 @@ This parameter allows you to specify number of first CPU cores that should be ex
 
 Exclude cores that are reserved for other critical system processes to ensure that VPP does not interfere with their operation.
 
-workers
-^^^^^^^
+``workers``
+^^^^^^^^^^^
 
 This parameter allows you to specify the number of worker threads that should be created. Each worker thread will be assigned to a separate CPU core after the skipped and main ones.
 
