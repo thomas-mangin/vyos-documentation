@@ -26,15 +26,15 @@ Pay attention that disabling this option leads to loss of connectivity to destin
 
 Other configuration section crucial for integration between VPP and Kernel is netlink settings. It allows to configure how VPP management listen to netlink events and how it processes them.
 
-.. cfgcmd:: set vpp settings lcp batch-delay-ms <value>
+.. cfgcmd:: set vpp settings lcp netlink batch-delay-ms <value>
 
 This parameter specifies the delay in milliseconds between processing batch netlink messages. If you expect to get frequent and intensive netlink events, you may need to decrease this value to ensure that VPP processes netlink events in a timely manner.
 
-.. cfgcmd:: set vpp settings lcp batch-size <value>
+.. cfgcmd:: set vpp settings lcp netlink batch-size <value>
 
 This parameter specifies the maximum number of netlink messages to process in a single batch. If you have a high volume of netlink events, increasing this value can improve throughput by allowing more messages to be processed at once. However, setting it too high may increase latency for individual messages.
 
-.. cfgcmd:: set vpp settings lcp rx-buffer-size <value>
+.. cfgcmd:: set vpp settings lcp netlink rx-buffer-size <value>
 
 This parameter specifies the size of the receive buffer for netlink messages. Increasing this value can help accommodate bursts of netlink messages, but setting it too high may lead to increased memory usage.
 
