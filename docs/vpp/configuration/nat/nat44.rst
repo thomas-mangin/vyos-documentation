@@ -234,7 +234,13 @@ For more granular control, you can create port-specific static rules. This is us
 Where:
 
 * ``<internal-port>`` and ``<external-port>`` are the port numbers used by the connection
-* ``<protocol>`` specifies the protocol (tcp, udp, icmp) - if not specified, the rule applies to all protocols
+* ``<protocol>`` specifies the protocol (tcp, udp, icmp)
+
+.. important::
+
+   If you do not specify ports and protocol, the rule will apply to all traffic between the specified internal and external addresses.
+
+   Rules must contain either both ports and protocol or neither.
 
 Advanced Static Rule Options
 ----------------------------
@@ -298,8 +304,8 @@ To document your rules, you can add a description:
 
    set vpp nat44 static rule <rule-number> description <description>
 
-Configuration Examples
-^^^^^^^^^^^^^^^^^^^^^^
+Static Rules Configuration Examples
+-----------------------------------
 
 **Full one-to-one NAT mapping:**
 
@@ -337,6 +343,163 @@ Configuration Examples
    When using twice-nat or self-twice-nat options, ensure you have configured a twice-nat address pool using:
    
    ``set vpp nat44 address-pool twice-nat address <twice-nat-ip-range>``
+
+Exclude Rules Configuration
+===========================
+
+Exclude rules allow you to prevent specific traffic from undergoing NAT translation. This is particularly useful for:
+
+* **Router management**: Allowing SSH access to the router itself from external networks
+* **Service bypass**: Excluding specific services from NAT processing
+* **Traffic forwarding**: Allowing forwarded traffic to bypass NAT with 1-to-1 mapping
+
+Exclude rules take precedence over both dynamic and static NAT rules, ensuring that matching traffic bypasses NAT processing. For forwarded traffic, exclude rules create invisible 1-to-1 mappings that allow packets to pass through without NAT modifications.
+
+Basic Exclude Rule Configuration
+--------------------------------
+
+To create an exclude rule, you need to specify the traffic characteristics that should bypass NAT. You can configure exclude rules in two ways:
+
+**Option 1: Using local address**
+
+.. cfgcmd::
+
+   set vpp nat44 exclude rule <rule-number> local-address <internal-ip>
+
+**Option 2: Using external interface**
+
+.. cfgcmd::
+
+   set vpp nat44 exclude rule <rule-number> external-interface <interface-name>
+
+Where:
+
+* ``<rule-number>`` is a unique identifier for the exclude rule
+* ``<internal-ip>`` is the local IP address that should be excluded from NAT
+* ``<interface-name>`` is the external interface where the traffic originates
+
+.. important::
+
+   You must use either ``local-address`` OR ``external-interface`` in an exclude rule, but not both simultaneously. These options are mutually exclusive.
+
+Port-specific Exclude Rules
+---------------------------
+
+For more granular control, you can exclude only specific ports and protocols. You can combine port and protocol specifications with either local-address or external-interface:
+
+**With local address:**
+
+.. cfgcmd::
+
+   set vpp nat44 exclude rule <rule-number> local-address <internal-ip>
+
+.. cfgcmd::
+
+   set vpp nat44 exclude rule <rule-number> local-port <port-number>
+
+.. cfgcmd::
+
+   set vpp nat44 exclude rule <rule-number> protocol <protocol>
+
+**With external interface:**
+
+.. cfgcmd::
+
+   set vpp nat44 exclude rule <rule-number> external-interface <interface-name>
+
+.. cfgcmd::
+
+   set vpp nat44 exclude rule <rule-number> local-port <port-number>
+
+.. cfgcmd::
+
+   set vpp nat44 exclude rule <rule-number> protocol <protocol>
+
+Where:
+
+* ``<port-number>`` is the specific port to exclude (1-65535)
+* ``<protocol>`` can be ``tcp``, ``udp``, ``icmp``, or ``all`` (default)
+
+Rule Documentation
+------------------
+
+Add descriptions to your exclude rules for better management:
+
+.. cfgcmd::
+
+   set vpp nat44 exclude rule <rule-number> description <description>
+
+Exclude Rules Configuration Examples
+------------------------------------
+
+**Exclude SSH access to router:**
+
+.. code-block:: none
+
+   # Allow external SSH access to router without NAT
+   set vpp nat44 exclude rule 10 local-address 192.168.1.1
+   set vpp nat44 exclude rule 10 local-port 22
+   set vpp nat44 exclude rule 10 protocol tcp
+   set vpp nat44 exclude rule 10 description "SSH access to router"
+
+**Exclude SNMP monitoring:**
+
+.. code-block:: none
+
+   # Allow SNMP monitoring without NAT translation
+   set vpp nat44 exclude rule 20 local-port 161
+   set vpp nat44 exclude rule 20 protocol udp
+   set vpp nat44 exclude rule 20 external-interface eth1
+   set vpp nat44 exclude rule 20 description "SNMP monitoring"
+
+**Exclude all traffic to router management interface:**
+
+.. code-block:: none
+
+   # Exclude all traffic to router's management IP
+   set vpp nat44 exclude rule 30 local-address 192.168.100.1
+   set vpp nat44 exclude rule 30 description "Management interface bypass"
+
+**Exclude all traffic from external interface:**
+
+.. code-block:: none
+
+   # Exclude all traffic from external interface (alternative approach)
+   set vpp nat44 exclude rule 31 external-interface eth1
+   set vpp nat44 exclude rule 31 description "External interface bypass"
+
+**Exclude forwarded traffic for specific service:**
+
+.. code-block:: none
+
+   # Allow external access to internal server without NAT translation
+   set vpp nat44 exclude rule 40 local-address 192.168.1.50
+   set vpp nat44 exclude rule 40 local-port 8080
+   set vpp nat44 exclude rule 40 protocol tcp
+   set vpp nat44 exclude rule 40 description "Direct access to internal service"
+
+Common Use Cases
+----------------
+
+**Router Administration:**
+
+Exclude rules are essential when you need to manage the router from external networks. Without exclude rules, NAT would attempt to translate the router's own traffic, potentially breaking management connections.
+
+**Service Monitoring:**
+
+Network monitoring systems often need direct access to router services. Exclude rules ensure that monitoring traffic bypasses NAT translation.
+
+**Routing Protocols:**
+
+Some routing protocols or network services may require direct communication without NAT interference.
+
+**Traffic Forwarding:**
+
+Exclude rules also work for forwarded traffic between networks. Without exclude rules, traffic from external to local networks must either match a static rule or be dropped. With exclude rules, traffic can bypass NAT processing with invisible 1-to-1 mappings.
+
+.. important::
+
+   Exclude rules affect both traffic destined for the router itself and forwarded traffic flowing through the router. For forwarded traffic, exclude rules create transparent 1-to-1 mappings that allow packets to pass without NAT modifications, while from the outside perspective, the traffic appears to bypass NAT entirely.
 
 Advanced NAT44 Settings
 =======================
@@ -466,6 +629,17 @@ Here's a complete example showing how to configure VyOS NAT44 for a typical netw
    set vpp nat44 address-pool translation address 203.0.113.10-203.0.113.50
    set vpp nat44 address-pool twice-nat address 203.0.113.100-203.0.113.110
 
+   # Exclude rules for router management
+   set vpp nat44 exclude rule 10 local-address 203.0.113.1
+   set vpp nat44 exclude rule 10 local-port 22
+   set vpp nat44 exclude rule 10 protocol tcp
+   set vpp nat44 exclude rule 10 description "SSH access to router"
+
+   set vpp nat44 exclude rule 11 local-address 203.0.113.1
+   set vpp nat44 exclude rule 11 local-port 443
+   set vpp nat44 exclude rule 11 protocol tcp
+   set vpp nat44 exclude rule 11 description "HTTPS access to router web interface"
+
    # Static rule for web server (HTTP)
    set vpp nat44 static rule 100 local address 192.168.1.10
    set vpp nat44 static rule 100 local port 80
@@ -505,6 +679,7 @@ Best Practices and Troubleshooting
 Recommendations
 ---------------
 
+* **Use exclude rules** for router management services like SSH
 * **Use out-to-in-only** for services that do not need access to external networks
 * **Limit port ranges** in static rules to only necessary ports
 * **Document all rules** using descriptions for easier management
@@ -525,6 +700,18 @@ Common Configuration Issues
 1. Confirm twice-nat pool is configured
 2. Verify static rules have the correct twice-nat option
 3. Check that both translation and twice-nat pools are properly defined
+
+**Router management access issues:**
+
+1. Verify exclude rules are configured for management services
+2. Check that local-address matches the router's interface IP
+3. Ensure external-interface is correctly specified
+
+**Forwarded traffic from external networks not bypassing NAT:**
+
+1. Verify exclude rules are configured for the specific traffic flow
+2. Check that local-address matches the destination IP in the internal network
+3. Ensure protocol and port specifications match the traffic requirements
 
 Operational Commands
 ====================
