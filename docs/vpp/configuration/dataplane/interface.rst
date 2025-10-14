@@ -65,7 +65,6 @@ The xdp-options section allows for the configuration of various XDP-specific set
 
 XDP options you can configure are:
 
-- ``no-syscall-lock``: Disables the syscall lock for the XDP interface. This can improve performance by allowing multiple threads to access the interface concurrently.
 - ``num-rx-queues``: Specifies the number of receive queues for the XDP interface. More queues can improve performance on multi-core systems by allowing parallel processing of incoming packets. Each queue will be assigned to a separate CPU core.
 - ``promisc``: Enables or disables promiscuous mode on the interface. When promiscuous mode is enabled, the interface will receive all packets on the network, regardless of type and destination of the packets. Some NICs need this feature to be enabled to avoid filtering out packets (for example to pass VLAN tagged packets).
 - ``rx-queue-size``: Defines the size of each receive queue. Larger queue sizes can help accommodate bursts of incoming traffic, reducing the likelihood of packet drops during high traffic periods.
