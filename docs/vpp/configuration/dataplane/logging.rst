@@ -24,7 +24,7 @@ Where ``<level>`` can be one of the following:
 - ``emerg`` (Emergency) - System is unusable.
 - ``alert`` (Alert) - Immediate action required.
 - ``crit`` (Critical) - Critical conditions.
-- ``err`` (Error) - Error conditions.
+- ``error`` (Error) - Error conditions.
 - ``warn`` (Warning) - Warning conditions.
 - ``notice`` (Notice) - Normal but significant.
 - ``info`` (Informational) - Routine informational messages.
