@@ -128,7 +128,7 @@ an additional ``tls`` sub-node can be used to enable encryption and
 configure certificate handling. TLS is not supported over UDP and
 if you attempt to enable TLS while using UDP, the system will issue a warning.
 
-.. cfgcmd:: set system syslog remote <address> tls enable
+.. cfgcmd:: set system syslog remote <address> tls
 
    Enable TLS for this remote syslog destination.
 
@@ -179,13 +179,13 @@ Examples:
    set system syslog remote 10.10.2.3 facility all level debug
    set system syslog remote 10.10.2.3 port 6514
    set system syslog remote 10.10.2.3 protocol tcp
-   set system syslog remote 10.10.2.3 tls enable
+   set system syslog remote 10.10.2.3 tls auth-mode anon
+   # or just use 'set system syslog remote 10.10.2.3 tls'
 
    # Example of 'certvalid' authentication mode
    set system syslog remote elk.example.com facility all level debug
    set system syslog remote elk.example.com port 6514
    set system syslog remote elk.example.com protocol tcp
-   set system syslog remote elk.example.com tls enable
    set system syslog remote elk.example.com tls ca-certificate my-ca
    set system syslog remote elk.example.com tls auth-mode certvalid
 
@@ -193,7 +193,6 @@ Examples:
    set system syslog remote syslog.example.com facility all level debug
    set system syslog remote syslog.example.com port 6514
    set system syslog remote syslog.example.com protocol tcp
-   set system syslog remote syslog.example.com tls enable
    set system syslog remote syslog.example.com tls ca-certificate my-ca
    set system syslog remote syslog.example.com tls auth-mode fingerprint
    set system syslog remote syslog.example.com tls permitted-peers 'SHA1:10:C4:26:...,SHA256:7B:4B:10:...'
@@ -202,7 +201,6 @@ Examples:
    set system syslog remote graylog.example.com facility all level debug
    set system syslog remote graylog.example.com port 6514
    set system syslog remote graylog.example.com protocol tcp
-   set system syslog remote graylog.example.com tls enable
    set system syslog remote graylog.example.com tls ca-certificate my-ca
    set system syslog remote graylog.example.com tls certificate syslog-client
    set system syslog remote graylog.example.com tls auth-mode name
