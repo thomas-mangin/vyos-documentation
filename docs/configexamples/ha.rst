@@ -482,7 +482,7 @@ correctly.
    set protocols ospf log-adjacency-changes
    set protocols ospf parameters abr-type 'cisco'
    set protocols ospf parameters router-id '10.254.60.2'
-   set protocols ospf route-map PUBOSPF
+   set system ip protocol ospf route-map PUBOSPF
 
 
 Test OSPF
