@@ -4,20 +4,20 @@ IPSec IKEv2 Remote Access VPN
 =============================
 
 Internet Key Exchange version 2 (IKEv2) is a tunneling protocol, based on IPsec,
-that establishes a secure VPN communication between VPN devices,  and defines 
+that establishes a secure VPN communication between VPN devices, and defines
 negotiation and authentication processes for IPsec security associations (SAs).
 It is often known as IKEv2/IPSec or IPSec IKEv2 remote-access — or road-warriors
 as others call it.
 
 Key exchange and payload encryption is done using IKE and ESP proposals as known
 from IKEv1 but the connections are faster to establish, more reliable, and also
-support roaming from IP to IP (called MOBIKE which makes sure your connection 
-does not drop when changing networks from e.g. WIFI to LTE and back). 
+support roaming from IP to IP (called MOBIKE which makes sure your connection
+does not drop when changing networks from e.g. WIFI to LTE and back).
 Authentication can be achieved with X.509 certificates.
 
 Setting up certificates:
 ^^^^^^^^^^^^^^^^^^^^^^^^
-First of all, we need to create a CA root certificate and server certificate 
+First of all, we need to create a CA root certificate and server certificate
 on the server side.
 
 .. code-block:: none
@@ -70,16 +70,16 @@ on the server side.
   + }
 
 
-Once the command is completed, it will add the certificate to the configuration 
-session, to the pki subtree. You can then review the proposed changes and 
+Once the command is completed, it will add the certificate to the configuration
+session, to the pki subtree. You can then review the proposed changes and
 commit them.
 
 Setting up IPSec:
 ^^^^^^^^^^^^^^^^^
 
-After the PKI certs are all set up we can start configuring our IPSec/IKE 
+After the PKI certs are all set up we can start configuring our IPSec/IKE
 proposals used for key-exchange end data encryption. The used encryption ciphers
-and integrity algorithms vary from operating system to operating system. The 
+and integrity algorithms vary from operating system to operating system. The
 ones used in this example are validated to work on Windows 10.
 
 .. code-block:: none
@@ -125,7 +125,7 @@ Setting up tunnel:
   set vpn ipsec remote-access connection rw pool 'ra-rw-ipv6'
 
 VyOS also supports two different modes of authentication, local and RADIUS.
-To create a new local user named "vyos" with a password of "vyos" use the 
+To create a new local user named "vyos" with a password of "vyos" use the
 following commands.
 
 .. code-block:: none
@@ -156,12 +156,12 @@ that will connect to the "rw" connection on our VyOS server.
   ==== <snip> ====
   Add-VpnConnection -Name "VyOS IKEv2 VPN" -ServerAddress "vpn.vyos.net" -TunnelType "Ikev2"
 
-  Set-VpnConnectionIPsecConfiguration -ConnectionName "VyOS IKEv2 VPN" -AuthenticationTransformConstants GCMAES128 -CipherTransformConstants 
+  Set-VpnConnectionIPsecConfiguration -ConnectionName "VyOS IKEv2 VPN" -AuthenticationTransformConstants GCMAES128 -CipherTransformConstants
   GCMAES128 -EncryptionMethod GCMAES128 -IntegrityCheckMethod SHA256128 -PfsGroup None -DHGroup "Group14" -PassThru -Force
   ==== </snip> ====
 
 Add the commands from Snippet in the Windows side via PowerShell.
-Also import the root CA cert to the Windows “Trusted Root Certification 
+Also import the root CA cert to the Windows “Trusted Root Certification
 Authorities” and establish the connection.
 
 Verification:
@@ -173,4 +173,3 @@ Verification:
     Connection ID  Username    Protocol    State    Uptime    Tunnel IP    Remote Host    Remote ID    IKE Proposal                                IPSec Proposal
   ---------------  ----------  ----------  -------  --------  -----------  -------------  -----------  ------------------------------------------  ------------------
                 5  vyos        IKEv2       UP       37s       192.0.2.129  10.0.0.2       10.0.0.2     AES_GCM_16-128/PRF_HMAC_SHA2_256/MODP_2048  ESP:AES_GCM_16-128
-
